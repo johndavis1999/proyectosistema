@@ -1,0 +1,44 @@
+CRITICAL - 2023-05-19 02:07:13 --> Undefined variable $titulo
+in APPPATH\Views\productos\index.php on line 2.
+ 1 APPPATH\Views\productos\index.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(8): view('productos/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 02:08:13 --> Undefined variable $personas
+in APPPATH\Views\productos\index.php on line 51.
+ 1 APPPATH\Views\productos\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(10): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 02:21:01 --> Undefined variable $cargos
+in APPPATH\Views\productos\crear.php on line 64.
+ 1 APPPATH\Views\productos\crear.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\crear.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/crear', [], true)
+ 5 APPPATH\Controllers\Producto.php(16): view('productos/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 02:22:32 --> Undefined variable $cargos
+in APPPATH\Views\productos\crear.php on line 64.
+ 1 APPPATH\Views\productos\crear.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\crear.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/crear', [], true)
+ 5 APPPATH\Controllers\Producto.php(16): view('productos/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

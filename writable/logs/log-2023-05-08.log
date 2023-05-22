@@ -1,0 +1,193 @@
+CRITICAL - 2023-05-08 22:25:21 --> Call to undefined function App\Controllers\index()
+in APPPATH\Controllers\User.php on line 58.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:25:38 --> Call to undefined function App\Controllers\index()
+in APPPATH\Controllers\User.php on line 58.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:37:16 --> syntax error, unexpected '$passwordHash' (T_VARIABLE)
+in APPPATH\Controllers\User.php on line 68.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\User.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\User')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\User')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\User')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\User', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:45:18 --> Call to undefined function App\Controllers\withInput()
+in APPPATH\Controllers\User.php on line 58.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:48:15 --> The route for "http://localhost:8080/ventaspintura/public/UsuariosCrear" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('http://localhost:8080/ventaspintura/public/UsuariosCrear')
+ 2 SYSTEMPATH\Common.php(880): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\User.php(58): redirect('http://localhost:8080/ventaspintura/public/UsuariosCrear')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:57:06 --> The original file is not a valid file.
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH\Controllers\User.php(79): CodeIgniter\HTTP\Files\UploadedFile->move('../public/users/img/', '1683586626_93259b2cdedf19e7f5ba')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:57:19 --> The original file is not a valid file.
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH\Controllers\User.php(79): CodeIgniter\HTTP\Files\UploadedFile->move('../public/users/img/', '1683586639_be958cd396b41ba67d53')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:57:26 --> The original file is not a valid file.
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH\Controllers\User.php(62): CodeIgniter\HTTP\Files\UploadedFile->move('../public/users/img/', '1683586645_5dfcfd491839bd61d4ab')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:57:53 --> The original file is not a valid file.
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH\Controllers\User.php(62): CodeIgniter\HTTP\Files\UploadedFile->move('../public/users/img/', '1683586673_e654c988291a0e6bbe82')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:58:02 --> The original file is not a valid file.
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH\Controllers\User.php(60): CodeIgniter\HTTP\Files\UploadedFile->move('../public/users/img/', '1683586682_1f8045a11edb0e416b8f')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 22:58:21 --> The original file is not a valid file.
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 137.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH\Controllers\User.php(60): CodeIgniter\HTTP\Files\UploadedFile->move('../public/users/img/', '1683586701_3ef9d6b371016fb2c1ba')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:07:20 --> Call to a member function obtenerPersona() on null
+in APPPATH\Controllers\User.php on line 61.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:07:53 --> Call to a member function obtenerPersona() on null
+in APPPATH\Controllers\User.php on line 61.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:08:22 --> Call to a member function obtenerPersona() on null
+in APPPATH\Controllers\User.php on line 42.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:09:14 --> Call to a member function obtenerPersona() on null
+in APPPATH\Controllers\User.php on line 42.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:09:41 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:09:54 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:13:21 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:13:55 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:14:40 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:14:49 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:15:20 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:15:54 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:17:14 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:17:24 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:17:41 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-08 23:17:48 --> Call to undefined method App\Models\Users::obtenerPersona
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(42): CodeIgniter\Model->__call('obtenerPersona', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

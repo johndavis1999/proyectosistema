@@ -1,0 +1,419 @@
+ERROR - 2023-05-11 00:35:38 --> mysqli_sql_exception: Column 'es_empleado' cannot be null in C:\xampp\htdocs\ventaspintura\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\ventaspintura\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\ventaspintura\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\ventaspintura\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\ventaspintura\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\ventaspintura\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ventaspintura\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ventaspintura\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ventaspintura\app\Controllers\Persona.php(54): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ventaspintura\system\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+#9 C:\xampp\htdocs\ventaspintura\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+#10 C:\xampp\htdocs\ventaspintura\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ventaspintura\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-05-11 00:35:38 --> Column 'es_empleado' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `personas` (`nombres`, `identificacion`, `telefono`, `correo`, `es_empleado`, `id_cargo`, `estado`) VALUES (\'asdadadasd\', \'45646464564564\', \'12345679\', \'johndavis@gmail.com\', NULL, \'\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `personas` (`nombres`, `identificacion`, `telefono`, `correo`, `es_empleado`, `id_cargo`, `estado`) VALUES (\'asdadadasd\', \'45646464564564\', \'12345679\', \'johndavis@gmail.com\', NULL, \'\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `personas` (`nombres`, `identificacion`, `telefono`, `correo`, `es_empleado`, `id_cargo`, `estado`) VALUES (\'asdadadasd\', \'45646464564564\', \'12345679\', \'johndavis@gmail.com\', NULL, \'\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `personas` (`nombres`, `identificacion`, `telefono`, `correo`, `es_empleado`, `id_cargo`, `estado`) VALUES (:nombres:, :identificacion:, :telefono:, :correo:, :es_empleado:, :id_cargo:, :estado:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Persona.php(54): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 02:00:34 --> Undefined variable $es_cliente
+in APPPATH\Controllers\Persona.php on line 37.
+ 1 APPPATH\Controllers\Persona.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $es_cliente', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 02:47:52 --> Cannot use App\Models\Personas as Personas because the name is already in use
+in APPPATH\Controllers\Persona.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-11 02:50:29 --> Trying to access array offset on value of type null
+in APPPATH\Views\usuarios\editar.php on line 38.
+ 1 APPPATH\Views\usuarios\editar.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\usuarios\\editar.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\usuarios\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('usuarios/editar', [], true)
+ 5 APPPATH\Controllers\User.php(128): view('usuarios/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:11:23 --> Undefined variable $id
+in APPPATH\Views\personas\editar.php on line 8.
+ 1 APPPATH\Views\personas\editar.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php', 8)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/editar', [], true)
+ 5 APPPATH\Controllers\Persona.php(95): view('personas/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:26:56 --> Class "App\Models\Cargos" not found
+in APPPATH\Controllers\Persona.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-05-11 03:27:33 --> mysqli_sql_exception: Table 'db_sistema.cargos' doesn't exist in C:\xampp\htdocs\ventaspintura\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\ventaspintura\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ventaspintura\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ventaspintura\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ventaspintura\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ventaspintura\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ventaspintura\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ventaspintura\app\Controllers\Persona.php(20): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ventaspintura\system\CodeIgniter.php(934): App\Controllers\Persona->crear()
+#8 C:\xampp\htdocs\ventaspintura\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+#9 C:\xampp\htdocs\ventaspintura\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ventaspintura\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-11 03:27:33 --> Table 'db_sistema.cargos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `cargos`
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cargos`
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cargos`
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cargos`
+ORDER BY `id` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Persona.php(20): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:28:24 --> Undefined variable $cargos
+in APPPATH\Views\personas\crear.php on line 64.
+ 1 APPPATH\Views\personas\crear.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/crear', [], true)
+ 5 APPPATH\Controllers\Persona.php(22): view('personas/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:28:39 --> Undefined variable $cargos
+in APPPATH\Views\personas\crear.php on line 64.
+ 1 APPPATH\Views\personas\crear.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/crear', [], true)
+ 5 APPPATH\Controllers\Persona.php(22): view('personas/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:29:10 --> Undefined variable $cargo
+in APPPATH\Views\personas\crear.php on line 64.
+ 1 APPPATH\Views\personas\crear.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargo', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/crear', [], true)
+ 5 APPPATH\Controllers\Persona.php(22): view('personas/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:29:16 --> Undefined variable $cargos
+in APPPATH\Views\personas\crear.php on line 64.
+ 1 APPPATH\Views\personas\crear.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/crear', [], true)
+ 5 APPPATH\Controllers\Persona.php(22): view('personas/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:29:41 --> Undefined variable $cargos
+in APPPATH\Views\personas\crear.php on line 64.
+ 1 APPPATH\Views\personas\crear.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/crear', [], true)
+ 5 APPPATH\Controllers\Persona.php(22): view('personas/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:31:19 --> Undefined variable $cat
+in APPPATH\Views\personas\crear.php on line 66.
+ 1 APPPATH\Views\personas\crear.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cat', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/crear', [], true)
+ 5 APPPATH\Controllers\Persona.php(22): view('personas/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:34:02 --> Undefined variable $libro
+in APPPATH\Views\personas\editar.php on line 66.
+ 1 APPPATH\Views\personas\editar.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $libro', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/editar', [], true)
+ 5 APPPATH\Controllers\Persona.php(99): view('personas/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:36:11 --> Undefined variable $libro
+in APPPATH\Views\personas\editar.php on line 66.
+ 1 APPPATH\Views\personas\editar.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $libro', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/editar', [], true)
+ 5 APPPATH\Controllers\Persona.php(101): view('personas/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:36:55 --> Undefined variable $persona
+in APPPATH\Views\personas\editar.php on line 66.
+ 1 APPPATH\Views\personas\editar.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persona', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/editar', [], true)
+ 5 APPPATH\Controllers\Persona.php(101): view('personas/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:37:02 --> Undefined variable $personas
+in APPPATH\Views\personas\editar.php on line 66.
+ 1 APPPATH\Views\personas\editar.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/editar', [], true)
+ 5 APPPATH\Controllers\Persona.php(101): view('personas/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:38:18 --> Undefined variable $personas
+in APPPATH\Views\personas\editar.php on line 66.
+ 1 APPPATH\Views\personas\editar.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/editar', [], true)
+ 5 APPPATH\Controllers\Persona.php(101): view('personas/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->editar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 03:43:21 --> Undefined array key "extranjero"
+in APPPATH\Views\personas\editar.php on line 38.
+ 1 APPPATH\Views\personas\editar.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "extranjero"', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/editar', [], true)
+ 5 APPPATH\Controllers\Persona.php(101): view('personas/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->editar('20')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:02:14 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 51.
+ 1 APPPATH\Views\personas\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(107): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:02:22 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 51.
+ 1 APPPATH\Views\personas\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(107): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:03:33 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 51.
+ 1 APPPATH\Views\personas\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(107): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:12:31 --> Undefined variable $identificacion
+in APPPATH\Controllers\Persona.php on line 108.
+ 1 APPPATH\Controllers\Persona.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $identificacion', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 108)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:14:26 --> Undefined variable $data
+in APPPATH\Controllers\Persona.php on line 146.
+ 1 APPPATH\Controllers\Persona.php(146): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 146)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:14:37 --> Undefined variable $titulo
+in APPPATH\Views\personas\index.php on line 2.
+ 1 APPPATH\Views\personas\index.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(146): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:15:21 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 51.
+ 1 APPPATH\Views\personas\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\ventaspintura\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(149): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:16:30 --> Call to undefined function App\Controllers\index()
+in APPPATH\Controllers\Persona.php on line 147.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:55:45 --> Undefined variable $users
+in APPPATH\Controllers\Persona.php on line 50.
+ 1 APPPATH\Controllers\Persona.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 04:55:45 --> Undefined variable $users
+in APPPATH\Controllers\Persona.php on line 50.
+ 1 APPPATH\Controllers\Persona.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 05:05:43 --> Undefined variable $users
+in APPPATH\Controllers\Persona.php on line 127.
+ 1 APPPATH\Controllers\Persona.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 127)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 05:06:00 --> Undefined variable $id
+in APPPATH\Controllers\Persona.php on line 128.
+ 1 APPPATH\Controllers\Persona.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 128)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 05:13:17 --> Undefined variable $id
+in APPPATH\Controllers\Persona.php on line 128.
+ 1 APPPATH\Controllers\Persona.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php', 128)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:34:40 --> Call to undefined method App\Models\Personas::validar_cedula_ecuador
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(59): CodeIgniter\Model->__call('validar_cedula_ecuador', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:36:12 --> Call to undefined method App\Models\Personas::validar_cedula_ecuador
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(59): CodeIgniter\Model->__call('validar_cedula_ecuador', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:36:52 --> Call to undefined method App\Models\Personas::validar_cedula_ecuador
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(59): CodeIgniter\Model->__call('validar_cedula_ecuador', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:36:55 --> Call to undefined method App\Models\Personas::validar_cedula_ecuador
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(59): CodeIgniter\Model->__call('validar_cedula_ecuador', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:37:07 --> Call to undefined method App\Models\Personas::validar_cedula_ecuador
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(59): CodeIgniter\Model->__call('validar_cedula_ecuador', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:37:08 --> Call to undefined method App\Models\Personas::validar_cedula_ecuador
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(59): CodeIgniter\Model->__call('validar_cedula_ecuador', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:37:39 --> Call to undefined function App\Controllers\validar_cedula_ecuador()
+in APPPATH\Controllers\Persona.php on line 94.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:39:35 --> Call to undefined function App\Controllers\validar_identificacion_ecuador()
+in APPPATH\Controllers\Persona.php on line 94.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:40:41 --> Call to undefined function App\Controllers\validar_identificacion_ecuador()
+in APPPATH\Controllers\Persona.php on line 94.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:40:43 --> Call to undefined function App\Controllers\validar_identificacion_ecuador()
+in APPPATH\Controllers\Persona.php on line 94.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-11 21:55:39 --> syntax error, unexpected variable "$telefono"
+in APPPATH\Controllers\Persona.php on line 83.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\ventaspintura\\app\\Controllers\\Persona.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Persona')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Persona')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Persona', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
