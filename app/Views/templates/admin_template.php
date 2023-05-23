@@ -12,6 +12,8 @@
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -120,7 +122,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-shopping-basket"> </i>
+            <i class="fas fa-dolly-flatbed"></i>
               <p>
                 Productos
                 <i class="fas fa-angle-left right"></i>
@@ -137,6 +139,29 @@
                 <a href="<?= base_url('categorias') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categorias</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-cart-plus"></i>
+              <p>
+                Compras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('productos') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cotizaciones de compra</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('categorias') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Facturas de compra</p>
                 </a>
               </li>
             </ul>
@@ -161,6 +186,7 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
+  <!-- 
   <footer class="main-footer">
     <strong>Desarrollado por: John Davis - Fernando Cervantes</strong>
     All rights reserved.
@@ -168,6 +194,7 @@
       <b>Version</b> 1.0
     </div>
   </footer>
+  -->
 </div>
 <!-- ./wrapper -->
 

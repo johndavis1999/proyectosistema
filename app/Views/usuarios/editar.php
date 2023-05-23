@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="id_persona">Seleccionar Persona *</label>
-                                <select id="id_persona" class="custom-select" name="id_persona" placeholder="rol">
+                                <select id="id_persona" name="id_persona" class="selectpicker form-control" data-live-search="true">
                                     <option value="">Escoja una persona</option>
                                     <?php if($personas):?>
                                         <?php foreach($personas as $persona):?>
