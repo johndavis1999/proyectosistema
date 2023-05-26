@@ -98,6 +98,15 @@ $routes->post('guardarCategoria', 'Categoria::guardar', ['filter' => 'verificarS
 $routes->post('actualizarCategoria', 'Categoria::actualizar', ['filter' => 'verificarSesion']);
 $routes->get('eliminarCategoria/(:num)', 'Categoria::eliminar/$1', ['filter' => 'verificarSesion']);
 
+
+#compras
+$routes->get('Compras', 'Compra::index', ['filter' => 'verificarSesion']);
+$routes->get('comprasCrear', 'Compra::Crear', ['filter' => 'verificarSesion']);
+$routes->get('nuevo', 'Compra::nuevo', ['filter' => 'verificarSesion']);
+$routes->post('guardarCompra', 'Compra::guardar', ['filter' => 'verificarSesion']);
+
+
 #facturacion
 $routes->get('crearFact', 'Facturacion::crear', ['filter' => 'verificarSesion']);
 $routes->get('  ', 'Facturacion::ver', ['filter' => 'verificarSesion']);
+

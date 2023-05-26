@@ -35,7 +35,12 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    
+     protected $helpers = [];
+     protected $blade;
+     protected $view = APPPATH . 'Views';
+     protected $cache = APPPATH . 'Cache';
+ 
 
     /**
      * Be sure to declare properties for any property fetch you initialized.

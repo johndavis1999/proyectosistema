@@ -17,11 +17,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('public/plugins/fontawesome-free/css/all.min.css') ?>">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="<?= base_url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ?>">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('public/dist/css/adminlte.min.css') ?>">
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-collapse">
 <div class="wrapper">
@@ -57,8 +57,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?= base_url('dashboard') ?>" class="brand-link">
-      <img src="<?= base_url('assets/fav.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Pinturex</span>
+      <img src="<?= base_url('public/assets/fav.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">BusinessFlex</span>
     </a>
 
     <!-- Sidebar -->
@@ -66,7 +66,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?= base_url('users/img/'.(session('imagen')))?>" class="img-circle elevation-2" alt="User Image">
+          <img src="<?= base_url('public/users/img/'.(session('imagen')))?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="<?= base_url('salir') ?>" class="d-block"> <?= (session('usuario'))?></a>
@@ -153,13 +153,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url('productos') ?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Cotizaciones de compra</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url('categorias') ?>" class="nav-link">
+                <a href="<?= base_url('Compras') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Facturas de compra</p>
                 </a>
@@ -200,28 +194,28 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="<?= base_url('plugins/jquery/jquery.min.js') ?>"></script>
+<script src="<?= base_url('public/plugins/jquery/jquery.min.js') ?>"></script>
 <!-- Bootstrap -->
-<script src="<?= base_url('plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<script src="<?= base_url('public/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <!-- overlayScrollbars -->
-<script src="<?= base_url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
+<script src="<?= base_url('public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') ?>"></script>
 <!-- AdminLTE App -->
-<script src="<?= base_url('dist/js/adminlte.js') ?>"></script>
+<script src="<?= base_url('public/dist/js/adminlte.js') ?>"></script>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
-<script src="<?= base_url('plugins/jquery-mousewheel/jquery.mousewheel.js') ?>"></script>
-<script src="<?= base_url('plugins/raphael/raphael.min.js') ?>"></script>
-<script src="<?= base_url('plugins/jquery-mapael/jquery.mapael.min.js') ?>"></script>
-<script src="<?= base_url('plugins/jquery-mapael/maps/usa_states.min.js') ?>"></script>
+<script src="<?= base_url('public/plugins/jquery-mousewheel/jquery.mousewheel.js') ?>"></script>
+<script src="<?= base_url('public/plugins/raphael/raphael.min.js') ?>"></script>
+<script src="<?= base_url('public/plugins/jquery-mapael/jquery.mapael.min.js') ?>"></script>
+<script src="<?= base_url('public/plugins/jquery-mapael/maps/usa_states.min.js') ?>"></script>
 <!-- ChartJS -->
-<script src="<?= base_url('plugins/chart.js/Chart.min.js') ?>"></script>
+<script src="<?= base_url('public/plugins/chart.js/Chart.min.js') ?>"></script>
 
 <!-- AdminLTE for demo purposes -->
-<script src="<?= base_url('dist/js/demo.js') ?>"></script>
+<script src="<?= base_url('public/dist/js/demo.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?= base_url('dist/js/pages/dashboard2.js') ?>"></script>
-<script src="<?= base_url('js/funciones.js') ?>"></script>
+<script src="<?= base_url('public/dist/js/pages/dashboard2.js') ?>"></script>
+<script src="<?= base_url('public/js/funciones.js') ?>"></script>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>

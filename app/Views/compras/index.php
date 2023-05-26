@@ -1,22 +1,22 @@
 <?= $this->extend('templates/admin_template') ?>
-<?= $this->section('content',$titulo) ?>
+<?= $this->section('content') ?>
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-              <h1>Administrar Personas</h1>
+              <h1>Compras Proveedores</h1>
         </div>
         
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="dashboard">Inicio</a></li>
-              <li class="breadcrumb-item active">Administrar Personas</li>
+              <li class="breadcrumb-item active">Compras Proveedores</li>
           </ol>
         </div>
       </div>
       <div class="row mb-2">
         <div class="col2">
-          <button type="button" class="btn btn-block btn-success" onclick='window.location.href="crearPersona"'><i class="fas fa-plus"></i> Crear Persona</button>
+          <button type="button" class="btn btn-block btn-success" onclick='window.location.href="comprasCrear"'><i class="fas fa-plus"></i> Registrar compra</button>
         </div>
         <div class="col2 ml-3">
           <button type="button" class="btn btn-block btn-primary"><i class="fas fa-plus"></i> Exportar PDF</button>
@@ -30,7 +30,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Gestionar información de personas </h3>
+              <h3 class="card-title">Gestionar facturas de compras</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -42,13 +42,13 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                   <tr>
-                    <th>Persona</th>
+                    <th>Proveedor</th>
                     <th>Estado</th>
                     <th class="col-1">Opciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php if($personas):?>
+                  <?php /*if($personas):?>
                     <?php foreach($personas as $persona):?>
                         <tr> 
                           <td><?= $persona['nombres'];?></td>
@@ -67,7 +67,7 @@
                           </td>
                         </tr>
                     <?php endforeach; ?>
-                  <?php endif; ?>
+                  <?php endif;*/ ?>
                 </tbody>
               </table>
             </div>

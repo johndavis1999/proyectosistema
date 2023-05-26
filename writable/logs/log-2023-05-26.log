@@ -1,0 +1,370 @@
+ERROR - 2023-05-26 00:53:59 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=1264 in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 174)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_sistema', 3306, '', 0)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_sistema', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#6 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-05-26 00:53:59 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=1264 in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 174)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_sistema', 3306, '', 0)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_sistema', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#6 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-05-26 00:53:59 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `usuario` = :usuario:', [...], false)
+ 3 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\Users.php(21): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->acceder()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 00:53:59 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `usuario` = :usuario:', [...], false)
+ 3 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\Users.php(21): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->acceder()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-05-26 01:10:11 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_sistema' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_sistema', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_sistema' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#5 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#6 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-05-26 01:10:11 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_sistema'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `usuario` = :usuario:', [...], false)
+ 3 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Models\Users.php(21): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->acceder()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-05-26 01:12:43 --> mysqli_sql_exception: Table 'db_sistema.usuarios' doesn't exist in engine in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\app\Models\Users.php(21): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Login->acceder()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-26 01:12:43 --> Table 'db_sistema.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `usuario` = \'admin123\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `usuario` = \'admin123\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `usuario` = \'admin123\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `usuario` = :usuario:', [...], false)
+ 5 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Users.php(21): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Login.php(24): App\Models\Users->obtenerUsuario('admin123')
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->acceder()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 02:06:29 --> Undefined variable $personas
+in APPPATH\Views\compras\crear.php on line 32.
+ 1 APPPATH\Views\compras\crear.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 32)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(16): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:06:41 --> "max:10" is not a valid rule.
+in SYSTEMPATH\Validation\Validation.php on line 320.
+ 1 SYSTEMPATH\Validation\Validation.php(320): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('max:10')
+ 2 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('num_fact', 'num_fact', '111-111-111111', [...], [...])
+ 3 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Compra.php(53): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:54:47 --> Undefined variable $productos
+in APPPATH\Views\compras\crear.php on line 82.
+ 1 APPPATH\Views\compras\crear.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productos', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 82)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(20): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:56:09 --> Undefined array key "nombre"
+in APPPATH\Views\compras\crear.php on line 84.
+ 1 APPPATH\Views\compras\crear.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 84)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(25): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:57:38 --> Undefined array key "nombre"
+in APPPATH\Views\compras\crear.php on line 84.
+ 1 APPPATH\Views\compras\crear.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 84)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(25): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:58:29 --> Undefined array key "nombre"
+in APPPATH\Views\compras\crear.php on line 85.
+ 1 APPPATH\Views\compras\crear.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 85)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(25): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:58:43 --> Undefined array key "nombre"
+in APPPATH\Views\compras\crear.php on line 85.
+ 1 APPPATH\Views\compras\crear.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 85)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(25): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 03:59:00 --> Undefined array key "nombre"
+in APPPATH\Views\compras\crear.php on line 85.
+ 1 APPPATH\Views\compras\crear.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 85)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(25): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-26 04:01:49 --> Undefined variable $optionsHtml
+in APPPATH\Views\compras\crear.php on line 180.
+ 1 APPPATH\Views\compras\crear.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $optionsHtml', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php', 180)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/crear', [], true)
+ 5 APPPATH\Controllers\Compra.php(25): view('compras/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-05-26 05:13:12 --> mysqli_sql_exception: Table 'dscriptn_db_sistema.personas' doesn't exist in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->crear()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-05-26 05:13:12 --> Table 'dscriptn_db_sistema.personas' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `personas`
+WHERE `es_proveedor` = \'1\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `personas`
+WHERE `es_proveedor` = \'1\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `personas`
+WHERE `es_proveedor` = \'1\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `personas`
+WHERE `es_proveedor` = :es_proveedor:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Compra.php(18): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->crear()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-05-26 05:20:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'dscriptn_root'@'localhost' (using password: YES) in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'dscriptn_root', 'AKJKSZPJ123', 'dscriptn_db_sis...', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\proyectosistema\app\Controllers\Dashboard.php(15): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#4 C:\xampp\htdocs\proyectosistema\app\Controllers\Dashboard.php(15): CodeIgniter\Model->countAllResults()
+#5 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Dashboard->index()
+#6 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-05-26 05:20:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `personas`
+WHERE `es_cliente` = :es_cliente:
+AND `estado` = :estado:', [...], false)
+ 3 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 4 APPPATH\Controllers\Dashboard.php(15): CodeIgniter\Model->countAllResults()
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

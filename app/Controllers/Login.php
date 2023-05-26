@@ -44,7 +44,7 @@ class Login extends BaseController
     
         }
         $session = session();
-        $session->setFlashData('mensaje','Usuario o clave incorrectos '. $usuario . ' - ' . $passwordHash);
+        $session->setFlashData('mensaje','Usuario o clave incorrectos ');
         return $this->response->redirect(site_url(''));
     }
 
