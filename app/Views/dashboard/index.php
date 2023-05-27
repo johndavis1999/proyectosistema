@@ -98,14 +98,14 @@
                                         <!-- small box -->
                                         <div class="small-box bg-orange">
                                             <div class="inner">
-                                            <h3>X</h3>
+                                            <h3><?= $totalCompras ?></h3>
 
                                             <p>Compras realizadas</p>
                                             </div>
                                             <div class="icon">
                                             <i class="fas fa-cart-plus"></i>
                                             </div>
-                                            <a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
+                                            <a href="Compras" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
                                     </div>
                                     <!-- ./col -->
@@ -113,14 +113,14 @@
                                         <!-- small box -->
                                         <div class="small-box bg-gray">
                                             <div class="inner">
-                                            <h3>X$</h3>
+                                            <h3>$<?= $valorEgresoCompras ?></h3>
 
                                             <p>Egresos por compras</p>
                                             </div>
                                             <div class="icon">
                                             <i class="fas fa-money-check-alt"></i>
                                             </div>
-                                            <a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
+                                            <a href="Compras" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
                                     </div>
                                     <!-- ./col -->
