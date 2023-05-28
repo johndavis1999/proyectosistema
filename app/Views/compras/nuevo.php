@@ -1,5 +1,5 @@
 <?= $this->extend('templates/admin_template') ?>
-<?= $this->section('content') ?>
+<?= $this->section('content',$titulo) ?>
 
 
 <section class="content-header">
@@ -72,33 +72,38 @@
                                         $optionsHtml .= '<option value="' . $producto['id'] . '">' . $producto['nombre'] . '</option>';
                                     }
                                     ?>
-                                    <div class="table-responsive">
-                                        <table class="table table-sm" id="facturaItems">
-                                            <tr>
-                                                <!--Checkbox para seleccionar todas las filas de la tabla-->
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="checkAll"/>
-                                                    </div>
-                                                </th>
-                                                <th>Producto</th>
-                                                <th>Cantidad</th>
-                                                <th>Precio</th>
-                                                <th>% Descuento</th>
-                                                <th>IVA</th>
-                                                <th>Subtotal</th>
-                                                <th>Total</th>
-                                            </tr>
-                                            <!--Primera fila de la tabla con los campos del primer producto-->
-                                            <tr>
+                                    <div class="tablaForm">
+                                        <div class="table-wrapper">
+                                            <table class="table table-responsive-sm" id="facturaItems" style="width: 100%;">
+                                                <tr>
+                                                    <!--Checkbox para seleccionar todas las filas de la tabla-->
+                                                    <th>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="checkAll"/>
+                                                        </div>
+                                                    </th>
+                                                    <th>Producto</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Precio</th>
+                                                    <th>% Descuento</th>
+                                                    <th>IVA</th>
+                                                    <th>Subtotal</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                                <!--Primera fila de la tabla con los campos del primer producto-->
+                                                <tr>
 
-                                            </tr>
-                                        </table>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
 
+
+                            
+                            
 
                             <div class="table-responsive mb-5 card-body p-0">
                                 <div class="">
@@ -110,7 +115,7 @@
                             <div>             
                                 <div class="form-group">
                                     <label for="textAreaRemark">Descripcion</label>
-                                    <textarea class="form-control" name="descripcion" value="<?= old('descripcion') ?>" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento"></textarea>
+                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento"> <?= old('descripcion') ?></textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -128,35 +133,35 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="subttl_iva12">Subtotal IVA 12%*</label>
-                                            <input type="text" class="form-control align-right" id="subttl_iva12" value="<?= old('subttl_iva12') ?>" name="subttl_iva12" placeholder="Subtotal IVA 12%">
+                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= old('subttl_iva12') ?>" name="subttl_iva12" placeholder="Subtotal IVA 12%" readonly>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="subttl_iva0">Subtotal IVA 0%*</label>
-                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="<?= old('subttl_iva0') ?>" name="subttl_iva0" placeholder="Subtotal IVA 0%">
+                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="<?= old('subttl_iva0') ?>" name="subttl_iva0" placeholder="Subtotal IVA 0%" readonly>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="val_descuento">$ Descuento*</label>
-                                            <input type="text" class="form-control align-right" id="val_descuento" value="<?= old('val_descuento') ?>" name="val_descuento" placeholder="Porcentaje Descuento">
+                                            <input type="text" class="form-control align-right" id="val_descuento" value="<?= old('val_descuento') ?>" name="val_descuento" placeholder="Porcentaje Descuento" readonly>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="val_iva">Valor IVA</label>
-                                            <input type="text" class="form-control align-right" id="val_iva" value="<?= old('val_iva') ?>" name="val_iva" placeholder="Valor IVA">
+                                            <input type="text" class="form-control align-right" id="iva" value="<?= old('val_iva') ?>" name="val_iva" placeholder="Valor IVA" readonly>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="total">Valor Total</label>
-                                            <input type="text" class="form-control align-right" id="total" value="<?= old('total') ?>" name="total" placeholder="Valor Total">
+                                            <input type="text" class="form-control align-right" id="total" value="<?= old('total') ?>" name="total" placeholder="Valor Total" readonly>
                                         </div>
                                     </div>
 
@@ -201,10 +206,10 @@
     htmlRows += '<td><select class="selectpicker form-control" data-live-search="true" name="id_producto[]" id="id_producto_'+count+'" aria-label="Disabled select example" required>';
     htmlRows += '<option value="" selected>Seleccionar producto</option>' + optionsHtml;
     htmlRows += '</select></td>';             
-    htmlRows += '<td><input type="number" name="factura_producto_cantidad[]" id="factura_producto_cantidad_'+count+'" class="form-control factura_producto_cantidad" autocomplete="off" required step="1" min="1"></td>';           
+    htmlRows += '<td><input type="number" name="cantidad_compra[]" id="cantidad_compra_'+count+'" class="form-control cantidad_compra" autocomplete="off" required step="1" min="1"></td>';           
     htmlRows += '<td><input type="number" name="precio_compra[]" id="precio_compra_'+count+'" class="form-control precio_compra" autocomplete="off"></td>'; 
     htmlRows += '<td><input type="number" name="descuento_item[]" id="descuento_item_'+count+'" class="form-control descuento_item" autocomplete="off" value="0"></td>'; 
-    htmlRows += '<td><input type="number" name="iva_producto[]" id="iva_producto_'+count+'" class="form-control iva_producto" autocomplete="off"></td>'; 
+    htmlRows += '<td><input type="number" name="iva_producto[]" id="iva_producto_'+count+'" class="form-control iva_producto" autocomplete="off" value="0"></td>'; 
     htmlRows += '<td><input type="number" name="monto_subtotal_item[]" id="monto_subtotal_item_'+count+'" class="form-control monto_subtotal_item" autocomplete="off" readonly></td>'; 
     htmlRows += '<td><input type="number" name="monto_total_item[]" id="monto_total_item_'+count+'" class="form-control monto_total_item" autocomplete="off" readonly></td>'; 
     htmlRows += '</tr>';
@@ -262,7 +267,7 @@
     function calcularSubTotalItem(row) {
         var precioUnitario = document.getElementById("precio_compra_" + row).value;
         var descuento = document.getElementById("descuento_item_" + row).value;
-        var cantidad = document.getElementById("factura_producto_cantidad_" + row).value;
+        var cantidad = document.getElementById("cantidad_compra_" + row).value;
         var montoSubtotalItem = document.getElementById("monto_subtotal_item_" + row);
         montoSubtotalItem.value = (precioUnitario * cantidad)+(((precioUnitario * cantidad)*descuento)/100);
         
@@ -298,15 +303,6 @@
         ivaProducto.value = valorIva;
     }
 
-
-
-
-
-
-
-
-
-
     $(document).on('click', '#removeRows', function(){
         $(".itemRow:checked").each(function() {
             $(this).closest('tr').remove();
@@ -314,60 +310,70 @@
         $('#checkAll').prop('checked', false);
         calculateTotal();
     });		
-    $(document).on('blur', "[id^=factura_producto_cantidad_]", function(){
+    $(document).on('keyup blur', "[id^=id_producto_]", function(){
+        calculateTotal();
+    });		
+    $(document).on('keyup blur', "[id^=cantidad_compra_]", function(){
         calculateTotal();
     });	
-    $(document).on('blur', "[id^=precio_compra_]", function(){
+    $(document).on('keyup blur', "[id^=precio_compra_]", function(){
         calculateTotal();
     });	
-    $(document).on('blur', "[id^=iva_producto_]", function(){		
+    $(document).on('keyup blur', "[id^=iva_producto_]", function(){		
         calculateTotal();
     });	
-    $(document).on('blur', "[id^=descuento_item_]", function(){		
+    $(document).on('keyup blur', "[id^=descuento_item_]", function(){		
         calculateTotal();
     });	
+	$(document).on('keyup blur', "#iva", function(){		
+		calculateTotal();
+	});	
 });	
 
 
 function calculateTotal(){
 	var montoSubtotal = 0; 
+	var valorIvaTotal = 0; 
 	var montoTotal = 0; 
+	var descuentoTotal = 0; 
+    var valDescuentoItem = 0;
 	$("[id^='precio_compra_']").each(function() {
 		var id = $(this).attr('id');
 		id = id.replace("precio_compra_",'');
 		var priceU = $('#precio_compra_'+id).val();
-		var cantidad  = $('#factura_producto_cantidad_'+id).val();
+		var cantidad  = $('#cantidad_compra_'+id).val();
 		var ivaItem = $('#iva_producto_'+id).val();
 		var descuento = $('#descuento_item_'+id).val();
 		if(!cantidad) {
-			cantidad = 1;
+			cantidad = 0;
 		}
 
+        valItvaItem = (cantidad * ivaItem) /100;
 
 		var subtotal = (priceU*cantidad)-(((priceU*cantidad)*descuento)/100);
-		$('#monto_subtotal_item_'+id).val(parseFloat(subtotal));	
+		$('#monto_subtotal_item_'+id).val(parseFloat(subtotal));
+        valDescuentoItem += parseFloat(((priceU*cantidad)*descuento)/100);
+
 	
 		var totalItem = subtotal + ((subtotal*ivaItem)/100);
 		$('#monto_total_item_'+id).val(parseFloat(totalItem));
+		montoSubtotal += subtotal;
+        
+        valorIvaTotal += (parseFloat(ivaItem)*subtotal)/100;
 	});
 
 
 
 	$('#subtotal').val(parseFloat(montoSubtotal));	
-	var iva = $("#iva").val();
-	var subtotal = $('#subtotal').val();	
+	$('#iva').val(parseFloat(valorIvaTotal));	
+	$('#val_descuento').val(parseFloat(valDescuentoItem));	
+
+	var subtotal = $('#subtotal').val();
+
 	if(subtotal) {
-		var montoIva = subtotal*iva/100;
-		subtotal = parseFloat(subtotal)+parseFloat(montoIva);
+		subtotal = parseFloat(subtotal)+parseFloat(valorIvaTotal);
 		$('#total').val(subtotal);		
-		var amountPaid = $('#amountPaid').val();
 		var total = $('#total').val();	
-		if(amountPaid && total) {
-			total = total-amountPaid;			
-			$('#amountDue').val(total);
-		} else {		
-			$('#amountDue').val(subtotal);
-		}
 	}
 }
 </script>

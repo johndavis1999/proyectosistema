@@ -1,0 +1,94 @@
+CRITICAL - 2023-05-28 02:18:12 --> Call to undefined function App\Controllers\guardarDetalle()
+in APPPATH\Controllers\Compra.php on line 97.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:21:13 --> Call to undefined function App\Controllers\guardarDetalle()
+in APPPATH\Controllers\Compra.php on line 97.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:22:20 --> Undefined variable $POST
+in APPPATH\Controllers\Compra.php on line 105.
+ 1 APPPATH\Controllers\Compra.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $POST', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 105)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(14)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:23:01 --> Undefined constant "App\Controllers\i"
+in APPPATH\Controllers\Compra.php on line 108.
+ 1 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(15)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:23:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 109.
+ 1 APPPATH\Controllers\Compra.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 109)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(16)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:28:28 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 109.
+ 1 APPPATH\Controllers\Compra.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 109)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(18)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:28:53 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 109.
+ 1 APPPATH\Controllers\Compra.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 109)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(19)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:30:00 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 109.
+ 1 APPPATH\Controllers\Compra.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 109)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(20)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:30:13 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 109.
+ 1 APPPATH\Controllers\Compra.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 109)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(21)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:30:13 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 109.
+ 1 APPPATH\Controllers\Compra.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 109)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(22)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 02:30:54 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 109.
+ 1 APPPATH\Controllers\Compra.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 109)
+ 2 APPPATH\Controllers\Compra.php(97): App\Controllers\Compra->guardarDetalle(23)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 03:07:23 --> unlink(C:\xampp\htdocs\proyectosistema\writable\session/ci_sessiongud60cvk9tdeqqbea2t1ch4kju6fnfph): No such file or directory
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 246.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\proyectosistema\\writable\\session/ci_sessiongud60cvk9tdeqqbea2t1ch4kju6fnfph): No such file or directory', 'C:\\xampp\\htdocs\\proyectosistema\\system\\Session\\Handlers\\FileHandler.php', 246)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(246): unlink('C:\\xampp\\htdocs\\proyectosistema\\writable\\session/ci_sessiongud60cvk9tdeqqbea2t1ch4kju6fnfph')
+ 3 [internal function]: CodeIgniter\Session\Handlers\FileHandler->destroy('gud60cvk9tdeqqbea2t1ch4kju6fnfph')
+ 4 SYSTEMPATH\Session\Session.php(457): session_destroy()
+ 5 APPPATH\Controllers\Login.php(53): CodeIgniter\Session\Session->destroy()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->cerrarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
