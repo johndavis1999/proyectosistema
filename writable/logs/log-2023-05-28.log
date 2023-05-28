@@ -92,3 +92,366 @@ in SYSTEMPATH\Session\Handlers\FileHandler.php on line 246.
  7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
  8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:08:11 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:08:29 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:10:38 --> Uncaught ErrorException: require(templates/admin_template): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(templat...', 'C:\\xampp\\htdocs...', 1)
+#1 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): require()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:10:59 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:11:17 --> Uncaught ErrorException: require(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(): http...', 'C:\\xampp\\htdocs...', 1)
+#1 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): require()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:11:41 --> Uncaught ErrorException: require(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(): http...', 'C:\\xampp\\htdocs...', 1)
+#1 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): require()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:11:42 --> Uncaught ErrorException: require(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(): http...', 'C:\\xampp\\htdocs...', 1)
+#1 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): require()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:11:42 --> Uncaught ErrorException: require(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(): http...', 'C:\\xampp\\htdocs...', 1)
+#1 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): require()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:11:43 --> Uncaught ErrorException: require(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(): http...', 'C:\\xampp\\htdocs...', 1)
+#1 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): require()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:12:25 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:12:26 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:13:14 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:13:39 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:13:57 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:13:58 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 18:15:09 --> View themes, no current section.
+in SYSTEMPATH\View\View.php on line 394.
+ 1 APPPATH\Views\errors\html\error_404.php(12): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Config\Routes.php(31): view('errors/html/error_404')
+ 6 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 7 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:16:11 --> View themes, no current section.
+in SYSTEMPATH\View\View.php on line 394.
+ 1 APPPATH\Views\errors\html\error_404.php(12): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Config\Routes.php(31): view('errors/html/error_404')
+ 6 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 7 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:16:12 --> View themes, no current section.
+in SYSTEMPATH\View\View.php on line 394.
+ 1 APPPATH\Views\errors\html\error_404.php(12): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Config\Routes.php(31): view('errors/html/error_404')
+ 6 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 7 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:16:22 --> Undefined variable $titulo
+in APPPATH\Views\errors\html\error_404.php on line 2.
+ 1 APPPATH\Views\errors\html\error_404.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\errors\\html\\error_404.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Config\Routes.php(31): view('errors/html/error_404')
+ 6 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 7 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:16:26 --> Undefined variable $titulo
+in APPPATH\Views\templates\admin_template.php on line 6.
+ 1 APPPATH\Views\templates\admin_template.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\templates\\admin_template.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\templates\\admin_template.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('templates/admin_template', [], true)
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 6 APPPATH\Config\Routes.php(31): view('errors/html/error_404')
+ 7 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 8 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:16:43 --> Undefined variable $titulo
+in APPPATH\Views\errors\html\error_404.php on line 3.
+ 1 APPPATH\Views\errors\html\error_404.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\errors\\html\\error_404.php', 3)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\errors\\html\\error_404.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH\Config\Routes.php(31): view('errors/html/error_404')
+ 6 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 7 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:16:52 --> Undefined variable $titulo
+in APPPATH\Views\templates\admin_template.php on line 6.
+ 1 APPPATH\Views\templates\admin_template.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\templates\\admin_template.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\templates\\admin_template.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('templates/admin_template', [], true)
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 6 APPPATH\Config\Routes.php(31): view('errors/html/error_404')
+ 7 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 8 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:21:07 --> syntax error, unexpected token "else", expecting end of file
+in APPPATH\Views\errors\html\error_404.php on line 10.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 3 APPPATH\Config\Routes.php(32): view('errors/html/error_404', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 5 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:21:35 --> syntax error, unexpected token ";"
+in APPPATH\Views\errors\html\error_404.php on line 9.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 3 APPPATH\Config\Routes.php(32): view('errors/html/error_404', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 5 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 18:22:13 --> syntax error, unexpected token ";"
+in APPPATH\Views\errors\html\error_404.php on line 9.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 3 APPPATH\Config\Routes.php(32): view('errors/html/error_404', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 5 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

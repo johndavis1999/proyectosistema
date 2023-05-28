@@ -14,7 +14,7 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Login');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+//$routes->set404Override();
 $routes->setAutoRoute(true);
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
@@ -27,6 +27,11 @@ $routes->setAutoRoute(true);
  * Route Definitions
  * --------------------------------------------------------------------
  */
+$routes->set404Override(function() {
+    $data['titulo'] = 'Error 404'; // Puedes asignar aquí el valor que deseas para la variable $titulo
+    return view('errors/html/error_404', $data);
+});
+
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
