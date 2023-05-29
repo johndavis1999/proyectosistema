@@ -8,6 +8,11 @@ use App\Models\DetalleCompras;
 
 class Compra extends BaseController{
     public function index(){
+        $compra = new Compras();
+        $data['compras'] = $compra->select('compras.*, personas.nombres as persona')
+                                    ->join('personas', 'personas.id = compras.id_per_prov', 'left')
+                                    ->orderBy('compras.id', 'ASC')
+                                    ->findAll();
         $titulo = "Compras";
         $data['titulo'] = $titulo;
         return view('compras/index', $data);

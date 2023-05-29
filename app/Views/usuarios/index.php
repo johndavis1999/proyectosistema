@@ -44,7 +44,7 @@
                       <?php echo session('exito') ?>
                   </div>
               <?php }  ?> 
-                <table id="example2" class="table table-bordered table-hover">
+                <table id="example2" class="table table-bordered table-hover table-responsive-sm">
                   <thead>
                     <tr>
                       <th>Persona</th>
@@ -106,7 +106,10 @@
                                       </div>
                                       <div class="modal-footer justify-content-between">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-warning">Cambiar Contraseña</button>
+                                        <button type="submit" class="btn btn-warning">
+                                          <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                          Cambiar Contraseña
+                                        </button>
                                       </div>
                                     </form>
                                   </div>
@@ -131,4 +134,16 @@
       </div>
       <!-- /.container-fluid -->
     </section>
+<script>
+    $(document).ready(function() {
+        $('form').submit(function() {
+            // Bloquear el botón y cambiar el texto a "Guardando"
+            var submitButton = $('button[type="submit"]');
+            submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardando...');
+
+            // Continuar con el envío del formulario
+            return true;
+        });
+    });
+</script>
 <?= $this->endsection() ?>

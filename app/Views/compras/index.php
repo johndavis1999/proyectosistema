@@ -43,16 +43,22 @@
                 <thead>
                   <tr>
                     <th>Proveedor</th>
+                    <th>Documento</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
                     <th>Estado</th>
                     <th class="col-1">Opciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php /*if($personas):?>
-                    <?php foreach($personas as $persona):?>
+                  <?php if($compras):?>
+                    <?php foreach($compras as $compra):?>
                         <tr> 
-                          <td><?= $persona['nombres'];?></td>
-                          <td><?php echo $persona['estado']==1 ? 'Activo' : 'Inactivo'  ?></td>
+                          <td><?= $compra['persona'];?></td>
+                          <td><?= $compra['num_fact'];?></td>
+                          <td><?= $compra['fecha_doc'];?></td>
+                          <td><?= $compra['total'];?></td>
+                          <td><?php echo $compra['estado']==1 ? 'Activo' : 'Inactivo'  ?></td>
                           <td>
                             <div class="btn-group">
                               <button type="button" class="btn btn-warning">Acciones</button>
@@ -60,14 +66,14 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu" role="menu">
-                                <li><a class="dropdown-item" href="<?=base_url('editarPersona/'.$persona['id']);?>"><i class="fas fa-edit"></i> Editar</a></li>
-                                <li><a class="dropdown-item" href="<?=base_url('eliminarPersona/'.$persona['id']);?>"><i class="fas fa-trash-alt"></i> Borrar</a></li>
+                                <li><a class="dropdown-item" href="<?=base_url('editarPersona/'.$compra['id']);?>"><i class="fas fa-edit"></i> Editar</a></li>
+                                <li><a class="dropdown-item" href="<?=base_url('eliminarPersona/'.$compra['id']);?>"><i class="fas fa-trash-alt"></i> Borrar</a></li>
                               </div>
                             </div>
                           </td>
                         </tr>
                     <?php endforeach; ?>
-                  <?php endif;*/ ?>
+                  <?php endif; ?>
                 </tbody>
               </table>
             </div>

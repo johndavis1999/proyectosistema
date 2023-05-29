@@ -27,10 +27,26 @@ $routes->setAutoRoute(true);
  * Route Definitions
  * --------------------------------------------------------------------
  */
+
+
+function validarSesion() {
+    $session = session();
+    if (!$session->has('usuario')) {
+        return redirect()->to(base_url(''));
+    }
+}
+
 $routes->set404Override(function() {
+    
     $data['titulo'] = 'Error 404'; // Puedes asignar aquí el valor que deseas para la variable $titulo
-    return view('errors/html/error_404', $data);
+    if (!validarSesion()) {
+        return view('errors/html/error_404', $data);
+    }
+    return view('errors/html/error_404_nolog', $data);
 });
+
+
+#$routes->set404Override(['Error404Controller::index']);
 
 
 // We get a performance increase by specifying the default

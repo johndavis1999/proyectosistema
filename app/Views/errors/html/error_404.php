@@ -25,7 +25,7 @@
                 </h3>
                 <p>
                     No pudimos encontrar la página que estabas buscando.
-                    Mientras tanto, puedes <a href="<?= base_url("dashboard") ?>">regresar al panel de control</a> o intentar usar el formulario de búsqueda.
+                    Mientras tanto, puedes <a href="<?= base_url("dashboard") ?>">regresar al panel de control</a> o comunicate con el administrador del sitio.
                 </p>
             </div>
         </div>

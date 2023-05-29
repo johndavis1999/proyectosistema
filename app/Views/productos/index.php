@@ -39,7 +39,7 @@
                       <?php echo session('mensaje') ?>
                   </div>
               <?php }  ?> 
-                <table id="example2" class="table table-bordered table-hover" align-items: center>
+                <table id="example2" class="table table-bordered table-hover table-responsive-sm" align-items: center>
                   <thead>
                     <tr>
                       <th>Producto</th>

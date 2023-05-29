@@ -455,3 +455,283 @@ in APPPATH\Views\errors\html\error_404.php on line 9.
  4 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
  5 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
  6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:41:11 --> Invalid file: "errors/html/error_404_nolog.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('errors/html/error_404_nolog.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404_nolog', [], true)
+ 3 APPPATH\Config\Routes.php(38): view('errors/html/error_404_nolog', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdadas::index')
+ 5 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:41:19 --> Invalid file: "errors/html/error_404_nolog.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('errors/html/error_404_nolog.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404_nolog', [], true)
+ 3 APPPATH\Config\Routes.php(38): view('errors/html/error_404_nolog', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 5 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:41:40 --> Invalid file: "errors/html/error_404_nolog.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('errors/html/error_404_nolog.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('errors/html/error_404_nolog', [], true)
+ 3 APPPATH\Config\Routes.php(38): view('errors/html/error_404_nolog', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(954): CodeIgniter\Router\RouteCollection->Config\{closure}('Controller or its method is not found: \\App\\Controllers\\Asdasdas::index')
+ 5 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:47:36 --> Class "Error404Controller" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:48:37 --> Class "Error404Controller" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:51:36 --> Class "Error404Controller" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:52:33 --> Class "Error404Controller" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:54:00 --> Class "error404" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:54:12 --> Class "error404" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:54:13 --> Class "error404" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:54:22 --> Class "error404" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:54:29 --> Class "prueba" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:55:00 --> Class "Error404Controller" not found
+in SYSTEMPATH\CodeIgniter.php on line 906.
+ 1 SYSTEMPATH\CodeIgniter.php(962): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-28 23:55:31 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:57:17 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:57:22 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::endsection() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:32
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 32.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:57:55 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:58:07 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:58:12 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:58:15 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:58:16 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:58:56 --> Uncaught Error: Call to undefined function extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:59:22 --> Uncaught ErrorException: require(../templates/admin_template): Failed to open stream: No such file or directory in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(../temp...', 'C:\\xampp\\htdocs...', 1)
+#1 C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php(1): require()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:59:29 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-05-28 23:59:59 --> Uncaught Error: Call to undefined method CodeIgniter\Debug\Exceptions::extend() in C:\xampp\htdocs\proyectosistema\app\Views\errors\html\error_404.php:1
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(282): include()
+#1 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(285): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#2 C:\xampp\htdocs\proyectosistema\system\Debug\Exceptions.php(156): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\PageNotFoundException), 404)
+#3 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#4 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Page Not Found
+#0 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(994): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(NULL)
+#1 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(387): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#3 {main}
+in APPPATH\Views\errors\html\error_404.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

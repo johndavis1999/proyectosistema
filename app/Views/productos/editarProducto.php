@@ -105,7 +105,10 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Editar Producto</button>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                Editar producto
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -124,4 +127,16 @@
     }
 </style>
 
+<script>
+    $(document).ready(function() {
+        $('form').submit(function() {
+            // Bloquear el botón y cambiar el texto a "Guardando"
+            var submitButton = $('button[type="submit"]');
+            submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardando...');
+
+            // Continuar con el envío del formulario
+            return true;
+        });
+    });
+</script>
 <?= $this->endsection() ?>

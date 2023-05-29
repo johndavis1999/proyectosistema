@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
+          <div class="col-7">
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
@@ -59,8 +59,11 @@
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+          <div class="col-5">
+            <button type="submit" class="btn btn-primary btn-block">
+              <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+              Acceder
+            </button>
           </div>
           <!-- /.col -->
         </div>
@@ -74,7 +77,20 @@
   <!-- /.card -->
 </div>
 <!-- /.login-box -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $('form').submit(function() {
+            // Bloquear el botón y cambiar el texto a "Guardando"
+            var submitButton = $('button[type="submit"]');
+            submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Cargando...');
+
+            // Continuar con el envío del formulario
+            return true;
+        });
+    });
+</script>
 <!-- jQuery -->
 <script src="<?= base_url('public/plugins/jquery/jquery.min.js') ?>"></script>
 <!-- Bootstrap 4 -->

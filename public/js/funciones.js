@@ -37,3 +37,14 @@ function mostrarSelect() {
     $('[data-toggle="tooltip"]').tooltip();
   });
       
+  
+  $(document).ready(function() {
+    $('form').submit(function() {
+        // Bloquear el botón y cambiar el texto a "Guardando"
+        var submitButton = $('button[type="submit"]');
+        submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardando...');
+
+        // Continuar con el envío del formulario
+        return true;
+    });
+});
