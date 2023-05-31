@@ -7,16 +7,23 @@ use App\Models\Productos;
 use App\Models\DetalleCompras;
 
 class Compra extends BaseController{
+    
     public function index(){
         $compra = new Compras();
         $data['compras'] = $compra->select('compras.*, personas.nombres as persona')
                                     ->join('personas', 'personas.id = compras.id_per_prov', 'left')
                                     ->orderBy('compras.id', 'ASC')
                                     ->findAll();
+                                    $detalleCompra = new DetalleCompras();
+        foreach ($data['compras'] as &$compra) {
+            $cantidadRegistros = $detalleCompra->where('id_compra', $compra['id'])->countAllResults();
+            $compra['cantidad_registros'] = $cantidadRegistros;
+        }
         $titulo = "Compras";
         $data['titulo'] = $titulo;
         return view('compras/index', $data);
     }
+
     public function crear(){
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
@@ -30,6 +37,7 @@ class Compra extends BaseController{
         $data['titulo'] = $titulo;
         return view('compras/crear', $data);
     }
+
     public function nuevo(){
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
@@ -45,7 +53,6 @@ class Compra extends BaseController{
         return view('compras/nuevo', $data);
     }
 
-    
     public function guardar(){
         $compra = new Compras();
         $num_fact = $this->request->getVar('num_fact');
@@ -62,7 +69,17 @@ class Compra extends BaseController{
         $pagado = 0;
         $estado = 1;
         
-        
+        $anio = date('Y', strtotime($fecha_doc));
+        $existeCompraMismoAnio = $compra->where('num_fact', $num_fact)
+                                        ->where('id_per_prov', $id_per_prov)
+                                        ->where('YEAR(fecha_doc)', $anio)
+                                        ->first();
+
+        if ($existeCompraMismoAnio !== null) {
+            $session = session();
+            $session->setFlashData('mensaje', 'Ya existe un documento con la misma secuencia y proveedor en el mismo año');
+            return redirect()->back()->withInput();
+        }
 
         $validacion = $this->validate([
             'num_fact'=>'required|exact_length[17]',
@@ -99,13 +116,13 @@ class Compra extends BaseController{
         ];
         $compra->insert($datos);
         $lastInsertId = $compra->insertID();
-        $this->guardarDetalle($lastInsertId);
+        //$this->guardarDetalle($lastInsertId);
+        //$this->actualizarStockIngreso($lastInsertId);
         return $this->response->redirect(site_url('Compras'));
     }
 
     private function guardarDetalle($lastInsertId) {
         $detalle = new DetalleCompras();
-
         // Recorremos los detalles de ingreso y los guardamos en la base de datos
         for ($i = 0; $i < count($this->request->getVar('id_producto')); $i++) {
             $data = [
@@ -121,5 +138,45 @@ class Compra extends BaseController{
             $detalle->insert($data);
         }
     }
+
+    private function actualizarStockIngreso($lastInsertId) {
+        // Selecciona los productos y las cantidades que se ingresaron en la compra
+        $detalles = new DetalleCompras();
+        $detalle_ingreso = $detalles->where('id_compra', $lastInsertId)->findAll();
+        // Incrementa el stock de cada producto ingresado capturando 'cantidad' de cada producto
+        foreach ($detalle_ingreso as $detalle) {
+            $productos = new Productos();
+            $producto = $productos->find($detalle['id_producto']);
+            $nuevoStock = $producto['stock'] + $detalle['cantidad'];
+            $productos->update($detalle['id_producto'], ['stock' => $nuevoStock]);
+        }
+    }
     
+    public function eliminar($id = null) {
+        $compra = new Compras();
+        //validar si hay categorias con productos relacionados
+        $compra->where('id', $id)->delete($id);
+        $this->reversarStockIngreso($id);
+        $this->eliminarIngresoDetalle($id);
+        return $this->response->redirect(site_url('Compras'));
+    }
+    
+    public function eliminarIngresoDetalle($id_compra){
+        $detalles = new DetalleCompras();
+        $detalles->where('id_compra', $id_compra)->delete();
+    }
+    
+    private function reversarStockIngreso($lastInsertId) {
+        // Selecciona los productos y las cantidades que se ingresaron en la compra
+        $detalles = new DetalleCompras();
+        $detalle_ingreso = $detalles->where('id_compra', $lastInsertId)->findAll();
+        // Incrementa el stock de cada producto ingresado capturando 'cantidad' de cada producto
+        foreach ($detalle_ingreso as $detalle) {
+            $productos = new Productos();
+            $producto = $productos->find($detalle['id_producto']);
+            $nuevoStock = $producto['stock'] - $detalle['cantidad'];
+            $productos->update($detalle['id_producto'], ['stock' => $nuevoStock]);
+        }
+    }
+
 }

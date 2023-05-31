@@ -41,7 +41,6 @@
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>
-
                                 </div>
 
                                 <div class="form-group">
@@ -140,7 +139,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="subttl_iva0">Subtotal IVA 0%*</label>
-                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="<?= old('subttl_iva0') ?>" name="subttl_iva0" placeholder="Subtotal IVA 0%" readonly>
+                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="0" name="subttl_iva0" placeholder="Subtotal IVA 0%" readonly>
                                         </div>
                                     </div>
 
@@ -168,8 +167,10 @@
                                 </div>
 
                             </div>
-                            <button class="btn btn-primary btn-block col-lg-2" type="submit">Guardar Documento</button>
-                            
+                            <button class="btn btn-primary btn-block col-lg-2" type="submit">
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                Guardar Documento
+                            </button>
                         </div>
                   </form>
               </div>
@@ -415,4 +416,16 @@ function formatearNumero(input) {
 
 </script>
 
+<script>
+    $(document).ready(function() {
+        $('form').submit(function() {
+            // Bloquear el botón y cambiar el texto a "Guardando"
+            var submitButton = $('button[type="submit"]');
+            submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardando...');
+
+            // Continuar con el envío del formulario
+            return true;
+        });
+    });
+</script>
 <?= $this->endsection() ?>

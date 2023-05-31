@@ -139,7 +139,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="subttl_iva0">Subtotal IVA 0%*</label>
-                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="<?= old('subttl_iva0') ?>" name="subttl_iva0" placeholder="Subtotal IVA 0%" readonly>
+                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="0" name="subttl_iva0" placeholder="Subtotal IVA 0%" readonly>
                                         </div>
                                     </div>
 
