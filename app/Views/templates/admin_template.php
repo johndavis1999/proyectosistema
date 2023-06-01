@@ -14,6 +14,7 @@
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 
+<link rel="stylesheet" href="<?= base_url('public/css/estilos.css') ?>">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -46,6 +47,24 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-list-4">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="<?= base_url('public/users/img/'.(session('imagen')))?>" width="35" height="35" class="rounded-circle">
+               <?= (session('usuario'))?>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#"><i class="fas fa-key"></i>  Cambiar Contraseña</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-id-card"></i> Ver VCard</a>
+              <a class="dropdown-item" href="<?= base_url('salir') ?>"><i class="fas fa-sign-in-alt">  </i> Cerrar Sesión</a>
+            </div>
+          </li>   
+        </ul>
+      </div>
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -56,14 +75,14 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?= base_url('dashboard') ?>" class="brand-link">
       <img src="<?= base_url('public/assets/fav.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">BusinessFlex</span>
     </a>
-
     <!-- Sidebar -->
+    
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -71,9 +90,10 @@
           <img src="<?= base_url('public/users/img/'.(session('imagen')))?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?= base_url('salir') ?>" class="d-block"> <?= (session('usuario'))?></a>
+          <a href="#" class="d-block"> <?= (session('usuario'))?></a>
         </div>
       </div>
+
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -164,9 +184,27 @@
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
+      
     </div>
-    <!-- /.sidebar -->
+    <!-- /.sidebar-menu -->
+    <div class="sidebar-custom">
+      <div class="user-panel d-flex">
+        <a href="#" class="btn btn-link image"><i class="fas fa-cogs"></i></a>
+        
+        <div class="col ms-auto">
+          <div class="info">
+            <div class="switch">
+              <input type="checkbox" id="mode" checked>
+              <label for="mode">
+                <span></span>
+                <span style="color: white;">Modo Oscuro</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </aside>
 
   <!-- Content Wrapper. Contains page content -->

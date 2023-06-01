@@ -131,15 +131,8 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="subttl_iva12">Subtotal IVA 12%*</label>
-                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= old('subttl_iva12') ?>" name="subttl_iva12" placeholder="Subtotal IVA 12%" readonly>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="subttl_iva0">Subtotal IVA 0%*</label>
-                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="0" name="subttl_iva0" placeholder="Subtotal IVA 0%" readonly>
+                                            <label for="subtotal_compra">Subtotal IVA 12%*</label>
+                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= old('subtotal_compra') ?>" name="subtotal_compra" placeholder="Subtotal IVA 12%" readonly>
                                         </div>
                                     </div>
 

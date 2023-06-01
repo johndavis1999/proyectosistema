@@ -60,14 +60,23 @@ class Compra extends BaseController{
         $id_per_prov = $this->request->getVar('id_per_prov');
         $fecha_doc = $this->request->getVar('fecha_doc');
         $doc_adjunto = $this->request->getVar('doc_adjunto');
-        $subttl_iva12 = $this->request->getVar('subttl_iva12');
-        $subttl_iva0 = $this->request->getVar('subttl_iva0');
+        $subtotal_compra = $this->request->getVar('subtotal_compra');
         $val_descuento = $this->request->getVar('val_descuento');
         $val_iva = $this->request->getVar('val_iva');
         $descripcion = $this->request->getVar('descripcion');
         $total = $this->request->getVar('total');
         $pagado = 0;
         $estado = 1;
+        
+        $idProducto = $this->request->getVar('id_producto');
+        
+        // Verificar si se recibió al menos un item
+        if (empty($idProducto)) {
+            $session = session();
+            $session->setFlashData('mensaje', 'Debe seleccionar al menos un producto');
+            return redirect()->back()->withInput();
+        }
+
         
         $anio = date('Y', strtotime($fecha_doc));
         $existeCompraMismoAnio = $compra->where('num_fact', $num_fact)
@@ -86,8 +95,8 @@ class Compra extends BaseController{
             'autorizacion_fact' => 'required|numeric|exact_length[11,50]',
             'id_per_prov'=>'required|numeric',
             'fecha_doc' => 'required',
-            'subttl_iva12' => 'required|numeric',
-            'subttl_iva0' => 'required|numeric',
+            'descripcion' => 'max_length[250]',
+            'subtotal_compra' => 'required|numeric',
             'val_descuento' => 'numeric',
             'val_iva' => 'required|numeric',
             'total' => 'required|numeric',
@@ -105,8 +114,7 @@ class Compra extends BaseController{
             'id_per_prov'=>$id_per_prov,
             'fecha_doc'=>$fecha_doc,
             'doc_adjunto'=>$doc_adjunto,
-            'subttl_iva12'=>$subttl_iva12,
-            'subttl_iva0'=>$subttl_iva0,
+            'subtotal_compra'=>$subtotal_compra,
             'val_descuento'=>$val_descuento,
             'val_iva'=>$val_iva,
             'descripcion'=>$descripcion,
@@ -116,7 +124,7 @@ class Compra extends BaseController{
         ];
         $compra->insert($datos);
         $lastInsertId = $compra->insertID();
-        //$this->guardarDetalle($lastInsertId);
+        $this->guardarDetalle($lastInsertId);
         //$this->actualizarStockIngreso($lastInsertId);
         return $this->response->redirect(site_url('Compras'));
     }

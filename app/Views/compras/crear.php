@@ -45,12 +45,12 @@
 
                                 <div class="form-group">
                                     <label for="numero-factura">Factura:</label>
-                                    <input  class="form-control" type="text" id="num_fact" name="num_fact" value="<?= old('num_fact') ?>" placeholder="xxx-xxx-xxxxxxxxx" oninput="formatearNumero(this)">
+                                    <input  class="form-control" type="text" id="num_fact" name="num_fact" value="<?= old('num_fact') ?>" placeholder="xxx-xxx-xxxxxxxxx" oninput="formatearNumero(this)" autocomplete="off">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="autorizacion-factura">Autorizacion:</label>
-                                    <input class="form-control" type="text" id="autorizacion_fact" name="autorizacion_fact" value="<?= old('autorizacion_fact') ?>" oninput="formatoAutorizacion(this)">
+                                    <input class="form-control" type="text" id="autorizacion_fact" name="autorizacion_fact" value="<?= old('autorizacion_fact') ?>" oninput="formatoAutorizacion(this)" autocomplete="off">
                                 </div>
 
                                 <div class="form-group">
@@ -114,8 +114,10 @@
                             <div>             
                                 <div class="form-group">
                                     <label for="textAreaRemark">Descripcion</label>
-                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento"> <?= old('descripcion') ?></textarea>
+                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()"><?= old('descripcion') ?></textarea>
+                                    <p id="contadorCaracteres">Caracteres restantes: 250/250</p>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label for="doc_adjunto">Documento adjunto</label>
@@ -131,15 +133,8 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="subttl_iva12">Subtotal IVA 12%*</label>
-                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= old('subttl_iva12') ?>" name="subttl_iva12" placeholder="Subtotal IVA 12%" readonly>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="subttl_iva0">Subtotal IVA 0%*</label>
-                                            <input type="text" class="form-control align-right" id="subttl_iva0" value="0" name="subttl_iva0" placeholder="Subtotal IVA 0%" readonly>
+                                            <label for="subtotal_compra">$ Subtotal</label>
+                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= old('subtotal_compra') ?>" name="subtotal_compra" placeholder="Subtotal IVA 12%" readonly>
                                         </div>
                                     </div>
 
@@ -152,14 +147,14 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="val_iva">Valor IVA</label>
+                                            <label for="val_iva">$ Valor IVA</label>
                                             <input type="text" class="form-control align-right" id="iva" value="<?= old('val_iva') ?>" name="val_iva" placeholder="Valor IVA" readonly>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="total">Valor Total</label>
+                                            <label for="total">$ Valor Total</label>
                                             <input type="text" class="form-control align-right" id="total" value="<?= old('total') ?>" name="total" placeholder="Valor Total" readonly>
                                         </div>
                                     </div>
@@ -182,6 +177,32 @@
 
 <script> 
     // $('#id_producto_' + count).selectpicker(); // Inicializar el elemento selectpicker;
+    function limitarCaracteres() {
+    var descripcion = document.getElementById("descripcion");
+    var contadorCaracteres = document.getElementById("contadorCaracteres");
+    var maxCaracteres = 250;
+
+    if (descripcion.value.length > maxCaracteres) {
+        descripcion.value = descripcion.value.substr(0, maxCaracteres);
+    }
+
+    contadorCaracteres.textContent = "Caracteres restantes: " + (maxCaracteres - descripcion.value.length) + "/250";
+    }
+   
+
+    function deshabilitarSelect(selectElement) {
+  $(selectElement).selectpicker('refresh'); // Actualiza el selectpicker
+  $(selectElement).prop('disabled', true); // Deshabilita el select
+  $(selectElement).selectpicker('refresh'); // Vuelve a actualizar el selectpicker
+  
+  var selectedValue = $(selectElement).val(); // Obtiene el valor seleccionado
+  var hiddenInputId = $(selectElement).attr('id').replace('id_productoSelect_', 'id_producto_'); // Obtiene el ID del input oculto
+  
+  $('#' + hiddenInputId).val(selectedValue); // Asigna el valor seleccionado al input oculto
+}
+
+
+
 </script>
   
 <script>
@@ -200,25 +221,37 @@
     var optionsHtml = '<?php echo $optionsHtml; ?>';
 
     $(document).on('click', '#addRows', function() { 
+    var lastRow = $('#facturaItems tr:last');
+    var selectProducto = lastRow.find('.selectpicker');
+    var idProducto = selectProducto.val();
+    var numElementos = lastRow.find(':input').length;
+    if (numElementos > 0 && !idProducto) {
+        alert("Debe seleccionar un producto en la fila anterior antes de agregar una nueva fila.");
+        return;
+    }
+    
     count++;
     var htmlRows = '';
     htmlRows += '<tr>';
     htmlRows += '<td><input class="itemRow" type="checkbox"></td>';               
-    htmlRows += '<td><select class="selectpicker form-control" data-live-search="true" name="id_producto[]" id="id_producto_'+count+'" aria-label="Disabled select example" required>';
+    htmlRows += '<td>';
+    htmlRows += '<select class="selectpicker form-control" data-live-search="true" name="id_producto[]" id="id_productoSelect_'+count+'" aria-label="Disabled select example" required onchange="deshabilitarSelect(this)">';
     htmlRows += '<option value="" selected>Seleccionar producto</option>' + optionsHtml;
-    htmlRows += '</select></td>';             
-    htmlRows += '<td><input type="number" name="cantidad_compra[]" id="cantidad_compra_'+count+'" class="form-control cantidad_compra" autocomplete="off" required step="1" min="1"></td>';           
-    htmlRows += '<td><input type="number" name="precio_compra[]" id="precio_compra_'+count+'" class="form-control precio_compra" autocomplete="off"></td>'; 
-    htmlRows += '<td><input type="number" name="descuento_item[]" id="descuento_item_'+count+'" class="form-control descuento_item" autocomplete="off" value="0"></td>'; 
-    htmlRows += '<td><input type="number" name="iva_producto[]" id="iva_producto_'+count+'" class="form-control iva_producto" autocomplete="off" value="0"></td>'; 
-    htmlRows += '<td><input type="number" name="monto_subtotal_item[]" id="monto_subtotal_item_'+count+'" class="form-control monto_subtotal_item" autocomplete="off" readonly></td>'; 
-    htmlRows += '<td><input type="number" name="monto_total_item[]" id="monto_total_item_'+count+'" class="form-control monto_total_item" autocomplete="off" readonly></td>'; 
+    htmlRows += '</select>';
+    htmlRows += '<input type="hidden" name="id_producto[]" id="id_producto_'+count+'" />';
+    htmlRows += '</td>';
+    htmlRows += '<td><input type="text" name="cantidad_compra[]" id="cantidad_compra_'+count+'" class="form-control cantidad_compra" autocomplete="off" required step="1" min="1" oninput="this.value = permitirNumerosDecimales(this)"></td>';           
+    htmlRows += '<td><input type="text" name="precio_compra[]" id="precio_compra_'+count+'" class="form-control precio_compra" autocomplete="off" oninput="this.value = permitirNumerosDecimales(this)"></td>'; 
+    htmlRows += '<td><input type="text" name="descuento_item[]" id="descuento_item_'+count+'" class="form-control descuento_item" autocomplete="off" value="0" oninput="this.value = porcentajedescuento(this)"></td>'; 
+    htmlRows += '<td><input type="text" name="iva_producto[]" id="iva_producto_'+count+'" class="form-control iva_producto" autocomplete="off" value="0" oninput="this.value = permitirNumerosDecimales(this)" readonly></td>'; 
+    htmlRows += '<td><input type="text" name="monto_subtotal_item[]" id="monto_subtotal_item_'+count+'" class="form-control monto_subtotal_item" autocomplete="off" readonly oninput="this.value = permitirNumerosDecimales(this)"></td>'; 
+    htmlRows += '<td><input type="text" name="monto_total_item[]" id="monto_total_item_'+count+'" class="form-control monto_total_item" autocomplete="off" readonly oninput="this.value = permitirNumerosDecimales(this)"></td>'; 
     htmlRows += '</tr>';
-    $('#facturaItems').append(htmlRows)
-    $('#id_producto_' + count).selectpicker(); // Inicializar el elemento selectpicker;
-    
+    $('#facturaItems').append(htmlRows);
+    $('#id_productoSelect_' + count).selectpicker(); // Inicializar el elemento selectpicker;
+
     // Obtener el elemento de selección de productos de la fila dinámica
-    var productoSelect = document.getElementById("id_producto_" + count);
+    var productoSelect = document.getElementById("id_productoSelect_" + count);
     
     // Agregar un evento de cambio al elemento de selección de productos de la fila dinámica
     productoSelect.addEventListener("change", function() {
@@ -252,6 +285,7 @@
     });
     
 });
+
 
     // Función para obtener el precio de un producto por su ID
     function obtenerPrecioProducto(productoId) {
@@ -383,6 +417,34 @@ function calculateTotal(){
 
 <script>
     
+    function porcentajedescuento(input) {
+  // Obtener el valor del input
+  var valor = input.value;
+  
+  // Eliminar todos los caracteres que no sean números ni el símbolo de punto
+  var numero = valor.replace(/[^0-9.]/g, "");
+  
+  // Verificar si hay más de un punto decimal y eliminar los extras
+  var puntosDecimales = numero.match(/\./g);
+  if (puntosDecimales && puntosDecimales.length > 1) {
+    numero = numero.replace(/\./g, "");
+  }
+  
+  // Convertir el número en un valor decimal
+  var porcentaje = parseFloat(numero);
+  
+  // Asegurarse de que el número esté en el rango de 0 a 100
+  if (isNaN(porcentaje) || porcentaje < 0) {
+    porcentaje = 0;
+  } else if (porcentaje > 100) {
+    porcentaje = 100;
+  }
+  
+  // Devolver el porcentaje resultante
+  return porcentaje;
+}
+
+
     /* para usar solo permitir numeros se be usar esto en el input oninput="this.value = permitirNumeros(this)" */
 function formatoAutorizacion(input) {
     var numero = permitirNumeros(input);
@@ -396,6 +458,24 @@ function permitirNumeros(input) {
     var numero = input.value.replace(/\D/g, "");
     return numero;
 }
+
+function permitirNumerosDecimales(input) {
+  // Obtener el valor del input
+  var valor = input.value;
+  
+  // Eliminar todos los caracteres que no sean números ni puntos decimales
+  var numero = valor.replace(/[^0-9.]/g, "");
+  
+  // Verificar si hay más de un punto decimal y eliminar los extras
+  var puntosDecimales = numero.match(/\./g);
+  if (puntosDecimales && puntosDecimales.length > 1) {
+    numero = numero.replace(/\./g, "");
+  }
+  
+  // Devolver el número resultante
+  return numero;
+}
+
 
 function formatearNumero(input) {
     var numero = permitirNumeros(input);
