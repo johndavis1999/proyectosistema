@@ -37,7 +37,7 @@ class Dashboard extends BaseController
         $titulo = "Dashboard";
         $data['titulo'] = $titulo;
 
-        return view('Dashboard/index', $data);
+        return view('dashboard/index', $data);
     }
 
 }

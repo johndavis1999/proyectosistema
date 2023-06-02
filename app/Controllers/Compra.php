@@ -59,12 +59,12 @@ class Compra extends BaseController{
         $autorizacion_fact = $this->request->getVar('autorizacion_fact');
         $id_per_prov = $this->request->getVar('id_per_prov');
         $fecha_doc = $this->request->getVar('fecha_doc');
-        $doc_adjunto = $this->request->getVar('doc_adjunto');
         $subtotal_compra = $this->request->getVar('subtotal_compra');
         $val_descuento = $this->request->getVar('val_descuento');
         $val_iva = $this->request->getVar('val_iva');
         $descripcion = $this->request->getVar('descripcion');
         $total = $this->request->getVar('total');
+        $doc_adjunto = $this->request->getFile('doc_adjunto');
         $pagado = 0;
         $estado = 1;
         
@@ -108,12 +108,58 @@ class Compra extends BaseController{
             return redirect()->back()->withInput();
         }
 
+            echo("xd");
+        if ($doc_adjunto != '') {
+            $validarDocumento = $this->validate([
+                'doc_adjunto' => [
+                    'uploaded[doc_adjunto]',
+                    'max_size[doc_adjunto,2048]',
+                    'ext_in[doc_adjunto,jpg,jpeg,png,pdf,docx,xlsx,rar,zip]',
+                ]
+            ]);
+            if(!$validarDocumento){
+                $session = session();
+                $session->setFlashData('mensaje','Formato o tamaño del documento no admitido, el formato debe ser JPG, PNG, JPEG, PDF, DOCX, XLS RAR, ZIP con tamaño máximo de 2mb');
+                return redirect()->back()->withInput();
+            }
+            
+        
+            
+            $ruta = 'public/docs/compras/';
+            $doc_adjunto = $this->request->getFile('doc_adjunto');
+            $nombreRandom = $doc_adjunto->getRandomName();
+            $nuevoNombre = $ruta . $nombreRandom;
+            $doc_adjunto->move($ruta, $nombreRandom);
+            
+
+            // Registrar compra
+            
+            $datos=[
+                'num_fact'=>$num_fact,
+                'autorizacion_fact'=>$autorizacion_fact,
+                'id_per_prov'=>$id_per_prov,
+                'fecha_doc'=>$fecha_doc,
+                'doc_adjunto'=>$nuevoNombre,
+                'subtotal_compra'=>$subtotal_compra,
+                'val_descuento'=>$val_descuento,
+                'val_iva'=>$val_iva,
+                'descripcion'=>$descripcion,
+                'total'=>$total,
+                'pagado'=>$pagado,
+                'estado'=>$estado
+            ];
+            $compra->insert($datos);
+            $lastInsertId = $compra->insertID();
+            $this->guardarDetalle($lastInsertId);
+            $this->actualizarStockIngreso($lastInsertId);
+            return $this->response->redirect(site_url('Compras'));
+        }
         $datos=[
             'num_fact'=>$num_fact,
             'autorizacion_fact'=>$autorizacion_fact,
             'id_per_prov'=>$id_per_prov,
             'fecha_doc'=>$fecha_doc,
-            'doc_adjunto'=>$doc_adjunto,
+            'doc_adjunto'=>'',
             'subtotal_compra'=>$subtotal_compra,
             'val_descuento'=>$val_descuento,
             'val_iva'=>$val_iva,
@@ -125,8 +171,9 @@ class Compra extends BaseController{
         $compra->insert($datos);
         $lastInsertId = $compra->insertID();
         $this->guardarDetalle($lastInsertId);
-        //$this->actualizarStockIngreso($lastInsertId);
+        $this->actualizarStockIngreso($lastInsertId);
         return $this->response->redirect(site_url('Compras'));
+        
     }
 
     private function guardarDetalle($lastInsertId) {
@@ -161,9 +208,15 @@ class Compra extends BaseController{
     }
     
     public function eliminar($id = null) {
-        $compra = new Compras();
+        $compras = new Compras();
+        $compra = $compras->find($id);
+        $doc_adjunto = $compra['doc_adjunto'];
         //validar si hay categorias con productos relacionados
-        $compra->where('id', $id)->delete($id);
+        // Verificar y eliminar el documento de respaldo
+        if (!empty($doc_adjunto) && file_exists($doc_adjunto) && $doc_adjunto != '') {
+            unlink($doc_adjunto);
+        }
+        $compras->where('id', $id)->delete($id);
         $this->reversarStockIngreso($id);
         $this->eliminarIngresoDetalle($id);
         return $this->response->redirect(site_url('Compras'));

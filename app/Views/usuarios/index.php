@@ -65,8 +65,8 @@
                             <td><?= $user['rol_usuario'];?></td>
                             <td><?php echo $user['estado']==1 ? 'Activo' : 'Inactivo'  ?></td>
                             <td>
-                              <?php if (!empty($user['imagen']) &&  file_exists('users/img/'.$user['imagen'])) {?>
-                                <a href="<?= base_url('users/img/'.$user['imagen'])?>">Ver</a>
+                              <?php if (!empty($user['imagen']) &&  file_exists('public/users/img/'.$user['imagen'])) {?>
+                                <a href="<?= base_url('public/users/img/'.$user['imagen'])?>">Ver</a>
                               <?php }else{?>
                                 <a href="#">Ver</a>
                               <?php }?>

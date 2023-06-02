@@ -1,0 +1,236 @@
+CRITICAL - 2023-06-02 01:18:00 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Compra.php on line 176.
+ 1 APPPATH\Controllers\Compra.php(176): count(null)
+ 2 APPPATH\Controllers\Compra.php(168): App\Controllers\Compra->guardarDetalle(44)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:32:53 --> Undefined variable $nuevoNombre
+in APPPATH\Controllers\Compra.php on line 158.
+ 1 APPPATH\Controllers\Compra.php(158): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nuevoNombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 158)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:33:04 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Compra.php on line 178.
+ 1 APPPATH\Controllers\Compra.php(178): count(null)
+ 2 APPPATH\Controllers\Compra.php(169): App\Controllers\Compra->guardarDetalle(48)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-02 01:42:12 --> mysqli_sql_exception: Column 'doc_adjunto' cannot be null in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyectosistema\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(168): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-06-02 01:42:12 --> Column 'doc_adjunto' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (:num_fact:, :autorizacion_fact:, :id_per_prov:, :fecha_doc:, :doc_adjunto:, :subtotal_compra:, :val_descuento:, :val_iva:, :descripcion:, :total:, :pagado:, :estado:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Compra.php(168): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-02 01:42:38 --> mysqli_sql_exception: Column 'doc_adjunto' cannot be null in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyectosistema\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(168): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-06-02 01:42:38 --> Column 'doc_adjunto' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (:num_fact:, :autorizacion_fact:, :id_per_prov:, :fecha_doc:, :doc_adjunto:, :subtotal_compra:, :val_descuento:, :val_iva:, :descripcion:, :total:, :pagado:, :estado:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Compra.php(168): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-02 01:43:06 --> mysqli_sql_exception: Column 'doc_adjunto' cannot be null in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyectosistema\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(168): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-06-02 01:43:06 --> Column 'doc_adjunto' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (\'\', \'\', \'\', \'\', NULL, \'\', \'\', \'\', \'\', \'\', 0, 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `compras` (`num_fact`, `autorizacion_fact`, `id_per_prov`, `fecha_doc`, `doc_adjunto`, `subtotal_compra`, `val_descuento`, `val_iva`, `descripcion`, `total`, `pagado`, `estado`) VALUES (:num_fact:, :autorizacion_fact:, :id_per_prov:, :fecha_doc:, :doc_adjunto:, :subtotal_compra:, :val_descuento:, :val_iva:, :descripcion:, :total:, :pagado:, :estado:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Compra.php(168): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:44:58 --> Call to a member function getRandomName() on null
+in APPPATH\Controllers\Compra.php on line 127.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:46:04 --> Call to a member function getRandomName() on null
+in APPPATH\Controllers\Compra.php on line 127.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:46:25 --> Call to a member function getRandomName() on null
+in APPPATH\Controllers\Compra.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:46:40 --> Call to a member function getRandomName() on null
+in APPPATH\Controllers\Compra.php on line 128.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:47:03 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Compra.php on line 159.
+ 1 APPPATH\Controllers\Compra.php(159): count(null)
+ 2 APPPATH\Controllers\Compra.php(149): App\Controllers\Compra->guardarDetalle(52)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 01:47:53 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\Compra.php on line 159.
+ 1 APPPATH\Controllers\Compra.php(159): count(null)
+ 2 APPPATH\Controllers\Compra.php(149): App\Controllers\Compra->guardarDetalle(53)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:00:14 --> fopen(http://localhost/proyectosistema/public/docs/compras/index.html): Failed to open stream: HTTP wrapper does not support writeable connections
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 179.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(http://localhost/proyectosistema/public/docs/compras/index.html): Failed to open stream: HTTP wrapper does not support writeable connections', 'C:\\xampp\\htdocs\\proyectosistema\\system\\HTTP\\Files\\UploadedFile.php', 179)
+ 2 SYSTEMPATH\HTTP\Files\UploadedFile.php(179): fopen('http://localhost/proyectosistema/public/docs/compras/index.html', 'x+b')
+ 3 SYSTEMPATH\HTTP\Files\UploadedFile.php(130): CodeIgniter\HTTP\Files\UploadedFile->setPath('http://localhost/proyectosistema/public/docs/compras/')
+ 4 APPPATH\Controllers\Compra.php(130): CodeIgniter\HTTP\Files\UploadedFile->move('http://localhost/proyectosistema/public/docs/compras/', '1685671214_c5c3202eb3933c66204e.zip')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:02:36 --> Could not move file "php3881.tmp" to "/". Reason: 
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php3881.tmp', '/', '')
+ 2 APPPATH\Controllers\Compra.php(130): CodeIgniter\HTTP\Files\UploadedFile->move('/', '1685671356_a9cd1a67e5498261fddf.rar')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:02:51 --> Could not move file "php6F90.tmp" to "/". Reason: 
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php6F90.tmp', '/', '')
+ 2 APPPATH\Controllers\Compra.php(130): CodeIgniter\HTTP\Files\UploadedFile->move('/', '1685671371_a9b0071c5e20d8a237c3.rar')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:03:06 --> Could not move file "phpAA88.tmp" to "/". Reason: 
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 149.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(149): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpAA88.tmp', '/', '')
+ 2 APPPATH\Controllers\Compra.php(130): CodeIgniter\HTTP\Files\UploadedFile->move('/', '1685671386_3a012df96538d09857d2.rar')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:14:03 --> fopen(http://localhost/proyectosistema/users/img/1685672043_26de6780e13ec0770e0b.png/index.html): Failed to open stream: HTTP wrapper does not support writeable connections
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 179.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(http://localhost/proyectosistema/users/img/1685672043_26de6780e13ec0770e0b.png/index.html): Failed to open stream: HTTP wrapper does not support writeable connections', 'C:\\xampp\\htdocs\\proyectosistema\\system\\HTTP\\Files\\UploadedFile.php', 179)
+ 2 SYSTEMPATH\HTTP\Files\UploadedFile.php(179): fopen('http://localhost/proyectosistema/users/img/1685672043_26de6780e13ec0770e0b.png/index.html', 'x+b')
+ 3 SYSTEMPATH\HTTP\Files\UploadedFile.php(130): CodeIgniter\HTTP\Files\UploadedFile->setPath('http://localhost/proyectosistema/users/img/1685672043_26de6780e13ec0770e0b.png/')
+ 4 APPPATH\Controllers\Compra.php(131): CodeIgniter\HTTP\Files\UploadedFile->move('http://localhost/proyectosistema/users/img/1685672043_26de6780e13ec0770e0b.png/')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->guardar()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:24:11 --> Attempt to read property "doc_adjunto" on array
+in APPPATH\Controllers\Compra.php on line 213.
+ 1 APPPATH\Controllers\Compra.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "doc_adjunto" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->eliminar('74')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:24:24 --> Attempt to read property "doc_adjunto" on array
+in APPPATH\Controllers\Compra.php on line 213.
+ 1 APPPATH\Controllers\Compra.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "doc_adjunto" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->eliminar('74')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:26:09 --> Attempt to read property "doc_adjunto" on array
+in APPPATH\Controllers\Compra.php on line 213.
+ 1 APPPATH\Controllers\Compra.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "doc_adjunto" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->eliminar('74')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:27:02 --> Attempt to read property "doc_adjunto" on array
+in APPPATH\Controllers\Compra.php on line 213.
+ 1 APPPATH\Controllers\Compra.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "doc_adjunto" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->eliminar('74')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:27:24 --> Attempt to read property "doc_adjunto" on array
+in APPPATH\Controllers\Compra.php on line 213.
+ 1 APPPATH\Controllers\Compra.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "doc_adjunto" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->eliminar('75')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-02 02:28:39 --> Attempt to read property "doc_adjunto" on array
+in APPPATH\Controllers\Compra.php on line 213.
+ 1 APPPATH\Controllers\Compra.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "doc_adjunto" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->eliminar('74')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

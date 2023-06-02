@@ -1,7 +1,7 @@
 <?= $this->extend('templates/admin_template') ?>
 <?= $this->section('content',$titulo) ?>
 
-
+<link rel="stylesheet" href="<?= base_url('public/plugins/toastr/toastr.min.css') ?>">
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -23,7 +23,7 @@
                   <div class="card-header">
                       <h3 class="card-title">Formulario de creacion de Producto</h3>
                   </div>
-                  <form action="guardarCompra" method="POST">
+                  <form action="<?= base_url('guardarCompra') ?>" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             <?php if(session('mensaje')){?>
                                 <div class="alert alert-danger" role="alert">
@@ -31,31 +31,37 @@
                                 </div>
                             <?php }  ?> 
                             <div>
-                                <div class="form-group">
-                                    <label for="id_per_prov">Seleccionar Proveedor *</label>
-                                    <select id="id_per_prov" name="id_per_prov" class="selectpicker form-control" data-live-search="true">
-                                        <option value="">Escoja una persona</option>
-                                        <?php if($personas):?>
-                                            <?php foreach($personas as $persona):?>
-                                                <option value="<?=$persona['id']?>" <?php if(old('id_per_prov') == $persona['id']) echo 'selected'; ?>><?= $persona['nombres'] ?></option>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="numero-factura">Factura:</label>
-                                    <input  class="form-control" type="text" id="num_fact" name="num_fact" value="<?= old('num_fact') ?>" placeholder="xxx-xxx-xxxxxxxxx" oninput="formatearNumero(this)" autocomplete="off">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="autorizacion-factura">Autorizacion:</label>
-                                    <input class="form-control" type="text" id="autorizacion_fact" name="autorizacion_fact" value="<?= old('autorizacion_fact') ?>" oninput="formatoAutorizacion(this)" autocomplete="off">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="fecha_doc">Fecha emision</label>
-                                    <input type="date" class="form-control" id="fecha_doc" value="<?= old('fecha_doc') ?>" name="fecha_doc"/>
+                                <div class="row">
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="id_per_prov">Seleccionar Proveedor *</label>
+                                            <select id="id_per_prov" name="id_per_prov" class="selectpicker form-control" data-live-search="true">
+                                                <option value="">Escoja una persona</option>
+                                                <?php if($personas):?>
+                                                    <?php foreach($personas as $persona):?>
+                                                        <option value="<?=$persona['id']?>" <?php if(old('id_per_prov') == $persona['id']) echo 'selected'; ?>><?= $persona['nombres'] ?></option>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="numero-factura">Factura:</label>
+                                            <input  class="form-control" type="text" id="num_fact" name="num_fact" value="<?= old('num_fact') ?>" placeholder="xxx-xxx-xxxxxxxxx" oninput="formatearNumero(this)" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-group">
+                                            <label for="autorizacion-factura">Autorizacion:</label>
+                                            <input class="form-control" type="text" id="autorizacion_fact" name="autorizacion_fact" value="<?= old('autorizacion_fact') ?>" oninput="formatoAutorizacion(this)" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fecha_doc">Fecha emision</label>
+                                            <input type="date" class="form-control" id="fecha_doc" value="<?= old('fecha_doc') ?>" name="fecha_doc" onclick="mostrarCalendario()"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg d-lg-none">
+                                        <!-- Contenido del segundo col -->
+                                    </div>
                                 </div>
                             </div>
 
@@ -99,8 +105,6 @@
                                 </div>
                                 <!-- /.card-body -->
                             </div>
-
-
                             
                             
 
@@ -111,62 +115,115 @@
                                 </div>
                             </div>
 
-                            <div>             
-                                <div class="form-group">
-                                    <label for="textAreaRemark">Descripcion</label>
-                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()"><?= old('descripcion') ?></textarea>
-                                    <p id="contadorCaracteres">Caracteres restantes: 250/250</p>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="doc_adjunto">Documento adjunto</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="doc_adjunto" name="doc_adjunto">
-                                            <label class="custom-file-label" for="doc_adjunto">Seleccionar archivo</label>
+                            <div class="row">  
+                                <div class="col-8">           
+                                    <div class="form-group">
+                                        <label for="textAreaRemark">Descripcion</label>
+                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()"><?= old('descripcion') ?></textarea>
+                                        <p id="contadorCaracteres">Caracteres restantes: 250/250</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="doc_adjunto">Documento adjunto</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="doc_adjunto" name="doc_adjunto" onchange="updatePlaceholder(this)">
+                                                <label class="custom-file-label" for="doc_adjunto" id="doc_adjunto_label">Seleccionar archivo</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="row">
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="subtotal_compra">$ Subtotal</label>
-                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= old('subtotal_compra') ?>" name="subtotal_compra" placeholder="Subtotal IVA 12%" readonly>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="subtotal">Subtotal:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-dollar-sign"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= old('subtotal_compra') ?>" name="subtotal_compra" placeholder="Subtotal" readonly>
                                         </div>
                                     </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="val_descuento">$ Descuento*</label>
-                                            <input type="text" class="form-control align-right" id="val_descuento" value="<?= old('val_descuento') ?>" name="val_descuento" placeholder="Porcentaje Descuento" readonly>
+                                    <div class="form-group">
+                                        <label for="val_descuento">Descuento:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-dollar-sign"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control align-right" id="val_descuento" value="<?= old('val_descuento') ?>" name="val_descuento" placeholder="Valor Descuento" readonly>
                                         </div>
                                     </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="val_iva">$ Valor IVA</label>
+                                    <div class="form-group">
+                                        <label for="val_iva">Valor IVA:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-dollar-sign"></i>
+                                                </span>
+                                            </div>
                                             <input type="text" class="form-control align-right" id="iva" value="<?= old('val_iva') ?>" name="val_iva" placeholder="Valor IVA" readonly>
                                         </div>
                                     </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="total">$ Valor Total</label>
+                                    <div class="form-group">
+                                        <label for="total">Valor Total:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-dollar-sign"></i>
+                                                </span>
+                                            </div>
                                             <input type="text" class="form-control align-right" id="total" value="<?= old('total') ?>" name="total" placeholder="Valor Total" readonly>
                                         </div>
                                     </div>
-
                                 </div>
 
                             </div>
-                            <button class="btn btn-primary btn-block col-lg-2" type="submit">
+                            <button class="btn btn-primary btn-block col-lg-2"  id="submitButton" type="submit">
                                 <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                                 Guardar Documento
                             </button>
                         </div>
+                        <!-- Agrega un modal con el id "selectionModal" -->
+                        <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="selectionModalLabel">Mensaje de advertencia</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Por favor, seleccione al menos un producto.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Agrega un modal con el id "customModal" -->
+                        <div class="modal fade" id="customModal" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="customModalLabel">Mensaje de advertencia</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Debe seleccionar un producto en la fila anterior antes de agregar una nueva fila.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                   </form>
               </div>
           </div>
@@ -176,6 +233,12 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script> 
+
+    function updatePlaceholder(input) {
+        var fileName = input.files[0].name;
+        document.getElementById("doc_adjunto_label").innerText = fileName;
+    }
+
     // $('#id_producto_' + count).selectpicker(); // Inicializar el elemento selectpicker;
     function limitarCaracteres() {
     var descripcion = document.getElementById("descripcion");
@@ -202,6 +265,23 @@
 }
 
 
+document.getElementById("submitButton").addEventListener("click", function(event) {
+    var selectedProducts = document.querySelectorAll('select[name="id_producto[]"]');
+    var hasSelectedProduct = false;
+
+    selectedProducts.forEach(function(select) {
+        if (select.value !== "") {
+            hasSelectedProduct = true;
+        }
+    });
+
+    if (!hasSelectedProduct) {
+        event.preventDefault();
+        // Mostrar el modal con el id "selectionModal"
+        $('#selectionModal').modal('show');
+    }
+});
+
 
 </script>
   
@@ -226,9 +306,30 @@
     var idProducto = selectProducto.val();
     var numElementos = lastRow.find(':input').length;
     if (numElementos > 0 && !idProducto) {
-        alert("Debe seleccionar un producto en la fila anterior antes de agregar una nueva fila.");
-        return;
-    }
+    // Mostrar mensaje de alerta con Toastr
+    toastr.warning('Debe seleccionar un producto en la fila anterior antes de agregar una nueva fila.');
+    return;
+}
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": true,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+};
+
+
+
     
     count++;
     var htmlRows = '';
@@ -508,4 +609,6 @@ function formatearNumero(input) {
         });
     });
 </script>
+
+<script src="<?= base_url('public/plugins/toastr/toastr.min.js') ?>"></script>
 <?= $this->endsection() ?>

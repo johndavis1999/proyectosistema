@@ -93,7 +93,7 @@ class User extends BaseController
             }
         
             $nuevoNombre=$imagen->getRandomName();
-            $ruta = 'users/img/';
+            $ruta = 'public/users/img/';
             $imagen->move($ruta,$nuevoNombre);
             // Crea el nuevo usuario
             $usuarioNuevo = ['usuario' => $usuario, 'password' => $passwordHash, 'id_persona' => $id_persona, 'id_rol' => $id_rol, 'estado' => $estado, 'imagen' => $nuevoNombre];
@@ -113,7 +113,7 @@ class User extends BaseController
         $idUsuario = $session->get('id');
         $usuario = $users->find($id);
         $imagen = $usuario['imagen'];
-        $ruta = 'users/img/';
+        $ruta = 'public/users/img/';
      
         if($idUsuario == $id){
             $session = session();
@@ -200,7 +200,7 @@ class User extends BaseController
             }
         
             $nuevoNombre = $imagen->getRandomName();
-            $ruta = 'users/img/';
+            $ruta = 'public/users/img/';
             $imagen->move($ruta, $nuevoNombre);
             $imagenNombre = $nuevoNombre;
         
