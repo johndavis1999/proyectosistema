@@ -126,6 +126,9 @@ $routes->get('comprasCrear', 'Compra::Crear', ['filter' => 'verificarSesion']);
 $routes->get('nuevo', 'Compra::nuevo', ['filter' => 'verificarSesion']);
 $routes->post('guardarCompra', 'Compra::guardar', ['filter' => 'verificarSesion']);
 $routes->get('eliminarCompra/(:num)', 'Compra::eliminar/$1', ['filter' => 'verificarSesion']);
+$routes->get('editarCompra/(:num)', 'Compra::editar/$1', ['filter' => 'verificarSesion']);
+$routes->get('consultarCompra/(:num)', 'Compra::consultar/$1', ['filter' => 'verificarSesion']);
+$routes->post('actualizarCompra', 'Compra::actualizar', ['filter' => 'verificarSesion']);
 
 
 #facturacion

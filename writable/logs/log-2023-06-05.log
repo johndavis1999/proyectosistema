@@ -1,0 +1,22 @@
+CRITICAL - 2023-06-05 01:27:34 --> Undefined variable $count
+in APPPATH\Views\compras\editar.php on line 128.
+ 1 APPPATH\Views\compras\editar.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php', 128)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/editar', [], true)
+ 5 APPPATH\Controllers\Compra.php(289): view('compras/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->editar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-05 01:27:39 --> Undefined variable $count
+in APPPATH\Views\compras\editar.php on line 128.
+ 1 APPPATH\Views\compras\editar.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php', 128)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/editar', [], true)
+ 5 APPPATH\Controllers\Compra.php(289): view('compras/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->editar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -21,7 +21,7 @@
           <div class="">
               <div class="card card-primary">
                   <div class="card-header">
-                      <h3 class="card-title">Formulario de creacion de Producto</h3>
+                      <h3 class="card-title">Formulario de registro de Compras</h3>
                   </div>
                   <form action="<?= base_url('guardarCompra') ?>" method="POST" enctype="multipart/form-data">
                         <div class="card-body">

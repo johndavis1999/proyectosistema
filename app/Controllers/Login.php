@@ -37,10 +37,14 @@ class Login extends BaseController
                 'estado' => $datosUsuario['estado'],
                 'nombreUsuario' => $nombreUsuario // Nueva línea para guardar el nombre del usuario en la sesión
             ];
-    
+            if($datosUsuario['estado'] != "0"){
+                $session = session();
+                $session->set($data);
+                return redirect()->to(base_url('/dashboard'));
+            }
             $session = session();
-            $session->set($data);
-            return redirect()->to(base_url('/dashboard'));
+            $session->setFlashData('mensaje','El usuario se encuentra inactivo ');
+            return $this->response->redirect(site_url(''));
     
         }
         $session = session();

@@ -60,7 +60,7 @@
                           <td><?= $compra['fecha_doc'];?></td>
                           <td><?= $compra['total'];?></td>
                           <td><?= $compra['cantidad_registros'];?></td>
-                          <td><?php echo $compra['estado']==1 ? 'Activo' : 'Inactivo'  ?></td>
+                          <td><?php echo $compra['estado']==1 ? 'Activo' : 'Anulado'  ?></td>
                           <td>
                             <div class="btn-group">
                               <button type="button" class="btn btn-warning">Acciones</button>
@@ -68,7 +68,8 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu" role="menu">
-                                <li><a class="dropdown-item" href="<?=base_url('editarPersona/'.$compra['id']);?>"><i class="fas fa-edit"></i> Editar</a></li>
+                                <li><a class="dropdown-item" href="<?=base_url('consultarCompra/'.$compra['id']);?>"><i class="fas fa-eye"></i> Consultar</a></li>
+                                <li><a class="dropdown-item" href="<?=base_url('editarCompra/'.$compra['id']);?>"><i class="fas fa-edit"></i> Editar</a></li>
                                 <li><a class="dropdown-item"  data-toggle="modal" data-target="#modalDelete<?=$compra['id'];?>"><i class="fas fa-trash-alt"></i> Borrar</a></li>
                               </div>
                             </div>

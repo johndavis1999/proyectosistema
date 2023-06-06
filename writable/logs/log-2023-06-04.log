@@ -1,0 +1,179 @@
+CRITICAL - 2023-06-04 03:28:00 --> Undefined array key ""
+in APPPATH\Views\compras\consultar.php on line 24.
+ 1 APPPATH\Views\compras\consultar.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php', 24)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/consultar', [], true)
+ 5 APPPATH\Controllers\Compra.php(257): view('compras/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-04 04:07:02 --> mysqli_sql_exception: Unknown column 'productos.id_producto' in 'field list' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `detalle...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `detalle...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `detalle...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `detalle...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(269): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(257): App\Controllers\Compra->obtenerItemsCompra('83')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-06-04 04:07:02 --> Unknown column 'productos.id_producto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `detalle_compras`.*, `productos`.`id_producto` as `producto`
+FROM `detalle_compras`
+LEFT JOIN `productos` ON `productos`.`id` = `detalle_compras`.`id_producto`
+WHERE `id_compra` = \'83\'
+ORDER BY `detalle_compras`.`id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `detalle_compras`.*, `productos`.`id_producto` as `producto`
+FROM `detalle_compras`
+LEFT JOIN `productos` ON `productos`.`id` = `detalle_compras`.`id_producto`
+WHERE `id_compra` = \'83\'
+ORDER BY `detalle_compras`.`id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `detalle_compras`.*, `productos`.`id_producto` as `producto`
+FROM `detalle_compras`
+LEFT JOIN `productos` ON `productos`.`id` = `detalle_compras`.`id_producto`
+WHERE `id_compra` = \'83\'
+ORDER BY `detalle_compras`.`id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `detalle_compras`.*, `productos`.`id_producto` as `producto`
+FROM `detalle_compras`
+LEFT JOIN `productos` ON `productos`.`id` = `detalle_compras`.`id_producto`
+WHERE `id_compra` = :id_compra:
+ORDER BY `detalle_compras`.`id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Compra.php(269): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Compra.php(257): App\Controllers\Compra->obtenerItemsCompra('83')
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:17:47 --> Call to undefined method App\Models\Compras::obtenerItemsCompra
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Compra.php(257): CodeIgniter\Model->__call('obtenerItemsCompra', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:18:25 --> Call to undefined method App\Models\Compras::obtenerItemsCompra
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Compra.php(257): CodeIgniter\Model->__call('obtenerItemsCompra', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:18:26 --> Call to undefined method App\Models\Compras::obtenerItemsCompra
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Compra.php(257): CodeIgniter\Model->__call('obtenerItemsCompra', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:18:30 --> Call to undefined method App\Models\Compras::obtenerItemsCompra
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Compra.php(257): CodeIgniter\Model->__call('obtenerItemsCompra', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:28:10 --> Undefined array key "producto"
+in APPPATH\Views\compras\consultar.php on line 108.
+ 1 APPPATH\Views\compras\consultar.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "producto"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php', 108)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/consultar', [], true)
+ 5 APPPATH\Controllers\Compra.php(259): view('compras/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:28:29 --> Undefined variable $detalls
+in APPPATH\Views\compras\consultar.php on line 108.
+ 1 APPPATH\Views\compras\consultar.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $detalls', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php', 108)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/consultar', [], true)
+ 5 APPPATH\Controllers\Compra.php(259): view('compras/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:28:38 --> Undefined array key "factura_producto_cantidad"
+in APPPATH\Views\compras\consultar.php on line 109.
+ 1 APPPATH\Views\compras\consultar.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "factura_producto_cantidad"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php', 109)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/consultar', [], true)
+ 5 APPPATH\Controllers\Compra.php(259): view('compras/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:33:50 --> Undefined variable $id_producto
+in APPPATH\Views\compras\consultar.php on line 108.
+ 1 APPPATH\Views\compras\consultar.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_producto', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php', 108)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/consultar', [], true)
+ 5 APPPATH\Controllers\Compra.php(259): view('compras/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 04:34:05 --> Undefined variable $id_producto
+in APPPATH\Views\compras\consultar.php on line 108.
+ 1 APPPATH\Views\compras\consultar.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_producto', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php', 108)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/consultar', [], true)
+ 5 APPPATH\Controllers\Compra.php(259): view('compras/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 05:04:19 --> Undefined array key "doc_adjunto1"
+in APPPATH\Views\compras\consultar.php on line 163.
+ 1 APPPATH\Views\compras\consultar.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "doc_adjunto1"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php', 163)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/consultar', [], true)
+ 5 APPPATH\Controllers\Compra.php(259): view('compras/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->consultar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 05:37:26 --> Undefined variable $compra
+in APPPATH\Views\compras\editar.php on line 25.
+ 1 APPPATH\Views\compras\editar.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/editar', [], true)
+ 5 APPPATH\Controllers\Compra.php(286): view('compras/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->editar('80')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 05:39:44 --> Undefined variable $compra
+in APPPATH\Views\compras\editar.php on line 25.
+ 1 APPPATH\Views\compras\editar.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php', 25)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/editar', [], true)
+ 5 APPPATH\Controllers\Compra.php(286): view('compras/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->editar('83')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-04 15:32:30 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Compra.php on line 312.
+ 1 APPPATH\Controllers\Compra.php(312): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 312)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
