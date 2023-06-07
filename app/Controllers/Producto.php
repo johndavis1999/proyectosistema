@@ -11,9 +11,9 @@ class Producto extends BaseController{
         $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
                                     ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
                                     ->orderBy('id','ASC')
-                                    ->findAll();
-
-
+                                    ->paginate(10);
+        $paginador = $producto->pager;
+        $data['paginador']=$paginador;
         $titulo = "Productos";
         $data['titulo'] = $titulo;
         return view('productos/index', $data);

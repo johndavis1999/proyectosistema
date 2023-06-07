@@ -16,7 +16,9 @@ class User extends BaseController
                                     ->join('personas', 'personas.id = usuarios.id_persona', 'left')
                                     ->join('roles', 'roles.id = usuarios.id_rol', 'left')
                                     ->orderBy('usuarios.id', 'ASC')
-                                    ->findAll();
+                                    ->paginate(10);
+        $paginador = $user->pager;
+        $data['paginador']=$paginador;
         $titulo = "Usuarios";
         $data['titulo'] = $titulo;
         return view('usuarios/index', $data);

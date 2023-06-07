@@ -8,7 +8,9 @@ use App\Models\Users;
 class Persona extends BaseController{
     public function index(){
         $persona = new Personas();
-        $data['personas'] = $persona->orderBy('id','ASC')->findAll();
+        $data['personas'] = $persona->orderBy('id','ASC')->paginate(10);
+        $paginador = $persona->pager;
+        $data['paginador']=$paginador;
         $titulo = "Personas";
         $data['titulo'] = $titulo;
         return view('personas/index', $data);

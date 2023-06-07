@@ -13,7 +13,9 @@ class Compra extends BaseController{
         $data['compras'] = $compra->select('compras.*, personas.nombres as persona')
                                     ->join('personas', 'personas.id = compras.id_per_prov', 'left')
                                     ->orderBy('compras.id', 'ASC')
-                                    ->findAll();
+                                    ->paginate(10);
+        $paginador = $compra->pager;
+        $data['paginador']=$paginador;
                                     $detalleCompra = new DetalleCompras();
         foreach ($data['compras'] as &$compra) {
             $cantidadRegistros = $detalleCompra->where('id_compra', $compra['id'])->countAllResults();

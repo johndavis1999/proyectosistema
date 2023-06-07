@@ -7,7 +7,9 @@ use App\Models\Productos;
 class Categoria extends BaseController{
     public function index(){
         $categoria = new Categorias();
-        $data['categorias'] = $categoria->orderBy('id','ASC')->findAll();
+        $data['categorias'] = $categoria->orderBy('id','ASC')->paginate(10);
+        $paginador = $categoria->pager;
+        $data['paginador']=$paginador;
         $titulo = "Categorias";
         $data['titulo'] = $titulo;
         return view('productos/categorias', $data);

@@ -1,0 +1,27 @@
+CRITICAL - 2023-06-07 04:17:07 --> Illegal offset type
+in APPPATH\Controllers\Producto.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-07 04:20:37 --> Call to undefined method CodeIgniter\Pager\Pager::hasPrevious()
+in APPPATH\Views\productos\index.php on line 118.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 4 APPPATH\Controllers\Producto.php(19): view('productos/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-07 04:50:07 --> Undefined variable $paginador
+in APPPATH\Views\compras\index.php on line 102.
+ 1 APPPATH\Views\compras\index.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $paginador', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 102)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(24): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

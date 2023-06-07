@@ -113,6 +113,9 @@
                     <?php endif; ?>
                   </tbody>
                 </table>
+                <div>
+                  <?php echo $paginador->links() ?>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>
