@@ -7,14 +7,140 @@ use App\Models\Users;
 
 class Persona extends BaseController{
     public function index(){
+        $cargo = new Cargos();
+        $data['cargos'] = $cargo->orderBy('id','ASC')->findAll();
         $persona = new Personas();
-        $data['personas'] = $persona->orderBy('id','ASC')->paginate(10);
-        $paginador = $persona->pager;
-        $data['paginador']=$paginador;
+        $estado = $this->request->getVar('estado');
+        $rol = $this->request->getVar('rol');
+        $nombre = $this->request->getVar('nombre');
+        $cargo = $this->request->getVar('cargo');
         $titulo = "Personas";
         $data['titulo'] = $titulo;
+        $data['estado']=$estado;
+        $data['rol']=$rol;
+        $data['nombre']=$nombre;
+        $data['cargo']=$cargo;
+
+        $rolCampos = [
+            'empleado' => 'es_empleado',
+            'proveedor' => 'es_proveedor',
+            'cliente' => 'es_cliente',
+        ];
+        
+        if (array_key_exists($rol, $rolCampos)) {
+            $campoRol = $rolCampos[$rol];
+            $persona->where($campoRol, 1);
+        }
+        
+        // Aplica los filtros solo si se han seleccionado valores
+        if ($estado != null || $rol != null || $nombre != null || $cargo != null) {
+            $persona->orderBy('id', 'ASC');
+
+            if ($estado != null) {
+                $persona->where('estado', $estado);
+            }
+
+            if ($rol != null) {
+                $rolCampos = [
+                    'empleado' => 'es_empleado',
+                    'proveedor' => 'es_proveedor',
+                    'cliente' => 'es_cliente',
+                ];
+        
+                if (array_key_exists($rol, $rolCampos)) {
+                    $campoRol = $rolCampos[$rol];
+                    $persona->where($campoRol, 1);
+                }
+            }
+
+            if ($nombre != null) {
+                $persona->like('nombres', $nombre);
+            }
+
+            if ($cargo != null) {
+                $persona->like('id_cargo', $cargo);
+            }
+
+            $data['personas'] = $persona->paginate(10);
+            $paginador = $persona->pager;
+            $data['paginador'] = $paginador;
+
+            return view('personas/index', $data);
+        }
+
+        $data['personas'] = $persona->paginate(10);
+        $paginador = $persona->pager;
+        $data['paginador'] = $paginador;
+
         return view('personas/index', $data);
     }
+
+    /*
+    public function filtrar(){
+        $persona = new Personas();
+        $estado = $this->request->getVar('estado');
+        $esCliente = $this->request->getVar('es_cliente');
+        $titulo = "Personas";
+        $data['titulo'] = $titulo;
+        $data['estado']=$estado;
+        $data['es_cliente']=$esCliente;
+
+        // Aplica los filtros solo si se han seleccionado valores
+        if ($estado != null || $esCliente != null) {
+            $persona->orderBy('id', 'ASC');
+
+            if ($estado != null) {
+                $persona->where('estado', $estado);
+            }
+
+            if ($esCliente != null) {
+                $persona->where('es_cliente', $esCliente);
+            }
+
+            $data['personas'] = $persona->paginate(10);
+            $paginador = $persona->pager;
+            $data['paginador'] = $paginador;
+
+            return view('personas/index', $data);
+        }
+
+        $data['personas'] = $persona->paginate(10);
+        $paginador = $persona->pager;
+        $data['paginador'] = $paginador;
+
+        return view('personas/index', $data);
+    }*/
+public function generarExcel()
+{
+    $persona = new Personas();
+    $estado = $this->request->getVar('estado');
+    $esCliente = $this->request->getVar('es_cliente');
+
+    // Filtrar los elementos según los criterios seleccionados
+    $personas = $persona->where('estado', $estado)->where('es_cliente', $esCliente)->orderBy('id', 'ASC')->findAll();
+
+    // Crear el contenido del archivo Excel
+    $excelData = "ID\tNombre\tCorreo\n";
+    foreach ($personas as $persona) {
+        $excelData .= $persona['id'] . "\t" . $persona['nombres'] . "\t" . $persona['correo'] . "\n";
+    }
+
+    // Configurar el encabezado de la respuesta HTTP
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="personas.xlsx"');
+    header('Cache-Control: max-age=0');
+
+    // Convertir el contenido del archivo Excel a UTF-8
+    $excelData = mb_convert_encoding($excelData, 'UTF-8');
+
+    // Imprimir el contenido del archivo Excel
+    echo $excelData;
+    exit;
+}
+
+
+
+
 
     public function crear(){
         $titulo = "Personas";

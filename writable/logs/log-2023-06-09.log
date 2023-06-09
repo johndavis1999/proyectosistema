@@ -1,0 +1,168 @@
+CRITICAL - 2023-06-09 01:02:23 --> Invalid file: "personas/filtrar.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('personas/filtrar.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/filtrar', [], true)
+ 3 APPPATH\Controllers\Persona.php(30): view('personas/filtrar', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:03:04 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 60.
+ 1 APPPATH\Views\personas\index.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(32): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:04:08 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 60.
+ 1 APPPATH\Views\personas\index.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(33): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:04:10 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 60.
+ 1 APPPATH\Views\personas\index.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(33): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:04:18 --> Invalid file: "personas/filtrar.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('personas/filtrar.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/filtrar', [], true)
+ 3 APPPATH\Controllers\Persona.php(30): view('personas/filtrar', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:06:22 --> CodeIgniter\HTTP\RedirectResponse::to(): Argument #2 ($code) must be of type ?int, array given, called in C:\xampp\htdocs\proyectosistema\app\Controllers\Persona.php on line 37
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 32.
+ 1 APPPATH\Controllers\Persona.php(37): CodeIgniter\HTTP\RedirectResponse->to('personas/index', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:19:21 --> Undefined variable $estado
+in APPPATH\Views\personas\index.php on line 34.
+ 1 APPPATH\Views\personas\index.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(38): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:23:50 --> Undefined variable $estado
+in APPPATH\Views\personas\index.php on line 34.
+ 1 APPPATH\Views\personas\index.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(37): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:46:52 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 59.
+ 1 APPPATH\Views\personas\index.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(33): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:57:37 --> Undefined variable $estado
+in APPPATH\Views\personas\index.php on line 28.
+ 1 APPPATH\Views\personas\index.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(42): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:58:33 --> Undefined variable $estado
+in APPPATH\Views\personas\index.php on line 28.
+ 1 APPPATH\Views\personas\index.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(42): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 01:59:21 --> Undefined variable $es_cliente
+in APPPATH\Views\personas\index.php on line 34.
+ 1 APPPATH\Views\personas\index.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $es_cliente', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(44): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->filtrar()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 02:15:50 --> Undefined variable $estado
+in APPPATH\Views\personas\index.php on line 28.
+ 1 APPPATH\Views\personas\index.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(16): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 02:16:03 --> Undefined variable $estado
+in APPPATH\Views\personas\index.php on line 28.
+ 1 APPPATH\Views\personas\index.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 28)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(16): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 03:28:20 --> Undefined variable $rol
+in APPPATH\Views\personas\index.php on line 38.
+ 1 APPPATH\Views\personas\index.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rol', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(67): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-09 03:42:25 --> Undefined variable $persona
+in APPPATH\Views\personas\index.php on line 50.
+ 1 APPPATH\Views\personas\index.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persona', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 50)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(62): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

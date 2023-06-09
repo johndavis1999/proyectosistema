@@ -103,6 +103,8 @@ $routes->post('guardarPersona', 'Persona::guardar', ['filter' => 'verificarSesio
 $routes->get('eliminarPersona/(:num)', 'Persona::eliminar/$1', ['filter' => 'verificarSesion']);
 $routes->get('editarPersona/(:num)', 'Persona::editar/$1', ['filter' => 'verificarSesion']);
 $routes->post('actualizarPersona', 'Persona::actualizar', ['filter' => 'verificarSesion']);
+$routes->get('filtrarPersonas', 'Persona::filtrar', ['filter' => 'verificarSesion']);
+
 
 #productos
 $routes->get('productos', 'Producto::index', ['filter' => 'verificarSesion']);
