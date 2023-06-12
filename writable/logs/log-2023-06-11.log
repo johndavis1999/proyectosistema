@@ -1,0 +1,807 @@
+CRITICAL - 2023-06-11 02:54:37 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\proyectosistema\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nombres', null)
+ 2 APPPATH\Controllers\Persona.php(123): CodeIgniter\Model->__call('like', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel(null, null, null, null)
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 02:54:45 --> CodeIgniter\Database\BaseBuilder::like(): Argument #2 ($match) must be of type string, null given, called in C:\xampp\htdocs\proyectosistema\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 984.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->like('nombres', null)
+ 2 APPPATH\Controllers\Persona.php(123): CodeIgniter\Model->__call('like', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel(null, null, null, null)
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 03:33:45 --> Undefined array key "cargo_empleado"
+in APPPATH\Controllers\Persona.php on line 158.
+ 1 APPPATH\Controllers\Persona.php(158): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cargo_empleado"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 158)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 03:34:20 --> Undefined array key "cargo_empleado"
+in APPPATH\Controllers\Persona.php on line 157.
+ 1 APPPATH\Controllers\Persona.php(157): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cargo_empleado"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 157)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 03:36:49 --> Undefined array key "cargo_empleado"
+in APPPATH\Controllers\Persona.php on line 157.
+ 1 APPPATH\Controllers\Persona.php(157): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cargo_empleado"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 157)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 03:37:55 --> Undefined array key "cargo_empleado"
+in APPPATH\Controllers\Persona.php on line 157.
+ 1 APPPATH\Controllers\Persona.php(157): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cargo_empleado"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 157)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 05:54:34 --> Undefined variable $personas
+in APPPATH\Views\personas\index.php on line 147.
+ 1 APPPATH\Views\personas\index.php(147): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 147)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(84): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 05:57:29 --> Undefined variable $totalPersonas
+in APPPATH\Views\personas\index.php on line 129.
+ 1 APPPATH\Views\personas\index.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPersonas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 129)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(79): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 06:09:35 --> "bootstrap" is not a valid Pager template.
+in SYSTEMPATH\Pager\Pager.php on line 120.
+ 1 SYSTEMPATH\Pager\Pager.php(120): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('bootstrap')
+ 2 SYSTEMPATH\Pager\Pager.php(83): CodeIgniter\Pager\Pager->displayLinks('personas', 'bootstrap')
+ 3 APPPATH\Controllers\Persona.php(80): CodeIgniter\Pager\Pager->links('personas', 'bootstrap')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 06:10:47 --> Undefined variable $totalPersonas
+in APPPATH\Views\personas\index.php on line 129.
+ 1 APPPATH\Views\personas\index.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPersonas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 129)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(79): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 06:13:38 --> Call to undefined method App\Models\Personas::count
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(80): CodeIgniter\Model->__call('count', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 06:14:03 --> Call to undefined method App\Models\Personas::count
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(80): CodeIgniter\Model->__call('count', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 17:46:48 --> Undefined variable $totalPersonas
+in APPPATH\Views\personas\index.php on line 145.
+ 1 APPPATH\Views\personas\index.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPersonas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(80): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 17:48:45 --> Call to undefined method App\Models\Personas::count
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Persona.php(75): CodeIgniter\Model->__call('count', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 18:09:50 --> Cannot access protected property App\Models\Personas::$builder
+in APPPATH\Controllers\Persona.php on line 78.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 18:12:23 --> Call to a member function countAllResults() on array
+in APPPATH\Controllers\Persona.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 18:15:14 --> Undefined variable $totalPersonas
+in APPPATH\Controllers\Persona.php on line 48.
+ 1 APPPATH\Controllers\Persona.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPersonas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 18:22:54 --> Undefined variable $totalPersonas
+in APPPATH\Views\personas\index.php on line 145.
+ 1 APPPATH\Views\personas\index.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPersonas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(78): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:06:20 --> Undefined variable $totalPersonas
+in APPPATH\Views\personas\index.php on line 145.
+ 1 APPPATH\Views\personas\index.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPersonas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(78): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:21:21 --> Undefined variable $nombre
+in APPPATH\Views\productos\index.php on line 43.
+ 1 APPPATH\Views\productos\index.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(19): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:23:45 --> Undefined variable $nombre
+in APPPATH\Views\productos\index.php on line 43.
+ 1 APPPATH\Views\productos\index.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(19): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:23:51 --> Undefined variable $nombre
+in APPPATH\Views\productos\index.php on line 43.
+ 1 APPPATH\Views\productos\index.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(19): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:23:55 --> Undefined variable $nombre
+in APPPATH\Views\productos\index.php on line 43.
+ 1 APPPATH\Views\productos\index.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(19): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:26:05 --> Undefined variable $estado
+in APPPATH\Views\productos\index.php on line 50.
+ 1 APPPATH\Views\productos\index.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 50)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(39): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:28:07 --> Undefined variable $titulo
+in APPPATH\Views\productos\index.php on line 2.
+ 1 APPPATH\Views\productos\index.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(26): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:28:21 --> Undefined variable $titulo
+in APPPATH\Views\productos\index.php on line 2.
+ 1 APPPATH\Views\productos\index.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(27): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:28:59 --> Undefined array key "categoria"
+in APPPATH\Views\productos\index.php on line 86.
+ 1 APPPATH\Views\productos\index.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(29): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:32:22 --> Undefined array key "categoria"
+in APPPATH\Views\productos\index.php on line 86.
+ 1 APPPATH\Views\productos\index.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(29): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:35:20 --> Undefined variable $estado
+in APPPATH\Views\productos\index.php on line 22.
+ 1 APPPATH\Views\productos\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(31): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:37:14 --> Too few arguments to function App\Controllers\Persona::generarExcel(), 1 passed in C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php on line 934 and exactly 5 expected
+in APPPATH\Controllers\Persona.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('laptop')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:43:06 --> Too few arguments to function App\Controllers\Persona::generarExcel(), 1 passed in C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php on line 934 and exactly 5 expected
+in APPPATH\Controllers\Persona.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('laptop')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:46:44 --> Too few arguments to function App\Controllers\Persona::generarExcel(), 1 passed in C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php on line 934 and exactly 5 expected
+in APPPATH\Controllers\Persona.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('laptop')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 19:47:07 --> Too few arguments to function App\Controllers\Persona::generarExcel(), 1 passed in C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php on line 934 and exactly 5 expected
+in APPPATH\Controllers\Persona.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel('laptop')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:17:39 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:17:39 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND  `codigo` LIKE \'%m%\' ESCAPE \'!\'
+AND  `estado` LIKE \'%0%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND  `codigo` LIKE \'%m%\' ESCAPE \'!\'
+AND  `estado` LIKE \'%0%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND  `codigo` LIKE \'%m%\' ESCAPE \'!\'
+AND  `estado` LIKE \'%0%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE :nombre: ESCAPE \'!\'
+AND  `codigo` LIKE :codigo: ESCAPE \'!\'
+AND  `estado` LIKE :estado: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:18:32 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:18:32 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND  `codigo` LIKE \'%m%\' ESCAPE \'!\'
+AND `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND  `codigo` LIKE \'%m%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND  `codigo` LIKE \'%m%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE :nombre: ESCAPE \'!\'
+AND  `codigo` LIKE :codigo: ESCAPE \'!\'
+AND `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:18:42 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:18:42 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 20:19:46 --> Undefined variable $estado
+in APPPATH\Controllers\Producto.php on line 21.
+ 1 APPPATH\Controllers\Producto.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Producto.php', 21)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:19:52 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:19:52 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:20:22 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:20:22 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE :nombre: ESCAPE \'!\'
+AND `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:20:35 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:20:35 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE :nombre: ESCAPE \'!\'
+AND `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:20:39 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(37): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:20:39 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE :nombre: ESCAPE \'!\'
+AND `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(37): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:20:43 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(32): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:20:43 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(32): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 20:20:47 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 20:20:47 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE \'%x%\' ESCAPE \'!\'
+AND `estado` = \'0\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `nombre` LIKE :nombre: ESCAPE \'!\'
+AND `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Producto.php(41): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 21:23:35 --> Undefined variable $categorias
+in APPPATH\Views\productos\index.php on line 59.
+ 1 APPPATH\Views\productos\index.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(70): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-11 21:24:07 --> Undefined variable $producto
+in APPPATH\Views\productos\index.php on line 61.
+ 1 APPPATH\Views\productos\index.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $producto', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 61)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Producto.php(72): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 22:24:08 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(271): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->generarExcel('none', 'none', '1', 'none', '0', '0', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 22:24:08 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'1\'
+AND `porcentaje_iva` = \'0\'
+AND `descuento` = \'0\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'1\'
+AND `porcentaje_iva` = \'0\'
+AND `descuento` = \'0\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'1\'
+AND `porcentaje_iva` = \'0\'
+AND `descuento` = \'0\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = :estado:
+AND `porcentaje_iva` = :porcentaje_iva:
+AND `descuento` = :descuento:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Producto.php(271): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->generarExcel('none', 'none', '1', 'none', '0', '0', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-11 22:24:12 --> mysqli_sql_exception: Column 'estado' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Producto.php(271): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Producto->generarExcel('none', 'none', '1', 'none', '0', '0', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-11 22:24:12 --> Column 'estado' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'1\'
+AND `porcentaje_iva` = \'0\'
+AND `descuento` = \'0\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'1\'
+AND `porcentaje_iva` = \'0\'
+AND `descuento` = \'0\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = \'1\'
+AND `porcentaje_iva` = \'0\'
+AND `descuento` = \'0\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `productos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `estado` = :estado:
+AND `porcentaje_iva` = :porcentaje_iva:
+AND `descuento` = :descuento:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Producto.php(271): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto->generarExcel('none', 'none', '1', 'none', '0', '0', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

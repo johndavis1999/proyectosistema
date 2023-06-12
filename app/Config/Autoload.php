@@ -61,7 +61,9 @@ class Autoload extends AutoloadConfig
      *
      * @var array<string, string>
      */
-    public $classmap = [];
+    public $classmap = [
+        'PhpOffice\PhpSpreadsheet' => APPPATH . 'ThirdParty/PhpSpreadsheet/src',
+    ];
 
     /**
      * -------------------------------------------------------------------

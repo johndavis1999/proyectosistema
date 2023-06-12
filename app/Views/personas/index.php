@@ -1,5 +1,40 @@
 <?= $this->extend('templates/admin_template') ?>
 <?= $this->section('content',$titulo) ?>
+    
+    <script>
+      $(document).ready(function() {
+        var selectedRol = $('#rol').val();
+        if (selectedRol === 'empleado') {
+          $('#id_cargo').show();
+          $('#cargo_label').show();
+          $('#seccionCargo').show();
+        } else {
+          $('#id_cargo').hide();
+          $('#cargo_label').hide();
+          $('#seccionCargo').hide();
+        }
+
+        $('#rol').change(function() {
+          var selectedRol = $(this).val();
+          if (selectedRol === 'empleado') {
+            $('#id_cargo').show();
+            $('#cargo_label').show();
+            $('#seccionCargo').show();
+          } else {
+            $('#id_cargo').hide();
+            $('#cargo_label').hide();
+            $('#seccionCargo').hide();
+          }
+        });
+
+        $('#formulario').submit(function() {
+          var selectedRol = $('#rol').val();
+          if (selectedRol !== 'empleado') {
+            $('#id_cargo').removeAttr('name');
+          }
+        });
+      });
+    </script>
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
@@ -13,47 +48,18 @@
             <li class="breadcrumb-item active">Administrar Personas</li>
           </ol>
         </div>
+
       </div>
       <div class="row mb-2">
         <div class="col2">
-          <button type="button" class="btn btn-block btn-success" onclick='window.location.href="crearPersona"'><i class="fas fa-plus"></i> Crear Persona</button>
+          <button type="button" class="btn btn-block btn-success" onclick='window.location.href="crearPersona"'><i class="fas fa-user-plus"></i> Crear Persona</button>
         </div>
         <div class="col2 ml-3">
-          <button type="button" class="btn btn-block btn-primary"><i class="fas fa-plus"></i> Exportar PDF</button>
+          <a href="<?= base_url('exportar/' .  ($estado !== null && $estado !== '' ? ($estado != 0 ? $estado : 0) : 'none') . '/' . ($rol ? $rol : 'none') . '/' . ($nombre ? $nombre : 'none') . '/' . ($cargo ? $cargo : 'none') . '/' . ($extranjero !== null && $extranjero !== '' ? ($extranjero != 0 ? $extranjero : 0) : 'none') ) ?>" class="btn btn-block btn-primary">
+              <i class="fas fa-file-excel"></i> Exportar Excel
+          </a>
         </div>
       </div>
-    </div><!-- /.container-fluid -->
-    
-    <script>
-      $(document).ready(function() {
-        var selectedRol = $('#rol').val();
-        if (selectedRol === 'empleado') {
-          $('#id_cargo').show();
-          $('#cargo_label').show();
-        } else {
-          $('#id_cargo').hide();
-          $('#cargo_label').hide();
-        }
-
-        $('#rol').change(function() {
-          var selectedRol = $(this).val();
-          if (selectedRol === 'empleado') {
-            $('#id_cargo').show();
-            $('#cargo_label').show();
-          } else {
-            $('#id_cargo').hide();
-            $('#cargo_label').hide();
-          }
-        });
-
-        $('#formulario').submit(function() {
-          var selectedRol = $('#rol').val();
-          if (selectedRol !== 'empleado') {
-            $('#id_cargo').removeAttr('name');
-          }
-        });
-      });
-    </script>
     <div class="row">
       <div class="col-12" id="accordion">
         <div class="card card-primary card-outline">
@@ -64,42 +70,62 @@
               </h4>
             </div>
           </a>
-          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+          <div id="collapseTwo" class="collapse show" data-parent="#accordion">
             <div class="card-body">
-              <form id="formulario" method="get" action="<?= base_url('personas') ?>" class="form-inline">
-                <div class="form-group">
-                  <label for="estado" class="mr-2">Estado:</label>
-                  <select name="estado" id="estado" class="form-control mr-2">
-                    <option value="" <?php echo ($estado === '') ? 'selected' : ''; ?>>Todos</option>
-                    <option value="1" <?php echo ($estado === '1') ? 'selected' : ''; ?>>Activo</option>
-                    <option value="0" <?php echo ($estado === '0') ? 'selected' : ''; ?>>Inactivo</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="rol" class="mr-2">Rol:</label>
-                  <select name="rol" id="rol" class="form-control mr-2">
-                    <option value="" <?php echo ($rol === '') ? 'selected' : ''; ?>>Todos</option>
-                    <option value="empleado" <?php echo ($rol === 'empleado') ? 'selected' : ''; ?>>Empleado</option>
-                    <option value="proveedor" <?php echo ($rol === 'proveedor') ? 'selected' : ''; ?>>Proveedor</option>
-                    <option value="cliente" <?php echo ($rol === 'cliente') ? 'selected' : ''; ?>>Cliente</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="id_cargo" id="cargo_label" class="mr-2" style="display: none;">ID Cargo:</label>
-                  <select name="cargo" id="id_cargo" class="form-control mr-2" style="display: none;">
-                    <option value="">Todos</option>
-                    <?php if($cargos):?>
-                      <?php foreach($cargos as $cargoOption):?>
-                        <option value="<?=$cargoOption['id']?>" <?php if($cargoOption['id'] == $cargo) echo 'selected'; ?>>
-                          <?= $cargoOption['descripcion'] ?>
-                        </option>
-                      <?php endforeach; ?>
-                    <?php endif; ?>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="nombre" class="mr-2">Nombre:</label>
-                  <input type="text" name="nombre" id="nombre" value="<?= $nombre ?>" class="form-control mr-2">
+              <form id="formulario" method="get" action="<?= base_url('personas') ?>">
+                <div class="row">
+                  <div class="col-5">
+                    <div class="form-group">
+                      <label for="nombre" class="mr-2">Nombre:</label>
+                      <input type="text" name="nombre" id="nombre" value="<?= $nombre ?>" class="form-control mr-2">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="estado" class="mr-2">Estado:</label>
+                      <select name="estado" id="estado" class="form-control mr-2">
+                        <option value="" <?php echo ($estado === '') ? 'selected' : ''; ?>>Todos</option>
+                        <option value="1" <?php echo ($estado == '1') ? 'selected' : ''; ?>>Activo</option>
+                        <option value="0" <?php echo ($estado == '0') ? 'selected' : ''; ?>>Inactivo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="extranjero" class="mr-2">Extranjero:</label>
+                      <select name="extranjero" id="extranjero" class="form-control mr-2">
+                        <option value="" <?php echo ($extranjero === '') ? 'selected' : ''; ?>>Todos</option>
+                        <option value="0" <?php echo ($extranjero == '0') ? 'selected' : ''; ?>>No</option>
+                        <option value="1" <?php echo ($extranjero == '1') ? 'selected' : ''; ?>>Si</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="rol" class="mr-2">Rol:</label>
+                      <select name="rol" id="rol" class="form-control mr-2">
+                        <option value="" <?php echo ($rol === '') ? 'selected' : ''; ?>>Todos</option>
+                        <option value="empleado" <?php echo ($rol === 'empleado') ? 'selected' : ''; ?>>Empleado</option>
+                        <option value="proveedor" <?php echo ($rol === 'proveedor') ? 'selected' : ''; ?>>Proveedor</option>
+                        <option value="cliente" <?php echo ($rol === 'cliente') ? 'selected' : ''; ?>>Cliente</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col" id="seccionCargo">
+                    <div class="form-group">
+                      <label for="id_cargo" id="cargo_label" class="mr-2" style="display: none;">ID Cargo:</label>
+                      <select name="cargo" id="id_cargo" class="form-control mr-2" style="display: none;">
+                        <option value="">Todos</option>
+                        <?php if($cargos):?>
+                          <?php foreach($cargos as $cargoOption):?>
+                            <option value="<?=$cargoOption['id']?>" <?php if($cargoOption['id'] == $cargo) echo 'selected'; ?>>
+                              <?= $cargoOption['descripcion'] ?>
+                            </option>
+                          <?php endforeach; ?>
+                        <?php endif; ?>
+                      </select>
+                    </div>
+                  </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Filtrar</button>
               </form>
@@ -108,15 +134,18 @@
         </div>
       </div>
     </div>
+    </div><!-- /.container-fluid -->
   </section>
   <section class="content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
           <div class="card">
+            <!--
             <div class="card-header">
-              <h3 class="card-title">Gestionar información de personas </h3>
+              <h3 class="card-title">x Resultados Encontrados</h3>
             </div>
+                -->
             <!-- /.card-header -->
             <div class="card-body">
             <?php if(session('mensaje')){?>
@@ -170,6 +199,20 @@
     <!-- /.container-fluid -->
   </section>
   
+  <script>
+      
+      // Obtener el ancho de la ventana del navegador
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+      // Verificar el ancho de la ventana y aplicar el estado colapsado o desplegado del acordeón
+      if (windowWidth < 768) {
+        // Pantallas pequeñas: colapsar el acordeón por defecto
+        $("#collapseTwo").removeClass("show");
+      } else {
+        // Pantallas grandes: desplegar el acordeón por defecto
+        $("#collapseTwo").addClass("show");
+      }
+    </script>
 
 
 <?= $this->endsection() ?>

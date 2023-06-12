@@ -1,5 +1,10 @@
 <?php
 namespace App\Controllers;
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+
 use App\Controllers\BaseController;
 use App\Models\Personas;
 use App\Models\Cargos;
@@ -11,12 +16,14 @@ class Persona extends BaseController{
         $data['cargos'] = $cargo->orderBy('id','ASC')->findAll();
         $persona = new Personas();
         $estado = $this->request->getVar('estado');
+        $extranjero = $this->request->getVar('extranjero');
         $rol = $this->request->getVar('rol');
         $nombre = $this->request->getVar('nombre');
         $cargo = $this->request->getVar('cargo');
         $titulo = "Personas";
         $data['titulo'] = $titulo;
         $data['estado']=$estado;
+        $data['extranjero']=$extranjero;
         $data['rol']=$rol;
         $data['nombre']=$nombre;
         $data['cargo']=$cargo;
@@ -33,11 +40,15 @@ class Persona extends BaseController{
         }
         
         // Aplica los filtros solo si se han seleccionado valores
-        if ($estado != null || $rol != null || $nombre != null || $cargo != null) {
+        if ($estado != null || $extranjero != null || $rol != null || $nombre != null || $cargo != null) {
             $persona->orderBy('id', 'ASC');
 
             if ($estado != null) {
                 $persona->where('estado', $estado);
+            }
+
+            if ($extranjero != null) {
+                $persona->where('es_extranjero', $extranjero);
             }
 
             if ($rol != null) {
@@ -64,83 +75,115 @@ class Persona extends BaseController{
             $data['personas'] = $persona->paginate(10);
             $paginador = $persona->pager;
             $data['paginador'] = $paginador;
-
             return view('personas/index', $data);
         }
 
         $data['personas'] = $persona->paginate(10);
+
         $paginador = $persona->pager;
         $data['paginador'] = $paginador;
 
         return view('personas/index', $data);
     }
 
-    /*
-    public function filtrar(){
+    public function generarExcel($estado, $rol, $nombre, $cargo, $extranjero){
+        
         $persona = new Personas();
-        $estado = $this->request->getVar('estado');
-        $esCliente = $this->request->getVar('es_cliente');
-        $titulo = "Personas";
-        $data['titulo'] = $titulo;
-        $data['estado']=$estado;
-        $data['es_cliente']=$esCliente;
 
+        $rolCampos = [
+            'empleado' => 'es_empleado',
+            'proveedor' => 'es_proveedor',
+            'cliente' => 'es_cliente',
+        ];
+        
+        if (array_key_exists($rol, $rolCampos)) {
+            $campoRol = $rolCampos[$rol];
+            $persona->where($campoRol, 1);
+        }
+        
         // Aplica los filtros solo si se han seleccionado valores
-        if ($estado != null || $esCliente != null) {
+        if ($estado != 'none' || $extranjero != 'none' || $rol != 'none' || $nombre != 'none' || $cargo != 'none') {
             $persona->orderBy('id', 'ASC');
 
-            if ($estado != null) {
+            if ($estado != 'none') {
                 $persona->where('estado', $estado);
             }
 
-            if ($esCliente != null) {
-                $persona->where('es_cliente', $esCliente);
+            if ($extranjero != 'none') {
+                $persona->where('es_extranjero', $extranjero);
             }
 
-            $data['personas'] = $persona->paginate(10);
-            $paginador = $persona->pager;
-            $data['paginador'] = $paginador;
+            if ($rol != 'none') {
+                $rolCampos = [
+                    'empleado' => 'es_empleado',
+                    'proveedor' => 'es_proveedor',
+                    'cliente' => 'es_cliente',
+                ];
+        
+                if (array_key_exists($rol, $rolCampos)) {
+                    $campoRol = $rolCampos[$rol];
+                    $persona->where($campoRol, 1);
+                }
+            }
 
-            return view('personas/index', $data);
+            if ($nombre != 'none') {
+                $persona->like('nombres', $nombre);
+            }
+
+            if ($cargo != 'none') {
+                $persona->like('id_cargo', $cargo);
+            }
+
+            $data['personas'] = $persona->select('personas.*, cargos.descripcion as cargo_empleado')->join('cargos', 'cargos.id = personas.id_cargo', 'left')->findAll();
+        } else {
+            $data['personas'] = $persona->select('personas.*, cargos.descripcion as cargo_empleado')->join('cargos', 'cargos.id = personas.id_cargo', 'left')->findAll();
         }
 
-        $data['personas'] = $persona->paginate(10);
-        $paginador = $persona->pager;
-        $data['paginador'] = $paginador;
+        // Crear un nuevo objeto Spreadsheet
+        $spreadsheet = new Spreadsheet();
 
-        return view('personas/index', $data);
-    }*/
-public function generarExcel()
-{
-    $persona = new Personas();
-    $estado = $this->request->getVar('estado');
-    $esCliente = $this->request->getVar('es_cliente');
+        // Obtener la hoja activa
+        $sheet = $spreadsheet->getActiveSheet();
 
-    // Filtrar los elementos según los criterios seleccionados
-    $personas = $persona->where('estado', $estado)->where('es_cliente', $esCliente)->orderBy('id', 'ASC')->findAll();
+        // Agregar encabezados
+        $sheet->setCellValue('A1', 'ID');
+        $sheet->setCellValue('B1', 'Nombres');
+        $sheet->setCellValue('C1', 'Estado');
+        $sheet->setCellValue('D1', 'Es Extranjero');
+        $sheet->setCellValue('E1', 'Cliente');
+        $sheet->setCellValue('F1', 'Proveedor');
+        $sheet->setCellValue('G1', 'Empleado');
+        $sheet->setCellValue('H1', 'Cargo');
+        // ... Agregar más columnas según tus necesidades
 
-    // Crear el contenido del archivo Excel
-    $excelData = "ID\tNombre\tCorreo\n";
-    foreach ($personas as $persona) {
-        $excelData .= $persona['id'] . "\t" . $persona['nombres'] . "\t" . $persona['correo'] . "\n";
+        // Agregar datos de las personas al archivo Excel
+        $row = 2;
+        foreach ($data['personas'] as $persona) {
+            $sheet->setCellValue('A' . $row, $persona['id']);
+            $sheet->setCellValue('B' . $row, $persona['nombres']);
+            $sheet->setCellValue('C' . $row, $persona['estado'] == '1' ? 'Activo' : 'Inactivo');
+            $sheet->setCellValue('D' . $row, $persona['es_extranjero'] == '1' ? 'Si' : 'No');
+            $sheet->setCellValue('E' . $row, $persona['es_cliente'] == '1' ? 'Si' : 'No');
+            $sheet->setCellValue('F' . $row, $persona['es_proveedor'] == '1' ? 'Si' : 'No');
+            $sheet->setCellValue('G' . $row, $persona['es_empleado'] == '1' ? 'Si' : 'No');
+            $sheet->setCellValue('H' . $row, $persona['cargo_empleado']);
+            // ... Agregar más columnas según tus necesidades
+
+            $row++;
+        }
+
+        // Guardar el archivo Excel
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'export_personas.xlsx';
+        $writer->save($filename);
+
+        // Descargar el archivo Excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+        $writer->save('php://output');
+        exit;
     }
-
-    // Configurar el encabezado de la respuesta HTTP
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="personas.xlsx"');
-    header('Cache-Control: max-age=0');
-
-    // Convertir el contenido del archivo Excel a UTF-8
-    $excelData = mb_convert_encoding($excelData, 'UTF-8');
-
-    // Imprimir el contenido del archivo Excel
-    echo $excelData;
-    exit;
-}
-
-
-
-
 
     public function crear(){
         $titulo = "Personas";

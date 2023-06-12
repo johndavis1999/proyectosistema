@@ -1,5 +1,7 @@
 <?php
 namespace App\Controllers;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Controllers\BaseController;
 use App\Models\Productos;
 use App\Models\Categorias;
@@ -7,15 +9,81 @@ use App\Models\DetalleCompras;
 
 class Producto extends BaseController{
     public function index(){
+        $categoria = new Categorias();
+        $data['categorias'] = $categoria->orderBy('id','ASC')->findAll();
         $producto = new Productos();
+        $titulo = "Productos";
+        $data['titulo'] = $titulo;
+
+        $nombre = $this->request->getVar('nombre');
+        $codigo = $this->request->getVar('codigo');
+        $estado = $this->request->getVar('estado');
+        $inventariable = $this->request->getVar('inventariable');
+        $iva = $this->request->getVar('iva');
+        $descuento = $this->request->getVar('descuento');
+        $categoriaFiltro = $this->request->getVar('categoriaFiltro');
+
+        $data['nombre']=$nombre;
+        $data['codigo']=$codigo;
+        $data['estado']=$estado;
+        $data['inventariable']=$inventariable;
+        $data['iva']=$iva;
+        $data['descuento']=$descuento;
+        $data['categoriaFiltro']=$categoriaFiltro;
+
+        if ($nombre != null || $codigo != null || $estado != null || $inventariable != null || $iva != null || $descuento != null || $categoriaFiltro != null) {
+            $producto->orderBy('id', 'ASC');
+
+            if ($nombre != null) {
+                $producto->like('nombre', $nombre);
+            }
+
+            if ($codigo != null) {
+                $producto->like('codigo', $codigo);
+            }
+
+            if ($estado != null) {
+                $producto->where('productos.estado', $estado);
+            }
+
+            if ($inventariable != null) {
+                $producto->where('es_inventariable', $inventariable);
+            }
+
+            if ($iva != null) {
+                $producto->where('porcentaje_iva', $iva);
+            }
+
+            if ($descuento != null) {
+                if ($descuento != '0'){
+                    $producto->where('descuento <>', 0);
+                }
+                else{
+                    $producto->where('descuento', $descuento);
+                }
+            }
+
+            if ($categoriaFiltro != null) {
+                $producto->where('id_categoria', $categoriaFiltro);
+            }
+
+            $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
+                                    ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
+                                    ->paginate(10);
+
+            $paginador = $producto->pager;
+            $data['paginador'] = $paginador;
+            return view('productos/index', $data);
+        }
+
+
+
         $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
                                     ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
                                     ->orderBy('id','ASC')
                                     ->paginate(10);
         $paginador = $producto->pager;
         $data['paginador']=$paginador;
-        $titulo = "Productos";
-        $data['titulo'] = $titulo;
         return view('productos/index', $data);
     }
     
@@ -156,5 +224,114 @@ class Producto extends BaseController{
 
         return $this->response->redirect(site_url('productos'));
     }
+    
+    public function generarExcel($nombre, $codigo, $estado, $inventariable, $iva, $descuento, $categoriaFiltro){
+        $producto = new Productos();
+        // Aplica los filtros solo si se han seleccionado valores
+        if ($nombre != 'none' || $codigo != 'none' || $estado != 'none' || $inventariable != 'none' || $iva != 'none' || $descuento != 'none' || $categoriaFiltro != 'none') {
+            $producto->orderBy('id', 'ASC');
+
+            if ($nombre != 'none') {
+                $producto->like('nombre', $nombre);
+            }
+
+            if ($codigo != 'none') {
+                $producto->like('codigo', $codigo);
+            }
+
+            if ($estado != 'none') {
+                $producto->where('productos.estado', $estado);
+            }
+
+            if ($inventariable != 'none') {
+                $producto->where('es_inventariable', $inventariable);
+            }
+
+            if ($iva != 'none') {
+                $producto->where('porcentaje_iva', $iva);
+            }
+
+            
+            if ($descuento != 'none') {
+                if ($descuento != '0'){
+                    $producto->where('descuento !=', '0');
+                }
+                else{
+                    $producto->where('descuento', $descuento);
+                }
+            }
+
+            if ($categoriaFiltro != 'none') {
+                $producto->where('id_categoria', $categoriaFiltro);
+            }
+
+
+            $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
+                                    ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
+                                    ->findAll();
+        } else {
+            $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
+                                    ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
+                                    ->findAll();
+        }
+
+        // Crear un nuevo objeto Spreadsheet
+        $spreadsheet = new Spreadsheet();
+
+        // Obtener la hoja activa
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->getColumnDimension('C')->setWidth(35);
+        $sheet->getColumnDimension('D')->setWidth(20);  
+        $sheet->getColumnDimension('E')->setWidth(15);  
+        $sheet->getColumnDimension('H')->setWidth(15);  
+        $sheet->getColumnDimension('I')->setWidth(15);  
+        $sheet->getColumnDimension('J')->setWidth(20);  
+        // Agregar encabezados
+        $sheet->setCellValue('A1', 'ID');
+        $sheet->setCellValue('B1', 'Codigo');
+        $sheet->setCellValue('C1', 'Nombre');
+        $sheet->setCellValue('D1', 'Categoría');
+        $sheet->setCellValue('E1', 'Inventariable');
+        $sheet->setCellValue('F1', 'Stock');
+        $sheet->setCellValue('G1', 'IVA');
+        $sheet->setCellValue('H1', 'Precio Venta');
+        $sheet->setCellValue('I1', 'Precio Compra');
+        $sheet->setCellValue('J1', 'Porcentaje Descuento');
+        $sheet->setCellValue('K1', 'Estado');
+        // ... Agregar más columnas según tus necesidades
+
+        // Agregar datos de las personas al archivo Excel
+        $row = 2;
+        foreach ($data['productos'] as $producto) {
+            $sheet->setCellValue('A' . $row, $producto['id']);
+            $sheet->setCellValue('B' . $row, $producto['codigo']);
+            $sheet->setCellValue('C' . $row, $producto['nombre']);
+            $sheet->setCellValue('D' . $row, $producto['categoria']);
+            $sheet->setCellValue('E' . $row, $producto['es_inventariable'] == '1' ? 'Si' : 'No' );
+            $sheet->setCellValue('F' . $row, $producto['stock']);
+            $sheet->setCellValue('G' . $row, $producto['porcentaje_iva'].'%');
+            $sheet->setCellValue('H' . $row, $producto['precio_venta']);
+            $sheet->setCellValue('I' . $row, $producto['precio_compra']);
+            $sheet->setCellValue('J' . $row, $producto['descuento']);
+            $sheet->setCellValue('K' . $row, $producto['estado'] == '1' ? 'Activo' : 'Inactivo');
+            // ... Agregar más columnas según tus necesidades
+
+            $row++;
+        }
+
+        // Guardar el archivo Excel
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'export_productos.xlsx';
+        $writer->save($filename);
+
+        // Descargar el archivo Excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+        $writer->save('php://output');
+        exit;
+    }
+
 
 }

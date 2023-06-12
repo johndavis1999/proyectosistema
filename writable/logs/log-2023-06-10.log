@@ -1,0 +1,165 @@
+ERROR - 2023-06-10 04:21:15 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'dscriptn_root', 'AkJkSzpj123', 'dscriptn_db_sis...', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Persona.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Persona->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\proyectosistema\app\Controllers\Persona.php(15): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Persona->index()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-06-10 04:21:15 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cargos`
+ORDER BY `id` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Persona.php(15): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:24:26 --> Cannot use object of type CodeIgniter\Pager\Pager as array
+in APPPATH\Controllers\Persona.php on line 95.
+ 1 APPPATH\Controllers\Persona.php(78): App\Controllers\Persona->generateExcel(Object(App\Models\Personas))
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:24:51 --> fopen(ruta/del/archivo.xlsx): Failed to open stream: No such file or directory
+in FCPATH\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\BaseWriter.php on line 128.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(ruta/del/archivo.xlsx): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\proyectosistema\\vendor\\phpoffice\\phpspreadsheet\\src\\PhpSpreadsheet\\Writer\\BaseWriter.php', 128)
+ 2 FCPATH\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\BaseWriter.php(128): fopen('ruta/del/archivo.xlsx', 'wb')
+ 3 FCPATH\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(547): PhpOffice\PhpSpreadsheet\Writer\BaseWriter->openFileHandle('ruta/del/archivo.xlsx')
+ 4 APPPATH\Controllers\Persona.php(106): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('ruta/del/archivo.xlsx')
+ 5 APPPATH\Controllers\Persona.php(75): App\Controllers\Persona->generateExcel([...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:32:48 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Persona.php on line 101.
+ 1 APPPATH\Controllers\Persona.php(101): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 101)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:33:03 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Persona.php on line 99.
+ 1 APPPATH\Controllers\Persona.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:33:18 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Persona.php on line 99.
+ 1 APPPATH\Controllers\Persona.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:34:04 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Persona.php on line 99.
+ 1 APPPATH\Controllers\Persona.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:38:07 --> Undefined array key "apellidos"
+in APPPATH\Controllers\Persona.php on line 153.
+ 1 APPPATH\Controllers\Persona.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "apellidos"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 153)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:45:52 --> Undefined variable $titulo
+in APPPATH\Views\personas\index.php on line 2.
+ 1 APPPATH\Views\personas\index.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(62): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:46:21 --> Undefined variable $estado
+in APPPATH\Views\personas\index.php on line 75.
+ 1 APPPATH\Views\personas\index.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 75)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(63): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:47:06 --> Undefined variable $cargos
+in APPPATH\Views\personas\index.php on line 93.
+ 1 APPPATH\Views\personas\index.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 93)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(68): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:50:43 --> Undefined variable $excelUrl
+in APPPATH\Views\personas\index.php on line 22.
+ 1 APPPATH\Views\personas\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $excelUrl', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\personas\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('personas/index', [], true)
+ 5 APPPATH\Controllers\Persona.php(83): view('personas/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:51:28 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Persona.php on line 101.
+ 1 APPPATH\Controllers\Persona.php(101): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 101)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:52:21 --> Undefined array key "apellidos"
+in APPPATH\Controllers\Persona.php on line 154.
+ 1 APPPATH\Controllers\Persona.php(154): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "apellidos"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Persona.php', 154)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:57:43 --> Too few arguments to function App\Controllers\Persona::generarExcel(), 0 passed in C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php on line 934 and exactly 4 expected
+in APPPATH\Controllers\Persona.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-10 04:58:03 --> Too few arguments to function App\Controllers\Persona::generarExcel(), 0 passed in C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php on line 934 and exactly 4 expected
+in APPPATH\Controllers\Persona.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Persona->generarExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

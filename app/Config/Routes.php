@@ -103,7 +103,10 @@ $routes->post('guardarPersona', 'Persona::guardar', ['filter' => 'verificarSesio
 $routes->get('eliminarPersona/(:num)', 'Persona::eliminar/$1', ['filter' => 'verificarSesion']);
 $routes->get('editarPersona/(:num)', 'Persona::editar/$1', ['filter' => 'verificarSesion']);
 $routes->post('actualizarPersona', 'Persona::actualizar', ['filter' => 'verificarSesion']);
-$routes->get('filtrarPersonas', 'Persona::filtrar', ['filter' => 'verificarSesion']);
+$routes->get('exportar/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?', 'Persona::generarExcel/$1/$2/$3/$4/$5', ['filter' => 'verificarSesion']);
+
+
+
 
 
 #productos
@@ -113,6 +116,7 @@ $routes->get('crearProducto', 'Producto::crear', ['filter' => 'verificarSesion']
 $routes->get('editarProducto/(:num)', 'Producto::editar/$1', ['filter' => 'verificarSesion']);
 $routes->post('actualizarProducto', 'Producto::actualizarProducto', ['filter' => 'verificarSesion']);
 $routes->get('eliminarProducto/(:num)', 'Producto::eliminar/$1', ['filter' => 'verificarSesion']);
+$routes->get('exportarProductos/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?', 'Producto::generarExcel/$1/$2/$3/$4/$5/$6/$7', ['filter' => 'verificarSesion']);
 
 
 #categorias
@@ -137,3 +141,5 @@ $routes->post('actualizarCompra', 'Compra::actualizar', ['filter' => 'verificarS
 $routes->get('crearFact', 'Facturacion::crear', ['filter' => 'verificarSesion']);
 $routes->get('  ', 'Facturacion::ver', ['filter' => 'verificarSesion']);
 
+#pagos
+$routes->get('Pagos', 'Pago::index', ['filter' => 'verificarSesion']);

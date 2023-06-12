@@ -19,9 +19,102 @@
             <button type="button" class="btn btn-block btn-success" onclick='window.location.href="crearProducto"'><i class="fas fa-plus"></i> Crear Producto</button>
           </div>
           <div class="col2 ml-3">
-            <button type="button" class="btn btn-block btn-primary"><i class="fas fa-plus"></i> Exportar PDF</button>
+            <a href="<?= base_url('exportarProductos/'. ($nombre ? $nombre : 'none') . '/' . ($codigo ? $codigo : 'none') . '/' .  ($estado !== null && $estado !== '' ? ($estado != 0 ? $estado : 0) : 'none') . '/' .  ($inventariable !== null && $inventariable !== '' ? ($inventariable != 0 ? $inventariable : 0) : 'none') . '/' .  ($iva !== null && $iva !== '' ? ($iva != 0 ? $iva : 0) : 'none') . '/' .  ($descuento !== null && $descuento !== '' ? ($descuento != 0 ? $descuento : 0) : 'none') . '/' . ($categoriaFiltro ? $categoriaFiltro : 'none')) ?>" class="btn btn-block btn-primary">
+                <i class="fas fa-file-excel"></i> Exportar Excel
+            </a>
           </div>
         </div>
+        <div class="row container-flui">
+        <div class="col-12" id="accordion">
+          <div class="card card-primary card-outline">
+            <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+              <div class="card-header">
+                <h4 class="card-title w-100">
+                  Filtros de busqueda <i class="fas fa-search"></i>
+                </h4>
+              </div>
+            </a>
+            <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                <form id="formulario" method="get" action="<?= base_url('productos') ?>">
+                  <div class="row g-3">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="nombre" class="mr-2">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" value="<?= $nombre ?>" class="form-control mr-2">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="codigo" class="mr-2">Codigo:</label>
+                        <input type="text" name="codigo" id="codigo" value="<?= $codigo ?>" class="form-control mr-2">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="categoriaFiltro" class="mr-2">Categoria:</label>
+                        <select id="categoriaFiltro" name="categoriaFiltro" class="selectpicker form-control" data-live-search="true">
+                            <option value="">Todos</option>
+                            <?php if($categorias):?>
+                                <?php foreach($categorias as $categoria):?>
+                                    <option value="<?=$categoria['id']?>" <?php if($categoria['id'] == $categoriaFiltro) echo 'selected'; ?>>
+                                        <?= $categoria['descripcion'] ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="estado" class="mr-2">Estado:</label>
+                        <select name="estado" id="estado" class="form-control mr-2">
+                          <option value="" <?php echo ($estado === '') ? 'selected' : ''; ?>>Todos</option>
+                          <option value="1" <?php echo ($estado == '1') ? 'selected' : ''; ?>>Activo</option>
+                          <option value="0" <?php echo ($estado == '0') ? 'selected' : ''; ?>>Inactivo</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <label for="inventariable" class="mr-2">Inventariable:</label>
+                        <select name="inventariable" id="inventariable" class="form-control mr-2">
+                          <option value="" <?php echo ($inventariable === '') ? 'selected' : ''; ?>>Todos</option>
+                          <option value="1" <?php echo ($inventariable == '1') ? 'selected' : ''; ?>>Si</option>
+                          <option value="0" <?php echo ($inventariable == '0') ? 'selected' : ''; ?>>No</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <label for="iva" class="mr-2">% IVA:</label>
+                        <select name="iva" id="iva" class="form-control mr-2">
+                          <option value="" <?php echo ($iva === '') ? 'selected' : ''; ?>>Todos</option>
+                          <option value="12" <?php echo ($iva == '12') ? 'selected' : ''; ?>>12%</option>
+                          <option value="0" <?php echo ($iva == '0') ? 'selected' : ''; ?>>0%</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <label for="descuento" class="mr-2">Descuento:</label>
+                        <select name="descuento" id="descuento" class="form-control mr-2">
+                          <option value="" <?php echo ($descuento === '') ? 'selected' : ''; ?>>Todos</option>
+                          <option value="1" <?php echo ($descuento == '1') ? 'selected' : ''; ?>>Si</option>
+                          <option value="0" <?php echo ($descuento == '0') ? 'selected' : ''; ?>>No</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Filtrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </div><!-- /.container-fluid -->
     </section>
     <section class="content">
@@ -145,5 +238,18 @@
       tippy('#alertaInventario', {
         content: 'Hay poco stock del producto',
       });
+
+      
+      // Obtener el ancho de la ventana del navegador
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+      // Verificar el ancho de la ventana y aplicar el estado colapsado o desplegado del acordeón
+      if (windowWidth < 768) {
+        // Pantallas pequeñas: colapsar el acordeón por defecto
+        $("#collapseTwo").removeClass("show");
+      } else {
+        // Pantallas grandes: desplegar el acordeón por defecto
+        $("#collapseTwo").addClass("show");
+      }
     </script>
 <?= $this->endsection() ?>

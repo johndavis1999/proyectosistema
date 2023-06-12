@@ -180,6 +180,12 @@
                   <p>Facturas de compra</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?= base_url('Pagos') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pagos</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
