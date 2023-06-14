@@ -143,3 +143,6 @@ $routes->get('  ', 'Facturacion::ver', ['filter' => 'verificarSesion']);
 
 #pagos
 $routes->get('Pagos', 'Pago::index', ['filter' => 'verificarSesion']);
+$routes->get('crearPago', 'Pago::crear', ['filter' => 'verificarSesion']);
+$routes->post('guardarPago', 'Pago::guardar', ['filter' => 'verificarSesion']);
+$routes->get('eliminarPago/(:num)', 'Pago::eliminar/$1', ['filter' => 'verificarSesion']);

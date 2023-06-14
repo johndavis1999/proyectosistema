@@ -26,13 +26,6 @@
             $('#seccionCargo').hide();
           }
         });
-
-        $('#formulario').submit(function() {
-          var selectedRol = $('#rol').val();
-          if (selectedRol !== 'empleado') {
-            $('#id_cargo').removeAttr('name');
-          }
-        });
       });
     </script>
   <section class="content-header">

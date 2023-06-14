@@ -1,0 +1,33 @@
+CRITICAL - 2023-06-12 02:34:51 --> Undefined variable $nombre
+in APPPATH\Views\pagos\index.php on line 22.
+ 1 APPPATH\Views\pagos\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(11): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-12 02:35:45 --> Undefined variable $nombre
+in APPPATH\Views\pagos\index.php on line 22.
+ 1 APPPATH\Views\pagos\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(11): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-12 02:59:30 --> Undefined variable $optionsHtml
+in APPPATH\Views\pagos\crear.php on line 228.
+ 1 APPPATH\Views\pagos\crear.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $optionsHtml', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\crear.php', 228)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/crear', [], true)
+ 5 APPPATH\Controllers\Pago.php(23): view('pagos/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
