@@ -146,7 +146,7 @@
                 <?php echo session('mensaje') ?>
               </div>
             <?php }  ?> 
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="example2" class="table table-bordered table-hover table-sm table-responsive-sm">
                 <thead>
                   <tr>
                     <th>Persona</th>

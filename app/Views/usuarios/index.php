@@ -44,7 +44,7 @@
                       <?php echo session('exito') ?>
                   </div>
               <?php }  ?> 
-                <table id="example2" class="table table-bordered table-hover table-responsive-sm">
+                <table id="example2" class="table table-bordered table-hover table-sm table-responsive-sm">
                   <thead>
                     <tr>
                       <th>Persona</th>

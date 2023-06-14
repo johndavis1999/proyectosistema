@@ -284,7 +284,7 @@ class Persona extends BaseController{
         $es_proveedor = $this->request->getVar('es_proveedor');
         $estado = 1;
     
-        $es_extranjero = $es_extranjero == 1 ? 1 : 0;
+        $es_extranjero = $es_extranjero == '1' ? '1' : '0';
         $es_empleado = $es_empleado == 1 ? 1 : 0;
         $es_cliente = $es_cliente == 1 ? 1 : 0;
         $es_proveedor = $es_proveedor == 1 ? 1 : 0;   
@@ -304,16 +304,14 @@ class Persona extends BaseController{
             return $this->response->redirect(base_url('crearPersona'));
         }
 
-        if($es_extranjero !=0){
-            
-        }
-
-        $cedulaValida = $this->validar_identificacion_ecuador($identificacion);
-        if ( $cedulaValida != true ) {
-            //return redirect()->back()->withInput()->with('mensaje', 'La persona seleccionada ya tiene un usuario creado');
-            $session = session();
-            $session->setFlashData('mensaje','Cedula Invalida');
-            return redirect()->back()->withInput();
+        if($es_extranjero != 1){
+            $cedulaValida = $this->validar_identificacion_ecuador($identificacion);
+            if ( $cedulaValida != true ) {
+                //return redirect()->back()->withInput()->with('mensaje', 'La persona seleccionada ya tiene un usuario creado');
+                $session = session();
+                $session->setFlashData('mensaje','Cedula Invalida' .$es_extranjero);
+                return redirect()->back()->withInput();
+            }
         }
 
         $validacion = $this->validate([

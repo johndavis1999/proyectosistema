@@ -31,14 +31,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-                <h1>Registrar Pago</h1>
+                <h1>Editar Pago #<?= $pago['id'];?></h1>
           </div>
         
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Inicio</a></li>
               <li class="breadcrumb-item"><a href="<?= base_url('Pagos') ?>">Pagos</a></li>
-              <li class="breadcrumb-item active">Registrar Pago</li>
+              <li class="breadcrumb-item active">Editar Pago</li>
           </ol>
         </div>
       </div>
@@ -46,9 +46,10 @@
           <div class="">
               <div class="card card-primary">
                   <div class="card-header">
-                      <h3 class="card-title">Formulario de registro de Pago</h3>
+                      <h3 class="card-title">Formulario de edición de Pago</h3>
                   </div>
-                  <form action="<?= base_url('guardarPago') ?>" method="POST" enctype="multipart/form-data">
+                  <form action="<?= base_url('actualizarPago') ?>" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" value="<?= $pago['id'];?>" name="id">
                         <div class="card-body">
                             <?php if(session('mensaje')){?>
                                 <div class="alert alert-danger" role="alert">
@@ -60,7 +61,7 @@
                                     <div class="col-lg-4 col-12">
                                         <div class="form-group">
                                             <label for="fecha_registro">Fecha de registro *</label>
-                                            <input type="date" class="form-control" id="fecha_registro" value="<?= old('fecha_registro') ?>" name="fecha_registro" onclick="mostrarCalendario()"/>
+                                            <input type="date" class="form-control" id="fecha_registro" value="<?= $pago['fecha_registro'] ?>" name="fecha_registro" onclick="mostrarCalendario()"/>
                                         </div>
                                         <div class="form-group">
                                             <label for="id_proveedor">Seleccionar Proveedor *</label>
@@ -68,7 +69,7 @@
                                                 <option value="">Escoja una persona</option>
                                                 <?php if($personas):?>
                                                     <?php foreach($personas as $persona):?>
-                                                        <option value="<?=$persona['id']?>" <?php if(old('id_proveedor') == $persona['id']) echo 'selected'; ?>><?= $persona['nombres']?></option>
+                                                        <option value="<?=$persona['id']?>" <?php if($pago['id_proveedor'] == $persona['id']) echo 'selected'; ?>><?= $persona['nombres']?></option>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </select>
@@ -77,9 +78,9 @@
                                             <label for="forma_pago">Seleccionar Forma de Pago: *</label>
                                             <select id="forma_pago" id="formaPago" name="forma_pago" class="form-control" data-live-search="true">
                                                 <option value="">Escoja una forma de pago</option>
-                                                <option value="Efectivo" <?php if(old('forma_pago') == 'Efectivo') echo 'selected'; ?>>Efectivo</option>
-                                                <option value="Transferencia" <?php if(old('forma_pago') == 'Transferencia') echo 'selected'; ?>>Transferencia</option>
-                                                <option value="Cheque" <?php if(old('forma_pago') == 'Cheque') echo 'selected'; ?>>Cheque</option>
+                                                <option value="Efectivo" <?php if($pago['forma_pago'] == 'Efectivo') echo 'selected'; ?>>Efectivo</option>
+                                                <option value="Transferencia" <?php if($pago['forma_pago'] == 'Transferencia') echo 'selected'; ?>>Transferencia</option>
+                                                <option value="Cheque" <?php if($pago['forma_pago'] == 'Cheque') echo 'selected'; ?>>Cheque</option>
                                             </select>
                                         </div>
                                     </div>
@@ -90,22 +91,22 @@
                                                 <option value="">Escoja una persona</option>
                                                 <?php if($bancos):?>
                                                     <?php foreach($bancos as $banco):?>
-                                                        <option value="<?=$banco['id']?>" <?php if(old('id_banco') == $banco['id']) echo 'selected'; ?>><?= $banco['nombre'] ?></option>
+                                                        <option value="<?=$banco['id']?>" <?php if($pago['id_banco'] == $banco['id']) echo 'selected'; ?>><?= $banco['nombre'] ?></option>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </select>
                                         </div>
                                         <div class="form-group" id="seccionCheque" style="display: none;">
                                             <label for="num_cheque">Numero de Cheque:</label>
-                                            <input class="form-control" type="text" id="num_cheque" name="num_cheque" value="<?= old('num_cheque') ?>" autocomplete="off">
+                                            <input class="form-control" type="text" id="num_cheque" name="num_cheque" value="<?= $pago['num_cheque'] ?>" autocomplete="off">
                                         </div>
                                         <div class="form-group" id="seccionTransferencia" style="display: none;">
                                             <label for="num_transferencia">Numero de Transferencia:</label>
-                                            <input class="form-control" type="text" id="num_transferencia" name="num_transferencia" value="<?= old('num_transferencia') ?>" autocomplete="off">
+                                            <input class="form-control" type="text" id="num_transferencia" name="num_transferencia" value="<?= $pago['num_transferencia'] ?>" autocomplete="off">
                                         </div>
                                         <div class="form-group" id="seccionFechaMov" style="display: none;">
                                             <label for="fecha_movimiento">Fecha de movimiento *</label>
-                                            <input type="date" class="form-control" id="fecha_movimiento" value="<?= old('fecha_movimiento') ?>" name="fecha_movimiento" onclick="mostrarCalendario()"/>
+                                            <input type="date" class="form-control" id="fecha_movimiento" value="<?= $pago['fecha_movimiento'] ?>" name="fecha_movimiento" onclick="mostrarCalendario()"/>
                                         </div>
                                     </div>
                                 </div>
@@ -136,6 +137,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <?php if (!empty($pago['doc_adjunto']) &&  file_exists($pago['doc_adjunto'])) {?>
+                                            <a class="btn btn-primary" href="<?= base_url($pago['doc_adjunto']) ?>" download>
+                                                Descargar documento adjunto
+                                            </a>
+                                        <?php }else{?>
+                                            <a class="btn btn-danger delete" href="#">
+                                                No existe documento adjunto
+                                            </a>
+                                        <?php }?>
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
@@ -146,12 +158,12 @@
                                                     <i class="fas fa-dollar-sign"></i>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control align-right" id="valor_total" value="<?= old('valor_total') ?>" name="valor_total" placeholder="Valor Total">
+                                            <input type="text" class="form-control align-right" id="valor_total" value="<?= $pago['valor_total'] ?>" name="valor_total" placeholder="Valor Total">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-block col-lg-2"  id="submitButton" type="submit">
+                            <button class="btn btn-primary btn-block col-lg-2 mt-3"  id="submitButton" type="submit">
                                 <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                                 Guardar Documento
                             </button>

@@ -28,7 +28,7 @@ class User extends BaseController
     public function crear()
     {
         $persona = new Personas();
-        $data['personas'] = $persona->orderBy('id', 'ASC')->findAll();
+        $data['personas'] = $persona->where('es_empleado','1')->orderBy('id', 'ASC')->findAll();
         $titulo = "Usuarios";
         $data['titulo'] = $titulo;
         return view('usuarios/crear', $data);
