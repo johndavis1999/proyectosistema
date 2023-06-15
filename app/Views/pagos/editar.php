@@ -88,7 +88,7 @@
                                         <div class="form-group" id="seccionBanco" style="display: none;">
                                             <label for="forma_pago">Seleccionar Banco: *</label>
                                             <select id="banco" name="id_banco" class="selectpicker form-control" data-live-search="true">
-                                                <option value="">Escoja una persona</option>
+                                                <option value="">Escoja un banco</option>
                                                 <?php if($bancos):?>
                                                     <?php foreach($bancos as $banco):?>
                                                         <option value="<?=$banco['id']?>" <?php if($pago['id_banco'] == $banco['id']) echo 'selected'; ?>><?= $banco['nombre'] ?></option>
@@ -114,7 +114,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Detalles de la factura</h3>
+                                    <h3 class="card-title">Detalles del Pago</h3>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -122,7 +122,7 @@
                             <div class="table-responsive mb-5 card-body p-0">
                                 <div class="">
                                     <button class="btn btn-danger delete" id="removeRows" type="button">Eliminar</button>
-                                    <button class="btn btn-primary" id="addRows" type="button">Agregar producto</button>
+                                    <button class="btn btn-primary" id="addRows" type="button">Agregar Factura</button>
                                 </div>
                             </div>
 
@@ -167,44 +167,6 @@
                                 <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                                 Guardar Documento
                             </button>
-                        </div>
-                        <!-- Agrega un modal con el id "selectionModal" -->
-                        <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="selectionModalLabel">Mensaje de advertencia</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Por favor, seleccione al menos un producto.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Agrega un modal con el id "customModal" -->
-                        <div class="modal fade" id="customModal" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="customModalLabel">Mensaje de advertencia</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Debe seleccionar un producto en la fila anterior antes de agregar una nueva fila.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                   </form>
               </div>

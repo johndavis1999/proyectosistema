@@ -87,7 +87,7 @@
                                         <div class="form-group" id="seccionBanco" style="display: none;">
                                             <label for="forma_pago">Seleccionar Banco: *</label>
                                             <select id="banco" name="id_banco" class="selectpicker form-control" data-live-search="true">
-                                                <option value="">Escoja una persona</option>
+                                                <option value="">Escoja un banco</option>
                                                 <?php if($bancos):?>
                                                     <?php foreach($bancos as $banco):?>
                                                         <option value="<?=$banco['id']?>" <?php if(old('id_banco') == $banco['id']) echo 'selected'; ?>><?= $banco['nombre'] ?></option>
@@ -113,7 +113,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Detalles de la factura</h3>
+                                    <h3 class="card-title">Detalles del Pago</h3>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -121,7 +121,7 @@
                             <div class="table-responsive mb-5 card-body p-0">
                                 <div class="">
                                     <button class="btn btn-danger delete" id="removeRows" type="button">Eliminar</button>
-                                    <button class="btn btn-primary" id="addRows" type="button">Agregar producto</button>
+                                    <button class="btn btn-primary" id="addRows" type="button">Agregar Factura</button>
                                 </div>
                             </div>
 

@@ -73,6 +73,18 @@ class Pago extends BaseController{
                     //return $this->response->redirect(site_url('/listar'));
                     return redirect()->back()->withInput();
                 }
+                
+                $anio = date('Y', strtotime($fecha_movimiento));
+                $existeChequeMismoAnio = $pago->where('num_cheque', $num_cheque)
+                                                ->where('id_banco', $id_banco)
+                                                ->where('YEAR(fecha_movimiento)', $anio)
+                                                ->first();
+        
+                if ($existeChequeMismoAnio !== null) {
+                    $session = session();
+                    $session->setFlashData('mensaje', 'Número de cheque duplicado');
+                    return redirect()->back()->withInput();
+                }
             } else if($forma_pago == 'Transferencia'){
                 $num_cheque = null;
                 $validacion = $this->validate([
@@ -86,8 +98,24 @@ class Pago extends BaseController{
                     //return $this->response->redirect(site_url('/listar'));
                     return redirect()->back()->withInput();
                 }
+
+                $anio = date('Y', strtotime($fecha_movimiento));
+                $existeTransferenciaMismoAnio = $pago->where('num_transferencia', $num_transferencia)
+                                                ->where('id_banco', $id_banco)
+                                                ->where('YEAR(fecha_movimiento)', $anio)
+                                                ->first();
+        
+                if ($existeTransferenciaMismoAnio !== null) {
+                    $session = session();
+                    $session->setFlashData('mensaje', 'Número de transferencia o deposito duplicado');
+                    return redirect()->back()->withInput();
+                }
             }
         }
+        
+        
+        
+
 
         $validacion = $this->validate([
             'id_proveedor'=>'required|numeric',
@@ -156,8 +184,8 @@ class Pago extends BaseController{
 
     public function eliminar($id = null) {
         $pago = new Pagos();
-        $compra = $pago->find($id);
-        $doc_adjunto = $compra['doc_adjunto'];
+        $pagos = $pago->find($id);
+        $doc_adjunto = $pagos['doc_adjunto'];
         // Verificar y eliminar el documento de respaldo
         if (!empty($doc_adjunto) && file_exists($doc_adjunto) && $doc_adjunto != '') {
             unlink($doc_adjunto);
@@ -233,8 +261,23 @@ class Pago extends BaseController{
                     //return $this->response->redirect(site_url('/listar'));
                     return redirect()->back()->withInput();
                 }
+
             }
         }
+        $anio = date('Y', strtotime($fecha_movimiento));
+        $existeTransferenciaMismoAnio = $pago->where('id !=', $id)
+                                        ->where('num_transferencia', $num_transferencia)
+                                        ->where('id_banco', $id_banco)
+                                        ->where('YEAR(fecha_movimiento)', $anio)
+                                        ->first();
+
+        if ($existeTransferenciaMismoAnio !== null) {
+            $session = session();
+            $session->setFlashData('mensaje', 'Número de transferencia o deposito duplicado');
+            return redirect()->back()->withInput();
+        }
+
+
 
         $validacion = $this->validate([
             'id_proveedor'=>'required|numeric',
