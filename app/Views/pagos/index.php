@@ -15,9 +15,6 @@
                 </div>
             </div>
             <div class="row mb-2">
-                <div class="col2">
-                    <button type="button" class="btn btn-block btn-success" onclick='window.location.href="crearPago"'><i class="fas fa-coins"></i> Registrar Pago</button>
-                </div>
                 <div class="col2 ml-3">
                     <a href="<?= base_url('exportarProductos/') ?>" class="btn btn-block btn-primary">
                         <i class="fas fa-file-excel"></i> Exportar Excel
@@ -57,7 +54,7 @@
                                             <td><?= $Pago['persona'];?></td>
                                             <td><?= $Pago['fecha_registro'];?></td>
                                             <td><?= $Pago['forma_pago'];?></td>
-                                            <td><?= $Pago['valor_total'];?></td>
+                                            <td><?= $Pago['valor_pagado'];?></td>
                                             <td>
                                                 <div class="btn-group">
                                                 <button type="button" class="btn btn-warning">Acciones</button>

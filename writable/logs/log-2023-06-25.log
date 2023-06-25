@@ -1,0 +1,230 @@
+CRITICAL - 2023-06-25 00:04:11 --> Undefined array key "valor"
+in APPPATH\Controllers\Pago.php on line 222.
+ 1 APPPATH\Controllers\Pago.php(222): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "valor"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Pago.php', 222)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 00:04:28 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\Pago.php(225): CodeIgniter\Model->update('90', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 00:04:51 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\Pago.php(225): CodeIgniter\Model->update('90', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 00:06:38 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\Pago.php(227): CodeIgniter\Model->update('90', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 00:06:55 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\Pago.php(227): CodeIgniter\Model->update('90', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 00:08:21 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\Pago.php(227): CodeIgniter\Model->update('90', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 00:50:18 --> Undefined variable $id_compra_anterior
+in APPPATH\Controllers\Pago.php on line 409.
+ 1 APPPATH\Controllers\Pago.php(409): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_compra_anterior', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Pago.php', 409)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 01:04:19 --> Undefined variable $valor_vencer
+in APPPATH\Views\pagos\editar.php on line 138.
+ 1 APPPATH\Views\pagos\editar.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $valor_vencer', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\editar.php', 138)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/editar', [], true)
+ 5 APPPATH\Controllers\Pago.php(281): view('pagos/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->editar('55')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 03:45:37 --> Undefined variable $compra
+in APPPATH\Views\pagos\consultar.php on line 47.
+ 1 APPPATH\Views\pagos\consultar.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 47)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(443): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('57')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 03:45:54 --> Undefined variable $compra
+in APPPATH\Views\pagos\consultar.php on line 47.
+ 1 APPPATH\Views\pagos\consultar.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 47)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(443): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('57')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 03:46:14 --> Undefined variable $compra
+in APPPATH\Views\pagos\consultar.php on line 47.
+ 1 APPPATH\Views\pagos\consultar.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 47)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(443): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('57')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 03:59:03 --> Undefined variable $nombre
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(22): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:02:04 --> Undefined variable $nombre
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(22): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:05:18 --> Undefined variable $categorias
+in APPPATH\Views\pagos\index.php on line 55.
+ 1 APPPATH\Views\pagos\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 55)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(84): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:06:56 --> Undefined variable $categorias
+in APPPATH\Views\pagos\index.php on line 56.
+ 1 APPPATH\Views\pagos\index.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:06:58 --> Undefined variable $categorias
+in APPPATH\Views\pagos\index.php on line 56.
+ 1 APPPATH\Views\pagos\index.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:07:39 --> syntax error, unexpected token ";"
+in APPPATH\Views\pagos\index.php on line 104.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:07:53 --> syntax error, unexpected token ";"
+in APPPATH\Views\pagos\index.php on line 104.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:07:57 --> syntax error, unexpected token ";"
+in APPPATH\Views\pagos\index.php on line 104.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:08:30 --> syntax error, unexpected token ";"
+in APPPATH\Views\pagos\index.php on line 103.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:08:43 --> syntax error, unexpected token ";"
+in APPPATH\Views\pagos\index.php on line 103.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:09:05 --> Unterminated comment starting line 37
+in APPPATH\Views\pagos\index.php on line 37.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:09:16 --> syntax error, unexpected token ";"
+in APPPATH\Views\pagos\index.php on line 104.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-25 04:10:04 --> Unterminated comment starting line 37
+in APPPATH\Views\pagos\index.php on line 37.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 3 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

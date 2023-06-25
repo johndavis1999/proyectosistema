@@ -2,6 +2,7 @@
 namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Compras;
+use App\Models\Pagos;
 use App\Models\Personas;
 use App\Models\Productos;
 use App\Models\DetalleCompras;
@@ -215,6 +216,14 @@ class Compra extends BaseController{
     public function eliminar($id = null) {
         $compras = new Compras();
         $compra = $compras->find($id);
+        $pagos = new Pagos();
+        $pago = $pagos->consultarCompra($id);
+        if ($pago) {
+            $session = session();
+            $session->setFlashData('mensaje','No se puede eliminar el documento ya que cuenta con pagos relacionados');
+            //return $this->response->redirect(site_url('/listar'));
+            return redirect()->back()->withInput();
+        }
         $doc_adjunto = $compra['doc_adjunto'];
         //validar si hay categorias con productos relacionados
         // Verificar y eliminar el documento de respaldo

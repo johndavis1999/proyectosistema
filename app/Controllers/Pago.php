@@ -2,6 +2,7 @@
 namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Pagos;
+use App\Models\Compras;
 use App\Models\Personas;
 use App\Models\Bancos;
 
@@ -9,10 +10,74 @@ class Pago extends BaseController{
     
     public function index(){
         $pago = new Pagos();
+
+        $nombre = $this->request->getVar('nombre');
+        $codigo = $this->request->getVar('codigo');
+        $estado = $this->request->getVar('estado');
+        $inventariable = $this->request->getVar('inventariable');
+        $iva = $this->request->getVar('iva');
+        $descuento = $this->request->getVar('descuento');
+        $categoriaFiltro = $this->request->getVar('categoriaFiltro');
+
+        $data['nombre']=$nombre;
+        $data['codigo']=$codigo;
+        $data['estado']=$estado;
+        $data['inventariable']=$inventariable;
+        $data['iva']=$iva;
+        $data['descuento']=$descuento;
+        $data['categoriaFiltro']=$categoriaFiltro;
+
+        /*
+        if ($nombre != null || $codigo != null || $estado != null || $inventariable != null || $iva != null || $descuento != null || $categoriaFiltro != null) {
+            $producto->orderBy('id', 'ASC');
+
+            if ($nombre != null) {
+                $producto->like('nombre', $nombre);
+            }
+
+            if ($codigo != null) {
+                $producto->like('codigo', $codigo);
+            }
+
+            if ($estado != null) {
+                $producto->where('productos.estado', $estado);
+            }
+
+            if ($inventariable != null) {
+                $producto->where('es_inventariable', $inventariable);
+            }
+
+            if ($iva != null) {
+                $producto->where('porcentaje_iva', $iva);
+            }
+
+            if ($descuento != null) {
+                if ($descuento != '0'){
+                    $producto->where('descuento <>', 0);
+                }
+                else{
+                    $producto->where('descuento', $descuento);
+                }
+            }
+
+            if ($categoriaFiltro != null) {
+                $producto->where('id_categoria', $categoriaFiltro);
+            }
+
+            $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
+                                    ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
+                                    ->paginate(10);
+
+            $paginador = $producto->pager;
+            $data['paginador'] = $paginador;
+            return view('pagos/index', $data);
+        }
+        */
+
         $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona')
                                 ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
-                                ->orderBy('pagos.id', 'ASC')
-                                ->orderBy('id','ASC')
+                                ->orderBy('pagos.id', 'DESC')
+                                ->orderBy('id','DESC')
                                 ->paginate(10);
         $paginador = $pago->pager;
         $data['paginador']=$paginador;
@@ -27,6 +92,9 @@ class Pago extends BaseController{
         $data['personas'] = $persona->where('es_proveedor', '1')
                                     ->orderBy('id', 'ASC')
                                     ->findAll();
+        $compra = new Compras();
+        $data['compras'] = $compra->orderBy('id', 'ASC')
+                                    ->findAll();
         
         $banco = new Bancos();
         $data['bancos'] = $banco->orderBy('id', 'ASC')
@@ -34,6 +102,25 @@ class Pago extends BaseController{
 
         $data['titulo'] = $titulo;
         return view('pagos/crear', $data);
+    }
+    
+    public function registrar($id=null){
+        $titulo = "Pagos";
+        $persona = new Personas();
+
+        $data['personas'] = $persona->where('es_proveedor', '1')
+                                    ->orderBy('id', 'ASC')
+                                    ->findAll();
+        
+        $banco = new Bancos();
+        $data['bancos'] = $banco->orderBy('id', 'ASC')
+                                ->findAll();
+                                
+        $compra = new Compras();
+        $data['compras'] = $compra->where('id',$id)->first();
+
+        $data['titulo'] = $titulo;
+        return view('pagos/registrar', $data);
     }
 
     public function guardar(){
@@ -46,7 +133,17 @@ class Pago extends BaseController{
         $id_banco = $this->request->getVar('id_banco'); 
         $fecha_movimiento = $this->request->getVar('fecha_movimiento'); 
         $doc_adjunto = $this->request->getFile('doc_adjunto'); 
-        $valor_total = $this->request->getVar('valor_total'); 
+        $id_compra = $this->request->getVar('id_compra'); 
+        $valor_compra = $this->request->getVar('valor_compra'); 
+        $valor_pagado = $this->request->getVar('valor_pagado'); 
+        $valor_vencer = $this->request->getVar('valor_vencer');
+        
+        
+        if($valor_pagado > $valor_vencer ){
+            $session = session();
+            $session->setFlashData('mensaje','El valor del pago es mayor al valor pendiente');
+            return redirect()->back()->withInput();
+        }
         
         if($forma_pago != 'Efectivo' && $forma_pago != 'Cheque' && $forma_pago != 'Transferencia'){
             $session = session();
@@ -112,15 +209,11 @@ class Pago extends BaseController{
                 }
             }
         }
-        
-        
-        
-
 
         $validacion = $this->validate([
             'id_proveedor'=>'required|numeric',
             'fecha_registro' => 'required',
-            'valor_total' => 'required|numeric',
+            'valor_pagado' => 'required|numeric',
         ]);
 
         if(!$validacion){
@@ -159,7 +252,9 @@ class Pago extends BaseController{
                 'num_transferencia'=>$num_transferencia,
                 'id_banco'=>$id_banco,
                 'fecha_movimiento'=>$fecha_movimiento,
-                'valor_total'=>$valor_total,
+                'id_compra'=>$id_compra,
+                'valor_compra'=>$valor_compra,
+                'valor_pagado'=>$valor_pagado,
                 'doc_adjunto'=>$nuevoNombre
             ];
             $pago->insert($datos);
@@ -175,11 +270,28 @@ class Pago extends BaseController{
             'id_banco'=>$id_banco,
             'fecha_movimiento'=>$fecha_movimiento,
             'doc_adjunto'=>'',
-            'valor_total'=>$valor_total
+            'id_compra'=>$id_compra,
+            'valor_compra'=>$valor_compra,
+            'valor_pagado'=>$valor_pagado
         ];
 
         $pago->insert($datos);
+
+        $this->sumarPago($id_compra,$valor_pagado);
+
         return $this->response->redirect(site_url('Pagos'));
+    }
+
+    protected function sumarPago($id_compra,$valor_pagado){
+        // Obtén el objeto del modelo de compras
+        $modeloCompras = new Compras(); // Asegúrate de que estás utilizando el modelo correcto aquí
+        $compra = $modeloCompras->find($id_compra);
+        if ($compra) {
+            if (array_key_exists('valor_pagado', $compra)) {
+                $nuevoValor = $compra['valor_pagado'] + $valor_pagado;
+            }
+            $modeloCompras->update($id_compra, ['valor_pagado' => $nuevoValor]);
+        }
     }
 
     public function eliminar($id = null) {
@@ -190,13 +302,35 @@ class Pago extends BaseController{
         if (!empty($doc_adjunto) && file_exists($doc_adjunto) && $doc_adjunto != '') {
             unlink($doc_adjunto);
         }
+        
+        // Restar el valor pagado al eliminar el pago
+        $id_compra = $pagos['id_compra'];
+        $valor_pagado = $pagos['valor_pagado'];
+        $this->restarPago($id_compra, $valor_pagado);
         $pago->where('id', $id)->delete($id);
         return $this->response->redirect(site_url('Pagos'));
     }
 
+    public function restarPago($id_compra, $valor_pagado) {
+        $modeloCompras = new Compras();
+        $compra = $modeloCompras->find($id_compra);
+    
+        if ($compra) {
+            if (array_key_exists('valor_pagado', $compra)) {
+                $nuevoValor = $compra['valor_pagado'] - $valor_pagado;
+            } else {
+                $nuevoValor = 0;
+            }
+            // Actualiza el campo valor_pagado en la tabla compras
+            $modeloCompras->update($id_compra, ['valor_pagado' => $nuevoValor]);
+        }
+    }
+    
     public function editar($id=null){
         $pago = new Pagos();
-        $data['pago'] = $pago->where('id',$id)->first();
+        $data['pago'] = $pago->select('pagos.*, compras.num_fact as compra,compras.total as  total_compra, compras.valor_pagado as pagado')
+                                ->join('compras', 'compras.id = pagos.id_compra', 'left')
+                                ->where('pagos.id',$id)->first();
         $titulo = "Pagos";
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
@@ -213,7 +347,7 @@ class Pago extends BaseController{
     public function actualizar(){
         $pago = new Pagos();
         $id = $this->request->getVar('id'); 
-        $id_proveedor = $this->request->getVar('id_proveedor'); 
+        $valorPagoAnterior = $pago->find($id); // Obtén el pago anterior antes de la actualización
         $fecha_registro = $this->request->getVar('fecha_registro'); 
         $forma_pago = $this->request->getVar('forma_pago'); 
         $num_cheque = $this->request->getVar('num_cheque'); 
@@ -221,7 +355,7 @@ class Pago extends BaseController{
         $id_banco = $this->request->getVar('id_banco'); 
         $fecha_movimiento = $this->request->getVar('fecha_movimiento'); 
         $doc_adjunto = $this->request->getFile('doc_adjunto'); 
-        $valor_total = $this->request->getVar('valor_total'); 
+        $valor_pagado = $this->request->getVar('valor_pagado'); 
         
         if($forma_pago != 'Efectivo' && $forma_pago != 'Cheque' && $forma_pago != 'Transferencia'){
             $session = session();
@@ -280,9 +414,8 @@ class Pago extends BaseController{
 
 
         $validacion = $this->validate([
-            'id_proveedor'=>'required|numeric',
             'fecha_registro' => 'required',
-            'valor_total' => 'required|numeric',
+            'valor_pagado' => 'required|numeric',
         ]);
 
         if(!$validacion){
@@ -321,32 +454,56 @@ class Pago extends BaseController{
             }
 
             $datos=[
-                'id_proveedor'=>$id_proveedor,
                 'fecha_registro'=>$fecha_registro,
                 'forma_pago'=>$forma_pago,
                 'num_cheque'=>$num_cheque,
                 'num_transferencia'=>$num_transferencia,
                 'id_banco'=>$id_banco,
                 'fecha_movimiento'=>$fecha_movimiento,
-                'valor_total'=>$valor_total,
+                'valor_pagado'=>$valor_pagado,
                 'doc_adjunto'=>$nuevoNombre
             ];
             $pago->update($id,$datos);
             return $this->response->redirect(site_url('Pagos'));
         }
+        
+        // Restar el valor pagado anterior
+        $id_compra = $valorPagoAnterior['id_compra'];
+        $valor_pagado_anterior = $valorPagoAnterior['valor_pagado'];
+        $this->restarPago($id_compra, $valor_pagado_anterior);
 
         $datos=[
-            'id_proveedor'=>$id_proveedor,
             'fecha_registro'=>$fecha_registro,
             'forma_pago'=>$forma_pago,
             'num_cheque'=>$num_cheque,
             'num_transferencia'=>$num_transferencia,
             'id_banco'=>$id_banco,
             'fecha_movimiento'=>$fecha_movimiento,
-            'valor_total'=>$valor_total
+            'valor_pagado'=>$valor_pagado
         ];
-
         $pago->update($id,$datos);
+
+        $this->sumarPago($id_compra, $valor_pagado);
+
         return $this->response->redirect(site_url('Pagos'));
+    }
+    
+    public function consultar($id=null){
+        $pago = new Pagos();
+        $data['pago'] = $pago->select('pagos.*, compras.num_fact as compra,compras.total as  total_compra, compras.valor_pagado as pagado')
+                                ->join('compras', 'compras.id = pagos.id_compra', 'left')
+                                ->where('pagos.id',$id)->first();
+        $titulo = "Pagos";
+        $persona = new Personas();
+        $data['personas'] = $persona->where('es_proveedor', '1')
+                                    ->orderBy('id', 'ASC')
+                                    ->findAll();
+        
+        $banco = new Bancos();
+        $data['bancos'] = $banco->orderBy('id', 'ASC')
+                                ->findAll();
+
+        $data['titulo'] = $titulo;
+        return view('pagos/consultar', $data);
     }
 }

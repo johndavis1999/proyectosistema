@@ -24,6 +24,15 @@
           <div class="col2 ml-3">
             <button type="button" class="btn btn-block btn-success" onclick='window.location.href="UsuariosCrear"'><i class="fas fa-plus"></i> Ver PDF Documento</button>
           </div>
+          <?php 
+            if($compra['total'] != $compra['valor_pagado']){
+        ?>
+            <div class="col2 ml-3">
+            <a type="button" class="btn btn-block btn-success" href="<?=base_url('registraPago/'.$compra['id']);?>"><i class="fas fa-coins"></i> Registrar Pago</a>
+            </div>
+        <?php 
+            }
+          ?>
         </div>
       </div>
       <div class="" style="justify-content: center; align-items: center;">

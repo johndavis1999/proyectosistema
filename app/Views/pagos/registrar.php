@@ -48,6 +48,7 @@
                   <div class="card-header">
                       <h3 class="card-title">Formulario de registro de Pago</h3>
                   </div>
+                  
                   <form action="<?= base_url('guardarPago') ?>" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             <?php if(session('mensaje')){?>
@@ -63,16 +64,19 @@
                                             <input type="date" class="form-control" id="fecha_registro" value="<?= old('fecha_registro') ?>" name="fecha_registro" onclick="mostrarCalendario()"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="id_proveedor">Seleccionar Proveedor *</label>
-                                            <select id="id_proveedor" name="id_proveedor" class="selectpicker form-control" data-live-search="true">
+                                            <label for="">Seleccionar Proveedor *</label>
+                                            <select id="" name="" class="selectpicker form-control" data-live-search="true" disabled>
                                                 <option value="">Escoja una persona</option>
                                                 <?php if($personas):?>
                                                     <?php foreach($personas as $persona):?>
-                                                        <option value="<?=$persona['id']?>" <?php if(old('id_proveedor') == $persona['id']) echo 'selected'; ?>><?= $persona['nombres']?></option>
+                                                        <option value="<?=$persona['id']?>" <?php if($persona['id'] == $compras['id_per_prov']) echo 'selected'; ?>>
+                                                            <?= $persona['nombres'] ?>
+                                                        </option>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </select>
                                         </div>
+                                        <input type="hidden" name="id_proveedor" value="<?= $compras['id_per_prov']; ?>">
                                         <div class="form-group">
                                             <label for="forma_pago">Seleccionar Forma de Pago: *</label>
                                             <select id="forma_pago" id="formaPago" name="forma_pago" class="form-control" data-live-search="true">
@@ -118,53 +122,37 @@
                                 <table id="tabla" class="table">
                                     <thead>
                                         <tr>
-                                        <th>ID</th>
-                                        <th>Documentos</th>
-                                        <th>Valor Seleccionado</th>
-                                        <th>Acciones</th>
+                                            <th class="col-2">Compra</th>
+                                            <th class="col-2">Capital a Vencer</th>
+                                            <th class="col-2">Pendiente</th>
+                                            <th class="col-2">Valor a Pagar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!-- Las filas se agregarán dinámicamente -->
+                                        <tr>
+                                            <td><?= $compras['num_fact'] ?><input type="hidden" name="id_compra" value="<?= $compras['id'] ?>"></td>
+                                            <td>$<?= $compras['total'] ?><input type="hidden" name="valor_compra" value="<?= $compras['total'] ?>"></td>
+                                            <td>$
+                                                <?php
+                                                    $valor_vencer = $compras['total'] - $compras['valor_pagado']; 
+                                                    echo $valor_vencer;
+                                                ?>
+                                                <input type="hidden" name="valor_vencer" value="<?= $valor_vencer ?>">
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="fas fa-dollar-sign"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= old('valor_pagado') ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required max="<?= $compras['total'] - $compras['valor_pagado'] ?>">
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            
-                            <!-- Modal -->
-                            <div id="modal" class="modal">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Seleccionar opción</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <select name="compra_id" id="opciones" class="form-control">
-                                                <option value="">Seleccionar compra</option>
-                                                <?php foreach ($compras as $compra) {
-                                                    if ($compra['id_per_prov'] === '1') {
-                                                        ?>
-                                                        <option value="<?= $compra['id'] ?>"><?= $compra['num_fact'] ?></option>
-                                                        <?php
-                                                    }
-                                                } ?>
-                                            </select>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" id="agregarBtn">Agregar</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="table-responsive mb-5 card-body p-0">
-                                <div class="">
-                                    <button class="btn btn-danger delete" id="removeRows" type="button">Eliminar</button>
-                                    <button class="btn btn-primary" id="agregarDocumentoBtn" type="button">Agregar Factura</button>
-                                </div>
                             </div>
 
                             <div class="row">  
@@ -176,19 +164,6 @@
                                                 <input type="file" class="custom-file-input" id="doc_adjunto" name="doc_adjunto" onchange="updatePlaceholder(this)">
                                                 <label class="custom-file-label" for="doc_adjunto" id="doc_adjunto_label">Seleccionar archivo</label>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="valor_total">Valor Total:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control align-right" id="valor_total" value="<?= old('valor_total') ?>" name="valor_total" placeholder="Valor Total">
                                         </div>
                                     </div>
                                 </div>
@@ -242,50 +217,36 @@
       </div>
     </div><!-- /.container-fluid -->
   </section>
-  <script>
-    // Obtener elementos del DOM
-    const agregarDocumentoBtn = document.getElementById('agregarDocumentoBtn');
-    const modal = document.getElementById('modal');
-    const opcionesSelect = document.getElementById('opciones');
-    const agregarBtn = document.getElementById('agregarBtn');
-    const tabla = document.getElementById('tabla').getElementsByTagName('tbody')[0];
-    let contador = 1;
+<script>
+    function permitirNumerosDecimales(input) {
+    // Obtener el valor del input
+    var valor = input.value;
+    
+    // Eliminar todos los caracteres que no sean números ni puntos decimales
+    var numero = valor.replace(/[^0-9.]/g, "");
+    
+    // Verificar si hay más de un punto decimal y eliminar los extras
+    var puntosDecimales = numero.match(/\./g);
+    if (puntosDecimales && puntosDecimales.length > 1) {
+        numero = numero.replace(/\./g, "");
+    }
+    
+    // Devolver el número resultante
+    return numero;
+    }
 
-    // Función para mostrar el modal
-    agregarDocumentoBtn.addEventListener('click', () => {
-      $('#modal').modal('show');
-    });
+    function validarMaximo(input) {
+        var maximo = <?= $valor_vencer ?>;
+        var valorIngresado = parseFloat(input.value);
+        
+        if (valorIngresado <= 0) {
+            input.setCustomValidity('El valor ingresado debe ser mayor a 0');
+        } else if (valorIngresado > maximo) {
+            input.setCustomValidity('El valor ingresado no puede ser mayor que ' + maximo);
+        } else {
+            input.setCustomValidity('');
+        }
+    }
 
-    // Función para agregar una opción seleccionada a la tabla
-    agregarBtn.addEventListener('click', () => {
-      const opcionSeleccionada = opcionesSelect.value;
-      const fila = tabla.insertRow();
-      const idCelda = fila.insertCell();
-      const celda = fila.insertCell();
-      const valorSeleccionadoCelda = fila.insertCell();
-      const accionesCelda = fila.insertCell();
-      const input = document.createElement('input');
-      const botonBorrar = document.createElement('button');
-      input.type = 'text';
-      input.value = opcionSeleccionada;
-      input.disabled = true;
-      botonBorrar.textContent = 'Borrar';
-      botonBorrar.className = 'btn btn-danger';
-      idCelda.innerHTML = contador;
-      celda.innerHTML = opcionSeleccionada;
-      valorSeleccionadoCelda.appendChild(input);
-      accionesCelda.appendChild(botonBorrar);
-      fila.id = "fila" + contador;
-
-    botonBorrar.addEventListener('click', () => {
-        const fila = botonBorrar.closest('tr');
-        tabla.deleteRow(fila.rowIndex);
-    });
-
-
-
-      contador++;
-      $('#modal').modal('hide');
-    });
-  </script>
+</script>
 <?= $this->endsection() ?>

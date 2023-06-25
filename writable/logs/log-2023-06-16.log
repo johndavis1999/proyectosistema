@@ -1,0 +1,22 @@
+CRITICAL - 2023-06-16 02:23:03 --> Undefined array key "nombre"
+in APPPATH\Views\pagos\crear.php on line 147.
+ 1 APPPATH\Views\pagos\crear.php(147): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\crear.php', 147)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/crear', [], true)
+ 5 APPPATH\Controllers\Pago.php(40): view('pagos/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-16 02:37:19 --> Undefined variable $compras
+in APPPATH\Views\pagos\crear.php on line 147.
+ 1 APPPATH\Views\pagos\crear.php(147): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compras', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\crear.php', 147)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\crear.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/crear', [], true)
+ 5 APPPATH\Controllers\Pago.php(36): view('pagos/crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

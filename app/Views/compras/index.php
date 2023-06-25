@@ -70,6 +70,13 @@
                               <div class="dropdown-menu" role="menu">
                                 <li><a class="dropdown-item" href="<?=base_url('consultarCompra/'.$compra['id']);?>"><i class="fas fa-eye"></i> Consultar</a></li>
                                 <li><a class="dropdown-item" href="<?=base_url('editarCompra/'.$compra['id']);?>"><i class="fas fa-edit"></i> Editar</a></li>
+                                <?php 
+                                  if($compra['total'] != $compra['valor_pagado']){
+                                ?>
+                                  <li><a class="dropdown-item" href="<?=base_url('registraPago/'.$compra['id']);?>"><i class="fas fa-coins"></i> Registrar Pago</a></li>
+                                <?php 
+                                  }
+                                ?>
                                 <li><a class="dropdown-item"  data-toggle="modal" data-target="#modalDelete<?=$compra['id'];?>"><i class="fas fa-trash-alt"></i> Borrar</a></li>
                               </div>
                             </div>
