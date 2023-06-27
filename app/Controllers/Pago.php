@@ -1,5 +1,7 @@
 <?php
 namespace App\Controllers;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Controllers\BaseController;
 use App\Models\Pagos;
 use App\Models\Compras;
@@ -10,69 +12,70 @@ class Pago extends BaseController{
     
     public function index(){
         $pago = new Pagos();
+        $proveedor = new Personas();
+        $data['proveedores'] = $proveedor->orderBy('id','ASC')->findAll();
+        $banco = new Bancos();
+        $data['bancos'] = $banco->orderBy('id','ASC')->findAll();
+        $compra = new Compras();
+        $data['compras'] = $compra->orderBy('id','ASC')->findAll();
+        $titulo = "Pagos";
+        $data['titulo'] = $titulo;
 
-        $nombre = $this->request->getVar('nombre');
-        $codigo = $this->request->getVar('codigo');
-        $estado = $this->request->getVar('estado');
-        $inventariable = $this->request->getVar('inventariable');
-        $iva = $this->request->getVar('iva');
-        $descuento = $this->request->getVar('descuento');
-        $categoriaFiltro = $this->request->getVar('categoriaFiltro');
+        $proveedorFiltro = $this->request->getVar('proveedorFiltro');
+        $forma_pago = $this->request->getVar('forma_pago');
+        $bancoFiltro = $this->request->getVar('bancoFiltro');
+        $num_pago = $this->request->getVar('num_pago');
+        $fecha_inicio = $this->request->getVar('fecha_inicio');
+        $fecha_fin = $this->request->getVar('fecha_fin');
+        $num_compra = $this->request->getVar('num_compra');
 
-        $data['nombre']=$nombre;
-        $data['codigo']=$codigo;
-        $data['estado']=$estado;
-        $data['inventariable']=$inventariable;
-        $data['iva']=$iva;
-        $data['descuento']=$descuento;
-        $data['categoriaFiltro']=$categoriaFiltro;
+        $data['proveedorFiltro']=$proveedorFiltro;
+        $data['forma_pago']=$forma_pago;
+        $data['bancoFiltro']=$bancoFiltro;
+        $data['num_pago']=$num_pago;
+        $data['fecha_inicio']=$fecha_inicio;
+        $data['fecha_fin']=$fecha_fin;
+        $data['num_compra']=$num_compra;
 
-        /*
-        if ($nombre != null || $codigo != null || $estado != null || $inventariable != null || $iva != null || $descuento != null || $categoriaFiltro != null) {
-            $producto->orderBy('id', 'ASC');
+        if (  $proveedorFiltro != null || $forma_pago != null || $bancoFiltro != null || $num_pago != null || $num_compra != null || ($fecha_inicio != null && $fecha_fin != null)) {
+            $pago->orderBy('id', 'ASC');
 
-            if ($nombre != null) {
-                $producto->like('nombre', $nombre);
+            if ($proveedorFiltro != null) {
+                $pago->where('id_proveedor', $proveedorFiltro);
             }
 
-            if ($codigo != null) {
-                $producto->like('codigo', $codigo);
+            if ($forma_pago != null) {
+                $pago->where('forma_pago', $forma_pago);
             }
 
-            if ($estado != null) {
-                $producto->where('productos.estado', $estado);
+            if ($bancoFiltro != null) {
+                $pago->where('id_banco', $bancoFiltro);
             }
 
-            if ($inventariable != null) {
-                $producto->where('es_inventariable', $inventariable);
+            if ($num_pago != null) {
+                $pago->where('id', $num_pago);
             }
 
-            if ($iva != null) {
-                $producto->where('porcentaje_iva', $iva);
+            if ($num_compra != null) {
+                $pago->where('id_compra', $num_compra);
             }
 
-            if ($descuento != null) {
-                if ($descuento != '0'){
-                    $producto->where('descuento <>', 0);
-                }
-                else{
-                    $producto->where('descuento', $descuento);
-                }
+            if ($fecha_inicio != null && $fecha_fin != null) {
+                $pago->where('fecha_registro >=', $fecha_inicio);
+                $pago->where('fecha_registro <=', $fecha_fin);
             }
+            
 
-            if ($categoriaFiltro != null) {
-                $producto->where('id_categoria', $categoriaFiltro);
-            }
-
-            $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
-                                    ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
+            $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona')
+                                    ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
+                                    ->orderBy('pagos.id', 'DESC')
+                                    ->orderBy('id','DESC')
                                     ->paginate(10);
 
-            $paginador = $producto->pager;
+            $paginador = $pago->pager;
             $data['paginador'] = $paginador;
             return view('pagos/index', $data);
         }
-        */
 
         $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona')
                                 ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
@@ -81,8 +84,6 @@ class Pago extends BaseController{
                                 ->paginate(10);
         $paginador = $pago->pager;
         $data['paginador']=$paginador;
-        $titulo = "Pagos";
-        $data['titulo'] = $titulo;
         return view('pagos/index', $data);
     }
     
@@ -505,5 +506,112 @@ class Pago extends BaseController{
 
         $data['titulo'] = $titulo;
         return view('pagos/consultar', $data);
+    }
+
+    public function generarExcel($proveedorFiltro, $forma_pago, $bancoFiltro, $num_pago, $num_compra, $fecha_inicio, $fecha_fin){
+        $pago = new Pagos();
+        // Aplica los filtros solo si se han seleccionado valores
+        if (  $proveedorFiltro != 'none' || $forma_pago != 'none' || $bancoFiltro != 'none' || $num_pago != 'none' || $num_compra != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none') {
+            $pago->orderBy('id', 'ASC');
+
+            if ($proveedorFiltro != 'none') {
+                $pago->where('pagos.id_proveedor', $proveedorFiltro);
+            }
+
+            if ($forma_pago != 'none') {
+                $pago->where('pagos.forma_pago', $forma_pago);
+            }
+
+            if ($bancoFiltro != 'none') {
+                $pago->where('pagos.id_banco', $bancoFiltro);
+            }
+
+            if ($num_pago != 'none') {
+                $pago->where('pagos.id', $num_pago);
+            }
+
+            if ($num_compra != 'none') {
+                $pago->where('pagos.id_compra', $num_compra);
+            }
+
+            if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
+                $pago->where('pagos.fecha_registro >=', $fecha_inicio);
+                $pago->where('pagos.fecha_registro <=', $fecha_fin);
+            }
+
+        $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+                                ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
+                                ->join('compras', 'compras.id = pagos.id_compra', 'left')
+                                ->join('bancos', 'bancos.id = pagos.id_banco', 'left')
+                                ->findAll();
+        } else {
+            $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+                                    ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
+                                    ->join('compras', 'compras.id = pagos.id_compra', 'left')
+                                    ->join('bancos', 'bancos.id = pagos.id_banco', 'left')
+                                    ->findAll();
+        }
+
+        // Crear un nuevo objeto Spreadsheet
+        $spreadsheet = new Spreadsheet();
+
+        // Obtener la hoja activa
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->getColumnDimension('A')->setWidth(10);
+        $sheet->getColumnDimension('B')->setWidth(30);
+        $sheet->getColumnDimension('C')->setWidth(17);
+        $sheet->getColumnDimension('D')->setWidth(15);
+        $sheet->getColumnDimension('E')->setWidth(15);
+        $sheet->getColumnDimension('F')->setWidth(15);
+        $sheet->getColumnDimension('G')->setWidth(15);
+        $sheet->getColumnDimension('H')->setWidth(20);
+        $sheet->getColumnDimension('I')->setWidth(20);
+        $sheet->getColumnDimension('J')->setWidth(20);
+        $sheet->getColumnDimension('K')->setWidth(15);
+        // Agregar encabezados
+        $sheet->setCellValue('A1', 'Num. Pago');
+        $sheet->setCellValue('B1', 'Proveedor');
+        $sheet->setCellValue('C1', 'Compra');
+        $sheet->setCellValue('D1', 'Valor Compra');
+        $sheet->setCellValue('E1', 'Valor Pago');
+        $sheet->setCellValue('F1', 'Fecha Registro');
+        $sheet->setCellValue('G1', 'Forma de Pago');
+        $sheet->setCellValue('H1', 'Num. Cheque');
+        $sheet->setCellValue('I1', 'Num. Transferencia');
+        $sheet->setCellValue('J1', 'Banco');
+        $sheet->setCellValue('K1', 'Fecha Mov.');
+        // ... Agregar más columnas según tus necesidades
+
+        // Agregar datos de las personas al archivo Excel
+        $row = 2;
+        foreach ($data['pagos'] as $pago) {
+            $sheet->setCellValue('A' . $row, $pago['id']);
+            $sheet->setCellValue('B' . $row, $pago['persona']);
+            $sheet->setCellValue('C' . $row, $pago['compra']);
+            $sheet->setCellValue('D' . $row, '$' . $pago['valor_compra']);
+            $sheet->setCellValue('E' . $row, '$' . $pago['valor_pagado']);
+            $sheet->setCellValue('F' . $row, $pago['fecha_registro']);
+            $sheet->setCellValue('G' . $row, $pago['forma_pago']);
+            $sheet->setCellValue('H' . $row, $pago['num_cheque']);
+            $sheet->setCellValue('I' . $row, $pago['num_transferencia']);
+            $sheet->setCellValue('J' . $row, $pago['id_banco']);
+            $sheet->setCellValue('K' . $row, $pago['banco']);
+            // ... Agregar más columnas según tus necesidades
+
+            $row++;
+        }
+
+        // Guardar el archivo Excel
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'export_pagos.xlsx';
+        $writer->save($filename);
+
+        // Descargar el archivo Excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+        $writer->save('php://output');
+        exit;
     }
 }

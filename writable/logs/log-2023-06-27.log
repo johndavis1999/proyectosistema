@@ -1,0 +1,536 @@
+CRITICAL - 2023-06-27 02:10:50 --> Undefined variable $categorias
+in APPPATH\Views\pagos\index.php on line 55.
+ 1 APPPATH\Views\pagos\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 55)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(86): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:14:11 --> Undefined variable $categorias
+in APPPATH\Views\pagos\index.php on line 55.
+ 1 APPPATH\Views\pagos\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 55)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(55): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:14:54 --> Undefined variable $categorias
+in APPPATH\Views\pagos\index.php on line 55.
+ 1 APPPATH\Views\pagos\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 55)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(57): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:16:08 --> Undefined variable $categorias
+in APPPATH\Views\pagos\index.php on line 55.
+ 1 APPPATH\Views\pagos\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 55)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(59): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:25:18 --> Undefined variable $num_pago
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_pago', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(59): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:30:20 --> Undefined variable $forma_pago
+in APPPATH\Views\pagos\index.php on line 77.
+ 1 APPPATH\Views\pagos\index.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $forma_pago', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 77)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(59): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:30:27 --> Undefined variable $forma_pagoforma_pago
+in APPPATH\Views\pagos\index.php on line 77.
+ 1 APPPATH\Views\pagos\index.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $forma_pagoforma_pago', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 77)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(59): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:35:05 --> Undefined array key "nombres"
+in APPPATH\Views\pagos\index.php on line 92.
+ 1 APPPATH\Views\pagos\index.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombres"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 92)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(65): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:35:46 --> Undefined variable $nombre
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(54): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 02:54:27 --> Undefined variable $titulo
+in APPPATH\Views\pagos\index.php on line 2.
+ 1 APPPATH\Views\pagos\index.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(67): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 03:00:57 --> Call to undefined method App\Models\Pagos::whereBetween
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Pago.php(62): CodeIgniter\Model->__call('whereBetween', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 03:01:33 --> Call to undefined method App\Models\Pagos::whereBetween
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Pago.php(62): CodeIgniter\Model->__call('whereBetween', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 03:26:45 --> Undefined variable $nombre
+in APPPATH\Views\pagos\index.php on line 19.
+ 1 APPPATH\Views\pagos\index.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 19)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(87): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 03:30:35 --> Class "App\Controllers\Productos" not found
+in APPPATH\Controllers\Pago.php on line 512.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-27 03:35:22 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.productos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-27 03:35:22 --> Unknown table 'dscriptn_db_sistema.productos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= :fecha_registro:
+AND `fecha_registro` <= :fecha_registro.1:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-27 03:35:26 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.productos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-27 03:35:26 --> Unknown table 'dscriptn_db_sistema.productos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `productos`. *, `categoria_producto`.`descripcion` as `categoria`
+FROM `pagos`
+LEFT JOIN `categoria_producto` ON `categoria_producto`.`id` = `productos`.`id_categoria`
+WHERE `fecha_registro` >= :fecha_registro:
+AND `fecha_registro` <= :fecha_registro.1:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-27 03:36:41 --> mysqli_sql_exception: Unknown column 'pago*' in 'field list' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pago*`\n...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pago*`\n...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pago*`\n...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pago*`\n...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(545): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-27 03:36:41 --> Unknown column 'pago*' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pago*`
+FROM `pagos`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pago*`
+FROM `pagos`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pago*`
+FROM `pagos`
+WHERE `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pago*`
+FROM `pagos`
+WHERE `fecha_registro` >= :fecha_registro:
+AND `fecha_registro` <= :fecha_registro.1:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pago.php(545): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 03:37:03 --> Undefined array key "productos"
+in APPPATH\Controllers\Pago.php on line 577.
+ 1 APPPATH\Controllers\Pago.php(577): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productos"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Pago.php', 577)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 03:38:27 --> Undefined array key "productos"
+in APPPATH\Controllers\Pago.php on line 585.
+ 1 APPPATH\Controllers\Pago.php(585): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "productos"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Pago.php', 585)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-27 03:41:36 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Transferencia', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-27 03:41:36 --> Column 'id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Transferencia\'
+AND `id_banco` = \'none\'
+AND `id` = \'none\'
+AND `num_fact` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Transferencia\'
+AND `id_banco` = \'none\'
+AND `id` = \'none\'
+AND `num_fact` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Transferencia\'
+AND `id_banco` = \'none\'
+AND `id` = \'none\'
+AND `num_fact` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = :id_proveedor:
+AND `forma_pago` = :forma_pago:
+AND `id_banco` = :id_banco:
+AND `id` = :id:
+AND `num_fact` = :num_fact:
+AND `fecha_registro` >= :fecha_registro:
+AND `fecha_registro` <= :fecha_registro.1:
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Transferencia', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-27 03:41:45 --> mysqli_sql_exception: Unknown column 'num_fact' in 'where clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Transferencia', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-27 03:41:45 --> Unknown column 'num_fact' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Transferencia\'
+AND `id_banco` = \'none\'
+AND `pagos`.`id` = \'none\'
+AND `num_fact` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Transferencia\'
+AND `id_banco` = \'none\'
+AND `pagos`.`id` = \'none\'
+AND `num_fact` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Transferencia\'
+AND `id_banco` = \'none\'
+AND `pagos`.`id` = \'none\'
+AND `num_fact` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id_proveedor` = :id_proveedor:
+AND `forma_pago` = :forma_pago:
+AND `id_banco` = :id_banco:
+AND `pagos`.`id` = :pagos.id:
+AND `num_fact` = :num_fact:
+AND `fecha_registro` >= :fecha_registro:
+AND `fecha_registro` <= :fecha_registro.1:
+ORDER BY `id` ASC, `pagos`.`id` DESC, `id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Transferencia', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-27 04:09:33 --> mysqli_sql_exception: Column 'fecha_registro' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-27 04:09:33 --> Column 'fecha_registro' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Efectivo\'
+AND `id_banco` = \'none\'
+AND `pagos`.`id` = \'none\'
+AND `id_compra` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Efectivo\'
+AND `id_banco` = \'none\'
+AND `pagos`.`id` = \'none\'
+AND `id_compra` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `id_proveedor` = \'none\'
+AND `forma_pago` = \'Efectivo\'
+AND `id_banco` = \'none\'
+AND `pagos`.`id` = \'none\'
+AND `id_compra` = \'none\'
+AND `fecha_registro` >= \'none\'
+AND `fecha_registro` <= \'none\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `id_proveedor` = :id_proveedor:
+AND `forma_pago` = :forma_pago:
+AND `id_banco` = :id_banco:
+AND `pagos`.`id` = :pagos.id:
+AND `id_compra` = :id_compra:
+AND `fecha_registro` >= :fecha_registro:
+AND `fecha_registro` <= :fecha_registro.1:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pago.php(546): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 04:18:47 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, string given, called in C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php on line 515
+in SYSTEMPATH\BaseModel.php on line 601.
+ 1 APPPATH\Controllers\Pago.php(515): CodeIgniter\BaseModel->findAll('id', 'ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 04:19:32 --> Undefined variable $data
+in APPPATH\Controllers\Pago.php on line 557.
+ 1 APPPATH\Controllers\Pago.php(557): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Pago.php', 557)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 04:19:54 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, string given, called in C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php on line 515
+in SYSTEMPATH\BaseModel.php on line 601.
+ 1 APPPATH\Controllers\Pago.php(515): CodeIgniter\BaseModel->findAll('id', 'ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 04:20:06 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, string given, called in C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php on line 515
+in SYSTEMPATH\BaseModel.php on line 601.
+ 1 APPPATH\Controllers\Pago.php(515): CodeIgniter\BaseModel->findAll('id', 'ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-27 04:20:10 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, string given, called in C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php on line 515
+in SYSTEMPATH\BaseModel.php on line 601.
+ 1 APPPATH\Controllers\Pago.php(515): CodeIgniter\BaseModel->findAll('id', 'ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

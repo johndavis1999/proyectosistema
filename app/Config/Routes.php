@@ -149,3 +149,4 @@ $routes->get('consultarPago/(:num)', 'Pago::consultar/$1', ['filter' => 'verific
 $routes->get('editarPago/(:num)', 'Pago::editar/$1', ['filter' => 'verificarSesion']);
 $routes->post('actualizarPago', 'Pago::actualizar', ['filter' => 'verificarSesion']);
 $routes->get('eliminarPago/(:num)', 'Pago::eliminar/$1', ['filter' => 'verificarSesion']);
+$routes->get('exportarPagos/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?', 'Pago::generarExcel/$1/$2/$3/$4/$5/$6/$7', ['filter' => 'verificarSesion']);
