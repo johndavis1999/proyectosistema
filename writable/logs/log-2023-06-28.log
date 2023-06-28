@@ -1,0 +1,491 @@
+ERROR - 2023-06-28 00:58:28 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'dscriptn_root', 'AkJkSzpj123', 'dscriptn_db_sis...', 3306, '', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->index()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-06-28 00:58:28 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `personas`
+ORDER BY `id` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Pago.php(16): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-28 01:00:31 --> mysqli_sql_exception: Column 'fecha_registro' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(545): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', '2023-06-17', '2023-09-08', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-28 01:00:31 --> Column 'fecha_registro' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_compra` = \'2023-06-17\'
+AND `fecha_registro` = \'2023-09-08\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_compra` = \'2023-06-17\'
+AND `fecha_registro` = \'2023-09-08\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_compra` = \'2023-06-17\'
+AND `fecha_registro` = \'2023-09-08\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_compra` = :pagos.id_compra:
+AND `fecha_registro` = :fecha_registro:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Pago.php(545): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->generarExcel('none', 'none', 'none', 'none', '2023-06-17', '2023-09-08', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-28 01:04:13 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(73): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-28 01:04:13 --> Column 'id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = \'2\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = \'2\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = :id:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Pago.php(73): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-28 01:26:58 --> mysqli_sql_exception: Column 'id' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Pago.php(73): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Pago->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-28 01:26:58 --> Column 'id' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = \'56\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = \'56\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = \'56\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `pagos`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+WHERE `id` = :id:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Pago.php(73): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 01:43:42 --> Undefined variable $num_pago
+in APPPATH\Views\compras\index.php on line 41.
+ 1 APPPATH\Views\compras\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_pago', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(27): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 01:45:26 --> Undefined variable $num_fact
+in APPPATH\Views\compras\index.php on line 41.
+ 1 APPPATH\Views\compras\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_fact', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(43): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 01:45:40 --> Undefined variable $proveedores
+in APPPATH\Views\compras\index.php on line 49.
+ 1 APPPATH\Views\compras\index.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedores', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 49)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(43): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 01:46:01 --> Undefined variable $bancos
+in APPPATH\Views\compras\index.php on line 89.
+ 1 APPPATH\Views\compras\index.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bancos', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 89)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(46): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 01:46:11 --> Class "App\Controllers\Bancos" not found
+in APPPATH\Controllers\Compra.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 01:46:19 --> Undefined variable $num_compra
+in APPPATH\Views\compras\index.php on line 106.
+ 1 APPPATH\Views\compras\index.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 106)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(49): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 01:46:38 --> Undefined variable $num_compra
+in APPPATH\Views\compras\index.php on line 106.
+ 1 APPPATH\Views\compras\index.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 106)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(49): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:12:57 --> Undefined variable $estado
+in APPPATH\Views\compras\index.php on line 79.
+ 1 APPPATH\Views\compras\index.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 79)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(51): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:17:22 --> Undefined variable $descuento
+in APPPATH\Views\compras\index.php on line 98.
+ 1 APPPATH\Views\compras\index.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descuento', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 98)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(55): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:18:18 --> Undefined variable $estado
+in APPPATH\Views\compras\index.php on line 108.
+ 1 APPPATH\Views\compras\index.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 108)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(57): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:21:13 --> Undefined variable $nombre
+in APPPATH\Controllers\Compra.php on line 35.
+ 1 APPPATH\Controllers\Compra.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:22:25 --> Undefined variable $codigo
+in APPPATH\Controllers\Compra.php on line 35.
+ 1 APPPATH\Controllers\Compra.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $codigo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:26:09 --> Undefined variable $categoriaFiltro
+in APPPATH\Controllers\Compra.php on line 35.
+ 1 APPPATH\Controllers\Compra.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoriaFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:37:35 --> Undefined variable $titulo
+in APPPATH\Views\productos\index.php on line 2.
+ 1 APPPATH\Views\productos\index.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(83): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:38:11 --> Undefined variable $nombre
+in APPPATH\Views\productos\index.php on line 22.
+ 1 APPPATH\Views\productos\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(85): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:38:37 --> Undefined variable $nombre
+in APPPATH\Views\productos\index.php on line 22.
+ 1 APPPATH\Views\productos\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\productos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('productos/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(85): view('productos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:39:02 --> Undefined array key "cantidad_registros"
+in APPPATH\Views\compras\index.php on line 159.
+ 1 APPPATH\Views\compras\index.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cantidad_registros"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 159)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(85): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:39:08 --> Undefined array key "cantidad_registros"
+in APPPATH\Views\compras\index.php on line 159.
+ 1 APPPATH\Views\compras\index.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cantidad_registros"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 159)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(85): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 02:39:20 --> Undefined variable $detalleCompra
+in APPPATH\Controllers\Compra.php on line 85.
+ 1 APPPATH\Controllers\Compra.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $detalleCompra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Compra.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-28 02:48:57 --> mysqli_sql_exception: Unknown column 'productos.estado' in 'where clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(81): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-28 02:48:57 --> Unknown column 'productos.estado' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `productos`.`estado` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `productos`.`estado` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `productos`.`estado` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `productos`.`estado` = :productos.estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Compra.php(81): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-28 02:54:41 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 'valor_pagado'' at line 4 in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(85): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-28 02:54:41 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 'valor_pagado'' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `total` != = \'valor_pagado\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `total` != = \'valor_pagado\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `total` != = \'valor_pagado\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `total` != = :total !=:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Compra.php(85): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-28 02:57:24 --> mysqli_sql_exception: Unknown column 'descuento' in 'where clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Compra.php(86): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Compra->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-28 02:57:24 --> Unknown column 'descuento' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `descuento` <> 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `descuento` <> 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `descuento` <> 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `compras`
+LEFT JOIN `personas` ON `personas`.`id` = `compras`.`id_per_prov`
+WHERE `descuento` <> :descuento:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Compra.php(86): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-28 03:07:51 --> Undefined variable $nombre
+in APPPATH\Views\compras\index.php on line 22.
+ 1 APPPATH\Views\compras\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\compras\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('compras/index', [], true)
+ 5 APPPATH\Controllers\Compra.php(98): view('compras/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Compra->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compra))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

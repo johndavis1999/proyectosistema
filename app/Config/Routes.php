@@ -135,6 +135,7 @@ $routes->get('eliminarCompra/(:num)', 'Compra::eliminar/$1', ['filter' => 'verif
 $routes->get('editarCompra/(:num)', 'Compra::editar/$1', ['filter' => 'verificarSesion']);
 $routes->get('consultarCompra/(:num)', 'Compra::consultar/$1', ['filter' => 'verificarSesion']);
 $routes->post('actualizarCompra', 'Compra::actualizar', ['filter' => 'verificarSesion']);
+$routes->get('exportarCompras/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?', 'Compra::generarExcel/$1/$2/$3/$4/$5/$6/$7/$8', ['filter' => 'verificarSesion']);
 
 
 #facturacion

@@ -19,7 +19,106 @@
           <button type="button" class="btn btn-block btn-success" onclick='window.location.href="comprasCrear"'><i class="fas fa-plus"></i> Registrar compra</button>
         </div>
         <div class="col2 ml-3">
-          <button type="button" class="btn btn-block btn-primary"><i class="fas fa-plus"></i> Exportar PDF</button>
+          <a href="<?= base_url('exportarCompras/'. ($num_fact ? $num_fact : 'none') . '/' . ($proveedorFiltro ? $proveedorFiltro : 'none') . '/' . ($fecha_inicio ? $fecha_inicio : 'none') . '/' . ($fecha_fin ? $fecha_fin : 'none') . '/' .  ($iva !== null && $iva !== '' ? ($iva != 0 ? $iva : 0) : 'none') . '/' . ($pagado ? $pagado : 'none') . '/' . ($descuento ? $descuento : 'none') . '/' .  ($estado !== null && $estado !== '' ? ($estado != 0 ? $estado : 0) : 'none')) ?>" class="btn btn-block btn-primary">
+              <i class="fas fa-file-excel"></i> Exportar Excel
+          </a>
+        </div>
+      </div>
+      <div class="row container-flui">
+        <div class="col-12" id="accordion">
+          <div class="card card-primary card-outline">
+            <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+              <div class="card-header">
+                <h4 class="card-title w-100">
+                  Filtros de busqueda <i class="fas fa-search"></i>
+                </h4>
+              </div>
+            </a>
+            <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                <form id="formulario" method="get" action="<?= base_url('Compras') ?>">
+                  <div class="row g-3">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="num_fact" class="mr-2">Numero de Factura:</label>
+                        <input type="text" name="num_fact" id="num_fact" value="<?= $num_fact ?>" class="form-control mr-2">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="proveedorFiltro" class="mr-2">Proveedor:</label>
+                        <select id="proveedorFiltro" name="proveedorFiltro" class="selectpicker form-control" data-live-search="true">
+                          <option value="">Todos</option>
+                          <?php if($proveedores):?>
+                            <?php foreach($proveedores as $proveedor):?>
+                              <option value="<?=$proveedor['id']?>" <?php if($proveedor['id'] == $proveedorFiltro) echo 'selected'; ?>>
+                                <?= $proveedor['nombres'] ?>
+                              </option>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="fecha_inicio">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="fecha_inicio" value="<?= $fecha_inicio ?>" name="fecha_inicio"/>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="fecha_fin">Fecha de Fin</label>
+                        <input type="date" class="form-control" id="fecha_fin" value="<?= $fecha_fin ?>" name="fecha_fin" disabled/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="iva" class="mr-2">% IVA:</label>
+                        <select name="iva" id="iva" class="form-control mr-2">
+                          <option value="" <?php echo ($iva === '') ? 'selected' : ''; ?>>Todos</option>
+                          <option value="12" <?php echo ($iva == '12') ? 'selected' : ''; ?>>12%</option>
+                          <option value="0" <?php echo ($iva == '0') ? 'selected' : ''; ?>>0%</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="pagado" class="mr-2">Estado Pago:</label>
+                        <select name="pagado" id="pagado" class="form-control mr-2">
+                          <option value="" <?php echo ($pagado === '') ? 'selected' : ''; ?>>Todos</option>
+                          <option value="Pendiente" <?php echo ($pagado == 'Pendiente') ? 'selected' : ''; ?>>Pendiente</option>
+                          <option value="Pagado" <?php echo ($pagado == 'Pagado') ? 'selected' : ''; ?>>Pagado</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="descuento" class="mr-2">Descuento:</label>
+                        <select name="descuento" id="descuento" class="form-control mr-2">
+                          <option value="" <?php echo ($descuento === '') ? 'selected' : ''; ?>>Todos</option>
+                          <option value="Si" <?php echo ($descuento == 'Si') ? 'selected' : ''; ?>>Si</option>
+                          <option value="No" <?php echo ($descuento == 'No') ? 'selected' : ''; ?>>No</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="estado" class="mr-2">Estado:</label>
+                          <select name="estado" id="estado" class="form-control mr-2">
+                            <option value="" <?php echo ($estado === '') ? 'selected' : ''; ?>>Todos</option>
+                            <option value="1" <?php echo ($estado == '1') ? 'selected' : ''; ?>>Activo</option>
+                            <option value="0" <?php echo ($estado == '0') ? 'selected' : ''; ?>>Anulado</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Filtrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -119,4 +218,43 @@
     </div>
     <!-- /.container-fluid -->
   </section>
+<script>
+    $(document).ready(function() {
+        $('#fecha_inicio').change(function() {
+            if($(this).val() == "") {
+                $('#fecha_fin').prop('disabled', true);
+            } else {
+                $('#fecha_fin').prop('disabled', false);
+            }
+        });
+    });
+    
+    $(document).ready(function() {
+        $('#fecha_inicio').change(function() {
+            var fechaInicio = $(this).val();
+
+            if(fechaInicio == "") {
+                $('#fecha_fin').prop('disabled', true);
+            } else {
+                $('#fecha_fin').prop('disabled', false);
+                $('#fecha_fin').prop('min', fechaInicio);
+            }
+        });
+    });
+    
+    $(document).ready(function() {
+        $('#fecha_inicio').change(function() {
+            var fechaInicio = $(this).val();
+
+            if(fechaInicio == "") {
+                $('#fecha_fin').prop('disabled', true);
+                $('#fecha_fin').removeAttr('required');
+            } else {
+                $('#fecha_fin').prop('disabled', false);
+                $('#fecha_fin').prop('min', fechaInicio);
+                $('#fecha_fin').prop('required', true);
+            }
+        });
+    });
+</script>
 <?= $this->endsection() ?>

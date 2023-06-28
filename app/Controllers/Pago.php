@@ -53,7 +53,7 @@ class Pago extends BaseController{
             }
 
             if ($num_pago != null) {
-                $pago->where('id', $num_pago);
+                $pago->where('pagos.id', $num_pago);
             }
 
             if ($num_compra != null) {

@@ -16,7 +16,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col2 ml-3">
-                    <a href="<?= base_url('exportarPagos/'. ($proveedorFiltro ? $proveedorFiltro : 'none') . '/' . ($forma_pago ? $forma_pago : 'none') . '/' . ($bancoFiltro ? $bancoFiltro : 'none') . '/' .  ($num_pago ? $num_pago : 'none') . '/' .  ($fecha_inicio ? $fecha_inicio : 'none') . '/' .  ($fecha_fin ? $fecha_fin : 'none') . '/' . ($num_compra ? $num_compra : 'none')) ?>" class="btn btn-block btn-primary">
+                    <a href="<?= base_url('exportarPagos/'. ($proveedorFiltro ? $proveedorFiltro : 'none') . '/' . ($forma_pago ? $forma_pago : 'none') . '/' . ($bancoFiltro ? $bancoFiltro : 'none') . '/' .  ($num_pago ? $num_pago : 'none') . '/' . ($num_compra ? $num_compra : 'none') . '/' .  ($fecha_inicio ? $fecha_inicio : 'none') . '/' .  ($fecha_fin ? $fecha_fin : 'none')) ?>" class="btn btn-block btn-primary">
                         <i class="fas fa-file-excel"></i> Exportar Excel
                     </a>
                 </div>
