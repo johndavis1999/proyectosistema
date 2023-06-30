@@ -1,0 +1,76 @@
+CRITICAL - 2023-06-30 00:44:17 --> Invalid file: "facturacion/index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('facturacion/index.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('facturacion/index', [], true)
+ 3 APPPATH\Controllers\Facturacion.php(16): view('facturacion/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Facturacion->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Facturacion))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-30 01:30:31 --> Invalid file: "Facturacion/crearFact.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Facturacion/crearFact.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('Facturacion/crearFact', [], true)
+ 3 APPPATH\Controllers\Cotizacion.php(22): view('Facturacion/crearFact', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-30 01:30:37 --> Invalid file: "Facturacion/crearFact.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Facturacion/crearFact.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('Facturacion/crearFact', [], true)
+ 3 APPPATH\Controllers\Cotizacion.php(22): view('Facturacion/crearFact', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-30 01:31:54 --> Invalid file: "ventas/crear_cotizacion.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('ventas/crear_cotizacion.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crear_cotizacion', [], true)
+ 3 APPPATH\Controllers\Cotizacion.php(23): view('ventas/crear_cotizacion', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-30 01:32:51 --> Undefined variable $personas
+in APPPATH\Views\ventas\crearCotizacion.php on line 40.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 40)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(23): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-30 02:27:05 --> mysqli_sql_exception: Column 'num_cot' cannot be null in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyectosistema\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(71): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->guardar()
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-06-30 02:27:05 --> Column 'num_cot' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cotizaciones` (`num_cot`, `id_cliente`, `fecha_doc`, `descripcion`, `val_descuento`, `val_iva`, `total`, `pagado`, `valor_pagado`, `aprobado`, `estado`) VALUES (NULL, \'6\', \'2023-06-29\', \'22\', \'1\', \'0.72\', \'6.72\', 0, 0, 0, 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cotizaciones` (`num_cot`, `id_cliente`, `fecha_doc`, `descripcion`, `val_descuento`, `val_iva`, `total`, `pagado`, `valor_pagado`, `aprobado`, `estado`) VALUES (NULL, \'6\', \'2023-06-29\', \'22\', \'1\', \'0.72\', \'6.72\', 0, 0, 0, 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cotizaciones` (`num_cot`, `id_cliente`, `fecha_doc`, `descripcion`, `val_descuento`, `val_iva`, `total`, `pagado`, `valor_pagado`, `aprobado`, `estado`) VALUES (NULL, \'6\', \'2023-06-29\', \'22\', \'1\', \'0.72\', \'6.72\', 0, 0, 0, 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cotizaciones` (`num_cot`, `id_cliente`, `fecha_doc`, `descripcion`, `val_descuento`, `val_iva`, `total`, `pagado`, `valor_pagado`, `aprobado`, `estado`) VALUES (:num_cot:, :id_cliente:, :fecha_doc:, :descripcion:, :val_descuento:, :val_iva:, :total:, :pagado:, :valor_pagado:, :aprobado:, :estado:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Cotizacion.php(71): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->guardar()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

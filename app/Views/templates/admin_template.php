@@ -160,6 +160,29 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+            <i class="fas fa-file-invoice-dollar p-1"></i>
+              <p>
+                Ventas
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('Cotizacion') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cotizaciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('Pagos') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cobros</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="fas fa-cart-plus"></i>
               <p>
                 Compras

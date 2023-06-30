@@ -138,7 +138,11 @@ $routes->post('actualizarCompra', 'Compra::actualizar', ['filter' => 'verificarS
 $routes->get('exportarCompras/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?', 'Compra::generarExcel/$1/$2/$3/$4/$5/$6/$7/$8', ['filter' => 'verificarSesion']);
 
 
-#facturacion
+#ventas
+$routes->get('Cotizaciones', 'Cotizacion::index', ['filter' => 'verificarSesion']);
+$routes->get('cotizacionCrear', 'Cotizacion::crear', ['filter' => 'verificarSesion']);
+$routes->post('guardarCotizacion', 'Cotizacion::guardar', ['filter' => 'verificarSesion']);
+
 $routes->get('crearFact', 'Facturacion::crear', ['filter' => 'verificarSesion']);
 $routes->get('  ', 'Facturacion::ver', ['filter' => 'verificarSesion']);
 

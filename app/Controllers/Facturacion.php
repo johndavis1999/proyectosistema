@@ -2,9 +2,19 @@
 
 namespace App\Controllers;
 use App\Controllers\BaseController;
+use App\Models\Facturas;
 
-class Facturacion extends BaseController
-{
+class Facturacion extends BaseController{
+    
+    public function index(){
+        $factura = new Facturas();
+        //$data['categorias'] = $categoria->orderBy('id','ASC')->paginate(10);
+        $paginador = $factura->pager;
+        $data['paginador']=$paginador;
+        $titulo = "Facturas";
+        $data['titulo'] = $titulo;
+        return view('facturacion/index', $data);
+    }
     
     public function crear()
     {
