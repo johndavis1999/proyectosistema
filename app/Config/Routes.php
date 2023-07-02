@@ -142,6 +142,8 @@ $routes->get('exportarCompras/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:
 $routes->get('Cotizaciones', 'Cotizacion::index', ['filter' => 'verificarSesion']);
 $routes->get('cotizacionCrear', 'Cotizacion::crear', ['filter' => 'verificarSesion']);
 $routes->post('guardarCotizacion', 'Cotizacion::guardar', ['filter' => 'verificarSesion']);
+$routes->get('eliminarCotizacion/(:num)', 'Cotizacion::eliminar/$1', ['filter' => 'verificarSesion']);
+$routes->get('consultarCotizacion/(:num)', 'Cotizacion::consultar/$1', ['filter' => 'verificarSesion']);
 
 $routes->get('crearFact', 'Facturacion::crear', ['filter' => 'verificarSesion']);
 $routes->get('  ', 'Facturacion::ver', ['filter' => 'verificarSesion']);

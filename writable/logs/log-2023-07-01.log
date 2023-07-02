@@ -1,0 +1,274 @@
+CRITICAL - 2023-07-01 21:54:31 --> Undefined variable $usuario
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(59): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 21:54:57 --> Object of class App\Models\Personas could not be converted to string
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 4 APPPATH\Controllers\Cotizacion.php(59): view('ventas/crearCotizacion', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 21:55:13 --> Cannot use object of type App\Models\Personas as array
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 4 APPPATH\Controllers\Cotizacion.php(59): view('ventas/crearCotizacion', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 21:57:08 --> Trying to access array offset on value of type null
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(61): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 21:59:34 --> Undefined variable $id
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(61): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:07:23 --> Undefined variable $vendedor
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedor', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:07:54 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:08:31 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Cotizacion.php on line 52.
+ 1 APPPATH\Controllers\Cotizacion.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:09:23 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Cotizacion.php on line 52.
+ 1 APPPATH\Controllers\Cotizacion.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:09:33 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Cotizacion.php on line 51.
+ 1 APPPATH\Controllers\Cotizacion.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:10:21 --> Attempt to read property "id" on null
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:13:10 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:13:23 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:13:24 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:13:27 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:13:35 --> Attempt to read property "id" on array
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:14:18 --> Undefined variable $vendedorNombre
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedorNombre', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(60): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:14:35 --> Array to string conversion
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(60): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:14:36 --> Array to string conversion
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(60): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:21:14 --> Class "App\Controllers\Usuario" not found
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:21:23 --> Class "App\Models\Usuarios" not found
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:21:43 --> Class "App\Controllers\Usuario" not found
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:21:50 --> Class "App\Models\Usuarios" not found
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:21:59 --> Class "App\Controllers\Users" not found
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:22:12 --> Undefined variable $idUsuario
+in APPPATH\Controllers\Cotizacion.php on line 49.
+ 1 APPPATH\Controllers\Cotizacion.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idUsuario', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:22:27 --> Attempt to read property "id_persona" on string
+in APPPATH\Controllers\Cotizacion.php on line 51.
+ 1 APPPATH\Controllers\Cotizacion.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_persona" on string', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:23:13 --> Trying to access array offset on value of type null
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(65): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:23:28 --> Trying to access array offset on value of type null
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(65): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:23:32 --> Trying to access array offset on value of type null
+in APPPATH\Views\ventas\crearCotizacion.php on line 36.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(65): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:24:04 --> Undefined variable $usuario
+in APPPATH\Controllers\Cotizacion.php on line 49.
+ 1 APPPATH\Controllers\Cotizacion.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:24:55 --> Undefined variable $usuario1
+in APPPATH\Controllers\Cotizacion.php on line 49.
+ 1 APPPATH\Controllers\Cotizacion.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario1', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:25:03 --> Attempt to read property "id_persona" on string
+in APPPATH\Controllers\Cotizacion.php on line 51.
+ 1 APPPATH\Controllers\Cotizacion.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_persona" on string', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:25:19 --> Cannot use object of type App\Models\Users as array
+in APPPATH\Controllers\Cotizacion.php on line 51.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-01 22:26:48 --> Attempt to read property "id_persona" on array
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 APPPATH\Controllers\Cotizacion.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_persona" on array', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

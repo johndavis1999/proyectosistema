@@ -13,13 +13,13 @@ class Facturacion extends BaseController{
         $data['paginador']=$paginador;
         $titulo = "Facturas";
         $data['titulo'] = $titulo;
-        return view('facturacion/index', $data);
+        return view('ventas/index', $data);
     }
     
     public function crear()
     {
         $titulo = "Facturacion";
-        return view('Facturacion/crearFact', ['titulo' => $titulo]);
+        return view('ventas/crearFact', ['titulo' => $titulo]);
     }
     
     public function ver()

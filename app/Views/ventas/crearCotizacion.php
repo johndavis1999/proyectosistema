@@ -51,11 +51,18 @@
                                             </select>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-lg-4 col-12">
                                         <div class="form-group">
                                             <label for="fecha_doc">Fecha emision</label>
                                             <input type="date" class="form-control" id="fecha_doc" value="<?= date('Y-m-d') ?>" name="fecha_doc" onclick="mostrarCalendario()"/>
                                         </div>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label for="numero-factura">Vendedor:</label>
+                                        <input  class="form-control" type="text" value="<?= $vendedor['nombres']?>" disabled>
+                                        <input  type="hidden" name="id_vendedor" value="<?= $vendedor['id'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -329,9 +336,9 @@ toastr.options = {
     htmlRows += '<input type="hidden" name="id_producto[]" id="id_producto_'+count+'" />';
     htmlRows += '</td>';
     htmlRows += '<td><input type="text" name="stock_producto[]" id="stock_producto_'+count+'" class="form-control stock_producto" autocomplete="off" disabled></td>';  
-    htmlRows += '<td><input type="text" name="cantidad_venta[]" id="cantidad_venta_'+count+'" class="form-control cantidad_venta" autocomplete="off" required oninput="this.value = permitirNumerosDecimales(this)" step="1" min="1"></td>';
+    htmlRows += '<td><input type="number" name="cantidad_venta[]" id="cantidad_venta_'+count+'" class="form-control cantidad_venta" autocomplete="off" required oninput="this.value = permitirNumerosDecimales(this)" step="1" min="1"></td>';
 
-    htmlRows += '<td><input type="text" name="precio_venta[]" id="precio_venta_'+count+'" class="form-control precio_venta" autocomplete="off" oninput="this.value = permitirNumerosDecimales(this)"></td>'; 
+    htmlRows += '<td><input type="text" name="precio_venta[]" id="precio_venta_'+count+'" class="form-control precio_venta" autocomplete="off" oninput="this.value = permitirNumerosDecimales(this)" readonly></td>'; 
     htmlRows += '<td><input type="text" name="descuento_item[]" id="descuento_item_'+count+'" class="form-control descuento_item" autocomplete="off" value="0" oninput="this.value = porcentajedescuento(this)"></td>'; 
     htmlRows += '<td><input type="text" name="iva_producto[]" id="iva_producto_'+count+'" class="form-control iva_producto" autocomplete="off" value="0" oninput="this.value = permitirNumerosDecimales(this)" readonly></td>'; 
     htmlRows += '<td><input type="text" name="monto_subtotal_item[]" id="monto_subtotal_item_'+count+'" class="form-control monto_subtotal_item" autocomplete="off" readonly oninput="this.value = permitirNumerosDecimales(this)"></td>'; 
@@ -384,6 +391,12 @@ toastr.options = {
         var maxStock = stockProducto.value;
         console.log(maxStock);
 */
+
+
+        var descuento = obtenerDescuentoProducto(productoId);
+        var DescuentoProducto = document.getElementById("descuento_item_" + count);
+        DescuentoProducto.value = descuento;
+        console.log(DescuentoProducto.value);
     });
 });
     // Función para obtener el precio de un producto por su ID
@@ -404,6 +417,17 @@ toastr.options = {
         for (var i = 0; i < productos.length; i++) {
             if (productos[i].id == productoId) {
                 return productos[i].stock;
+            }
+        }
+        return 0; // Devolver cero si no se encontró el producto
+    }
+    // Función para obtener el Descuento de un producto por su ID
+    function obtenerDescuentoProducto(productoId) {
+        // Recorrer la lista de productos y buscar el Descuento del producto con el ID especificado
+        var productos = <?php echo json_encode($productos); ?>;
+        for (var i = 0; i < productos.length; i++) {
+            if (productos[i].id == productoId) {
+                return productos[i].descuento;
             }
         }
         return 0; // Devolver cero si no se encontró el producto

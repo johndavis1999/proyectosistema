@@ -1,0 +1,453 @@
+CRITICAL - 2023-07-02 03:03:33 --> Undefined variable $compras
+in APPPATH\Views\ventas\cotizaciones.php on line 59.
+ 1 APPPATH\Views\ventas\cotizaciones.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compras', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(19): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:07:22 --> Undefined variable $compras
+in APPPATH\Views\ventas\cotizaciones.php on line 59.
+ 1 APPPATH\Views\ventas\cotizaciones.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compras', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(23): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:07:28 --> Undefined array key "num_fact"
+in APPPATH\Views\ventas\cotizaciones.php on line 63.
+ 1 APPPATH\Views\ventas\cotizaciones.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "num_fact"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 63)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(23): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:07:32 --> Undefined variable $compras
+in APPPATH\Views\ventas\cotizaciones.php on line 59.
+ 1 APPPATH\Views\ventas\cotizaciones.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compras', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 59)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(23): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:08:04 --> Undefined array key "num_fact"
+in APPPATH\Views\ventas\cotizaciones.php on line 63.
+ 1 APPPATH\Views\ventas\cotizaciones.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "num_fact"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 63)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(23): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:08:14 --> Undefined array key "cantidad_registros"
+in APPPATH\Views\ventas\cotizaciones.php on line 66.
+ 1 APPPATH\Views\ventas\cotizaciones.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cantidad_registros"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(23): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:09:06 --> Undefined variable $detalleCotizacion
+in APPPATH\Controllers\Cotizacion.php on line 26.
+ 1 APPPATH\Controllers\Cotizacion.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $detalleCotizacion', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 26)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:09:20 --> Undefined array key "cantidad_registros"
+in APPPATH\Views\ventas\cotizaciones.php on line 66.
+ 1 APPPATH\Views\ventas\cotizaciones.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cantidad_registros"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(29): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:09:36 --> Undefined array key "num_fact"
+in APPPATH\Views\ventas\cotizaciones.php on line 91.
+ 1 APPPATH\Views\ventas\cotizaciones.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "num_fact"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 91)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(29): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:23:40 --> Undefined array key "vendedor"
+in APPPATH\Views\ventas\cotizaciones.php on line 66.
+ 1 APPPATH\Views\ventas\cotizaciones.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "vendedor"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(29): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-02 03:24:28 --> mysqli_sql_exception: Not unique table/alias: 'personas' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-02 03:24:28 --> Not unique table/alias: 'personas'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', [], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-02 03:26:36 --> mysqli_sql_exception: Unknown column 'personas.id' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-02 03:26:36 --> Unknown column 'personas.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `personas`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', [], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-02 03:26:50 --> mysqli_sql_exception: Unknown column 'personas.id' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-02 03:26:50 --> Unknown column 'personas.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', [], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-02 03:26:52 --> mysqli_sql_exception: Unknown column 'personas.id' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-02 03:26:52 --> Unknown column 'personas.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `personas`.`id` = `cotizaciones`.`id_vendedor`', [], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cotizacion.php(19): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:36:23 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\registrar.php on line 72.
+ 1 APPPATH\Views\pagos\registrar.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\registrar.php', 72)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\registrar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/registrar', [], true)
+ 5 APPPATH\Controllers\Pago.php(124): view('pagos/registrar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->registrar('13')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:36:27 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\registrar.php on line 72.
+ 1 APPPATH\Views\pagos\registrar.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\registrar.php', 72)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\registrar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/registrar', [], true)
+ 5 APPPATH\Controllers\Pago.php(124): view('pagos/registrar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->registrar('13')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 03:55:36 --> syntax error, unexpected token "->"
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Cotizacion')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Cotizacion')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Cotizacion', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 04:14:11 --> syntax error, unexpected token "->"
+in APPPATH\Controllers\Cotizacion.php on line 50.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Cotizacion')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Cotizacion')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Cotizacion', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 05:44:29 --> Undefined variable $lastInsertId
+in APPPATH\Controllers\Cotizacion.php on line 173.
+ 1 APPPATH\Controllers\Cotizacion.php(173): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lastInsertId', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 173)
+ 2 APPPATH\Controllers\Cotizacion.php(165): App\Controllers\Cotizacion->reversarStockEgreso('20')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->eliminar('20')
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:16:29 --> Call to undefined method App\Controllers\Cotizacion::obtenerItemsCompra()
+in APPPATH\Controllers\Cotizacion.php on line 205.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:17:34 --> Invalid file: "ventas/consultarCotizacion.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('ventas/consultarCotizacion.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 3 APPPATH\Controllers\Cotizacion.php(207): view('ventas/consultarCotizacion', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:17:53 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\consultarCotizacion.php on line 38.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(207): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:18:10 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\consultarCotizacion.php on line 38.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(207): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:18:22 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\consultarCotizacion.php on line 38.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(207): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:18:29 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\consultarCotizacion.php on line 37.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 37)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(207): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:18:47 --> Undefined variable $vendedor
+in APPPATH\Views\ventas\consultarCotizacion.php on line 63.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedor', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 63)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(207): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:19:07 --> Undefined variable $vendedor
+in APPPATH\Views\ventas\consultarCotizacion.php on line 64.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedor', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 64)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(207): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:33:22 --> Undefined variable $cantidad_compra
+in APPPATH\Views\ventas\consultarCotizacion.php on line 137.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cantidad_compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 137)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(214): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:33:35 --> Undefined variable $cantidad_compra
+in APPPATH\Views\ventas\consultarCotizacion.php on line 137.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cantidad_compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 137)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(214): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:33:52 --> Undefined variable $cantidad_compra
+in APPPATH\Views\ventas\consultarCotizacion.php on line 137.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cantidad_compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 137)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(214): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:33:54 --> Undefined variable $cantidad_compra
+in APPPATH\Views\ventas\consultarCotizacion.php on line 137.
+ 1 APPPATH\Views\ventas\consultarCotizacion.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cantidad_compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php', 137)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\consultarCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/consultarCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(214): view('ventas/consultarCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->consultar('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:40:21 --> Invalid file: "Facturacion/crearFact.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Facturacion/crearFact.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('Facturacion/crearFact', [], true)
+ 3 APPPATH\Controllers\Facturacion.php(22): view('Facturacion/crearFact', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Facturacion->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Facturacion))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-02 06:40:39 --> Invalid file: "Facturacion/crearFact.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Facturacion/crearFact.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('Facturacion/crearFact', [], true)
+ 3 APPPATH\Controllers\Facturacion.php(22): view('Facturacion/crearFact', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Facturacion->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Facturacion))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
