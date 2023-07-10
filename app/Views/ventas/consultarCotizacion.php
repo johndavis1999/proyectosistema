@@ -1,6 +1,6 @@
 <?= $this->extend('templates/admin_template') ?>
 <?= $this->section('content',$titulo) ?>
-
+prueba
 <link rel="stylesheet" href="<?= base_url('public/plugins/toastr/toastr.min.css') ?>">
 <section class="content-header">
     <div class="container-fluid">
