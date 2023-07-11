@@ -48,7 +48,7 @@
                     <tr>
                       <th>Cliente</th>
                       <th>Vendedor</th>
-                      <th>Cotización</th>
+                      <th>Documento</th>
                       <th>Fecha</th>
                       <th>Total</th>
                       <th>Items</th>
@@ -64,7 +64,7 @@
                           <tr> 
                             <td><?= $cotizacion['persona'];?></td>
                             <td><?= $cotizacion['vendedor'];?></td>
-                            <td><?= $cotizacion['num_cot'];?></td>
+                            <td><a href="<?=base_url('consultarCotizacion/'.$cotizacion['id']);?>">Cotizacion #<?= $cotizacion['num_cot'];?></a></td>
                             <td><?= $cotizacion['fecha_doc'];?></td>
                             <td><?= $cotizacion['total'];?></td>
                             <td><?= $cotizacion['cantidad_registros'];?></td>
@@ -83,7 +83,7 @@
                                   <?php 
                                     if($cotizacion['total'] != $cotizacion['valor_pagado']){
                                   ?>
-                                    <li><a class="dropdown-item" href="<?=base_url('registraPago/'.$cotizacion['id']);?>"><i class="fas fa-coins"></i> Registrar Pago</a></li>
+                                    <li><a class="dropdown-item" href="<?=base_url('registraCobro/'.$cotizacion['id']);?>"><i class="fas fa-coins"></i> Registrar Cobro</a></li>
                                   <?php 
                                     }
                                   ?>

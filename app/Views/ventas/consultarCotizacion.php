@@ -1,6 +1,6 @@
 <?= $this->extend('templates/admin_template') ?>
 <?= $this->section('content',$titulo) ?>
-prueba
+
 <link rel="stylesheet" href="<?= base_url('public/plugins/toastr/toastr.min.css') ?>">
 <section class="content-header">
     <div class="container-fluid">
@@ -17,56 +17,56 @@ prueba
           </ol>
         </div>
       </div>
+        <div class="row mb-4 mt-3">
+          <div class="col2">
+            <a class="btn btn-block btn-primary" href="<?=base_url('editarCotizacion/'.$cotizacion['id']);?>"><i class="fas fa-edit"></i> Editar Documento</a>
+          </div>
+          <div class="col2 ml-3">
+            <button type="button" class="btn btn-block btn-success" onclick='window.location.href="UsuariosCrear"'><i class="fas fa-plus"></i> Ver PDF Documento</button>
+          </div>
+          <?php 
+            if($cotizacion['total'] != $cotizacion['valor_pagado']){
+        ?>
+            <div class="col2 ml-3">
+            <a type="button" class="btn btn-block btn-success" href="<?=base_url('registraPago/'.$cotizacion['id']);?>"><i class="fas fa-coins"></i> Registrar Pago</a>
+            </div>
+        <?php 
+            }
+          ?>
+          <div class="col2 ml-3">
+            <a class="btn btn-block btn-primary" href="<?=base_url('editarCotizacion/'.$cotizacion['id']);?>"><i class="fas fa-edit"></i> Generar Factura</a>
+          </div>
+        </div>
+        <?php if(session('mensaje')){?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo session('mensaje') ?>
+            </div>
+        <?php }  ?> 
+        <?php if(session('exito')){?>
+            <div class="alert alert-success" role="alert">
+                <?php echo session('exito') ?>
+            </div>
+        <?php }  ?> 
       <div class="" style="justify-content: center; align-items: center;">
           <div class="">
               <div class="card card-primary">
-                  <div class="card-header">
-                      <h3 class="card-title">Formulario de Registro de Cotización</h3>
-                  </div>
-                        <div class="card-body">
-                            <?php if(session('mensaje')){?>
-                                <div class="alert alert-danger" role="alert">
-                                    <?php echo session('mensaje') ?>
-                                </div>
-                            <?php }  ?> 
-                            <div>
-                                <div class="row">
-                                    <div class="col-lg-4 col-12">
-                                        <div class="form-group">
-                                            <label for="numero-factura">Num. Cotizacion:</label>
-                                            <input  class="form-control" type="text" id="num_cot" name="num_cot" value="<?= $cotizacion['num_cot'] ?>" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12">
-                                        <div class="form-group">
-                                            <label for="id_cliente">Seleccionar Cliente *</label>
-                                            <select id="id_cliente" name="id_cliente" class="selectpicker form-control" data-live-search="true" disabled>
-                                                <option value="">seleccione una persona</option>
-                                                <?php if($personas):?>
-                                                    <?php foreach($personas as $persona):?>
-                                                        <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizacion['id_cliente']) echo 'selected'; ?>>
-                                                            <?= $persona['nombres'] ?>
-                                                        </option>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                            </select>
-                                        </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-group">
+                                        <label for="numero-factura">Num. Cotizacion:</label>
+                                        <input  class="form-control" type="text" id="num_cot" name="num_cot" value="<?= $cotizacion['num_cot'] ?>" disabled>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-4 col-12">
-                                        <div class="form-group">
-                                            <label for="fecha_doc">Fecha emision</label>
-                                            <input type="date" class="form-control" id="fecha_doc" value="<?= date('Y-m-d') ?>" name="fecha_doc" onclick="mostrarCalendario()" disabled/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-4">
-                                        <label for="numero-factura">Vendedor:</label>
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-group">
+                                        <label for="id_cliente">Seleccionar Cliente *</label>
                                         <select id="id_cliente" name="id_cliente" class="selectpicker form-control" data-live-search="true" disabled>
-                                            <option value="">seleccione un vendedor</option>
+                                            <option value="">seleccione una persona</option>
                                             <?php if($personas):?>
                                                 <?php foreach($personas as $persona):?>
-                                                    <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizacion['id_vendedor']) echo 'selected'; ?>>
+                                                    <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizacion['id_cliente']) echo 'selected'; ?>>
                                                         <?= $persona['nombres'] ?>
                                                     </option>
                                                 <?php endforeach; ?>
@@ -75,167 +75,188 @@ prueba
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-group">
+                                        <label for="fecha_doc">Fecha emision</label>
+                                        <input type="date" class="form-control" id="fecha_doc" value="<?= date('Y-m-d') ?>" name="fecha_doc" onclick="mostrarCalendario()" disabled/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="numero-factura">Vendedor:</label>
+                                    <select id="id_cliente" name="id_cliente" class="selectpicker form-control" data-live-search="true" disabled>
+                                        <option value="">seleccione un vendedor</option>
+                                        <?php if($personas):?>
+                                            <?php foreach($personas as $persona):?>
+                                                <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizacion['id_vendedor']) echo 'selected'; ?>>
+                                                    <?= $persona['nombres'] ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Detalles de la Cotización</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body p-0">
-                                    <?php
-                                    $optionsHtml = '';
-                                    foreach ($productos as $producto) {
-                                        $optionsHtml .= '<option value="' . $producto['id'] . '">' . $producto['nombre'] . '</option>';
-                                    }
-                                    ?>
-                                    <div class="tablaForm">
-                                        <div class="table-wrapper">
-                                            <table class="table table-responsive-sm" id="facturaItems" style="width: 100%;">
-                                                <tr>
-                                                    <th>Producto</th>
-                                                    <th>Cantidad</th>
-                                                    <th>Precio</th>
-                                                    <th>% Descuento</th>
-                                                    <th>IVA</th>
-                                                    <th>Subtotal</th>
-                                                    <th>Total</th>
-                                                </tr>
-                                                <!--Primera fila de la tabla con los campos del primer producto-->
-                                                <?php
-                                                    // Iteramos a través de la lista de elementos de la orden
-                                                    
-                                                    $count = 0;
-                                                    foreach ($detalles as $detalle) {
-                                                        $count++;
-                                                        $id_producto = $detalle["producto"];
-                                                        $cantidad_venta = $detalle["cantidad"];
-                                                        $precio_venta = $detalle["precio"];
-                                                        $descuento_item = $detalle["descuento"];
-                                                        $iva_producto = $detalle["iva"];
-                                                        $monto_subtotal_item = $detalle["subtotal"];
-                                                        $monto_total_item = $detalle["total"];
-                                                ?>
-                                                <tr>
-                                                    <!--<td><input class="itemRow" type="checkbox"></td>-->
-                                                    <td>
-                                                        <!-- Creamos un menú desplegable para seleccionar el producto -->
-                                                        <select class="selectpicker form-control" data-live-search="true" name="id_producto[]" id="id_productoSelect_'+count+'" aria-label="Disabled select example" required onchange="deshabilitarSelect(this)" disabled>
-                                                            <option value="" selected>Seleccionar producto</option>
-                                                            <!-- Iteramos a través de la lista de productos y creamos una opción para cada uno -->
-                                                            <?php foreach ($productos as $producto): ?>
-                                                            <option value="<?php echo $producto['id']; ?>" <?php if ($id_producto == $producto['id']) { echo 'selected'; } ?>><?php echo $producto['nombre']; ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>
-                                                    </td>
-                                                    <td><input type="text" value="<?= $cantidad_venta ?>" name="cantidad_venta[]" id="cantidad_venta_<?php echo $count; ?>" class="form-control cantidad_venta" disabled></td>
-                                                    <td><input type="number" value="<?= $precio_venta ?>" name="precio_venta[]" id="precio_venta_<?php echo $count; ?>" class="form-control precio_venta" disabled></td>
-                                                    <td><input type="text" value="<?= $descuento_item ?>" name="descuento_item[]" id="descuento_item_<?php echo $count; ?>" class="form-control descuento_item" disabled></td>
-                                                    <td><input type="text" value="<?= $iva_producto ?>" name="iva_producto[]" id="iva_producto_<?php echo $count; ?>" class="form-control iva_producto" disabled></td>
-                                                    <td><input type="text" value="<?= $monto_subtotal_item ?>" name="monto_subtotal_item[]" id="monto_subtotal_item_<?php echo $count; ?>" class="form-control monto_subtotal_item" disabled></td>
-                                                    <td><input type="text" value="<?= $monto_total_item ?>" name="monto_total_item[]" id="monto_total_item_<?php echo $count; ?>" class="form-control monto_total_item" disabled></td>
-                                                </tr>
-                                                <?php } ?>
-                                            </table>
-                                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Detalles de la Cotización</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <?php
+                                $optionsHtml = '';
+                                foreach ($productos as $producto) {
+                                    $optionsHtml .= '<option value="' . $producto['id'] . '">' . $producto['nombre'] . '</option>';
+                                }
+                                ?>
+                                <div class="tablaForm">
+                                    <div class="table-wrapper">
+                                        <table class="table table-responsive-sm" id="facturaItems" style="width: 100%;">
+                                            <tr>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>Precio</th>
+                                                <th>% Descuento</th>
+                                                <th>IVA</th>
+                                                <th>Subtotal</th>
+                                                <th>Total</th>
+                                            </tr>
+                                            <!--Primera fila de la tabla con los campos del primer producto-->
+                                            <?php
+                                                // Iteramos a través de la lista de elementos de la orden
+                                                
+                                                $count = 0;
+                                                foreach ($detalles as $detalle) {
+                                                    $count++;
+                                                    $id_producto = $detalle["producto"];
+                                                    $cantidad_venta = $detalle["cantidad"];
+                                                    $precio_venta = $detalle["precio"];
+                                                    $descuento_item = $detalle["descuento"];
+                                                    $iva_producto = $detalle["iva"];
+                                                    $monto_subtotal_item = $detalle["subtotal"];
+                                                    $monto_total_item = $detalle["total"];
+                                            ?>
+                                            <tr>
+                                                <!--<td><input class="itemRow" type="checkbox"></td>-->
+                                                <td>
+                                                    <!-- Creamos un menú desplegable para seleccionar el producto -->
+                                                    <select class="selectpicker form-control" data-live-search="true" name="id_producto[]" id="id_productoSelect_'+count+'" aria-label="Disabled select example" required onchange="deshabilitarSelect(this)" disabled>
+                                                        <option value="" selected>Seleccionar producto</option>
+                                                        <!-- Iteramos a través de la lista de productos y creamos una opción para cada uno -->
+                                                        <?php foreach ($productos as $producto): ?>
+                                                        <option value="<?php echo $producto['id']; ?>" <?php if ($id_producto == $producto['id']) { echo 'selected'; } ?>><?php echo $producto['nombre']; ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </td>
+                                                <td><input type="text" value="<?= $cantidad_venta ?>" name="cantidad_venta[]" id="cantidad_venta_<?php echo $count; ?>" class="form-control cantidad_venta" disabled></td>
+                                                <td><input type="number" value="<?= $precio_venta ?>" name="precio_venta[]" id="precio_venta_<?php echo $count; ?>" class="form-control precio_venta" disabled></td>
+                                                <td><input type="text" value="<?= $descuento_item ?>" name="descuento_item[]" id="descuento_item_<?php echo $count; ?>" class="form-control descuento_item" disabled></td>
+                                                <td><input type="text" value="<?= $iva_producto ?>" name="iva_producto[]" id="iva_producto_<?php echo $count; ?>" class="form-control iva_producto" disabled></td>
+                                                <td><input type="text" value="<?= $monto_subtotal_item ?>" name="monto_subtotal_item[]" id="monto_subtotal_item_<?php echo $count; ?>" class="form-control monto_subtotal_item" disabled></td>
+                                                <td><input type="text" value="<?= $monto_total_item ?>" name="monto_total_item[]" id="monto_total_item_<?php echo $count; ?>" class="form-control monto_total_item" disabled></td>
+                                            </tr>
+                                            <?php } ?>
+                                        </table>
                                     </div>
                                 </div>
-                                <!-- /.card-body -->
                             </div>
+                            <!-- /.card-body -->
+                        </div>
 
-                            <div class="row">  
-                                <div class="col-8">           
-                                    <div class="form-group">
-                                        <label for="textAreaRemark">Descripcion</label>
-                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()" disabled><?= $cotizacion['descripcion'] ?></textarea>
-                                        <p id="contadorCaracteres">Caracteres restantes: 250/250</p>
+                        <div class="row">  
+                            <div class="col-8">           
+                                <div class="form-group">
+                                    <label for="textAreaRemark">Descripcion</label>
+                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()" disabled><?= $cotizacion['descripcion'] ?></textarea>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="subtotal">Subtotal:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control align-right" id="subtotal" value="<?= $cotizacion['subtotal_cotizacion'] ?>" name="subtotal_cotizacion" placeholder="Subtotal"  disabled>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="subtotal">Subtotal:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control align-right" id="subtotal" value="<?= $cotizacion['subtotal_cotizacion'] ?>" name="subtotal_cotizacion" placeholder="Subtotal"  disabled>
+                                <div class="form-group">
+                                    <label for="val_descuento">Descuento:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </span>
                                         </div>
+                                        <input type="text" class="form-control align-right" id="val_descuento" value="<?= $cotizacion['val_descuento'] ?>" name="val_descuento" placeholder="Valor Descuento"  disabled>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="val_descuento">Descuento:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control align-right" id="val_descuento" value="<?= $cotizacion['val_descuento'] ?>" name="val_descuento" placeholder="Valor Descuento"  disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="val_iva">Valor IVA:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </span>
                                         </div>
+                                        <input type="text" class="form-control align-right" id="iva" value="<?= $cotizacion['val_iva'] ?>" name="val_iva" placeholder="Valor IVA"  disabled>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="val_iva">Valor IVA:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control align-right" id="iva" value="<?= $cotizacion['val_iva'] ?>" name="val_iva" placeholder="Valor IVA"  disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="total">Valor Total:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </span>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="total">Valor Total:</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                </span>
-                                            </div>
-                                            <input type="text" class="form-control align-right" id="total" value="<?= $cotizacion['total'] ?>" name="total" placeholder="Valor Total" >
-                                        </div>
+                                        <input type="text" class="form-control align-right" id="total" value="<?= $cotizacion['total'] ?>" name="total" placeholder="Valor Total" >
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Agrega un modal con el id "selectionModal" -->
-                        <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="selectionModalLabel">Mensaje de advertencia</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Por favor, seleccione al menos un producto.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    </div>
+                    </div>
+                    <!-- Agrega un modal con el id "selectionModal" -->
+                    <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="selectionModalLabel">Mensaje de advertencia</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Por favor, seleccione al menos un producto.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Agrega un modal con el id "customModal" -->
-                        <div class="modal fade" id="customModal" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="customModalLabel">Mensaje de advertencia</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Debe seleccionar un producto en la fila anterior antes de agregar una nueva fila.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    </div>
+                    </div>
+                    <!-- Agrega un modal con el id "customModal" -->
+                    <div class="modal fade" id="customModal" tabindex="-1" role="dialog" aria-labelledby="customModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="customModalLabel">Mensaje de advertencia</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Debe seleccionar un producto en la fila anterior antes de agregar una nueva fila.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>
+                    </div>
               </div>
           </div>
       </div>

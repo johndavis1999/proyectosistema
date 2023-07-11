@@ -118,7 +118,10 @@ class Cotizacion extends BaseController{
         $lastInsertId = $cotizacion->insertID();
         $this->guardarDetalle($lastInsertId);
         $this->actualizarStockEgreso($lastInsertId);
-        return $this->response->redirect(site_url('Cotizaciones'));
+        #return $this->response->redirect(site_url('consultarCotizacion/'.$lastInsertId));
+        
+        return redirect()->to(base_url('consultarCotizacion/'.$lastInsertId))->with('exito', 'Cotizacion Creada Exitosamente');
+       
         
     }
 
@@ -221,5 +224,122 @@ class Cotizacion extends BaseController{
             ->where('id_cotizacion', $id)
             ->orderBy('detalle_cotizacion.id', 'ASC')
             ->findAll();
+    }
+    
+    public function editar($id=null){
+        $cotizaciones = new Cotizaciones();
+        $data['cotizacion'] = $cotizaciones->where('id',$id)->first();
+        $persona = new Personas();
+        $data['personas'] = $persona->where('es_cliente', '1')
+                                    ->orderBy('id', 'ASC')
+                                    ->findAll();
+
+        $data['vendedores'] = $persona->where('es_empleado', '1')
+                                      ->where('id_cargo', '3')
+                                      ->orderBy('id', 'ASC')
+                                      ->findAll();
+
+        $producto = new Productos();
+        $data['productos'] = $producto->where('estado', '1')
+                                    ->orderBy('id', 'ASC')
+                                    ->findAll();
+        $titulo = "Cotizaciones";
+        $data['titulo'] = $titulo;
+        $data['detalles'] = $this->obtenerItemsCotizacion($id);
+
+        return view('ventas/editarCotizacion', $data);
+    }
+
+    public function actualizar($id = null){
+        
+        $cotizacion = new Cotizaciones();
+
+
+        $id = $this->request->getVar('id');
+        $id_cliente = $this->request->getVar('id_cliente');
+        $id_vendedor = $this->request->getVar('id_vendedor');
+        $fecha_doc = $this->request->getVar('fecha_doc');
+        $descripcion = $this->request->getVar('descripcion');
+        $subtotal_cotizacion = $this->request->getVar('subtotal_cotizacion');
+        $val_descuento = $this->request->getVar('val_descuento');
+        $val_iva = $this->request->getVar('val_iva');
+        $total = $this->request->getVar('total');
+        $estado = $this->request->getVar('estado');
+        $aprobado = $this->request->getVar('aprobado');
+        $estadoOriginal = $this->request->getVar('estado_original');
+
+        $validacion = $this->validate([
+            #'num_cot'=>'numeric',
+            'id_cliente'=>'required|numeric',
+            'id_vendedor'=>'required|numeric',
+            'fecha_doc' => 'required',
+            'descripcion' => 'max_length[250]',
+            'subtotal_cotizacion' => 'numeric',
+            'val_descuento' => 'numeric',
+            'val_iva' => 'required|numeric',
+            'total' => 'required|numeric',
+            'estado' => 'required|numeric',
+            'aprobado' => 'required|numeric',
+        ]);
+        if(!$validacion){
+            $session = session();
+            $session->setFlashData('mensaje','Revise la información');
+            return redirect()->back()->withInput();
+        }
+
+        
+        
+        $datos=[
+            'id_cliente'=>$id_cliente,
+            'id_vendedor'=>$id_vendedor,
+            'fecha_doc'=>$fecha_doc,
+            'descripcion'=>$descripcion,
+            'subtotal_cotizacion'=>$subtotal_cotizacion,
+            'val_descuento'=>$val_descuento,
+            'val_iva'=>$val_iva,
+            'total'=>$total,
+            'aprobado'=>$aprobado,
+            'estado'=>$estado
+        ];
+    
+        $cotizacion->update($id,$datos);
+        
+        if($estado == '0'){
+            if($estadoOriginal == '0'){
+                #$this->reversarStockEgreso($id);
+                $this->eliminarEgresoDetalle($id);
+                $this->guardarDetalle($id);
+                #$this->actualizarStockEgreso($id);
+            }
+        }
+        
+        if($estado == '1'){
+            if($estadoOriginal == '0'){
+                #$this->reversarStockEgreso($id);
+                $this->eliminarEgresoDetalle($id);
+                $this->guardarDetalle($id);
+                $this->actualizarStockEgreso($id);
+            }
+        }
+        
+        if($estado == '0'){
+            if($estadoOriginal == '1'){
+                $this->reversarStockEgreso($id);
+                $this->eliminarEgresoDetalle($id);
+                $this->guardarDetalle($id);
+                #$this->actualizarStockEgreso($id);
+            }
+        }
+        
+        if($estado == '1'){
+            if($estadoOriginal == '1'){
+                $this->reversarStockEgreso($id);
+                $this->eliminarEgresoDetalle($id);
+                $this->guardarDetalle($id);
+                $this->actualizarStockEgreso($id);
+            }
+        }
+        return redirect()->to(base_url('consultarCotizacion/'.$id))->with('exito', 'Cotizacion Actualizada exitosamente');
+        
     }
 }

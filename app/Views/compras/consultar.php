@@ -19,7 +19,7 @@
         </div>
         <div class="row mb-4 mt-3">
           <div class="col2">
-            <a class="btn btn-block btn-primary" href="<?=base_url('editarCompra/'.$compra['id']);?>"><i class="fas fa-plus"></i> Editar Documento</a>
+            <a class="btn btn-block btn-primary" href="<?=base_url('editarCompra/'.$compra['id']);?>"><i class="fas fa-edit"></i> Editar Documento</a>
           </div>
           <div class="col2 ml-3">
             <button type="button" class="btn btn-block btn-success" onclick='window.location.href="UsuariosCrear"'><i class="fas fa-plus"></i> Ver PDF Documento</button>

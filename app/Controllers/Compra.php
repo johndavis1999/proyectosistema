@@ -539,7 +539,7 @@ class Compra extends BaseController{
         $this->eliminarIngresoDetalle($id);
         $this->guardarDetalle($id);
         $this->actualizarStockIngreso($id);
-        return redirect()->to(base_url('Compras'))->with('exito', 'Compra Actualizada exitosamente');
+        return redirect()->to(base_url('Compras'))->with('exito', 'Compra Actualizada Exitosamente');
     }
 
     public function generarExcel($num_fact, $proveedorFiltro, $fecha_inicio, $fecha_fin, $iva, $pagado, $descuento, $estado){
