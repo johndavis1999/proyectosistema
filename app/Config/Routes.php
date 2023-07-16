@@ -144,9 +144,20 @@ $routes->get('cotizacionCrear', 'Cotizacion::crear', ['filter' => 'verificarSesi
 $routes->post('guardarCotizacion', 'Cotizacion::guardar', ['filter' => 'verificarSesion']);
 $routes->get('eliminarCotizacion/(:num)', 'Cotizacion::eliminar/$1', ['filter' => 'verificarSesion']);
 $routes->get('consultarCotizacion/(:num)', 'Cotizacion::consultar/$1', ['filter' => 'verificarSesion']);
+$routes->get('editarCotizacion/(:num)', 'Cotizacion::editar/$1', ['filter' => 'verificarSesion']);
+$routes->post('actualizarCotizacion', 'Cotizacion::actualizar', ['filter' => 'verificarSesion']);
 
 $routes->get('crearFact', 'Facturacion::crear', ['filter' => 'verificarSesion']);
 $routes->get('  ', 'Facturacion::ver', ['filter' => 'verificarSesion']);
+
+#cobros
+$routes->get('Cobros', 'Cobro::index', ['filter' => 'verificarSesion']);
+$routes->get('registraCobro/(:num)', 'Cobro::registrar/$1', ['filter' => 'verificarSesion']);
+$routes->post('guardarCobro', 'Cobro::guardar', ['filter' => 'verificarSesion']);
+$routes->get('eliminarCobro/(:num)', 'Cobro::eliminar/$1', ['filter' => 'verificarSesion']);
+$routes->get('editarCobro/(:num)', 'Cobro::editar/$1', ['filter' => 'verificarSesion']);
+$routes->post('actualizarCobro', 'Cobro::actualizar', ['filter' => 'verificarSesion']);
+$routes->get('consultarCobro/(:num)', 'Cobro::consultar/$1', ['filter' => 'verificarSesion']);
 
 #pagos
 $routes->get('Pagos', 'Pago::index', ['filter' => 'verificarSesion']);

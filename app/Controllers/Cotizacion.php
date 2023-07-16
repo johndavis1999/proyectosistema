@@ -7,6 +7,7 @@ use App\Models\Personas;
 use App\Models\Users;
 use App\Models\Productos;
 use App\Models\DetalleCotizacion;
+use App\Models\Cobros;
 
 class Cotizacion extends BaseController{
     
@@ -163,6 +164,14 @@ class Cotizacion extends BaseController{
     public function eliminar($id = null) {
         $cotizaciones = new Cotizaciones();
         $cotizacion = $cotizaciones->find($id);
+        
+        $cobros = new Cobros();
+        $cobro = $cobros->consultarCobro($id);
+        if ($cobro) {
+            $session = session();
+            $session->setFlashData('mensaje','No se puede eliminar el documento ya que cuenta con cobros relacionados');
+            return redirect()->back()->withInput();
+        }
 
         $cotizaciones->where('id', $id)->delete($id);
         $this->reversarStockEgreso($id);

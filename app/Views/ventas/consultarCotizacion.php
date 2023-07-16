@@ -13,7 +13,7 @@
           <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Inicio</a></li>
               <li class="breadcrumb-item"><a href="<?= base_url('Cotizaciones') ?>">Cotizaciones</a></li>
-              <li class="breadcrumb-item active">Cotización</li>
+              <li class="breadcrumb-item active">Consultar</li>
           </ol>
         </div>
       </div>
@@ -28,7 +28,7 @@
             if($cotizacion['total'] != $cotizacion['valor_pagado']){
         ?>
             <div class="col2 ml-3">
-            <a type="button" class="btn btn-block btn-success" href="<?=base_url('registraPago/'.$cotizacion['id']);?>"><i class="fas fa-coins"></i> Registrar Pago</a>
+            <a type="button" class="btn btn-block btn-success" href="<?=base_url('registraCobro/'.$cotizacion['id']);?>"><i class="fas fa-coins"></i> Cobrar</a>
             </div>
         <?php 
             }
@@ -55,7 +55,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-12">
                                     <div class="form-group">
-                                        <label for="numero-factura">Num. Cotizacion:</label>
+                                        <label for="numero-factura">Num. Cotización:</label>
                                         <input  class="form-control" type="text" id="num_cot" name="num_cot" value="<?= $cotizacion['num_cot'] ?>" disabled>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-12">
                                     <div class="form-group">
-                                        <label for="fecha_doc">Fecha emision</label>
+                                        <label for="fecha_doc">Fecha emisión</label>
                                         <input type="date" class="form-control" id="fecha_doc" value="<?= date('Y-m-d') ?>" name="fecha_doc" onclick="mostrarCalendario()" disabled/>
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@
                         <div class="row">  
                             <div class="col-8">           
                                 <div class="form-group">
-                                    <label for="textAreaRemark">Descripcion</label>
+                                    <label for="textAreaRemark">Descripción</label>
                                     <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()" disabled><?= $cotizacion['descripcion'] ?></textarea>
                                 </div>
                             </div>

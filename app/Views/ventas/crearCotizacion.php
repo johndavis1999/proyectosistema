@@ -378,25 +378,33 @@ toastr.options = {
         valIvaProducto = ivaProducto.value;
         asignarIvaItem(count);
 
+        var inventariable = obtenerInventariable(productoId);
+        console.log("inventariable: " + inventariable);
         
         //se declara variables para obtener stock del productos
         var stock = obtenerStockProducto(productoId);
-        var stockProducto = document.getElementById("stock_producto_" + count);
-        stockProducto.value = stock;
-        console.log(stockProducto.value);
-        // asignar maximo estock
-        var maxInput = document.getElementById("cantidad_venta_" + count);
-        maxInput.setAttribute('max', stock);
-        /*
-        var maxStock = stockProducto.value;
-        console.log(maxStock);
-*/
+        if (inventariable == 1){
+            var stockProducto = document.getElementById("stock_producto_" + count);
+            stockProducto.value = stock;
+            console.log(stockProducto.value);
+            // asignar maximo estock
+            var maxInput = document.getElementById("cantidad_venta_" + count);
+            maxInput.setAttribute('max', stock);
+            /*
+            var maxStock = stockProducto.value;
+            console.log(maxStock);
+            */
+        } else{
+            var stockProducto = document.getElementById("stock_producto_" + count);
+            stockProducto.value = "N/A";
+        }
 
 
         var descuento = obtenerDescuentoProducto(productoId);
         var DescuentoProducto = document.getElementById("descuento_item_" + count);
         DescuentoProducto.value = descuento;
         console.log(DescuentoProducto.value);
+
     });
 });
     // Función para obtener el precio de un producto por su ID
@@ -421,6 +429,19 @@ toastr.options = {
         }
         return 0; // Devolver cero si no se encontró el producto
     }
+    
+    // Función para obtenersi el producto es inventariable
+    function obtenerInventariable(productoId) {
+        // Recorrer la lista de productos y buscar el stock del producto con el ID especificado
+        var productos = <?php echo json_encode($productos); ?>;
+        for (var i = 0; i < productos.length; i++) {
+            if (productos[i].id == productoId) {
+                return productos[i].es_inventariable;
+            }
+        }
+        return 0; // Devolver cero si no se encontró el producto
+    }
+
     // Función para obtener el Descuento de un producto por su ID
     function obtenerDescuentoProducto(productoId) {
         // Recorrer la lista de productos y buscar el Descuento del producto con el ID especificado

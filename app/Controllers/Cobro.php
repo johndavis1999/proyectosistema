@@ -26,8 +26,9 @@ class Cobro extends BaseController{
         $titulo = "Cobros";
         $data['titulo'] = $titulo;
 
-        $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona')
+        $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, cotizaciones.num_cot as cotizacion')
                                 ->join('personas', 'personas.id = cobros.id_cliente', 'left')
+                                ->join('cotizaciones', 'cotizaciones.id = cobros.id_cotizacion', 'left')
                                 ->orderBy('cobros.id', 'DESC')
                                 ->orderBy('id','DESC')
                                 ->paginate(10);
@@ -216,8 +217,10 @@ class Cobro extends BaseController{
                 'doc_adjunto'=>$nuevoNombre
             ];
             $cobros->insert($datos);
+            $lastInsertId = $cobros->insertID();
             $this->sumarCobro($id_cotizacion,$valor_pagado);
-            return $this->response->redirect(site_url('Cobros'));
+            #return $this->response->redirect(site_url('Cobros'));
+            return redirect()->to(base_url('consultarCobro/'.$lastInsertId))->with('exito', 'Cobro Registrado Exitosamente');
         }
 
         $datos=[
@@ -235,10 +238,11 @@ class Cobro extends BaseController{
         ];
 
         $cobros->insert($datos);
-
+        $lastInsertId = $cobros->insertID();
         $this->sumarCobro($id_cotizacion,$valor_pagado);
 
-        return $this->response->redirect(site_url('Cobros'));
+        #return $this->response->redirect(site_url('Cobros'));
+        return redirect()->to(base_url('consultarCobro/'.$lastInsertId))->with('exito', 'Cobro Registrado Exitosamente');
     }
 
     protected function sumarCobro($id_cotizacion,$valor_pagado){
@@ -302,12 +306,12 @@ class Cobro extends BaseController{
     
     public function editar($id=null){
         $cobro = new Cobros();
-        $data['cobro'] = $cobro->select('cobros.*, cotizaciones.num_cot as cotizaciones,cotizaciones.total as  total_cotizacion, cotizaciones.valor_pagado as pagado')
+        $data['cobro'] = $cobro->select('cobros.*, cotizaciones.num_cot as cotizacion,cotizaciones.total as  total_cotizacion, cotizaciones.valor_pagado as pagado')
                                 ->join('cotizaciones', 'cotizaciones.id = cobros.id_cotizacion', 'left')
                                 ->where('cobros.id',$id)->first();
         $titulo = "Cobros";
         $persona = new Personas();
-        $data['personas'] = $persona->where('es_proveedor', '1')
+        $data['personas'] = $persona->where('es_cliente', '1')
                                     ->orderBy('id', 'ASC')
                                     ->findAll();
         
@@ -319,13 +323,12 @@ class Cobro extends BaseController{
         return view('cobros/editar', $data);
     }
     public function actualizar(){
-        $pago = new Pagos();
+        $cobro = new Cobros();
         $id = $this->request->getVar('id'); 
-        $valorPagoAnterior = $pago->find($id); // Obtén el pago anterior antes de la actualización
+        $valorCobroAnterior = $cobro->find($id); // Obtén el pago anterior antes de la actualización
         $fecha_registro = $this->request->getVar('fecha_registro'); 
         $forma_pago = $this->request->getVar('forma_pago'); 
-        $num_cheque = $this->request->getVar('num_cheque'); 
-        $num_transferencia = $this->request->getVar('num_transferencia'); 
+        $num_movimiento = $this->request->getVar('num_movimiento'); 
         $id_banco = $this->request->getVar('id_banco'); 
         $fecha_movimiento = $this->request->getVar('fecha_movimiento'); 
         $doc_adjunto = $this->request->getFile('doc_adjunto'); 
@@ -338,50 +341,33 @@ class Cobro extends BaseController{
         }
         
         if($forma_pago == 'Efectivo'){
-            $num_cheque = null;
-            $num_transferencia = null;
+            $num_movimiento = null;
             $id_banco = null;
             $fecha_movimiento = null;
-        } else {
-            if($forma_pago == 'Cheque'){
-                $num_transferencia = null;
-                $validacion = $this->validate([
-                    'num_cheque'=>'required|numeric',
-                    'id_banco'=>'required|numeric',
-                    'fecha_movimiento'=>'required|date',
-                ]);
-                if(!$validacion){
-                    $session = session();
-                    $session->setFlashData('mensaje','Revise la información');
-                    //return $this->response->redirect(site_url('/listar'));
-                    return redirect()->back()->withInput();
-                }
-            } else if($forma_pago == 'Transferencia'){
-                $num_cheque = null;
-                $validacion = $this->validate([
-                    'num_transferencia'=>'required|numeric',
-                    'id_banco'=>'required|numeric',
-                    'fecha_movimiento'=>'required|date',
-                ]);
-                if(!$validacion){
-                    $session = session();
-                    $session->setFlashData('mensaje','Revise la información');
-                    //return $this->response->redirect(site_url('/listar'));
-                    return redirect()->back()->withInput();
-                }
-
+        } else if(($forma_pago == 'Cheque') || ($forma_pago == 'Transferencia')) {
+            $validacion = $this->validate([
+                'num_movimiento'=>'required|numeric',
+                'id_banco'=>'required|numeric',
+                'fecha_movimiento'=>'required|date',
+            ]);
+            if(!$validacion){
+                $session = session();
+                $session->setFlashData('mensaje','Revise la información');
+                //return $this->response->redirect(site_url('/listar'));
+                return redirect()->back()->withInput();
             }
         }
+        
         $anio = date('Y', strtotime($fecha_movimiento));
-        $existeTransferenciaMismoAnio = $pago->where('id !=', $id)
-                                        ->where('num_transferencia', $num_transferencia)
+        $existeTransferenciaMismoAnio = $cobro->where('id !=', $id)
+                                        ->where('num_movimiento', $num_movimiento)
                                         ->where('id_banco', $id_banco)
                                         ->where('YEAR(fecha_movimiento)', $anio)
                                         ->first();
 
         if ($existeTransferenciaMismoAnio !== null) {
             $session = session();
-            $session->setFlashData('mensaje', 'Número de transferencia o deposito duplicado');
+            $session->setFlashData('mensaje', 'Número movimiento duplicado');
             return redirect()->back()->withInput();
         }
 
@@ -398,6 +384,7 @@ class Cobro extends BaseController{
             //return $this->response->redirect(site_url('/listar'));
             return redirect()->back()->withInput();
         }
+        
 
         if ($doc_adjunto != '') {
             $validarDocumento = $this->validate([
@@ -420,53 +407,56 @@ class Cobro extends BaseController{
             $nuevoNombre = $ruta . $nombreRandom;
             $doc_adjunto->move($ruta, $nombreRandom);
 
-            $documentoActual = $pago->find($id);
+            $documentoActual = $cobro->find($id);
             $documentoAnterior = $documentoActual['doc_adjunto'];
         
             if (!empty($documentoAnterior) && file_exists($documentoAnterior) && $documentoAnterior != '') {
                 unlink($documentoAnterior);
             }
 
+            // Restar el valor pagado anterior
+            $id_cotizacion = $valorCobroAnterior['id_cotizacion'];
+            $valor_pagado_anterior = $valorCobroAnterior['valor_pagado'];
+            $this->restarCobro($id_cotizacion, $valor_pagado_anterior);
             $datos=[
                 'fecha_registro'=>$fecha_registro,
                 'forma_pago'=>$forma_pago,
-                'num_cheque'=>$num_cheque,
-                'num_transferencia'=>$num_transferencia,
+                'num_movimiento'=>$num_movimiento,
                 'id_banco'=>$id_banco,
                 'fecha_movimiento'=>$fecha_movimiento,
                 'valor_pagado'=>$valor_pagado,
                 'doc_adjunto'=>$nuevoNombre
             ];
-            $pago->update($id,$datos);
-            return $this->response->redirect(site_url('Pagos'));
+            $cobro->update($id,$datos);
+            $this->sumarCobro($id_cotizacion, $valor_pagado);
+            return $this->response->redirect(site_url('Cobros'));
         }
         
         // Restar el valor pagado anterior
-        $id_compra = $valorPagoAnterior['id_compra'];
-        $valor_pagado_anterior = $valorPagoAnterior['valor_pagado'];
-        $this->restarPago($id_compra, $valor_pagado_anterior);
+        $id_cotizacion = $valorCobroAnterior['id_cotizacion'];
+        $valor_pagado_anterior = $valorCobroAnterior['valor_pagado'];
+        $this->restarCobro($id_cotizacion, $valor_pagado_anterior);
 
         $datos=[
             'fecha_registro'=>$fecha_registro,
             'forma_pago'=>$forma_pago,
-            'num_cheque'=>$num_cheque,
-            'num_transferencia'=>$num_transferencia,
+            'num_movimiento'=>$num_movimiento,
             'id_banco'=>$id_banco,
             'fecha_movimiento'=>$fecha_movimiento,
             'valor_pagado'=>$valor_pagado
         ];
-        $pago->update($id,$datos);
+        $cobro->update($id,$datos);
 
-        $this->sumarPago($id_compra, $valor_pagado);
+        $this->sumarCobro($id_cotizacion, $valor_pagado);
 
-        return $this->response->redirect(site_url('Pagos'));
+        return $this->response->redirect(site_url('Cobros'));
     }
     
     public function consultar($id=null){
-        $pago = new Pagos();
-        $data['pago'] = $pago->select('pagos.*, compras.num_fact as compra,compras.total as  total_compra, compras.valor_pagado as pagado')
-                                ->join('compras', 'compras.id = pagos.id_compra', 'left')
-                                ->where('pagos.id',$id)->first();
+        $pago = new Cobros();
+        $data['cobro'] = $pago->select('cobros.*, cotizaciones.num_cot as cotizacion,cotizaciones.total as  total_cotizacion, cotizaciones.valor_pagado as pagado')
+                                ->join('cotizaciones', 'cotizaciones.id = cobros.id_cotizacion', 'left')
+                                ->where('cobros.id',$id)->first();
         $titulo = "Pagos";
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
@@ -478,7 +468,7 @@ class Cobro extends BaseController{
                                 ->findAll();
 
         $data['titulo'] = $titulo;
-        return view('pagos/consultar', $data);
+        return view('cobros/consultar', $data);
     }
 
     public function generarExcel($proveedorFiltro, $forma_pago, $bancoFiltro, $num_pago, $num_compra, $fecha_inicio, $fecha_fin){

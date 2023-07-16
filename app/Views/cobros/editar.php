@@ -10,7 +10,7 @@
                 } else {
                     $('#seccionBanco').hide();
                     $('#seccionFechaMov').hide();
-                    $('#seccionTransferencia').hide();
+                    $('#seccionMovimiento').hide();
                     $('#seccionCheque').hide();
                 }
             });
@@ -24,14 +24,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-                <h1>Registrar Cobro</h1>
+                <h1>Editar Cobro</h1>
           </div>
         
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Inicio</a></li>
               <li class="breadcrumb-item"><a href="<?= base_url('Cobro') ?>">Cobro</a></li>
-              <li class="breadcrumb-item active">Registrar Cobro</li>
+              <li class="breadcrumb-item active">Editar</li>
           </ol>
         </div>
       </div>
@@ -39,10 +39,12 @@
           <div class="">
               <div class="card card-primary">
                   <div class="card-header">
-                      <h3 class="card-title">Formulario de registro de Cobro</h3>
+                      <h3 class="card-title">Formulario de Edición de Cobro</h3>
                   </div>
                   
-                  <form action="<?= base_url('guardarCobro') ?>" method="POST" enctype="multipart/form-data">
+                  <form action="<?= base_url('actualizarCobro') ?>" method="POST" enctype="multipart/form-data">
+                  
+                    <input  type="hidden" name="id" value="<?= $cobro['id'] ?>">
                         <div class="card-body">
                             <?php if(session('mensaje')){?>
                                 <div class="alert alert-danger" role="alert">
@@ -53,35 +55,65 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-12">
                                         <div class="form-group">
-                                            <label for="numero-factura">Vendedor:</label>
-                                            <input  class="form-control" type="text" value="<?= $vendedor['nombres']?>" disabled>
-                                            <input  type="hidden" name="id_vendedor" value="<?= $vendedor['id'] ?>">
+                                        <?php 
+                                                if(session('id_rol')=='1'){
+                                                ?>
+                                                    <div class="form-group">
+                                                        <label for="numero-factura">Vendedor:</label>
+                                                        <select id="id_vendedor" name="id_vendedor" class="selectpicker form-control" data-live-search="true">
+                                                            <option value="">seleccione un vendedor</option>
+                                                            <?php if($personas):?>
+                                                                <?php foreach($personas as $persona):?>
+                                                                    <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cobro['id_vendedor']) echo 'selected'; ?>>
+                                                                        <?= $persona['nombres'] ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            <?php endif; ?>
+                                                        </select>
+                                                    </div>
+                                                <?php 
+                                                }else{
+                                                ?>
+                                                    <div class="form-group">
+                                                        <label for="numero-factura">Vendedor:</label>
+                                                        <select id="id_vendedor" name="id_vendedor" class="selectpicker form-control" data-live-search="true" disabled>
+                                                            <option value="">seleccione un vendedor</option>
+                                                            <?php if($personas):?>
+                                                                <?php foreach($personas as $persona):?>
+                                                                    <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cobro['id_vendedor']) echo 'selected'; ?>>
+                                                                        <?= $persona['nombres'] ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            <?php endif; ?>
+                                                        </select>
+                                                        <input  type="hidden" name="id_vendedor" value="<?= $cobro['id_vendedor'] ?>">
+                                                    </div>
+                                                <?php 
+                                                }
+                                            ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="fecha_registro">Fecha de registro *</label>
-                                            <input type="date" class="form-control" id="fecha_registro" value="<?= old('fecha_registro') ?>" name="fecha_registro" onclick="mostrarCalendario()"/>
+                                            <input type="date" class="form-control" id="fecha_registro" value="<?= $cobro['fecha_registro'] ?>" name="fecha_registro" onclick="mostrarCalendario()"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Seleccionar Proveedor *</label>
+                                            <label for="">Seleccionar Cliente *</label>
                                             <select id="" name="" class="selectpicker form-control" data-live-search="true" disabled>
                                                 <option value="">Escoja una persona</option>
                                                 <?php if($personas):?>
                                                     <?php foreach($personas as $persona):?>
-                                                        <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizaciones['id_cliente']) echo 'selected'; ?>>
-                                                            <?= $persona['nombres'] ?>
-                                                        </option>
+                                                        <option value="<?=$persona['id']?>" <?php if($cobro['id_cliente'] == $persona['id']) echo 'selected'; ?>><?= $persona['nombres']?></option>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </select>
                                         </div>
-                                        <input type="hidden" name="id_cliente" value="<?= $cotizaciones['id_cliente']; ?>">
                                         <div class="form-group">
                                             <label for="forma_pago">Seleccionar Forma de Pago: *</label>
                                             <select id="forma_pago" id="formaPago" name="forma_pago" class="form-control" data-live-search="true">
                                                 <option value="">Escoja una forma de pago</option>
-                                                <option value="Efectivo" <?php if(old('forma_pago') == 'Efectivo') echo 'selected'; ?>>Efectivo</option>
-                                                <option value="Transferencia" <?php if(old('forma_pago') == 'Transferencia') echo 'selected'; ?>>Transferencia</option>
-                                                <option value="Cheque" <?php if(old('forma_pago') == 'Cheque') echo 'selected'; ?>>Cheque</option>
+                                                <option value="Efectivo" <?php if($cobro['forma_pago'] == 'Efectivo') echo 'selected'; ?>>Efectivo</option>
+                                                <option value="Transferencia" <?php if($cobro['forma_pago'] == 'Transferencia') echo 'selected'; ?>>Transferencia</option>
+                                                <option value="Cheque" <?php if($cobro['forma_pago'] == 'Cheque') echo 'selected'; ?>>Cheque</option>
                                             </select>
                                         </div>
                                     </div>
@@ -92,18 +124,18 @@
                                                 <option value="">Escoja un banco</option>
                                                 <?php if($bancos):?>
                                                     <?php foreach($bancos as $banco):?>
-                                                        <option value="<?=$banco['id']?>" <?php if(old('id_banco') == $banco['id']) echo 'selected'; ?>><?= $banco['nombre'] ?></option>
+                                                        <option value="<?=$banco['id']?>" <?php if($cobro['id_banco'] == $banco['id']) echo 'selected'; ?>><?= $banco['nombre'] ?></option>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </select>
                                         </div>
                                         <div class="form-group" id="seccionMovimiento" style="display: none;">
                                             <label for="num_movimiento">Numero de Comprobante:</label>
-                                            <input class="form-control" type="text" id="num_movimiento" name="num_movimiento" value="<?= old('num_movimiento') ?>" autocomplete="off">
+                                            <input class="form-control" type="text" id="num_movimiento" name="num_movimiento" value="<?= $cobro['num_movimiento'] ?>" oninput="this.value = permitirNumeros(this)" autocomplete="off">
                                         </div>
                                         <div class="form-group" id="seccionFechaMov" style="display: none;">
                                             <label for="fecha_movimiento">Fecha de movimiento *</label>
-                                            <input type="date" class="form-control" id="fecha_movimiento" value="<?= old('fecha_movimiento') ?>" name="fecha_movimiento" onclick="mostrarCalendario()"/>
+                                            <input type="date" class="form-control" id="fecha_movimiento" value="<?= $cobro['fecha_movimiento'] ?>" name="fecha_movimiento" onclick="mostrarCalendario()"/>
                                         </div>
                                     </div>
                                 </div>
@@ -125,12 +157,13 @@
                                     <tbody>
                                         <!-- Las filas se agregarán dinámicamente -->
                                         <tr>
-                                            <td>Cotización #<?= $cotizaciones['num_cot'] ?><input type="hidden" name="id_cotizacion" value="<?= $cotizaciones['id'] ?>"></td>
-                                            <td>$<?= $cotizaciones['total'] ?><input type="hidden" name="valor_cotizacion" value="<?= $cotizaciones['total'] ?>"></td>
+                                            <td>Cotización #<?= $cobro['cotizacion'] ?></td>
+                                            <td>$<?= $cobro['valor_cotizacion'] ?></td>
                                             <td>$
                                                 <?php
-                                                    $valor_vencer = $cotizaciones['total'] - $cotizaciones['valor_pagado']; 
+                                                    $valor_vencer = $cobro['total_cotizacion'] - $cobro['pagado']; 
                                                     echo $valor_vencer;
+                                                    $valor_vencer = $cobro['valor_cotizacion'] - $cobro['pagado'] + $cobro['valor_pagado'];
                                                 ?>
                                                 <input type="hidden" name="valor_vencer" value="<?= $valor_vencer ?>">
                                             </td>
@@ -141,7 +174,7 @@
                                                             <i class="fas fa-dollar-sign"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= old('valor_pagado') ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required max="<?= $cotizaciones['total'] - $cotizaciones['valor_pagado'] ?>">
+                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= $cobro['valor_pagado'] ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required max="<?= $cobro['total_cotizacion'] - $cobro['valor_pagado'] ?>">
                                                 </div>
                                             </td>
                                         </tr>
@@ -159,6 +192,17 @@
                                                 <label class="custom-file-label" for="doc_adjunto" id="doc_adjunto_label">Seleccionar archivo</label>
                                             </div>
                                         </div>
+                                        <div class="mt-3">
+                                            <?php if (!empty($compra['doc_adjunto']) &&  file_exists($compra['doc_adjunto'])) {?>
+                                                <a class="btn btn-primary" href="<?= base_url($compra['doc_adjunto']) ?>" download>
+                                                    Descargar documento adjunto
+                                                </a>
+                                            <?php }else{?>
+                                                <a class="btn btn-danger delete" href="#">
+                                                    No existe documento adjunto
+                                                </a>
+                                            <?php }?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -167,31 +211,13 @@
                                 Guardar Documento
                             </button>
                         </div>
-                        <!-- Agrega un modal con el id "selectionModal" -->
-                        <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="selectionModalLabel">Mensaje de advertencia</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Por favor, seleccione al menos un producto.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                   </form>
               </div>
           </div>
       </div>
     </div><!-- /.container-fluid -->
   </section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function permitirNumerosDecimales(input) {
     // Obtener el valor del input
@@ -221,6 +247,12 @@
         } else {
             input.setCustomValidity('');
         }
+    }
+
+    function permitirNumeros(input) {
+        // Eliminar todos los caracteres que no sean números
+        var numero = input.value.replace(/\D/g, "");
+        return numero;
     }
 
 </script>

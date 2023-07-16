@@ -1,0 +1,759 @@
+CRITICAL - 2023-07-11 00:42:01 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\registrar.php on line 72.
+ 1 APPPATH\Views\pagos\registrar.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\registrar.php', 72)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\registrar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/registrar', [], true)
+ 5 APPPATH\Controllers\Pago.php(124): view('pagos/registrar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->registrar('29')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-11 01:02:58 --> mysqli_sql_exception: Unknown column '$id_cotizacion' in 'where clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyectosistema\app\Models\Cobros.php(12): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(169): App\Models\Cobros->consultarCobro('29')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->eliminar('29')
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-11 01:02:58 --> Unknown column '$id_cotizacion' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = \'29\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = \'29\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = \'29\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = :$id_cotizacion:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\Cobros.php(12): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\Cotizacion.php(169): App\Models\Cobros->consultarCobro('29')
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->eliminar('29')
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-11 01:03:58 --> mysqli_sql_exception: Unknown column '$id_cotizacion' in 'where clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyectosistema\app\Models\Cobros.php(12): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(169): App\Models\Cobros->consultarCobro('29')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->eliminar('29')
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-11 01:03:58 --> Unknown column '$id_cotizacion' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = \'29\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = \'29\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = \'29\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cobros`
+WHERE `$id_cotizacion` = :$id_cotizacion:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\Cobros.php(12): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\Cotizacion.php(169): App\Models\Cobros->consultarCobro('29')
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->eliminar('29')
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:26:19 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\consultar.php on line 34.
+ 1 APPPATH\Views\pagos\consultar.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(508): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:34:58 --> Undefined variable $vendedor
+in APPPATH\Views\cobros\editar.php on line 57.
+ 1 APPPATH\Views\cobros\editar.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedor', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:35:47 --> Undefined variable $vendedor
+in APPPATH\Views\cobros\editar.php on line 57.
+ 1 APPPATH\Views\cobros\editar.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedor', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:38:06 --> Undefined variable $cotizacion
+in APPPATH\Views\cobros\editar.php on line 67.
+ 1 APPPATH\Views\cobros\editar.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizacion', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 67)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:38:32 --> Undefined variable $vendedor
+in APPPATH\Views\cobros\editar.php on line 93.
+ 1 APPPATH\Views\cobros\editar.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedor', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 93)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:38:53 --> Undefined variable $cotizaciones
+in APPPATH\Views\cobros\editar.php on line 105.
+ 1 APPPATH\Views\cobros\editar.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizaciones', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 105)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:39:23 --> Undefined variable $cotizaciones
+in APPPATH\Views\cobros\editar.php on line 105.
+ 1 APPPATH\Views\cobros\editar.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizaciones', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 105)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:39:36 --> Undefined variable $cotizaciones
+in APPPATH\Views\cobros\editar.php on line 112.
+ 1 APPPATH\Views\cobros\editar.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizaciones', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 112)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:39:42 --> Undefined variable $cotizaciones
+in APPPATH\Views\cobros\editar.php on line 163.
+ 1 APPPATH\Views\cobros\editar.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizaciones', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 163)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:40:06 --> Undefined array key "num_cot"
+in APPPATH\Views\cobros\editar.php on line 163.
+ 1 APPPATH\Views\cobros\editar.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "num_cot"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 163)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:40:52 --> Undefined array key "num_cot"
+in APPPATH\Views\cobros\editar.php on line 163.
+ 1 APPPATH\Views\cobros\editar.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "num_cot"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 163)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:48:45 --> Undefined variable $cotizaciones
+in APPPATH\Views\cobros\editar.php on line 179.
+ 1 APPPATH\Views\cobros\editar.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizaciones', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 179)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:53:13 --> Undefined variable $pago
+in APPPATH\Views\cobros\editar.php on line 169.
+ 1 APPPATH\Views\cobros\editar.php(169): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pago', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 169)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:53:35 --> Undefined variable $cotizaciones
+in APPPATH\Views\cobros\editar.php on line 180.
+ 1 APPPATH\Views\cobros\editar.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizaciones', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 180)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:53:53 --> Undefined array key "total"
+in APPPATH\Views\cobros\editar.php on line 180.
+ 1 APPPATH\Views\cobros\editar.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 180)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 01:54:40 --> Undefined array key "total"
+in APPPATH\Views\cobros\editar.php on line 180.
+ 1 APPPATH\Views\cobros\editar.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 180)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:02:16 --> Undefined variable $cotizacion
+in APPPATH\Views\cobros\editar.php on line 81.
+ 1 APPPATH\Views\cobros\editar.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cotizacion', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 81)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:05:08 --> Undefined array key "id_proveedor"
+in APPPATH\Views\cobros\editar.php on line 103.
+ 1 APPPATH\Views\cobros\editar.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_proveedor"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 103)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:12:40 --> Undefined variable $pago
+in APPPATH\Views\cobros\editar.php on line 125.
+ 1 APPPATH\Views\cobros\editar.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pago', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php', 125)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\editar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/editar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(320): view('cobros/editar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->editar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:29:43 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 414.
+ 1 APPPATH\Controllers\Cobro.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 414)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:29:53 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 414.
+ 1 APPPATH\Controllers\Cobro.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 414)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:30:40 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 414.
+ 1 APPPATH\Controllers\Cobro.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 414)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:31:07 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 414.
+ 1 APPPATH\Controllers\Cobro.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 414)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-11 02:36:30 --> mysqli_sql_exception: Unknown column 'num_transferencia' in 'where clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(379): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-11 02:36:30 --> Unknown column 'num_transferencia' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `cobros`
+WHERE `id` IS NOT NULL
+AND `num_transferencia` IS NULL
+AND `id_banco` = \'4\'
+AND YEAR(fecha_movimiento) = \'2023\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cobros`
+WHERE `id` IS NOT NULL
+AND `num_transferencia` IS NULL
+AND `id_banco` = \'4\'
+AND YEAR(fecha_movimiento) = \'2023\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cobros`
+WHERE `id` IS NOT NULL
+AND `num_transferencia` IS NULL
+AND `id_banco` = \'4\'
+AND YEAR(fecha_movimiento) = \'2023\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cobros`
+WHERE `id` IS NOT NULL
+AND `num_transferencia` IS NULL
+AND `id_banco` = :id_banco:
+AND YEAR(fecha_movimiento) = :YEAR(fecha_movimiento):
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Cobro.php(379): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:37:01 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 402.
+ 1 APPPATH\Controllers\Cobro.php(402): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 402)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:38:23 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:39:10 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:40:00 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:41:14 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:41:35 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:42:58 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:43:06 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:43:16 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:43:35 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:43:39 --> Undefined array key "id"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:43:44 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 449.
+ 1 APPPATH\Controllers\Cobro.php(449): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 449)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:44:11 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 333.
+ 1 APPPATH\Controllers\Cobro.php(333): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 333)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:44:15 --> Undefined array key "id_cotizacion"
+in APPPATH\Controllers\Cobro.php on line 333.
+ 1 APPPATH\Controllers\Cobro.php(333): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 333)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:44:29 --> Undefined array key "id"
+in APPPATH\Controllers\Cobro.php on line 334.
+ 1 APPPATH\Controllers\Cobro.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 334)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 02:44:51 --> Array to string conversion
+in APPPATH\Controllers\Cobro.php on line 334.
+ 1 APPPATH\Controllers\Cobro.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 334)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->actualizar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:02:49 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\consultar.php on line 34.
+ 1 APPPATH\Views\pagos\consultar.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(508): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:05:33 --> Class "App\Controllers\Pagos" not found
+in APPPATH\Controllers\Cobro.php on line 456.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:05:47 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\consultar.php on line 34.
+ 1 APPPATH\Views\pagos\consultar.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(508): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('27')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:05:55 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\consultar.php on line 34.
+ 1 APPPATH\Views\pagos\consultar.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(508): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('27')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:06:49 --> Trying to access array offset on value of type null
+in APPPATH\Views\pagos\consultar.php on line 34.
+ 1 APPPATH\Views\pagos\consultar.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php', 34)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/consultar', [], true)
+ 5 APPPATH\Controllers\Pago.php(508): view('pagos/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->consultar('27')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-11 03:09:13 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.pagos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-11 03:09:13 --> Unknown table 'dscriptn_db_sistema.pagos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+WHERE `pagos`.`id` = \'27\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+WHERE `pagos`.`id` = \'27\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+WHERE `pagos`.`id` = \'27\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+WHERE `pagos`.`id` = :pagos.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:09:30 --> Undefined variable $cobro
+in APPPATH\Views\cobros\consultar.php on line 47.
+ 1 APPPATH\Views\cobros\consultar.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cobro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php', 47)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/consultar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(468): view('cobros/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-11 03:09:43 --> mysqli_sql_exception: Unknown column 'cobros.id_compra' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-11 03:09:43 --> Unknown column 'cobros.id_compra' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+WHERE `cobros`.`id` = :cobros.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-11 03:09:50 --> mysqli_sql_exception: Unknown column 'cobros.cotizacion' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-11 03:09:50 --> Unknown column 'cobros.cotizacion' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`cotizacion`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`cotizacion`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`cotizacion`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`.*, `compras`.`num_fact` as `compra`, `compras`.`total` as `total_compra`, `compras`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`cotizacion`
+WHERE `cobros`.`id` = :cobros.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:09:56 --> Undefined array key "cotizacion"
+in APPPATH\Views\cobros\consultar.php on line 160.
+ 1 APPPATH\Views\cobros\consultar.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php', 160)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/consultar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(471): view('cobros/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:10:12 --> Undefined array key "cotizacion"
+in APPPATH\Views\cobros\consultar.php on line 160.
+ 1 APPPATH\Views\cobros\consultar.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php', 160)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/consultar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(471): view('cobros/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-11 03:10:43 --> mysqli_sql_exception: Unknown column 'cotizaciones.num_fact' in 'field list' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-11 03:10:43 --> Unknown column 'cotizaciones.num_fact' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`.*, `cotizaciones`.`num_fact` as `compra`, `cotizaciones`.`total` as `total_compra`, `cotizaciones`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`.*, `cotizaciones`.`num_fact` as `compra`, `cotizaciones`.`total` as `total_compra`, `cotizaciones`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`.*, `cotizaciones`.`num_fact` as `compra`, `cotizaciones`.`total` as `total_compra`, `cotizaciones`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = \'27\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`.*, `cotizaciones`.`num_fact` as `compra`, `cotizaciones`.`total` as `total_compra`, `cotizaciones`.`valor_pagado` as `pagado`
+FROM `cobros`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = :cobros.id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Cobro.php(459): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-11 03:10:53 --> Undefined array key "total_cotizacion"
+in APPPATH\Views\cobros\consultar.php on line 164.
+ 1 APPPATH\Views\cobros\consultar.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total_cotizacion"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php', 164)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/consultar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(471): view('cobros/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('27')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -10,7 +10,7 @@
                 } else {
                     $('#seccionBanco').hide();
                     $('#seccionFechaMov').hide();
-                    $('#seccionTransferencia').hide();
+                    $('#seccionMovimiento').hide();
                     $('#seccionCheque').hide();
                 }
             });
@@ -30,8 +30,8 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="<?= base_url('Cobro') ?>">Cobro</a></li>
-              <li class="breadcrumb-item active">Registrar Cobro</li>
+              <li class="breadcrumb-item"><a href="<?= base_url('Cobro') ?>">Cobros</a></li>
+              <li class="breadcrumb-item active">Crear</li>
           </ol>
         </div>
       </div>
@@ -62,7 +62,7 @@
                                             <input type="date" class="form-control" id="fecha_registro" value="<?= old('fecha_registro') ?>" name="fecha_registro" onclick="mostrarCalendario()"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Seleccionar Proveedor *</label>
+                                            <label for="">Seleccionar Cliente *</label>
                                             <select id="" name="" class="selectpicker form-control" data-live-search="true" disabled>
                                                 <option value="">Escoja una persona</option>
                                                 <?php if($personas):?>
@@ -99,7 +99,7 @@
                                         </div>
                                         <div class="form-group" id="seccionMovimiento" style="display: none;">
                                             <label for="num_movimiento">Numero de Comprobante:</label>
-                                            <input class="form-control" type="text" id="num_movimiento" name="num_movimiento" value="<?= old('num_movimiento') ?>" autocomplete="off">
+                                            <input class="form-control" type="text" id="num_movimiento" name="num_movimiento" value="<?= old('num_movimiento') ?>" oninput="this.value = permitirNumeros(this)" autocomplete="off">
                                         </div>
                                         <div class="form-group" id="seccionFechaMov" style="display: none;">
                                             <label for="fecha_movimiento">Fecha de movimiento *</label>
@@ -167,25 +167,6 @@
                                 Guardar Documento
                             </button>
                         </div>
-                        <!-- Agrega un modal con el id "selectionModal" -->
-                        <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="selectionModalLabel">Mensaje de advertencia</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Por favor, seleccione al menos un producto.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                   </form>
               </div>
           </div>
@@ -221,6 +202,12 @@
         } else {
             input.setCustomValidity('');
         }
+    }
+
+    function permitirNumeros(input) {
+        // Eliminar todos los caracteres que no sean números
+        var numero = input.value.replace(/\D/g, "");
+        return numero;
     }
 
 </script>

@@ -4,19 +4,19 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Pagos</h1>
+                    <h1>Cobros</h1>
                 </div>
             
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="dashboard">Inicio</a></li>
-                        <li class="breadcrumb-item active">Pagos</li>
+                        <li class="breadcrumb-item active">Cobros</li>
                     </ol>
                 </div>
             </div>
             <div class="row mb-2">
                 <div class="col2 ml-3">
-                    <a href="<?= base_url('exportarPagos/') ?>" class="btn btn-block btn-primary">
+                    <a href="<?= base_url('exportarCobros/') ?>" class="btn btn-block btn-primary">
                         <i class="fas fa-file-excel"></i> Exportar Excel
                     </a>
                 </div>
@@ -33,11 +33,11 @@
                         </a>
                         <div id="collapseTwo" class="collapse show" data-parent="#accordion">
                             <div class="card-body">
-                                <form id="formulario" method="get" action="<?= base_url('Pagos') ?>">
+                                <form id="formulario" method="get" action="<?= base_url('Cobros') ?>">
                                     <div class="row g-3">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="num_pago" class="mr-2">Numero de pago:</label>
+                                                <label for="num_pago" class="mr-2">Numero de cobro:</label>
                                                 <input type="text" name="num_pago" id="num_pago" value="" class="form-control mr-2">
                                             </div>
                                         </div>
@@ -116,8 +116,9 @@
                             <table id="example2" class="table table-bordered table-hover  table-sm table-responsive-sm" align-items: center>
                                 <thead>
                                     <tr>
-                                        <th># Pago</th>
-                                        <th>Proveedor</th>
+                                        <th>Num Cobro</th>
+                                        <th>Cliente</th>
+                                        <th>Documento</th>
                                         <th>Fecha de registro</th>
                                         <th>Forma de Pago</th>
                                         <th>Valor</th>
@@ -128,8 +129,9 @@
                                     <?php if($cobros):?>
                                         <?php foreach($cobros as $cotizacion):?>
                                             <tr> 
-                                            <td><?= $cotizacion['id'];?></td>
+                                            <td><a href="<?=base_url('consultarCobro/'.$cotizacion['id']);?>">Cobro #<?= $cotizacion['id'];?></a></td>
                                             <td><?= $cotizacion['persona'];?></td>
+                                            <td><a href="<?=base_url('consultarCotizacion/'.$cotizacion['id_cotizacion']);?>" target="_blank">Cotización #<?= $cotizacion['cotizacion'];?></a></td>
                                             <td><?= $cotizacion['fecha_registro'];?></td>
                                             <td><?= $cotizacion['forma_pago'];?></td>
                                             <td><?= $cotizacion['valor_pagado'];?></td>
@@ -140,7 +142,7 @@
                                                     <span class="sr-only">Toggle Dropdown</span>
                                                 </button>
                                                 <div class="dropdown-menu" role="menu">
-                                                    <li><a class="dropdown-item" href="<?=base_url('consultarPago/'.$cotizacion['id']);?>"><i class="fas fa-eye"></i> Consultar</a></li>
+                                                    <li><a class="dropdown-item" href="<?=base_url('consultarCobro/'.$cotizacion['id']);?>"><i class="fas fa-eye"></i> Consultar</a></li>
                                                     <li><a class="dropdown-item" href="<?=base_url('editarCobro/'.$cotizacion['id']);?>"><i class="fas fa-edit"></i> Editar</a></li>
                                                     <li><a class="dropdown-item"  data-toggle="modal" data-target="#modalDelete<?=$cotizacion['id'];?>"><i class="fas fa-trash-alt"></i> Borrar</a></li>
                                                 </div>
@@ -149,17 +151,17 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Eliminar Pago <?=$cotizacion['id'];?></h4>
+                                                        <h4 class="modal-title">Eliminar Cobro <?=$cotizacion['id'];?></h4>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Desea Eliminar el Comprobante de Pago? <?=$cotizacion['id'];?>
+                                                        Desea Eliminar el Comprobante de Cobro de la <a href="<?=base_url('consultarCotizacion/'.$cotizacion['id_cotizacion']);?>" target="_blank">Cotización #<?= $cotizacion['cotizacion'];?></a>?
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                                        <a type="button" class="btn btn-danger" href="<?=base_url('eliminarCobro/'.$cotizacion['id']);?>">Eliminar Pago</a>
+                                                        <a type="button" class="btn btn-danger" href="<?=base_url('eliminarCobro/'.$cotizacion['id']);?>">Eliminar Cobro</a>
                                                     </div>
                                                     </div>
                                                 </div>
