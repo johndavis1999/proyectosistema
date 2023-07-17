@@ -6,18 +6,11 @@
                 if ($(this).val() === 'Cheque' || $(this).val() === 'Transferencia') {
                     $('#seccionBanco').show();
                     $('#seccionFechaMov').show();
-                    if($(this).val() === 'Cheque'){
-                        $('#seccionCheque').show();
-                        $('#seccionTransferencia').hide();
-                    }
-                    else if($(this).val() === 'Transferencia'){
-                        $('#seccionTransferencia').show();
-                        $('#seccionCheque').hide();
-                    }
+                    $('#seccionMovimiento').show();
                 } else {
                     $('#seccionBanco').hide();
                     $('#seccionFechaMov').hide();
-                    $('#seccionTransferencia').hide();
+                    $('#seccionMovimiento').hide();
                     $('#seccionCheque').hide();
                 }
             });
@@ -99,13 +92,9 @@
                                                 <?php endif; ?>
                                             </select>
                                         </div>
-                                        <div class="form-group" id="seccionCheque" style="display: none;">
-                                            <label for="num_cheque">Numero de Cheque:</label>
-                                            <input class="form-control" type="text" id="num_cheque" name="num_cheque" value="<?= old('num_cheque') ?>" autocomplete="off">
-                                        </div>
-                                        <div class="form-group" id="seccionTransferencia" style="display: none;">
-                                            <label for="num_transferencia">Numero de Transferencia:</label>
-                                            <input class="form-control" type="text" id="num_transferencia" name="num_transferencia" value="<?= old('num_transferencia') ?>" autocomplete="off">
+                                        <div class="form-group" id="seccionMovimiento" style="display: none;">
+                                            <label for="num_movimiento">Numero de Comprobante:</label>
+                                            <input class="form-control" type="text" id="num_movimiento" name="num_movimiento" value="<?= old('num_movimiento') ?>" oninput="this.value = permitirNumeros(this)" autocomplete="off">
                                         </div>
                                         <div class="form-group" id="seccionFechaMov" style="display: none;">
                                             <label for="fecha_movimiento">Fecha de movimiento *</label>

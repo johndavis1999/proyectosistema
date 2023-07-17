@@ -41,11 +41,19 @@
                   <form>
                     <input  type="hidden" name="id" value="<?= $cobro['id'] ?>">
                         <div class="card-body">
+                            
                             <?php if(session('mensaje')){?>
                                 <div class="alert alert-danger" role="alert">
                                     <?php echo session('mensaje') ?>
                                 </div>
                             <?php }  ?> 
+
+                            <?php if(session('exito')){?>
+                                <div class="alert alert-success" role="alert">
+                                    <?php echo session('exito') ?>
+                                </div>
+                            <?php }  ?> 
+
                             <div>
                                 <div class="row">
                                     <div class="col-lg-4 col-12">

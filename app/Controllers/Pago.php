@@ -66,8 +66,9 @@ class Pago extends BaseController{
             }
             
 
-            $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona')
+            $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as factura')
                                     ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
+                                    ->join('compras', 'compras.id = pagos.id_compra', 'left')
                                     ->orderBy('pagos.id', 'DESC')
                                     ->orderBy('id','DESC')
                                     ->paginate(10);
@@ -77,8 +78,9 @@ class Pago extends BaseController{
             return view('pagos/index', $data);
         }
 
-        $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona')
+        $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as factura')
                                 ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
+                                ->join('compras', 'compras.id = pagos.id_compra', 'left')
                                 ->orderBy('pagos.id', 'DESC')
                                 ->orderBy('id','DESC')
                                 ->paginate(10);
@@ -130,6 +132,7 @@ class Pago extends BaseController{
         $fecha_registro = $this->request->getVar('fecha_registro'); 
         $forma_pago = $this->request->getVar('forma_pago'); 
         $num_cheque = $this->request->getVar('num_cheque'); 
+        $num_movimiento = $this->request->getVar('num_movimiento'); 
         $num_transferencia = $this->request->getVar('num_transferencia'); 
         $id_banco = $this->request->getVar('id_banco'); 
         $fecha_movimiento = $this->request->getVar('fecha_movimiento'); 
@@ -153,15 +156,14 @@ class Pago extends BaseController{
         }
         
         if($forma_pago == 'Efectivo'){
-            $num_cheque = null;
-            $num_transferencia = null;
+            $num_movimiento = 'Efectivo';
             $id_banco = null;
             $fecha_movimiento = null;
         } else {
             if($forma_pago == 'Cheque'){
                 $num_transferencia = null;
                 $validacion = $this->validate([
-                    'num_cheque'=>'required|numeric',
+                    'num_movimiento'=>'required|numeric',
                     'id_banco'=>'required|numeric',
                     'fecha_movimiento'=>'required|date',
                 ]);
@@ -173,7 +175,7 @@ class Pago extends BaseController{
                 }
                 
                 $anio = date('Y', strtotime($fecha_movimiento));
-                $existeChequeMismoAnio = $pago->where('num_cheque', $num_cheque)
+                $existeChequeMismoAnio = $pago->where('num_movimiento', $num_movimiento)
                                                 ->where('id_banco', $id_banco)
                                                 ->where('YEAR(fecha_movimiento)', $anio)
                                                 ->first();
@@ -186,7 +188,7 @@ class Pago extends BaseController{
             } else if($forma_pago == 'Transferencia'){
                 $num_cheque = null;
                 $validacion = $this->validate([
-                    'num_transferencia'=>'required|numeric',
+                    'num_movimiento'=>'required|numeric',
                     'id_banco'=>'required|numeric',
                     'fecha_movimiento'=>'required|date',
                 ]);
@@ -198,7 +200,7 @@ class Pago extends BaseController{
                 }
 
                 $anio = date('Y', strtotime($fecha_movimiento));
-                $existeTransferenciaMismoAnio = $pago->where('num_transferencia', $num_transferencia)
+                $existeTransferenciaMismoAnio = $pago->where('num_movimiento', $num_movimiento)
                                                 ->where('id_banco', $id_banco)
                                                 ->where('YEAR(fecha_movimiento)', $anio)
                                                 ->first();
@@ -249,8 +251,7 @@ class Pago extends BaseController{
                 'id_proveedor'=>$id_proveedor,
                 'fecha_registro'=>$fecha_registro,
                 'forma_pago'=>$forma_pago,
-                'num_cheque'=>$num_cheque,
-                'num_transferencia'=>$num_transferencia,
+                'num_movimiento'=>$num_movimiento,
                 'id_banco'=>$id_banco,
                 'fecha_movimiento'=>$fecha_movimiento,
                 'id_compra'=>$id_compra,
@@ -266,8 +267,7 @@ class Pago extends BaseController{
             'id_proveedor'=>$id_proveedor,
             'fecha_registro'=>$fecha_registro,
             'forma_pago'=>$forma_pago,
-            'num_cheque'=>$num_cheque,
-            'num_transferencia'=>$num_transferencia,
+            'num_movimiento'=>$num_movimiento,
             'id_banco'=>$id_banco,
             'fecha_movimiento'=>$fecha_movimiento,
             'doc_adjunto'=>'',

@@ -7,11 +7,12 @@
                     $('#seccionBanco').show();
                     $('#seccionFechaMov').show();
                     $('#seccionMovimiento').show();
+                    $('#validar').show();
                 } else {
                     $('#seccionBanco').hide();
                     $('#seccionFechaMov').hide();
                     $('#seccionMovimiento').hide();
-                    $('#seccionCheque').hide();
+                    $('#validar').hide();
                 }
             });
 
@@ -136,6 +137,12 @@
                                         <div class="form-group" id="seccionFechaMov" style="display: none;">
                                             <label for="fecha_movimiento">Fecha de movimiento *</label>
                                             <input type="date" class="form-control" id="fecha_movimiento" value="<?= $cobro['fecha_movimiento'] ?>" name="fecha_movimiento" onclick="mostrarCalendario()"/>
+                                        </div>
+                                        <div class="form-check" id="validar" style="display: none;">
+                                            <input class="form-check-input" name="omitir_validar_mov" type="checkbox" value="1" <?= $cobro['omitir_validar_mov'] ? 'checked' : '' ?> id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                            Omitir validación de movimiento
+                                            </label>
                                         </div>
                                     </div>
                                 </div>

@@ -383,6 +383,7 @@ toastr.options = {
         
         //se declara variables para obtener stock del productos
         var stock = obtenerStockProducto(productoId);
+        
         if (inventariable == 1){
             var stockProducto = document.getElementById("stock_producto_" + count);
             stockProducto.value = stock;

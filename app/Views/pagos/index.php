@@ -136,8 +136,9 @@
                             <table id="example2" class="table table-bordered table-hover  table-sm table-responsive-sm" align-items: center>
                                 <thead>
                                     <tr>
-                                        <th># Pago</th>
+                                        <th>Num Pago</th>
                                         <th>Proveedor</th>
+                                        <th>Documento</th>
                                         <th>Fecha de registro</th>
                                         <th>Forma de Pago</th>
                                         <th>Valor</th>
@@ -148,8 +149,9 @@
                                     <?php if($pagos):?>
                                         <?php foreach($pagos as $Pago):?>
                                             <tr> 
-                                            <td><?= $Pago['id'];?></td>
+                                            <td><a href="<?=base_url('consultarPago/'.$Pago['id']);?>" target="_blank">Pago #<?= $Pago['id'];?></a></td>
                                             <td><?= $Pago['persona'];?></td>
+                                            <td><a href="<?=base_url('consultarCompra/'.$Pago['id_compra']);?>" target="_blank"><?= $Pago['factura'];?></a></td>
                                             <td><?= $Pago['fecha_registro'];?></td>
                                             <td><?= $Pago['forma_pago'];?></td>
                                             <td><?= $Pago['valor_pagado'];?></td>

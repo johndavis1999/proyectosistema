@@ -38,15 +38,11 @@ class Cobro extends BaseController{
     }
     
     public function crear(){
-        $titulo = "Pagos";
+        $titulo = "Cobros";
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
                                     ->orderBy('id', 'ASC')
                                     ->findAll();
-        $compra = new Compras();
-        $data['compras'] = $compra->orderBy('id', 'ASC')
-                                    ->findAll();
-        
         $banco = new Bancos();
         $data['bancos'] = $banco->orderBy('id', 'ASC')
                                 ->findAll();
@@ -98,6 +94,9 @@ class Cobro extends BaseController{
         $valor_cotizacion = $this->request->getVar('valor_cotizacion'); 
         $valor_pagado = $this->request->getVar('valor_pagado'); 
         $valor_vencer = $this->request->getVar('valor_vencer');
+        $omitir_validar_mov = $this->request->getVar('omitir_validar_mov');
+    
+        $omitir_validar_mov = $omitir_validar_mov == '1' ? '1' : '0';
         
         
         if($valor_pagado > $valor_vencer ){
@@ -113,57 +112,60 @@ class Cobro extends BaseController{
         }
         
         if($forma_pago == 'Efectivo'){
-            $num_movimiento = null;
+            $num_movimiento = 'Efectivo';
             $id_banco = null;
             $fecha_movimiento = null;
+            $omitir_validar_mov = '1';
         } else {
-            if($forma_pago == 'Cheque'){
-                $validacion = $this->validate([
-                    'num_movimiento'=>'required|numeric',
-                    'id_banco'=>'required|numeric',
-                    'fecha_movimiento'=>'required|date',
-                ]);
-                if(!$validacion){
-                    $session = session();
-                    $session->setFlashData('mensaje','Revise la información');
-                    //return $this->response->redirect(site_url('/listar'));
-                    return redirect()->back()->withInput();
-                }
-                
-                $anio = date('Y', strtotime($fecha_movimiento));
-                $existeChequeMismoAnio = $cobros->where('num_movimiento', $num_movimiento)
-                                                ->where('id_banco', $id_banco)
-                                                ->where('YEAR(fecha_movimiento)', $anio)
-                                                ->first();
-        
-                if ($existeChequeMismoAnio !== null) {
-                    $session = session();
-                    $session->setFlashData('mensaje', 'Número de cheque duplicado');
-                    return redirect()->back()->withInput();
-                }
-            } else if($forma_pago == 'Transferencia'){
-                $validacion = $this->validate([
-                    'num_movimiento'=>'required|numeric',
-                    'id_banco'=>'required|numeric',
-                    'fecha_movimiento'=>'required|date',
-                ]);
-                if(!$validacion){
-                    $session = session();
-                    $session->setFlashData('mensaje','Revise la información');
-                    //return $this->response->redirect(site_url('/listar'));
-                    return redirect()->back()->withInput();
-                }
-
-                $anio = date('Y', strtotime($fecha_movimiento));
-                $existeTransferenciaMismoAnio = $cobros->where('num_movimiento', $num_movimiento)
-                                                ->where('id_banco', $id_banco)
-                                                ->where('YEAR(fecha_movimiento)', $anio)
-                                                ->first();
-        
-                if ($existeTransferenciaMismoAnio !== null) {
-                    $session = session();
-                    $session->setFlashData('mensaje', 'Número de transferencia o deposito duplicado');
-                    return redirect()->back()->withInput();
+            if( $omitir_validar_mov == '0'){
+                if($forma_pago == 'Cheque'){
+                    $validacion = $this->validate([
+                        'num_movimiento'=>'required|numeric',
+                        'id_banco'=>'required|numeric',
+                        'fecha_movimiento'=>'required|date',
+                    ]);
+                    if(!$validacion){
+                        $session = session();
+                        $session->setFlashData('mensaje','Revise la información');
+                        //return $this->response->redirect(site_url('/listar'));
+                        return redirect()->back()->withInput();
+                    }
+                    
+                    $anio = date('Y', strtotime($fecha_movimiento));
+                    $existeChequeMismoAnio = $cobros->where('num_movimiento', $num_movimiento)
+                                                    ->where('id_banco', $id_banco)
+                                                    ->where('YEAR(fecha_movimiento)', $anio)
+                                                    ->first();
+            
+                    if ($existeChequeMismoAnio !== null) {
+                        $session = session();
+                        $session->setFlashData('mensaje', 'Número de cheque duplicado');
+                        return redirect()->back()->withInput();
+                    }
+                } else if($forma_pago == 'Transferencia'){
+                    $validacion = $this->validate([
+                        'num_movimiento'=>'required|numeric',
+                        'id_banco'=>'required|numeric',
+                        'fecha_movimiento'=>'required|date',
+                    ]);
+                    if(!$validacion){
+                        $session = session();
+                        $session->setFlashData('mensaje','Revise la información');
+                        //return $this->response->redirect(site_url('/listar'));
+                        return redirect()->back()->withInput();
+                    }
+    
+                    $anio = date('Y', strtotime($fecha_movimiento));
+                    $existeTransferenciaMismoAnio = $cobros->where('num_movimiento', $num_movimiento)
+                                                    ->where('id_banco', $id_banco)
+                                                    ->where('YEAR(fecha_movimiento)', $anio)
+                                                    ->first();
+            
+                    if ($existeTransferenciaMismoAnio !== null) {
+                        $session = session();
+                        $session->setFlashData('mensaje', 'Número de transferencia o deposito duplicado');
+                        return redirect()->back()->withInput();
+                    }
                 }
             }
         }
@@ -211,6 +213,7 @@ class Cobro extends BaseController{
                 'num_movimiento'=>$num_movimiento,
                 'id_banco'=>$id_banco,
                 'fecha_movimiento'=>$fecha_movimiento,
+                'omitir_validar_mov'=>$omitir_validar_mov,
                 'id_cotizacion'=>$id_cotizacion,
                 'valor_cotizacion'=>$valor_cotizacion,
                 'valor_pagado'=>$valor_pagado,
@@ -231,6 +234,7 @@ class Cobro extends BaseController{
             'num_movimiento'=>$num_movimiento,
             'id_banco'=>$id_banco,
             'fecha_movimiento'=>$fecha_movimiento,
+            'omitir_validar_mov'=>$omitir_validar_mov,
             'id_cotizacion'=>$id_cotizacion,
             'valor_cotizacion'=>$valor_cotizacion,
             'valor_pagado'=>$valor_pagado,
@@ -322,6 +326,7 @@ class Cobro extends BaseController{
         $data['titulo'] = $titulo;
         return view('cobros/editar', $data);
     }
+
     public function actualizar(){
         $cobro = new Cobros();
         $id = $this->request->getVar('id'); 
@@ -333,6 +338,9 @@ class Cobro extends BaseController{
         $fecha_movimiento = $this->request->getVar('fecha_movimiento'); 
         $doc_adjunto = $this->request->getFile('doc_adjunto'); 
         $valor_pagado = $this->request->getVar('valor_pagado'); 
+        $omitir_validar_mov = $this->request->getVar('omitir_validar_mov');
+    
+        $omitir_validar_mov = $omitir_validar_mov == '1' ? '1' : '0';
         
         if($forma_pago != 'Efectivo' && $forma_pago != 'Cheque' && $forma_pago != 'Transferencia'){
             $session = session();
@@ -341,7 +349,7 @@ class Cobro extends BaseController{
         }
         
         if($forma_pago == 'Efectivo'){
-            $num_movimiento = null;
+            $num_movimiento = 'Efectivo';
             $id_banco = null;
             $fecha_movimiento = null;
         } else if(($forma_pago == 'Cheque') || ($forma_pago == 'Transferencia')) {
@@ -358,17 +366,20 @@ class Cobro extends BaseController{
             }
         }
         
-        $anio = date('Y', strtotime($fecha_movimiento));
-        $existeTransferenciaMismoAnio = $cobro->where('id !=', $id)
-                                        ->where('num_movimiento', $num_movimiento)
-                                        ->where('id_banco', $id_banco)
-                                        ->where('YEAR(fecha_movimiento)', $anio)
-                                        ->first();
-
-        if ($existeTransferenciaMismoAnio !== null) {
-            $session = session();
-            $session->setFlashData('mensaje', 'Número movimiento duplicado');
-            return redirect()->back()->withInput();
+        if( $omitir_validar_mov == '0'){
+            $anio = date('Y', strtotime($fecha_movimiento));
+            $existeTransferenciaMismoAnio = $cobro->where('id !=', $id)
+                                            ->where('forma_pago', $forma_pago)
+                                            ->where('num_movimiento', $num_movimiento)
+                                            ->where('id_banco', $id_banco)
+                                            ->where('YEAR(fecha_movimiento)', $anio)
+                                            ->first();
+    
+            if ($existeTransferenciaMismoAnio !== null) {
+                $session = session();
+                $session->setFlashData('mensaje', 'Número movimiento duplicado');
+                return redirect()->back()->withInput();
+            }
         }
 
 
@@ -401,7 +412,7 @@ class Cobro extends BaseController{
                 return redirect()->back()->withInput();
             }
             
-            $ruta = 'public/docs/pagos/';
+            $ruta = 'public/docs/cobros/';
             $doc_adjunto = $this->request->getFile('doc_adjunto');
             $nombreRandom = $doc_adjunto->getRandomName();
             $nuevoNombre = $ruta . $nombreRandom;
@@ -424,6 +435,7 @@ class Cobro extends BaseController{
                 'num_movimiento'=>$num_movimiento,
                 'id_banco'=>$id_banco,
                 'fecha_movimiento'=>$fecha_movimiento,
+                'omitir_validar_mov'=>$omitir_validar_mov,
                 'valor_pagado'=>$valor_pagado,
                 'doc_adjunto'=>$nuevoNombre
             ];
@@ -443,6 +455,7 @@ class Cobro extends BaseController{
             'num_movimiento'=>$num_movimiento,
             'id_banco'=>$id_banco,
             'fecha_movimiento'=>$fecha_movimiento,
+            'omitir_validar_mov'=>$omitir_validar_mov,
             'valor_pagado'=>$valor_pagado
         ];
         $cobro->update($id,$datos);
@@ -457,7 +470,7 @@ class Cobro extends BaseController{
         $data['cobro'] = $pago->select('cobros.*, cotizaciones.num_cot as cotizacion,cotizaciones.total as  total_cotizacion, cotizaciones.valor_pagado as pagado')
                                 ->join('cotizaciones', 'cotizaciones.id = cobros.id_cotizacion', 'left')
                                 ->where('cobros.id',$id)->first();
-        $titulo = "Pagos";
+        $titulo = "Cobro";
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
                                     ->orderBy('id', 'ASC')
