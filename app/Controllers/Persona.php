@@ -268,8 +268,6 @@ class Persona extends BaseController{
              false; // Longitud incorrecta de la identificación
         }
     }
-                  
-    
 
     public function guardar(){
         $persona = new Personas();
@@ -286,6 +284,10 @@ class Persona extends BaseController{
     
         $es_extranjero = $es_extranjero == '1' ? '1' : '0';
         $es_empleado = $es_empleado == 1 ? 1 : 0;
+        if($es_empleado == '1'){
+            
+            $es_cliente = '1';
+        }
         $es_cliente = $es_cliente == 1 ? 1 : 0;
         $es_proveedor = $es_proveedor == 1 ? 1 : 0;   
 
@@ -391,18 +393,25 @@ class Persona extends BaseController{
             return redirect()->back()->withInput();
         }
 
-        $cedulaValida = $this->validar_identificacion_ecuador($identificacion);
-        if ( $cedulaValida != true ) {
-            //return redirect()->back()->withInput()->with('mensaje', 'La persona seleccionada ya tiene un usuario creado');
-            $session = session();
-            $session->setFlashData('mensaje','Cedula Invalida');
-            return redirect()->back()->withInput();
+
+        if($es_extranjero != 1){
+            $cedulaValida = $this->validar_identificacion_ecuador($identificacion);
+            if ( $cedulaValida != true ) {
+                //return redirect()->back()->withInput()->with('mensaje', 'La persona seleccionada ya tiene un usuario creado');
+                $session = session();
+                $session->setFlashData('mensaje','Cedula Invalida');
+                return redirect()->back()->withInput();
+            }
         }
     
-        $es_extranjero = $es_extranjero == 1 ? 1 : 0;
+        $es_extranjero = $es_extranjero == '1' ? '1' : '0';
         $es_empleado = $es_empleado == 1 ? 1 : 0;
+        if($es_empleado == '1'){
+            
+            $es_cliente = '1';
+        }
         $es_cliente = $es_cliente == 1 ? 1 : 0;
-        $es_proveedor = $es_proveedor == 1 ? 1 : 0;   
+        $es_proveedor = $es_proveedor == 1 ? 1 : 0;     
 
         if($es_empleado == 0 && $es_cliente == 0 && $es_proveedor == 0){
             $session = session();

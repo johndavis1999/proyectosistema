@@ -63,6 +63,7 @@
                                                     Anulado
                                                 </option>
                                             </select>
+                                        <input type="hidden" value="<?= $compra['estado'] ?>" name="estado_original">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-12">

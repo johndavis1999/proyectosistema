@@ -413,6 +413,7 @@ class Compra extends BaseController{
         $doc_adjunto = $this->request->getFile('doc_adjunto');
         $pagado = 0;
         $estado = $this->request->getVar('estado');
+        $estadoOriginal = $this->request->getVar('estado_original');
 
         $idProducto = $this->request->getVar('id_producto');
         
@@ -505,10 +506,51 @@ class Compra extends BaseController{
             ];
         
             $compra->update($id,$datos);
+
+            /*
             $this->reversarStockIngreso($id);
             $this->eliminarIngresoDetalle($id);
             $this->guardarDetalle($id);
             $this->actualizarStockIngreso($id);
+            */
+
+            if($estado == '0'){
+                if($estadoOriginal == '0'){
+                    #$this->reversarStockEgreso($id);
+                    $this->eliminarIngresoDetalle($id);
+                    $this->guardarDetalle($id);
+                    #$this->actualizarStockEgreso($id);
+                }
+            }
+            
+            if($estado == '1'){
+                if($estadoOriginal == '0'){
+                    #$this->reversarStockEgreso($id);
+                    $this->eliminarIngresoDetalle($id);
+                    $this->guardarDetalle($id);
+                    $this->actualizarStockIngreso($id);
+                }
+            }
+            
+            if($estado == '0'){
+                if($estadoOriginal == '1'){
+                    $this->reversarStockIngreso($id);
+                    $this->eliminarIngresoDetalle($id);
+                    $this->guardarDetalle($id);
+                    #$this->actualizarStockEgreso($id);
+                }
+            }
+            
+            if($estado == '1'){
+                if($estadoOriginal == '1'){
+                    $this->reversarStockIngreso($id);
+                    $this->eliminarIngresoDetalle($id);
+                    $this->guardarDetalle($id);
+                    $this->actualizarStockIngreso($id);
+                }
+            }
+
+
             return redirect()->to(base_url('Compras'))->with('exito', 'Compra Actualizada exitosamente');
         }
 
@@ -535,10 +577,51 @@ class Compra extends BaseController{
         ];
         
         $compra->update($id,$datos);
+
+        /*
         $this->reversarStockIngreso($id);
         $this->eliminarIngresoDetalle($id);
         $this->guardarDetalle($id);
         $this->actualizarStockIngreso($id);
+        */
+
+        if($estado == '0'){
+            if($estadoOriginal == '0'){
+                #$this->reversarStockEgreso($id);
+                $this->eliminarIngresoDetalle($id);
+                $this->guardarDetalle($id);
+                #$this->actualizarStockEgreso($id);
+            }
+        }
+        
+        if($estado == '1'){
+            if($estadoOriginal == '0'){
+                #$this->reversarStockEgreso($id);
+                $this->eliminarIngresoDetalle($id);
+                $this->guardarDetalle($id);
+                $this->actualizarStockIngreso($id);
+            }
+        }
+        
+        if($estado == '0'){
+            if($estadoOriginal == '1'){
+                $this->reversarStockIngreso($id);
+                $this->eliminarIngresoDetalle($id);
+                $this->guardarDetalle($id);
+                #$this->actualizarStockEgreso($id);
+            }
+        }
+        
+        if($estado == '1'){
+            if($estadoOriginal == '1'){
+                $this->reversarStockIngreso($id);
+                $this->eliminarIngresoDetalle($id);
+                $this->guardarDetalle($id);
+                $this->actualizarStockIngreso($id);
+            }
+        }
+
+
         return redirect()->to(base_url('Compras'))->with('exito', 'Compra Actualizada Exitosamente');
     }
 
