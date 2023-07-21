@@ -242,4 +242,17 @@
         });
     });
 </script>
+<script>
+    // Obtener el ancho de la ventana del navegador
+    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Verificar el ancho de la ventana y aplicar el estado colapsado o desplegado del acordeón
+    if (windowWidth < 768) {
+    // Pantallas pequeñas: colapsar el acordeón por defecto
+    $("#collapseTwo").removeClass("show");
+    } else {
+    // Pantallas grandes: desplegar el acordeón por defecto
+    $("#collapseTwo").addClass("show");
+    }
+</script>
 <?= $this->endsection() ?>

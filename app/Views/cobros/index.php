@@ -16,7 +16,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col2 ml-3">
-                    <a href="<?= base_url('exportarCobros/') ?>" class="btn btn-block btn-primary">
+                    <a href="<?= base_url('exportarCobros/' . ($num_cobro ? $num_cobro : 'none')  . '/' . ($clienteFiltro ? $clienteFiltro : 'none') . '/' . ($forma_pago ? $forma_pago : 'none') . '/' . ($num_movimiento ? $num_movimiento : 'none') . '/' . ($bancoFiltro ? $bancoFiltro : 'none') . '/' . ($num_cot ? $num_cot : 'none') . '/' . ($fecha_inicio ? $fecha_inicio : 'none') . '/' . ($fecha_fin ? $fecha_fin : 'none')) ?>" class="btn btn-block btn-primary">
                         <i class="fas fa-file-excel"></i> Exportar Excel
                     </a>
                 </div>
@@ -37,29 +37,35 @@
                                     <div class="row g-3">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="num_pago" class="mr-2">Numero de cobro:</label>
-                                                <input type="text" name="num_pago" id="num_pago" value="" class="form-control mr-2">
+                                                <label for="num_cobro" class="mr-2">Numero de cobro:</label>
+                                                <input type="text" name="num_cobro" id="num_cobro" value="<?= $num_cobro ?>" class="form-control mr-2">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="proveedorFiltro" class="mr-2">Proveedor:</label>
-                                                <select id="proveedorFiltro" name="proveedorFiltro" class="selectpicker form-control" data-live-search="true">
+                                                <label for="clienteFiltro" class="mr-2">Cliente:</label>
+                                                <select id="clienteFiltro" name="clienteFiltro" class="selectpicker form-control" data-live-search="true">
                                                     <option value="">Todos</option>
-                                                    
+                                                    <?php if($clientes):?>
+                                                        <?php foreach($clientes as $cliente):?>
+                                                            <option value="<?=$cliente['id']?>" <?php if($cliente['id'] == $clienteFiltro) echo 'selected'; ?>>
+                                                                <?= $cliente['nombres'] ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="fecha_inicio">Fecha de Inicio</label>
-                                                <input type="date" class="form-control" id="fecha_inicio" value="" name="fecha_inicio"/>
+                                                <input type="date" class="form-control" id="fecha_inicio" value="<?= $fecha_inicio ?>" name="fecha_inicio"/>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="fecha_fin">Fecha de Fin</label>
-                                                <input type="date" class="form-control" id="fecha_fin" value="" name="fecha_fin" disabled/>
+                                                <input type="date" class="form-control" id="fecha_fin" value="<?= $fecha_fin ?>" name="fecha_fin" disabled/>
                                             </div>
                                         </div>
                                     </div>
@@ -68,11 +74,17 @@
                                             <div class="form-group">
                                                 <label for="forma_pago" class="mr-2">Forma de Pago:</label>
                                                 <select name="forma_pago" id="forma_pago" class="form-control mr-2">
-                                                    <option value="">Todos</option>
-                                                    <option value="Efectivo">Efectivo</option>
-                                                    <option value="Transferencia">Transferencia</option>
-                                                    <option value="Cheque">Cheque</option>
+                                                    <option value="" <?php echo ($forma_pago === '') ? 'selected' : ''; ?>>Todos</option>
+                                                    <option value="Efectivo" <?php echo ($forma_pago == 'Efectivo') ? 'selected' : ''; ?>>Efectivo</option>
+                                                    <option value="Transferencia" <?php echo ($forma_pago == 'Transferencia') ? 'selected' : ''; ?>>Transferencia</option>
+                                                    <option value="Cheque" <?php echo ($forma_pago == 'Cheque') ? 'selected' : ''; ?>>Cheque</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="num_movimiento" class="mr-2">Numero de Comprobante:</label>
+                                                <input type="text" name="num_movimiento" id="num_movimiento"  value="<?= $num_movimiento ?>" class="form-control mr-2">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
@@ -80,14 +92,28 @@
                                                 <label for="bancoFiltro" class="mr-2">Banco:</label>
                                                 <select id="bancoFiltro" name="bancoFiltro" class="selectpicker form-control" data-live-search="true">
                                                     <option value="">Todos</option>
+                                                    <?php if($bancos):?>
+                                                        <?php foreach($bancos as $banco):?>
+                                                            <option value="<?=$banco['id']?>" <?php if($banco['id'] == $bancoFiltro) echo 'selected'; ?>>
+                                                                <?= $banco['nombre'] ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="num_compra" class="mr-2">Compra:</label>
-                                                <select id="num_compra" name="num_compra" class="selectpicker form-control" data-live-search="true">
+                                                <label for="num_cot" class="mr-2">Cotización:</label>
+                                                <select id="num_cot" name="num_cot" class="selectpicker form-control" data-live-search="true">
                                                     <option value="">Todos</option>
+                                                    <?php if($cotizaciones):?>
+                                                        <?php foreach($cotizaciones as $cotizacion):?>
+                                                            <option value="<?=$cotizacion['id']?>" <?php if($cotizacion['id'] == $cotizacion) echo 'selected'; ?>>
+                                                                Cotizacion #<?= $cotizacion['num_cot'] ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -221,5 +247,18 @@
             }
         });
     });
+</script>
+<script>
+    // Obtener el ancho de la ventana del navegador
+    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Verificar el ancho de la ventana y aplicar el estado colapsado o desplegado del acordeón
+    if (windowWidth < 768) {
+    // Pantallas pequeñas: colapsar el acordeón por defecto
+    $("#collapseTwo").removeClass("show");
+    } else {
+    // Pantallas grandes: desplegar el acordeón por defecto
+    $("#collapseTwo").addClass("show");
+    }
 </script>
 <?= $this->endsection() ?>

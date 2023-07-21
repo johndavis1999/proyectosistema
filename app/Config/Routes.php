@@ -158,6 +158,7 @@ $routes->get('eliminarCobro/(:num)', 'Cobro::eliminar/$1', ['filter' => 'verific
 $routes->get('editarCobro/(:num)', 'Cobro::editar/$1', ['filter' => 'verificarSesion']);
 $routes->post('actualizarCobro', 'Cobro::actualizar', ['filter' => 'verificarSesion']);
 $routes->get('consultarCobro/(:num)', 'Cobro::consultar/$1', ['filter' => 'verificarSesion']);
+$routes->get('exportarCobros/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?', 'Cobro::generarExcel/$1/$2/$3/$4/$5/$6/$7/$8', ['filter' => 'verificarSesion']);
 
 #pagos
 $routes->get('Pagos', 'Pago::index', ['filter' => 'verificarSesion']);

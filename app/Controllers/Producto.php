@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\Productos;
 use App\Models\Categorias;
 use App\Models\DetalleCompras;
+use App\Models\DetalleCotizacion;
 
 class Producto extends BaseController{
     public function index(){
@@ -158,12 +159,21 @@ class Producto extends BaseController{
             $session = session();
             $session->setFlashData('mensaje','No se puede eliminar el producto ya que tiene transacciones relacionadas.');
             return $this->response->redirect(site_url('productos'));
-        }else{
-            $producto = new Productos();
-            $datos = $producto->where('id', $id)->first();
-            $producto->where('id', $id)->delete($id);
+        }
+
+        $detallesCot = new DetalleCotizacion();
+        //validar si hay categorias con productos relacionados
+        $detallesCot = $detalles->where('id_producto', $id)->findAll();
+        if(!empty($detallesCot)){
+            $session = session();
+            $session->setFlashData('mensaje','No se puede eliminar el producto ya que tiene transacciones relacionadas.');
             return $this->response->redirect(site_url('productos'));
         }
+
+        $producto = new Productos();
+        $datos = $producto->where('id', $id)->first();
+        $producto->where('id', $id)->delete($id);
+        return $this->response->redirect(site_url('productos'));
 
         
 

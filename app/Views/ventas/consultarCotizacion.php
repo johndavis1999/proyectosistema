@@ -53,9 +53,10 @@
                     <div class="card-body">
                         <div>
                             <div class="row">
+                                <input type="hidden" name="id" value="<?= $cotizacion['id'] ?>">
                                 <div class="col-lg-4 col-12">
                                     <div class="form-group">
-                                        <label for="numero-factura">Num. Cotización:</label>
+                                        <label for="numero-factura">Num. Cotizacion:</label>
                                         <input  class="form-control" type="text" id="num_cot" name="num_cot" value="<?= $cotizacion['num_cot'] ?>" disabled>
                                     </div>
                                 </div>
@@ -74,26 +75,92 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-group  col-lg-4 col-12">
+                                    <label for="estado">Estado:</label>
+                                    <select id="estado" name="estado" class="form-control" disabled>
+                                        <option value="">Escoja un estado</option>
+                                        <option value="1" <?php if($cotizacion['estado'] == "1") echo 'selected'; ?>>
+                                            Activo
+                                        </option>
+                                        <option value="0" <?php if($cotizacion['estado'] == "0") echo 'selected'; ?>>
+                                            Anulado
+                                        </option>
+                                    </select>
+                                    <input type="hidden" value="<?= $cotizacion['estado'] ?>" name="estado_original">
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4 col-12">
                                     <div class="form-group">
-                                        <label for="fecha_doc">Fecha emisión</label>
+                                        <label for="fecha_doc">Fecha emision</label>
                                         <input type="date" class="form-control" id="fecha_doc" value="<?= date('Y-m-d') ?>" name="fecha_doc" onclick="mostrarCalendario()" disabled/>
                                     </div>
                                 </div>
-                                <div class="form-group col-4">
-                                    <label for="numero-factura">Vendedor:</label>
-                                    <select id="id_cliente" name="id_cliente" class="selectpicker form-control" data-live-search="true" disabled>
-                                        <option value="">seleccione un vendedor</option>
-                                        <?php if($personas):?>
-                                            <?php foreach($personas as $persona):?>
-                                                <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizacion['id_vendedor']) echo 'selected'; ?>>
-                                                    <?= $persona['nombres'] ?>
-                                                </option>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
+                                <?php 
+                                    if(session('id_rol')=='1'){
+                                    ?>
+                                        <div class="form-group col-lg-4 col-12">
+                                            <label for="numero-factura">Vendedor:</label>
+                                            <select id="id_vendedor" name="id_vendedor" class="selectpicker form-control" data-live-search="true" disabled>
+                                                <option value="">seleccione un vendedor</option>
+                                                <?php if($personas):?>
+                                                    <?php foreach($personas as $persona):?>
+                                                        <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizacion['id_vendedor']) echo 'selected'; ?>>
+                                                            <?= $persona['nombres'] ?>
+                                                        </option>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </select>
+                                        </div>
+                                    <?php 
+                                    }else{
+                                    ?>
+                                        <div class="form-group col-lg-4 col-12">
+                                            <label for="numero-factura">Vendedor:</label>
+                                            <select id="id_vendedor" name="id_vendedor" class="selectpicker form-control" data-live-search="true" disabled>
+                                                <option value="">seleccione un vendedor</option>
+                                                <?php if($personas):?>
+                                                    <?php foreach($personas as $persona):?>
+                                                        <option value="<?=$persona['id']?>" <?php if($persona['id'] == $cotizacion['id_vendedor']) echo 'selected'; ?>>
+                                                            <?= $persona['nombres'] ?>
+                                                        </option>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </select>
+                                        </div>
+                                    <?php 
+                                    }
+                                ?>
+                                <div class="form-group  col-lg-4 col-12">
+                                    <label for="aprobado">Aprobado:</label>
+                                    <select id="aprobado" name="aprobado" class="form-control" disabled>
+                                        <option value="">------</option>
+                                        <option value="1" <?php if($cotizacion['aprobado'] == "1") echo 'selected'; ?>>
+                                            Aprobado
+                                        </option>
+                                        <option value="0" <?php if($cotizacion['aprobado'] == "0") echo 'selected'; ?>>
+                                            Pendiente
+                                        </option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group  col-lg-4 col-12">
+                                    <label for="aprobado">Pago:</label>
+                                    <select id="" name="" class="form-control" disabled>
+                                        <option value="1" <?php if($cotizacion['pagado'] == "1") echo 'selected'; ?>>
+                                            Pagado
+                                        </option>
+                                        <option value="0" <?php if($cotizacion['pagado'] == "0") echo 'selected'; ?>>
+                                            Pendiente
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-group">
+                                        <label for="fecha_doc">Valor Pagado</label>
+                                        <input type="text" class="form-control" id="" value="<?= '$' . $cotizacion['valor_pagado'] . ' de $' . $cotizacion['total'] ?>" disabled/>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -152,7 +152,7 @@
                                 <div class="card-header">
                                     <h3 class="card-title">Detalles del Cobro</h3>
                                 </div>
-                                <table id="tabla" class="table">
+                                <table id="tabla" class="table table-bordered table-hover  table-sm table-responsive-sm">
                                     <thead>
                                         <tr>
                                             <th class="col-2">Documento</th>

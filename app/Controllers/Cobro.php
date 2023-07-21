@@ -14,8 +14,8 @@ class Cobro extends BaseController{
     public function index(){
         $cobro = new Cobros();
 
-        $proveedor = new Personas();
-        $data['proveedores'] = $proveedor->orderBy('id','ASC')->findAll();
+        $cliente = new Personas();
+        $data['clientes'] = $cliente->orderBy('id','ASC')->findAll();
 
         $banco = new Bancos();
         $data['bancos'] = $banco->orderBy('id','ASC')->findAll();
@@ -25,6 +25,70 @@ class Cobro extends BaseController{
 
         $titulo = "Cobros";
         $data['titulo'] = $titulo;
+
+        $num_cobro = $this->request->getVar('num_cobro');
+        $clienteFiltro = $this->request->getVar('clienteFiltro');
+        $forma_pago = $this->request->getVar('forma_pago');
+        $num_movimiento = $this->request->getVar('num_movimiento');
+        $bancoFiltro = $this->request->getVar('bancoFiltro');
+        $num_cot = $this->request->getVar('num_cot');
+        $fecha_inicio = $this->request->getVar('fecha_inicio');
+        $fecha_fin = $this->request->getVar('fecha_fin');
+
+        $data['num_cobro']=$num_cobro;
+        $data['clienteFiltro']=$clienteFiltro;
+        $data['forma_pago']=$forma_pago;
+        $data['num_movimiento']=$num_movimiento;
+        $data['bancoFiltro']=$bancoFiltro;
+        $data['num_cot']=$num_cot;
+        $data['fecha_inicio']=$fecha_inicio;
+        $data['fecha_fin']=$fecha_fin;
+
+        if (  $num_cobro != null || $clienteFiltro != null || $forma_pago != null || $num_movimiento != null || $bancoFiltro != null || $num_cot != null || ($fecha_inicio != null && $fecha_fin != null)) {
+            $cobro->orderBy('id', 'ASC');
+
+            if ($clienteFiltro != null) {
+                $cobro->where('cobros.id_cliente', $clienteFiltro);
+            }
+
+            if ($forma_pago != null) {
+                $cobro->where('forma_pago', $forma_pago);
+            }
+
+            if ($num_movimiento != null) {
+                $cobro->where('num_movimiento', $num_movimiento);
+            }
+
+            if ($bancoFiltro != null) {
+                $cobro->where('id_banco', $bancoFiltro);
+            }
+
+            if ($num_cobro != null) {
+                $cobro->where('cobros.id', $num_cobro);
+            }
+
+            if ($num_cot != null) {
+                $cobro->where('id_cotizacion', $num_cot);
+            }
+
+            if ($fecha_inicio != null && $fecha_fin != null) {
+                $cobro->where('cobros.fecha_registro >=', $fecha_inicio);
+                $cobro->where('cobros.fecha_registro <=', $fecha_fin);
+            }
+            
+
+            $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, cotizaciones.num_cot as cotizacion')
+                                ->join('personas', 'personas.id = cobros.id_cliente', 'left')
+                                ->join('cotizaciones', 'cotizaciones.id = cobros.id_cotizacion', 'left')
+                                ->orderBy('cobros.id', 'DESC')
+                                ->orderBy('id','DESC')
+                                ->paginate(10);
+
+            $paginador = $cobro->pager;
+            $data['paginador'] = $paginador;
+            return view('cobros/index', $data);
+        }
+
 
         $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, cotizaciones.num_cot as cotizacion')
                                 ->join('personas', 'personas.id = cobros.id_cliente', 'left')
@@ -484,47 +548,47 @@ class Cobro extends BaseController{
         return view('cobros/consultar', $data);
     }
 
-    public function generarExcel($proveedorFiltro, $forma_pago, $bancoFiltro, $num_pago, $num_compra, $fecha_inicio, $fecha_fin){
-        $pago = new Pagos();
+    public function generarExcel($num_cobro, $clienteFiltro, $forma_pago, $num_movimiento, $bancoFiltro, $num_cot, $fecha_inicio, $fecha_fin){
+        $cobro = new Cobros();
         // Aplica los filtros solo si se han seleccionado valores
-        if (  $proveedorFiltro != 'none' || $forma_pago != 'none' || $bancoFiltro != 'none' || $num_pago != 'none' || $num_compra != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none') {
-            $pago->orderBy('id', 'ASC');
+        if (  $num_cobro != 'none' || $clienteFiltro != 'none' || $forma_pago != 'none' || $num_movimiento != 'none' || $bancoFiltro != 'none' || $num_cot != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none') {
+            $cobro->orderBy('id', 'ASC');
 
-            if ($proveedorFiltro != 'none') {
-                $pago->where('pagos.id_proveedor', $proveedorFiltro);
+            if ($clienteFiltro != 'none') {
+                $cobro->where('cobros.id_cliente', $clienteFiltro);
             }
 
             if ($forma_pago != 'none') {
-                $pago->where('pagos.forma_pago', $forma_pago);
+                $cobro->where('cobros.forma_pago', $forma_pago);
             }
 
             if ($bancoFiltro != 'none') {
-                $pago->where('pagos.id_banco', $bancoFiltro);
+                $cobro->where('cobros.id_banco', $bancoFiltro);
             }
 
-            if ($num_pago != 'none') {
-                $pago->where('pagos.id', $num_pago);
+            if ($num_cobro != 'none') {
+                $cobro->where('cobros.id', $num_cobro);
             }
 
-            if ($num_compra != 'none') {
-                $pago->where('pagos.id_compra', $num_compra);
+            if ($num_cot != 'none') {
+                $cobro->where('cobros.id_cotizacion', $num_cot);
             }
 
             if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
-                $pago->where('pagos.fecha_registro >=', $fecha_inicio);
-                $pago->where('pagos.fecha_registro <=', $fecha_fin);
+                $cobro->where('cobros.fecha_registro >=', $fecha_inicio);
+                $cobro->where('cobros.fecha_registro <=', $fecha_fin);
             }
 
-        $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
-                                ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
-                                ->join('compras', 'compras.id = pagos.id_compra', 'left')
-                                ->join('bancos', 'bancos.id = pagos.id_banco', 'left')
+        $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+                                ->join('personas', 'personas.id = cobros.id_cliente', 'left')
+                                ->join('compras', 'compras.id = cobros.id_cotizacion', 'left')
+                                ->join('bancos', 'bancos.id = cobros.id_banco', 'left')
                                 ->findAll();
         } else {
-            $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
-                                    ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
-                                    ->join('compras', 'compras.id = pagos.id_compra', 'left')
-                                    ->join('bancos', 'bancos.id = pagos.id_banco', 'left')
+            $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+                                    ->join('personas', 'personas.id = cobros.id_cliente', 'left')
+                                    ->join('compras', 'compras.id = cobros.id_cotizacion', 'left')
+                                    ->join('bancos', 'bancos.id = cobros.id_banco', 'left')
                                     ->findAll();
         }
 
@@ -561,18 +625,18 @@ class Cobro extends BaseController{
 
         // Agregar datos de las personas al archivo Excel
         $row = 2;
-        foreach ($data['pagos'] as $pago) {
-            $sheet->setCellValue('A' . $row, $pago['id']);
-            $sheet->setCellValue('B' . $row, $pago['persona']);
-            $sheet->setCellValue('C' . $row, $pago['compra']);
-            $sheet->setCellValue('D' . $row, '$' . $pago['valor_compra']);
-            $sheet->setCellValue('E' . $row, '$' . $pago['valor_pagado']);
-            $sheet->setCellValue('F' . $row, $pago['fecha_registro']);
-            $sheet->setCellValue('G' . $row, $pago['forma_pago']);
-            $sheet->setCellValue('H' . $row, $pago['num_cheque']);
-            $sheet->setCellValue('I' . $row, $pago['num_transferencia']);
-            $sheet->setCellValue('J' . $row, $pago['id_banco']);
-            $sheet->setCellValue('K' . $row, $pago['banco']);
+        foreach ($data['cobros'] as $cobro) {
+            $sheet->setCellValue('A' . $row, $cobro['id']);
+            $sheet->setCellValue('B' . $row, $cobro['persona']);
+            $sheet->setCellValue('C' . $row, $cobro['compra']);
+            $sheet->setCellValue('D' . $row, '$' . $cobro['valor_compra']);
+            $sheet->setCellValue('E' . $row, '$' . $cobro['valor_pagado']);
+            $sheet->setCellValue('F' . $row, $cobro['fecha_registro']);
+            $sheet->setCellValue('G' . $row, $cobro['forma_pago']);
+            $sheet->setCellValue('H' . $row, $cobro['num_cheque']);
+            $sheet->setCellValue('I' . $row, $cobro['num_transferencia']);
+            $sheet->setCellValue('J' . $row, $cobro['id_banco']);
+            $sheet->setCellValue('K' . $row, $cobro['banco']);
             // ... Agregar más columnas según tus necesidades
 
             $row++;

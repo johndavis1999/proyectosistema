@@ -1,0 +1,829 @@
+CRITICAL - 2023-07-21 02:53:30 --> Undefined variable $num_cobro
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cobro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(78): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:53:49 --> Undefined variable $num_cobro
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cobro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(89): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:53:51 --> Undefined variable $num_cobro
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cobro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(89): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:54:48 --> Undefined variable $num_cobro
+in APPPATH\Views\pagos\index.php on line 41.
+ 1 APPPATH\Views\pagos\index.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cobro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php', 41)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\pagos\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pagos/index', [], true)
+ 5 APPPATH\Controllers\Pago.php(89): view('pagos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pago->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pago))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:55:27 --> Undefined variable $clienteFiltro
+in APPPATH\Views\cobros\index.php on line 51.
+ 1 APPPATH\Views\cobros\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/index', [], true)
+ 5 APPPATH\Controllers\Cobro.php(48): view('cobros/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:55:40 --> Undefined variable $clienteFiltro
+in APPPATH\Views\cobros\index.php on line 51.
+ 1 APPPATH\Views\cobros\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/index', [], true)
+ 5 APPPATH\Controllers\Cobro.php(48): view('cobros/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:55:53 --> Undefined variable $clienteFiltro
+in APPPATH\Views\cobros\index.php on line 51.
+ 1 APPPATH\Views\cobros\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/index', [], true)
+ 5 APPPATH\Controllers\Cobro.php(48): view('cobros/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:55:54 --> Undefined variable $clienteFiltro
+in APPPATH\Views\cobros\index.php on line 51.
+ 1 APPPATH\Views\cobros\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/index', [], true)
+ 5 APPPATH\Controllers\Cobro.php(48): view('cobros/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:56:23 --> Undefined variable $clienteFiltro
+in APPPATH\Views\cobros\index.php on line 51.
+ 1 APPPATH\Views\cobros\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/index', [], true)
+ 5 APPPATH\Controllers\Cobro.php(48): view('cobros/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:56:26 --> Undefined variable $clienteFiltro
+in APPPATH\Views\cobros\index.php on line 51.
+ 1 APPPATH\Views\cobros\index.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php', 51)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/index', [], true)
+ 5 APPPATH\Controllers\Cobro.php(48): view('cobros/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 03:03:46 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cobro.php on line 47.
+ 1 APPPATH\Controllers\Cobro.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 03:03:51 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cobro.php on line 47.
+ 1 APPPATH\Controllers\Cobro.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 03:03:58 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cobro.php on line 47.
+ 1 APPPATH\Controllers\Cobro.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 03:04:01 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cobro.php on line 47.
+ 1 APPPATH\Controllers\Cobro.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:12:20 --> mysqli_sql_exception: Unknown column 'id_proveedor' in 'where clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(81): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:12:20 --> Unknown column 'id_proveedor' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_proveedor` = \'9\'
+AND `forma_pago` = \'Cheque\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_proveedor` = \'9\'
+AND `forma_pago` = \'Cheque\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_proveedor` = \'9\'
+AND `forma_pago` = \'Cheque\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_proveedor` = :id_proveedor:
+AND `forma_pago` = :forma_pago:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cobro.php(81): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:13:13 --> mysqli_sql_exception: Column 'id_cliente' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(81): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:13:13 --> Column 'id_cliente' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = \'9\'
+AND `forma_pago` = \'Cheque\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = \'9\'
+AND `forma_pago` = \'Cheque\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = \'9\'
+AND `forma_pago` = \'Cheque\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = :id_cliente:
+AND `forma_pago` = :forma_pago:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cobro.php(81): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:13:15 --> mysqli_sql_exception: Column 'id_cliente' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(81): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:13:15 --> Column 'id_cliente' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = \'9\'
+AND `forma_pago` = \'Cheque\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = \'9\'
+AND `forma_pago` = \'Cheque\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = \'9\'
+AND `forma_pago` = \'Cheque\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `id_cliente` = :id_cliente:
+AND `forma_pago` = :forma_pago:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cobro.php(81): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:29:48 --> mysqli_sql_exception: Column 'fecha_registro' in where clause is ambiguous in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(85): CodeIgniter\BaseModel->paginate(10)
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->index()
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:29:48 --> Column 'fecha_registro' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = \'15\'
+AND `fecha_registro` >= \'2023-07-01\'
+AND `fecha_registro` <= \'2023-07-20\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = \'15\'
+AND `fecha_registro` >= \'2023-07-01\'
+AND `fecha_registro` <= \'2023-07-20\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = \'15\'
+AND `fecha_registro` >= \'2023-07-01\'
+AND `fecha_registro` <= \'2023-07-20\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `cotizaciones` ON `cotizaciones`.`id` = `cobros`.`id_cotizacion`
+WHERE `cobros`.`id` = :cobros.id:
+AND `fecha_registro` >= :fecha_registro:
+AND `fecha_registro` <= :fecha_registro.1:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Cobro.php(85): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 03:52:40 --> Class "App\Controllers\Pagos" not found
+in APPPATH\Controllers\Cobro.php on line 552.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'none', 'none', 'none', '29', 'none', 'none')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:54:33 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.pagos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none', '')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:54:33 --> Unknown table 'dscriptn_db_sistema.pagos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = :pagos.forma_pago:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none', '')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:57:11 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.pagos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:57:11 --> Unknown table 'dscriptn_db_sistema.pagos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = :pagos.forma_pago:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:58:06 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.pagos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:58:06 --> Unknown table 'dscriptn_db_sistema.pagos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = :pagos.forma_pago:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'Efectivo', 'none', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:58:17 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.pagos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 03:58:17 --> Unknown table 'dscriptn_db_sistema.pagos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_proveedor` = \'15\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_proveedor` = \'15\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_proveedor` = \'15\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`id_proveedor` = :pagos.id_proveedor:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 04:02:19 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.pagos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 04:02:19 --> Unknown table 'dscriptn_db_sistema.pagos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+AND `pagos`.`id` = \'15\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+AND `pagos`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+AND `pagos`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = :pagos.forma_pago:
+AND `pagos`.`id` = :pagos.id:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 04:02:20 --> mysqli_sql_exception: Unknown table 'dscriptn_db_sistema.pagos' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`....', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`....')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`....')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`....', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 04:02:20 --> Unknown table 'dscriptn_db_sistema.pagos'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+AND `pagos`.`id` = \'15\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+AND `pagos`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = \'Efectivo\'
+AND `pagos`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `pagos`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `pagos`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `pagos`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `pagos`.`id_banco`
+WHERE `pagos`.`forma_pago` = :pagos.forma_pago:
+AND `pagos`.`id` = :pagos.id:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 04:03:04 --> mysqli_sql_exception: Unknown column 'cobros.id_proveedor' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 04:03:04 --> Unknown column 'cobros.id_proveedor' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = :cobros.forma_pago:
+AND `cobros`.`id` = :cobros.id:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 04:03:15 --> mysqli_sql_exception: Unknown column 'cobros.id_proveedor' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 04:03:15 --> Unknown column 'cobros.id_proveedor' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_proveedor`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = :cobros.forma_pago:
+AND `cobros`.`id` = :cobros.id:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 04:03:42 --> mysqli_sql_exception: Unknown column 'cobros.id_compra' in 'on clause' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyectosistema\app\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-07-21 04:03:42 --> Unknown column 'cobros.id_compra' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = \'Efectivo\'
+AND `cobros`.`id` = \'15\'
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cobros`.*, `personas`.`nombres` as `persona`, `compras`.`num_fact` as `compra`, `bancos`.`nombre` as `banco`
+FROM `cobros`
+LEFT JOIN `personas` ON `personas`.`id` = `cobros`.`id_cliente`
+LEFT JOIN `compras` ON `compras`.`id` = `cobros`.`id_compra`
+LEFT JOIN `bancos` ON `bancos`.`id` = `cobros`.`id_banco`
+WHERE `cobros`.`forma_pago` = :cobros.forma_pago:
+AND `cobros`.`id` = :cobros.id:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Cobro.php(586): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:04:00 --> Undefined array key "pagos"
+in APPPATH\Controllers\Cobro.php on line 628.
+ 1 APPPATH\Controllers\Cobro.php(628): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pagos"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 628)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('15', 'none', 'Efectivo', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:04:52 --> Undefined array key "valor_compra"
+in APPPATH\Controllers\Cobro.php on line 632.
+ 1 APPPATH\Controllers\Cobro.php(632): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "valor_compra"', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cobro.php', 632)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->generarExcel('none', 'none', 'none', 'none', 'none', 'none', 'none', 'none')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
