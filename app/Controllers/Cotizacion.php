@@ -30,7 +30,18 @@ class Cotizacion extends BaseController{
             $cantidadRegistros = $detalleCotizacion->where('id_cotizacion', $cotizacion['id'])->countAllResults();
             $cotizacion['cantidad_registros'] = $cantidadRegistros;
         }
-        return view('ventas/cotizaciones', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return view('ventas/cotizaciones', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     
     public function crear()
@@ -62,7 +73,18 @@ class Cotizacion extends BaseController{
         $titulo = "Cotizaciones";
         $data['titulo'] = $titulo;
         $data['num_cot'] = $ultimasecuencia+1;
-        return view('ventas/crearCotizacion', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return view('ventas/crearCotizacion', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function guardar(){
@@ -121,9 +143,18 @@ class Cotizacion extends BaseController{
         $this->actualizarStockEgreso($lastInsertId);
         #return $this->response->redirect(site_url('consultarCotizacion/'.$lastInsertId));
         
-        return redirect()->to(base_url('consultarCotizacion/'.$lastInsertId))->with('exito', 'Cotizacion Creada Exitosamente');
-       
-        
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return redirect()->to(base_url('consultarCotizacion/'.$lastInsertId))->with('exito', 'Cotizacion Creada Exitosamente');
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     private function guardarDetalle($lastInsertId) {
@@ -173,10 +204,20 @@ class Cotizacion extends BaseController{
             return redirect()->back()->withInput();
         }
 
-        $cotizaciones->where('id', $id)->delete($id);
-        $this->reversarStockEgreso($id);
-        $this->eliminarEgresoDetalle($id);
-        return $this->response->redirect(site_url('Cotizaciones'));
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            $cotizaciones->where('id', $id)->delete($id);
+            $this->reversarStockEgreso($id);
+            $this->eliminarEgresoDetalle($id);
+            return $this->response->redirect(site_url('Cotizaciones'));
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     
     private function reversarStockEgreso($id_cotizacion) {
@@ -223,7 +264,17 @@ class Cotizacion extends BaseController{
         $data['titulo'] = $titulo;
         $data['detalles'] = $this->obtenerItemsCotizacion($id);
 
-        return view('ventas/consultarCotizacion', $data);
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return view('ventas/consultarCotizacion', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     private function obtenerItemsCotizacion($id){
@@ -256,7 +307,17 @@ class Cotizacion extends BaseController{
         $data['titulo'] = $titulo;
         $data['detalles'] = $this->obtenerItemsCotizacion($id);
 
-        return view('ventas/editarCotizacion', $data);
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('ventas/editarCotizacion', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function actualizar($id = null){

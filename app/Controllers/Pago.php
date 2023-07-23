@@ -86,7 +86,18 @@ class Pago extends BaseController{
                                 ->paginate(10);
         $paginador = $pago->pager;
         $data['paginador']=$paginador;
-        return view('pagos/index', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('pagos/index', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     
     public function crear(){
@@ -104,7 +115,18 @@ class Pago extends BaseController{
                                 ->findAll();
 
         $data['titulo'] = $titulo;
-        return view('pagos/crear', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('pagos/crear', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     
     public function registrar($id=null){
@@ -123,7 +145,18 @@ class Pago extends BaseController{
         $data['compras'] = $compra->where('id',$id)->first();
 
         $data['titulo'] = $titulo;
-        return view('pagos/registrar', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('pagos/registrar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function guardar(){
@@ -308,8 +341,19 @@ class Pago extends BaseController{
         $id_compra = $pagos['id_compra'];
         $valor_pagado = $pagos['valor_pagado'];
         $this->restarPago($id_compra, $valor_pagado);
-        $pago->where('id', $id)->delete($id);
-        return $this->response->redirect(site_url('Pagos'));
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            $pago->where('id', $id)->delete($id);
+            return $this->response->redirect(site_url('Pagos'));
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function restarPago($id_compra, $valor_pagado) {
@@ -343,7 +387,18 @@ class Pago extends BaseController{
                                 ->findAll();
 
         $data['titulo'] = $titulo;
-        return view('pagos/editar', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('pagos/editar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     public function actualizar(){
         $pago = new Pagos();
@@ -505,113 +560,135 @@ class Pago extends BaseController{
                                 ->findAll();
 
         $data['titulo'] = $titulo;
-        return view('pagos/consultar', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('pagos/consultar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function generarExcel($proveedorFiltro, $forma_pago, $bancoFiltro, $num_pago, $num_compra, $fecha_inicio, $fecha_fin){
-        $pago = new Pagos();
-        // Aplica los filtros solo si se han seleccionado valores
-        if (  $proveedorFiltro != 'none' || $forma_pago != 'none' || $bancoFiltro != 'none' || $num_pago != 'none' || $num_compra != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none') {
-            $pago->orderBy('id', 'ASC');
 
-            if ($proveedorFiltro != 'none') {
-                $pago->where('pagos.id_proveedor', $proveedorFiltro);
-            }
-
-            if ($forma_pago != 'none') {
-                $pago->where('pagos.forma_pago', $forma_pago);
-            }
-
-            if ($bancoFiltro != 'none') {
-                $pago->where('pagos.id_banco', $bancoFiltro);
-            }
-
-            if ($num_pago != 'none') {
-                $pago->where('pagos.id', $num_pago);
-            }
-
-            if ($num_compra != 'none') {
-                $pago->where('pagos.id_compra', $num_compra);
-            }
-
-            if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
-                $pago->where('pagos.fecha_registro >=', $fecha_inicio);
-                $pago->where('pagos.fecha_registro <=', $fecha_fin);
-            }
-
-        $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
-                                ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
-                                ->join('compras', 'compras.id = pagos.id_compra', 'left')
-                                ->join('bancos', 'bancos.id = pagos.id_banco', 'left')
-                                ->findAll();
-        } else {
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            $pago = new Pagos();
+            // Aplica los filtros solo si se han seleccionado valores
+            if (  $proveedorFiltro != 'none' || $forma_pago != 'none' || $bancoFiltro != 'none' || $num_pago != 'none' || $num_compra != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none') {
+                $pago->orderBy('id', 'ASC');
+    
+                if ($proveedorFiltro != 'none') {
+                    $pago->where('pagos.id_proveedor', $proveedorFiltro);
+                }
+    
+                if ($forma_pago != 'none') {
+                    $pago->where('pagos.forma_pago', $forma_pago);
+                }
+    
+                if ($bancoFiltro != 'none') {
+                    $pago->where('pagos.id_banco', $bancoFiltro);
+                }
+    
+                if ($num_pago != 'none') {
+                    $pago->where('pagos.id', $num_pago);
+                }
+    
+                if ($num_compra != 'none') {
+                    $pago->where('pagos.id_compra', $num_compra);
+                }
+    
+                if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
+                    $pago->where('pagos.fecha_registro >=', $fecha_inicio);
+                    $pago->where('pagos.fecha_registro <=', $fecha_fin);
+                }
+    
             $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
                                     ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
                                     ->join('compras', 'compras.id = pagos.id_compra', 'left')
                                     ->join('bancos', 'bancos.id = pagos.id_banco', 'left')
                                     ->findAll();
-        }
-
-        // Crear un nuevo objeto Spreadsheet
-        $spreadsheet = new Spreadsheet();
-
-        // Obtener la hoja activa
-        $sheet = $spreadsheet->getActiveSheet();
-
-        $sheet->getColumnDimension('A')->setWidth(10);
-        $sheet->getColumnDimension('B')->setWidth(30);
-        $sheet->getColumnDimension('C')->setWidth(17);
-        $sheet->getColumnDimension('D')->setWidth(15);
-        $sheet->getColumnDimension('E')->setWidth(15);
-        $sheet->getColumnDimension('F')->setWidth(15);
-        $sheet->getColumnDimension('G')->setWidth(15);
-        $sheet->getColumnDimension('H')->setWidth(20);
-        $sheet->getColumnDimension('I')->setWidth(20);
-        $sheet->getColumnDimension('J')->setWidth(20);
-        $sheet->getColumnDimension('K')->setWidth(15);
-        // Agregar encabezados
-        $sheet->setCellValue('A1', 'Num. Pago');
-        $sheet->setCellValue('B1', 'Proveedor');
-        $sheet->setCellValue('C1', 'Compra');
-        $sheet->setCellValue('D1', 'Valor Compra');
-        $sheet->setCellValue('E1', 'Valor Pago');
-        $sheet->setCellValue('F1', 'Fecha Registro');
-        $sheet->setCellValue('G1', 'Forma de Pago');
-        $sheet->setCellValue('H1', 'Num. Cheque');
-        $sheet->setCellValue('I1', 'Num. Transferencia');
-        $sheet->setCellValue('J1', 'Banco');
-        $sheet->setCellValue('K1', 'Fecha Mov.');
-        // ... Agregar más columnas según tus necesidades
-
-        // Agregar datos de las personas al archivo Excel
-        $row = 2;
-        foreach ($data['pagos'] as $pago) {
-            $sheet->setCellValue('A' . $row, $pago['id']);
-            $sheet->setCellValue('B' . $row, $pago['persona']);
-            $sheet->setCellValue('C' . $row, $pago['compra']);
-            $sheet->setCellValue('D' . $row, '$' . $pago['valor_compra']);
-            $sheet->setCellValue('E' . $row, '$' . $pago['valor_pagado']);
-            $sheet->setCellValue('F' . $row, $pago['fecha_registro']);
-            $sheet->setCellValue('G' . $row, $pago['forma_pago']);
-            $sheet->setCellValue('H' . $row, $pago['num_cheque']);
-            $sheet->setCellValue('I' . $row, $pago['num_transferencia']);
-            $sheet->setCellValue('J' . $row, $pago['id_banco']);
-            $sheet->setCellValue('K' . $row, $pago['banco']);
+            } else {
+                $data['pagos'] = $pago->select('pagos.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+                                        ->join('personas', 'personas.id = pagos.id_proveedor', 'left')
+                                        ->join('compras', 'compras.id = pagos.id_compra', 'left')
+                                        ->join('bancos', 'bancos.id = pagos.id_banco', 'left')
+                                        ->findAll();
+            }
+    
+            // Crear un nuevo objeto Spreadsheet
+            $spreadsheet = new Spreadsheet();
+    
+            // Obtener la hoja activa
+            $sheet = $spreadsheet->getActiveSheet();
+    
+            $sheet->getColumnDimension('A')->setWidth(10);
+            $sheet->getColumnDimension('B')->setWidth(30);
+            $sheet->getColumnDimension('C')->setWidth(17);
+            $sheet->getColumnDimension('D')->setWidth(15);
+            $sheet->getColumnDimension('E')->setWidth(15);
+            $sheet->getColumnDimension('F')->setWidth(15);
+            $sheet->getColumnDimension('G')->setWidth(15);
+            $sheet->getColumnDimension('H')->setWidth(20);
+            $sheet->getColumnDimension('I')->setWidth(20);
+            $sheet->getColumnDimension('J')->setWidth(20);
+            $sheet->getColumnDimension('K')->setWidth(15);
+            // Agregar encabezados
+            $sheet->setCellValue('A1', 'Num. Pago');
+            $sheet->setCellValue('B1', 'Proveedor');
+            $sheet->setCellValue('C1', 'Compra');
+            $sheet->setCellValue('D1', 'Valor Compra');
+            $sheet->setCellValue('E1', 'Valor Pago');
+            $sheet->setCellValue('F1', 'Fecha Registro');
+            $sheet->setCellValue('G1', 'Forma de Pago');
+            $sheet->setCellValue('H1', 'Num. Cheque');
+            $sheet->setCellValue('I1', 'Num. Transferencia');
+            $sheet->setCellValue('J1', 'Banco');
+            $sheet->setCellValue('K1', 'Fecha Mov.');
             // ... Agregar más columnas según tus necesidades
-
-            $row++;
+    
+            // Agregar datos de las personas al archivo Excel
+            $row = 2;
+            foreach ($data['pagos'] as $pago) {
+                $sheet->setCellValue('A' . $row, $pago['id']);
+                $sheet->setCellValue('B' . $row, $pago['persona']);
+                $sheet->setCellValue('C' . $row, $pago['compra']);
+                $sheet->setCellValue('D' . $row, '$' . $pago['valor_compra']);
+                $sheet->setCellValue('E' . $row, '$' . $pago['valor_pagado']);
+                $sheet->setCellValue('F' . $row, $pago['fecha_registro']);
+                $sheet->setCellValue('G' . $row, $pago['forma_pago']);
+                $sheet->setCellValue('H' . $row, $pago['num_cheque']);
+                $sheet->setCellValue('I' . $row, $pago['num_transferencia']);
+                $sheet->setCellValue('J' . $row, $pago['id_banco']);
+                $sheet->setCellValue('K' . $row, $pago['banco']);
+                // ... Agregar más columnas según tus necesidades
+    
+                $row++;
+            }
+    
+            // Guardar el archivo Excel
+            $writer = new Xlsx($spreadsheet);
+            $filename = 'export_pagos.xlsx';
+            $writer->save($filename);
+    
+            // Descargar el archivo Excel
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="' . $filename . '"');
+            header('Cache-Control: max-age=0');
+            $writer->save('php://output');
+            exit;
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
         }
-
-        // Guardar el archivo Excel
-        $writer = new Xlsx($spreadsheet);
-        $filename = 'export_pagos.xlsx';
-        $writer->save($filename);
-
-        // Descargar el archivo Excel
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="' . $filename . '"');
-        header('Cache-Control: max-age=0');
-        $writer->save('php://output');
-        exit;
     }
 }

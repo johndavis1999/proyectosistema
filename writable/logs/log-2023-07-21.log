@@ -827,3 +827,14 @@ in APPPATH\Controllers\Cobro.php on line 632.
  3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
  4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 23:58:29 --> Undefined variable $cargos
+in APPPATH\Views\ventas\crearCotizacion.php on line 110.
+ 1 APPPATH\Views\ventas\crearCotizacion.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cargos', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php', 110)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\crearCotizacion.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/crearCotizacion', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(65): view('ventas/crearCotizacion', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

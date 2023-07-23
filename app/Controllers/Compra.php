@@ -113,7 +113,17 @@ class Compra extends BaseController{
             $compra['cantidad_registros'] = $cantidadRegistros;
         }
 
-        return view('compras/index', $data);
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('compras/index', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function crear(){
@@ -127,7 +137,18 @@ class Compra extends BaseController{
                                     ->findAll();
         $titulo = "Compras";
         $data['titulo'] = $titulo;
-        return view('compras/crear', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('compras/crear', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function nuevo(){
@@ -142,7 +163,18 @@ class Compra extends BaseController{
 
         $titulo = "Compras";
         $data['titulo'] = $titulo;
-        return view('compras/nuevo', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('compras/nuevo', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function guardar(){
@@ -367,7 +399,17 @@ class Compra extends BaseController{
         $data['titulo'] = $titulo;
         $data['detalles'] = $this->obtenerItemsCompra($id);
 
-        return view('compras/consultar', $data);
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('compras/consultar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     private function obtenerItemsCompra($id){
@@ -394,7 +436,17 @@ class Compra extends BaseController{
         $data['titulo'] = $titulo;
         $data['detalles'] = $this->obtenerItemsCompra($id);
 
-        return view('compras/editar', $data);
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('compras/editar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     
@@ -626,126 +678,137 @@ class Compra extends BaseController{
     }
 
     public function generarExcel($num_fact, $proveedorFiltro, $fecha_inicio, $fecha_fin, $iva, $pagado, $descuento, $estado){
-        $compra = new Compras();
-        // Aplica los filtros solo si se han seleccionado valores
-        if (  $num_fact != 'none' || $proveedorFiltro != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none' || $iva != 'none' || $pagado != 'none' || $descuento != 'none' || $estado != 'none') {
-            $compra->orderBy('id', 'ASC');
 
-            if ($num_fact != 'none') {
-                $compra->where('compras.num_fact', $num_fact);
-            }
-
-            if ($proveedorFiltro != 'none') {
-                $compra->where('compras.id_per_prov', $proveedorFiltro);
-            }
-
-            if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
-                $compra->where('compras.fecha_doc >=', $fecha_inicio);
-                $compra->where('compras.fecha_doc <=', $fecha_fin);
-            }
-
-            if ($iva != 'none') {
-                if($iva == '0'){
-                    $compra->where('val_iva ='. 0);
-                } else{
-                    $compra->where('val_iva >', 0);
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            $compra = new Compras();
+            // Aplica los filtros solo si se han seleccionado valores
+            if (  $num_fact != 'none' || $proveedorFiltro != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none' || $iva != 'none' || $pagado != 'none' || $descuento != 'none' || $estado != 'none') {
+                $compra->orderBy('id', 'ASC');
+    
+                if ($num_fact != 'none') {
+                    $compra->where('compras.num_fact', $num_fact);
                 }
-            }
-
-            if ($estado != 'none') {
-                $compra->where('compras.estado', $estado);
-            }
-
-            if ($descuento != 'none') {
-                if ($descuento == 'Si'){
-                    $compra->where('val_descuento >', 0);
+    
+                if ($proveedorFiltro != 'none') {
+                    $compra->where('compras.id_per_prov', $proveedorFiltro);
                 }
-                else{
-                    $compra->where('val_descuento =', 0);
+    
+                if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
+                    $compra->where('compras.fecha_doc >=', $fecha_inicio);
+                    $compra->where('compras.fecha_doc <=', $fecha_fin);
                 }
-            }
-
-            if ($pagado != 'none') {
-                if($pagado == "Pagado"){
-                    $compra->where('total = valor_pagado');
-                } else {
-                    $compra->where('total != valor_pagado');
+    
+                if ($iva != 'none') {
+                    if($iva == '0'){
+                        $compra->where('val_iva ='. 0);
+                    } else{
+                        $compra->where('val_iva >', 0);
+                    }
                 }
-            }
-            $data['compras'] = $compra->select('compras.*, personas.nombres as persona')
-                                    ->join('personas', 'personas.id = compras.id_per_prov', 'left')
-                                    ->orderBy('compras.id', 'DESC')
-                                ->findAll();
-        } else {
-            $data['compras'] = $compra->select('compras.*, personas.nombres as persona')
-                                    ->join('personas', 'personas.id = compras.id_per_prov', 'left')
-                                    ->orderBy('compras.id', 'DESC')
+    
+                if ($estado != 'none') {
+                    $compra->where('compras.estado', $estado);
+                }
+    
+                if ($descuento != 'none') {
+                    if ($descuento == 'Si'){
+                        $compra->where('val_descuento >', 0);
+                    }
+                    else{
+                        $compra->where('val_descuento =', 0);
+                    }
+                }
+    
+                if ($pagado != 'none') {
+                    if($pagado == "Pagado"){
+                        $compra->where('total = valor_pagado');
+                    } else {
+                        $compra->where('total != valor_pagado');
+                    }
+                }
+                $data['compras'] = $compra->select('compras.*, personas.nombres as persona')
+                                        ->join('personas', 'personas.id = compras.id_per_prov', 'left')
+                                        ->orderBy('compras.id', 'DESC')
                                     ->findAll();
-        }
-
-        // Crear un nuevo objeto Spreadsheet
-        $spreadsheet = new Spreadsheet();
-
-        // Obtener la hoja activa
-        $sheet = $spreadsheet->getActiveSheet();
-        
-        $sheet->getColumnDimension('B')->setWidth(17);
-        $sheet->getColumnDimension('C')->setWidth(13);
-        $sheet->getColumnDimension('D')->setWidth(35);
-        $sheet->getColumnDimension('E')->setWidth(10);
-        $sheet->getColumnDimension('F')->setWidth(14);
-        $sheet->getColumnDimension('G')->setWidth(14);
-        $sheet->getColumnDimension('H')->setWidth(14);
-        $sheet->getColumnDimension('I')->setWidth(14);
-        $sheet->getColumnDimension('J')->setWidth(14);
-        $sheet->getColumnDimension('K')->setWidth(12);
-
-        // Agregar encabezados
-        $sheet->setCellValue('A1', 'ID');
-        $sheet->setCellValue('B1', 'Numero Doc.');
-        $sheet->setCellValue('C1', 'Autorizacion');
-        $sheet->setCellValue('D1', 'Proveedor');
-        $sheet->setCellValue('E1', 'Fecha');
-        $sheet->setCellValue('F1', 'Val. Subtotal');
-        $sheet->setCellValue('G1', 'Val. Descuento');
-        $sheet->setCellValue('H1', 'Val. Iva');
-        $sheet->setCellValue('I1', 'Val. Total');
-        $sheet->setCellValue('J1', 'Val. Pagado');
-        $sheet->setCellValue('K1', 'Estado Pago');
-        $sheet->setCellValue('L1', 'Estado');
-        // ... Agregar más columnas según tus necesidades
-
-        // Agregar datos de las personas al archivo Excel
-        $row = 2;
-        foreach ($data['compras'] as $compra) {
-            $sheet->setCellValue('A' . $row, $compra['id']);
-            $sheet->setCellValue('B' . $row, $compra['num_fact']);
-            $sheet->setCellValue('C' . $row, $compra['autorizacion_fact']);
-            $sheet->setCellValue('D' . $row, $compra['persona']);
-            $sheet->setCellValue('E' . $row, $compra['fecha_doc']);
-            $sheet->setCellValue('F' . $row, "$" . $compra['subtotal_compra']);
-            $sheet->setCellValue('G' . $row, "$" . $compra['val_descuento']);
-            $sheet->setCellValue('H' . $row, "$" . $compra['val_iva']);
-            $sheet->setCellValue('I' . $row, "$" . $compra['total']);
-            $sheet->setCellValue('J' . $row, "$" . $compra['valor_pagado']);
-            $sheet->setCellValue('K' . $row, $compra['total'] == $compra['valor_pagado'] ? 'Pagado' : 'Pendiente');
-            $sheet->setCellValue('L' . $row, $compra['estado'] == '1' ? 'Activo' : 'Anulado');
+            } else {
+                $data['compras'] = $compra->select('compras.*, personas.nombres as persona')
+                                        ->join('personas', 'personas.id = compras.id_per_prov', 'left')
+                                        ->orderBy('compras.id', 'DESC')
+                                        ->findAll();
+            }
+    
+            // Crear un nuevo objeto Spreadsheet
+            $spreadsheet = new Spreadsheet();
+    
+            // Obtener la hoja activa
+            $sheet = $spreadsheet->getActiveSheet();
+            
+            $sheet->getColumnDimension('B')->setWidth(17);
+            $sheet->getColumnDimension('C')->setWidth(13);
+            $sheet->getColumnDimension('D')->setWidth(35);
+            $sheet->getColumnDimension('E')->setWidth(10);
+            $sheet->getColumnDimension('F')->setWidth(14);
+            $sheet->getColumnDimension('G')->setWidth(14);
+            $sheet->getColumnDimension('H')->setWidth(14);
+            $sheet->getColumnDimension('I')->setWidth(14);
+            $sheet->getColumnDimension('J')->setWidth(14);
+            $sheet->getColumnDimension('K')->setWidth(12);
+    
+            // Agregar encabezados
+            $sheet->setCellValue('A1', 'ID');
+            $sheet->setCellValue('B1', 'Numero Doc.');
+            $sheet->setCellValue('C1', 'Autorizacion');
+            $sheet->setCellValue('D1', 'Proveedor');
+            $sheet->setCellValue('E1', 'Fecha');
+            $sheet->setCellValue('F1', 'Val. Subtotal');
+            $sheet->setCellValue('G1', 'Val. Descuento');
+            $sheet->setCellValue('H1', 'Val. Iva');
+            $sheet->setCellValue('I1', 'Val. Total');
+            $sheet->setCellValue('J1', 'Val. Pagado');
+            $sheet->setCellValue('K1', 'Estado Pago');
+            $sheet->setCellValue('L1', 'Estado');
             // ... Agregar más columnas según tus necesidades
-
-            $row++;
+    
+            // Agregar datos de las personas al archivo Excel
+            $row = 2;
+            foreach ($data['compras'] as $compra) {
+                $sheet->setCellValue('A' . $row, $compra['id']);
+                $sheet->setCellValue('B' . $row, $compra['num_fact']);
+                $sheet->setCellValue('C' . $row, $compra['autorizacion_fact']);
+                $sheet->setCellValue('D' . $row, $compra['persona']);
+                $sheet->setCellValue('E' . $row, $compra['fecha_doc']);
+                $sheet->setCellValue('F' . $row, "$" . $compra['subtotal_compra']);
+                $sheet->setCellValue('G' . $row, "$" . $compra['val_descuento']);
+                $sheet->setCellValue('H' . $row, "$" . $compra['val_iva']);
+                $sheet->setCellValue('I' . $row, "$" . $compra['total']);
+                $sheet->setCellValue('J' . $row, "$" . $compra['valor_pagado']);
+                $sheet->setCellValue('K' . $row, $compra['total'] == $compra['valor_pagado'] ? 'Pagado' : 'Pendiente');
+                $sheet->setCellValue('L' . $row, $compra['estado'] == '1' ? 'Activo' : 'Anulado');
+                // ... Agregar más columnas según tus necesidades
+    
+                $row++;
+            }
+    
+            // Guardar el archivo Excel
+            $writer = new Xlsx($spreadsheet);
+            $filename = 'export_compras.xlsx';
+            $writer->save($filename);
+    
+            // Descargar el archivo Excel
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="' . $filename . '"');
+            header('Cache-Control: max-age=0');
+            $writer->save('php://output');
+            exit;
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
         }
-
-        // Guardar el archivo Excel
-        $writer = new Xlsx($spreadsheet);
-        $filename = 'export_compras.xlsx';
-        $writer->save($filename);
-
-        // Descargar el archivo Excel
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="' . $filename . '"');
-        header('Cache-Control: max-age=0');
-        $writer->save('php://output');
-        exit;
     }
 
 }

@@ -36,6 +36,10 @@ function validarSesion() {
     }
 }
 
+
+
+
+
 $routes->set404Override(function() {
     
     $data['titulo'] = 'Error 404'; // Puedes asignar aquí el valor que deseas para la variable $titulo
@@ -93,8 +97,6 @@ $routes->post('resetearPwd', 'User::resetear', ['filter' => 'verificarSesion']);
 
 
 
-#$routes->get('dashboard', 'Dashboard::index');
-$routes->get('dashboard', 'Dashboard::index', ['filter' => 'verificarSesion']);
 
 #Personas
 $routes->get('personas', 'Persona::index', ['filter' => 'verificarSesion']);

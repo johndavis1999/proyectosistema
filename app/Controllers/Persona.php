@@ -82,107 +82,128 @@ class Persona extends BaseController{
 
         $paginador = $persona->pager;
         $data['paginador'] = $paginador;
-
-        return view('personas/index', $data);
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('personas/index', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function generarExcel($estado, $rol, $nombre, $cargo, $extranjero){
         
-        $persona = new Personas();
-
-        $rolCampos = [
-            'empleado' => 'es_empleado',
-            'proveedor' => 'es_proveedor',
-            'cliente' => 'es_cliente',
-        ];
-        
-        if (array_key_exists($rol, $rolCampos)) {
-            $campoRol = $rolCampos[$rol];
-            $persona->where($campoRol, 1);
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
         }
-        
-        // Aplica los filtros solo si se han seleccionado valores
-        if ($estado != 'none' || $extranjero != 'none' || $rol != 'none' || $nombre != 'none' || $cargo != 'none') {
-            $persona->orderBy('id', 'ASC');
+        if (in_array($rol_usuario, [1,2])) {
 
-            if ($estado != 'none') {
-                $persona->where('estado', $estado);
+            $persona = new Personas();
+    
+            $rolCampos = [
+                'empleado' => 'es_empleado',
+                'proveedor' => 'es_proveedor',
+                'cliente' => 'es_cliente',
+            ];
+            
+            if (array_key_exists($rol, $rolCampos)) {
+                $campoRol = $rolCampos[$rol];
+                $persona->where($campoRol, 1);
             }
-
-            if ($extranjero != 'none') {
-                $persona->where('es_extranjero', $extranjero);
-            }
-
-            if ($rol != 'none') {
-                $rolCampos = [
-                    'empleado' => 'es_empleado',
-                    'proveedor' => 'es_proveedor',
-                    'cliente' => 'es_cliente',
-                ];
-        
-                if (array_key_exists($rol, $rolCampos)) {
-                    $campoRol = $rolCampos[$rol];
-                    $persona->where($campoRol, 1);
+            
+            // Aplica los filtros solo si se han seleccionado valores
+            if ($estado != 'none' || $extranjero != 'none' || $rol != 'none' || $nombre != 'none' || $cargo != 'none') {
+                $persona->orderBy('id', 'ASC');
+    
+                if ($estado != 'none') {
+                    $persona->where('estado', $estado);
                 }
+    
+                if ($extranjero != 'none') {
+                    $persona->where('es_extranjero', $extranjero);
+                }
+    
+                if ($rol != 'none') {
+                    $rolCampos = [
+                        'empleado' => 'es_empleado',
+                        'proveedor' => 'es_proveedor',
+                        'cliente' => 'es_cliente',
+                    ];
+            
+                    if (array_key_exists($rol, $rolCampos)) {
+                        $campoRol = $rolCampos[$rol];
+                        $persona->where($campoRol, 1);
+                    }
+                }
+    
+                if ($nombre != 'none') {
+                    $persona->like('nombres', $nombre);
+                }
+    
+                if ($cargo != 'none') {
+                    $persona->like('id_cargo', $cargo);
+                }
+    
+                $data['personas'] = $persona->select('personas.*, cargos.descripcion as cargo_empleado')->join('cargos', 'cargos.id = personas.id_cargo', 'left')->findAll();
+            } else {
+                $data['personas'] = $persona->select('personas.*, cargos.descripcion as cargo_empleado')->join('cargos', 'cargos.id = personas.id_cargo', 'left')->findAll();
             }
-
-            if ($nombre != 'none') {
-                $persona->like('nombres', $nombre);
-            }
-
-            if ($cargo != 'none') {
-                $persona->like('id_cargo', $cargo);
-            }
-
-            $data['personas'] = $persona->select('personas.*, cargos.descripcion as cargo_empleado')->join('cargos', 'cargos.id = personas.id_cargo', 'left')->findAll();
-        } else {
-            $data['personas'] = $persona->select('personas.*, cargos.descripcion as cargo_empleado')->join('cargos', 'cargos.id = personas.id_cargo', 'left')->findAll();
-        }
-
-        // Crear un nuevo objeto Spreadsheet
-        $spreadsheet = new Spreadsheet();
-
-        // Obtener la hoja activa
-        $sheet = $spreadsheet->getActiveSheet();
-
-        // Agregar encabezados
-        $sheet->setCellValue('A1', 'ID');
-        $sheet->setCellValue('B1', 'Nombres');
-        $sheet->setCellValue('C1', 'Estado');
-        $sheet->setCellValue('D1', 'Es Extranjero');
-        $sheet->setCellValue('E1', 'Cliente');
-        $sheet->setCellValue('F1', 'Proveedor');
-        $sheet->setCellValue('G1', 'Empleado');
-        $sheet->setCellValue('H1', 'Cargo');
-        // ... Agregar más columnas según tus necesidades
-
-        // Agregar datos de las personas al archivo Excel
-        $row = 2;
-        foreach ($data['personas'] as $persona) {
-            $sheet->setCellValue('A' . $row, $persona['id']);
-            $sheet->setCellValue('B' . $row, $persona['nombres']);
-            $sheet->setCellValue('C' . $row, $persona['estado'] == '1' ? 'Activo' : 'Inactivo');
-            $sheet->setCellValue('D' . $row, $persona['es_extranjero'] == '1' ? 'Si' : 'No');
-            $sheet->setCellValue('E' . $row, $persona['es_cliente'] == '1' ? 'Si' : 'No');
-            $sheet->setCellValue('F' . $row, $persona['es_proveedor'] == '1' ? 'Si' : 'No');
-            $sheet->setCellValue('G' . $row, $persona['es_empleado'] == '1' ? 'Si' : 'No');
-            $sheet->setCellValue('H' . $row, $persona['cargo_empleado']);
+    
+            // Crear un nuevo objeto Spreadsheet
+            $spreadsheet = new Spreadsheet();
+    
+            // Obtener la hoja activa
+            $sheet = $spreadsheet->getActiveSheet();
+    
+            // Agregar encabezados
+            $sheet->setCellValue('A1', 'ID');
+            $sheet->setCellValue('B1', 'Nombres');
+            $sheet->setCellValue('C1', 'Estado');
+            $sheet->setCellValue('D1', 'Es Extranjero');
+            $sheet->setCellValue('E1', 'Cliente');
+            $sheet->setCellValue('F1', 'Proveedor');
+            $sheet->setCellValue('G1', 'Empleado');
+            $sheet->setCellValue('H1', 'Cargo');
             // ... Agregar más columnas según tus necesidades
-
-            $row++;
+    
+            // Agregar datos de las personas al archivo Excel
+            $row = 2;
+            foreach ($data['personas'] as $persona) {
+                $sheet->setCellValue('A' . $row, $persona['id']);
+                $sheet->setCellValue('B' . $row, $persona['nombres']);
+                $sheet->setCellValue('C' . $row, $persona['estado'] == '1' ? 'Activo' : 'Inactivo');
+                $sheet->setCellValue('D' . $row, $persona['es_extranjero'] == '1' ? 'Si' : 'No');
+                $sheet->setCellValue('E' . $row, $persona['es_cliente'] == '1' ? 'Si' : 'No');
+                $sheet->setCellValue('F' . $row, $persona['es_proveedor'] == '1' ? 'Si' : 'No');
+                $sheet->setCellValue('G' . $row, $persona['es_empleado'] == '1' ? 'Si' : 'No');
+                $sheet->setCellValue('H' . $row, $persona['cargo_empleado']);
+                // ... Agregar más columnas según tus necesidades
+    
+                $row++;
+            }
+    
+            // Guardar el archivo Excel
+            $writer = new Xlsx($spreadsheet);
+            $filename = 'export_personas.xlsx';
+            $writer->save($filename);
+    
+            // Descargar el archivo Excel
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="' . $filename . '"');
+            header('Cache-Control: max-age=0');
+            $writer->save('php://output');
+            exit;
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
         }
-
-        // Guardar el archivo Excel
-        $writer = new Xlsx($spreadsheet);
-        $filename = 'export_personas.xlsx';
-        $writer->save($filename);
-
-        // Descargar el archivo Excel
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="' . $filename . '"');
-        header('Cache-Control: max-age=0');
-        $writer->save('php://output');
-        exit;
     }
 
     public function crear(){
@@ -190,7 +211,18 @@ class Persona extends BaseController{
         $cargo = new Cargos();
         $data['cargos'] = $cargo->orderBy('id','ASC')->findAll();
         $data['titulo'] = $titulo;
-        return view('personas/crear', $data);
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('personas/crear', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     function validar_identificacion_ecuador($identificacion) {
@@ -280,6 +312,8 @@ class Persona extends BaseController{
         $id_cargo = $this->request->getVar('id_cargo');
         $es_cliente = $this->request->getVar('es_cliente');
         $es_proveedor = $this->request->getVar('es_proveedor');
+        $cotizacion = $this->request->getVar('cotizacion');
+
         $estado = 1;
     
         $es_extranjero = $es_extranjero == '1' ? '1' : '0';
@@ -341,7 +375,12 @@ class Persona extends BaseController{
             'estado'=>$estado
         ];
         $persona->insert($datos);
-        return $this->response->redirect(site_url('personas'));
+
+        if($cotizacion=='1'){
+            return $this->response->redirect(site_url('cotizacionCrear'));
+        }else{
+            return $this->response->redirect(site_url('personas'));
+        }
     }
     
     public function eliminar($id = null) {
@@ -357,7 +396,6 @@ class Persona extends BaseController{
             $persona->where('id', $id)->delete($id);
             return $this->response->redirect(site_url('personas'));
         }
-
     }
 
     public function editar($id=null){
@@ -367,7 +405,18 @@ class Persona extends BaseController{
         $data['cargos'] = $cargo->orderBy('id','ASC')->findAll();
         $titulo = "Personas";
         $data['titulo'] = $titulo;
-        return view('personas/editar', $data);
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('personas/editar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function actualizar(){

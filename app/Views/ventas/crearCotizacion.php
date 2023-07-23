@@ -19,10 +19,18 @@
       </div>
       <div class="" style="justify-content: center; align-items: center;">
           <div class="">
+            
               <div class="card card-primary">
+                
                   <div class="card-header">
                       <h3 class="card-title">Formulario de Registro de Cotización</h3>
                   </div>
+                <div class="col-4 pt-3 px-3">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Crear Cliente
+                    </button>
+                </div>
+                
                   <form action="<?= base_url('guardarCotizacion') ?>" method="POST">
                         <div class="card-body">
                             <?php if(session('mensaje')){?>
@@ -222,6 +230,62 @@
               </div>
           </div>
       </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Crear Cliente</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <div class="modal-body">
+                            <form action="guardarPersona" method="POST">
+                                <?php if(session('mensaje')){?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?php echo session('mensaje') ?>
+                                    </div>
+                                <?php }  ?> 
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="identificacion">Identificación *</label>
+                                        <input type="text" class="form-control" id="identificacion" name="identificacion" value="<?= old('identificacion') ?>" placeholder="Identificacion">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" name="es_extranjero" id="es_extranjero" value="1" <?= old('es_extranjero') ? 'checked' : '' ?> class="form-control-input">
+                                            <span class="custom-control-description">Es Extranjero</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nombres">Nombres*</label>
+                                        <input type="text" value="<?= old('nombres') ?>" class="form-control" id="nombres" name="nombres" placeholder="Nombre de Persona">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="correo">Correo *</label>
+                                        <input type="email" class="form-control" id="correo" name="correo" value="<?= old('correo') ?>" placeholder="Correo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefono">Telefono*</label>
+                                        <input type="text" class="form-control" id="telefono" name="telefono" value="<?= old('telefono') ?>" placeholder="Telefono">
+                                    </div>
+                                    <input type="hidden" name="es_cliente" value="1">
+                                    <input type="hidden" name="cotizacion" value="1">
+                                </div>
+                                </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <button type="submit" class="btn btn-primary">
+                                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                            Crear Persona
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
     </div><!-- /.container-fluid -->
   </section>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

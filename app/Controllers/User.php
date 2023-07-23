@@ -21,8 +21,18 @@ class User extends BaseController
         $data['paginador']=$paginador;
         $titulo = "Usuarios";
         $data['titulo'] = $titulo;
-        return view('usuarios/index', $data);
-
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('usuarios/index', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     
     public function crear()
@@ -31,7 +41,18 @@ class User extends BaseController
         $data['personas'] = $persona->where('es_empleado','1')->orderBy('id', 'ASC')->findAll();
         $titulo = "Usuarios";
         $data['titulo'] = $titulo;
-        return view('usuarios/crear', $data);
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1])) {
+            return view('usuarios/crear', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function guardar(){
@@ -126,8 +147,19 @@ class User extends BaseController
         if (!empty($imagen) && file_exists($ruta . $imagen) && $imagen != '') {
             unlink($ruta . $imagen);
         }
-        $users->where('id', $id)->delete($id);
-        return redirect()->to(base_url('usuarios'));
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1])) {
+            $users->where('id', $id)->delete($id);
+            return redirect()->to(base_url('usuarios'));
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function editar($id=null){
@@ -139,7 +171,18 @@ class User extends BaseController
         $data['personas'] = $persona->orderBy('id','ASC')->findAll();
         $titulo = "Usuarios";
         $data['titulo'] = $titulo;
-        return view('usuarios/editar', $data);
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1])) {
+            return view('usuarios/editar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function actualizar(){
@@ -257,9 +300,20 @@ class User extends BaseController
             'password'=>$passwordHash
         ];
         
-        $user->update($id,$data);
-
-        return redirect()->to(base_url('usuarios'))->with('exito', 'Contraseña actualizada exitosamente');
+        
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1])) {
+            $user->update($id,$data);
+    
+            return redirect()->to(base_url('usuarios'))->with('exito', 'Contraseña actualizada exitosamente');
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
    

@@ -98,7 +98,18 @@ class Cobro extends BaseController{
                                 ->paginate(10);
         $paginador = $cobro->pager;
         $data['paginador']=$paginador;
-        return view('cobros/index', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return view('cobros/index', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     
     public function crear(){
@@ -112,7 +123,18 @@ class Cobro extends BaseController{
                                 ->findAll();
 
         $data['titulo'] = $titulo;
-        return view('cobros/crear', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return view('cobros/crear', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
     
     public function registrar($id=null){
@@ -141,7 +163,18 @@ class Cobro extends BaseController{
         $data['cotizaciones'] = $cotizacion->where('id',$id)->first();
 
         $data['titulo'] = $titulo;
-        return view('cobros/crear', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return view('cobros/crear', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function guardar(){
@@ -346,9 +379,20 @@ class Cobro extends BaseController{
         // Restar el valor pagado al eliminar el cobro
         $id_cotizacion = $cobros['id_cotizacion'];
         $valor_pagado = $cobros['valor_pagado'];
-        $this->restarCobro($id_cotizacion, $valor_pagado);
-        $cobro->where('id', $id)->delete($id);
-        return $this->response->redirect(site_url('Cobros'));
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            $this->restarCobro($id_cotizacion, $valor_pagado);
+            $cobro->where('id', $id)->delete($id);
+            return $this->response->redirect(site_url('Cobros'));
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function restarCobro($id_cotizacion, $valor_pagado) {
@@ -388,7 +432,18 @@ class Cobro extends BaseController{
                                 ->findAll();
 
         $data['titulo'] = $titulo;
-        return view('cobros/editar', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            return view('cobros/editar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function actualizar(){
@@ -545,113 +600,135 @@ class Cobro extends BaseController{
                                 ->findAll();
 
         $data['titulo'] = $titulo;
-        return view('cobros/consultar', $data);
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2,3])) {
+            return view('cobros/consultar', $data);
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 
     public function generarExcel($num_cobro, $clienteFiltro, $forma_pago, $num_movimiento, $bancoFiltro, $num_cot, $fecha_inicio, $fecha_fin){
-        $cobro = new Cobros();
-        // Aplica los filtros solo si se han seleccionado valores
-        if (  $num_cobro != 'none' || $clienteFiltro != 'none' || $forma_pago != 'none' || $num_movimiento != 'none' || $bancoFiltro != 'none' || $num_cot != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none') {
-            $cobro->orderBy('id', 'ASC');
 
-            if ($clienteFiltro != 'none') {
-                $cobro->where('cobros.id_cliente', $clienteFiltro);
-            }
-
-            if ($forma_pago != 'none') {
-                $cobro->where('cobros.forma_pago', $forma_pago);
-            }
-
-            if ($bancoFiltro != 'none') {
-                $cobro->where('cobros.id_banco', $bancoFiltro);
-            }
-
-            if ($num_cobro != 'none') {
-                $cobro->where('cobros.id', $num_cobro);
-            }
-
-            if ($num_cot != 'none') {
-                $cobro->where('cobros.id_cotizacion', $num_cot);
-            }
-
-            if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
-                $cobro->where('cobros.fecha_registro >=', $fecha_inicio);
-                $cobro->where('cobros.fecha_registro <=', $fecha_fin);
-            }
-
-        $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
-                                ->join('personas', 'personas.id = cobros.id_cliente', 'left')
-                                ->join('compras', 'compras.id = cobros.id_cotizacion', 'left')
-                                ->join('bancos', 'bancos.id = cobros.id_banco', 'left')
-                                ->findAll();
-        } else {
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            $cobro = new Cobros();
+            // Aplica los filtros solo si se han seleccionado valores
+            if (  $num_cobro != 'none' || $clienteFiltro != 'none' || $forma_pago != 'none' || $num_movimiento != 'none' || $bancoFiltro != 'none' || $num_cot != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none') {
+                $cobro->orderBy('id', 'ASC');
+    
+                if ($clienteFiltro != 'none') {
+                    $cobro->where('cobros.id_cliente', $clienteFiltro);
+                }
+    
+                if ($forma_pago != 'none') {
+                    $cobro->where('cobros.forma_pago', $forma_pago);
+                }
+    
+                if ($bancoFiltro != 'none') {
+                    $cobro->where('cobros.id_banco', $bancoFiltro);
+                }
+    
+                if ($num_cobro != 'none') {
+                    $cobro->where('cobros.id', $num_cobro);
+                }
+    
+                if ($num_cot != 'none') {
+                    $cobro->where('cobros.id_cotizacion', $num_cot);
+                }
+    
+                if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
+                    $cobro->where('cobros.fecha_registro >=', $fecha_inicio);
+                    $cobro->where('cobros.fecha_registro <=', $fecha_fin);
+                }
+    
             $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
                                     ->join('personas', 'personas.id = cobros.id_cliente', 'left')
                                     ->join('compras', 'compras.id = cobros.id_cotizacion', 'left')
                                     ->join('bancos', 'bancos.id = cobros.id_banco', 'left')
                                     ->findAll();
-        }
-
-        // Crear un nuevo objeto Spreadsheet
-        $spreadsheet = new Spreadsheet();
-
-        // Obtener la hoja activa
-        $sheet = $spreadsheet->getActiveSheet();
-
-        $sheet->getColumnDimension('A')->setWidth(10);
-        $sheet->getColumnDimension('B')->setWidth(30);
-        $sheet->getColumnDimension('C')->setWidth(17);
-        $sheet->getColumnDimension('D')->setWidth(15);
-        $sheet->getColumnDimension('E')->setWidth(15);
-        $sheet->getColumnDimension('F')->setWidth(15);
-        $sheet->getColumnDimension('G')->setWidth(15);
-        $sheet->getColumnDimension('H')->setWidth(20);
-        $sheet->getColumnDimension('I')->setWidth(20);
-        $sheet->getColumnDimension('J')->setWidth(20);
-        $sheet->getColumnDimension('K')->setWidth(15);
-        // Agregar encabezados
-        $sheet->setCellValue('A1', 'Num. Pago');
-        $sheet->setCellValue('B1', 'Proveedor');
-        $sheet->setCellValue('C1', 'Compra');
-        $sheet->setCellValue('D1', 'Valor Compra');
-        $sheet->setCellValue('E1', 'Valor Pago');
-        $sheet->setCellValue('F1', 'Fecha Registro');
-        $sheet->setCellValue('G1', 'Forma de Pago');
-        $sheet->setCellValue('H1', 'Num. Cheque');
-        $sheet->setCellValue('I1', 'Num. Transferencia');
-        $sheet->setCellValue('J1', 'Banco');
-        $sheet->setCellValue('K1', 'Fecha Mov.');
-        // ... Agregar más columnas según tus necesidades
-
-        // Agregar datos de las personas al archivo Excel
-        $row = 2;
-        foreach ($data['cobros'] as $cobro) {
-            $sheet->setCellValue('A' . $row, $cobro['id']);
-            $sheet->setCellValue('B' . $row, $cobro['persona']);
-            $sheet->setCellValue('C' . $row, $cobro['compra']);
-            $sheet->setCellValue('D' . $row, '$' . $cobro['valor_compra']);
-            $sheet->setCellValue('E' . $row, '$' . $cobro['valor_pagado']);
-            $sheet->setCellValue('F' . $row, $cobro['fecha_registro']);
-            $sheet->setCellValue('G' . $row, $cobro['forma_pago']);
-            $sheet->setCellValue('H' . $row, $cobro['num_cheque']);
-            $sheet->setCellValue('I' . $row, $cobro['num_transferencia']);
-            $sheet->setCellValue('J' . $row, $cobro['id_banco']);
-            $sheet->setCellValue('K' . $row, $cobro['banco']);
+            } else {
+                $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+                                        ->join('personas', 'personas.id = cobros.id_cliente', 'left')
+                                        ->join('compras', 'compras.id = cobros.id_cotizacion', 'left')
+                                        ->join('bancos', 'bancos.id = cobros.id_banco', 'left')
+                                        ->findAll();
+            }
+    
+            // Crear un nuevo objeto Spreadsheet
+            $spreadsheet = new Spreadsheet();
+    
+            // Obtener la hoja activa
+            $sheet = $spreadsheet->getActiveSheet();
+    
+            $sheet->getColumnDimension('A')->setWidth(10);
+            $sheet->getColumnDimension('B')->setWidth(30);
+            $sheet->getColumnDimension('C')->setWidth(17);
+            $sheet->getColumnDimension('D')->setWidth(15);
+            $sheet->getColumnDimension('E')->setWidth(15);
+            $sheet->getColumnDimension('F')->setWidth(15);
+            $sheet->getColumnDimension('G')->setWidth(15);
+            $sheet->getColumnDimension('H')->setWidth(20);
+            $sheet->getColumnDimension('I')->setWidth(20);
+            $sheet->getColumnDimension('J')->setWidth(20);
+            $sheet->getColumnDimension('K')->setWidth(15);
+            // Agregar encabezados
+            $sheet->setCellValue('A1', 'Num. Pago');
+            $sheet->setCellValue('B1', 'Proveedor');
+            $sheet->setCellValue('C1', 'Compra');
+            $sheet->setCellValue('D1', 'Valor Compra');
+            $sheet->setCellValue('E1', 'Valor Pago');
+            $sheet->setCellValue('F1', 'Fecha Registro');
+            $sheet->setCellValue('G1', 'Forma de Pago');
+            $sheet->setCellValue('H1', 'Num. Cheque');
+            $sheet->setCellValue('I1', 'Num. Transferencia');
+            $sheet->setCellValue('J1', 'Banco');
+            $sheet->setCellValue('K1', 'Fecha Mov.');
             // ... Agregar más columnas según tus necesidades
-
-            $row++;
+    
+            // Agregar datos de las personas al archivo Excel
+            $row = 2;
+            foreach ($data['cobros'] as $cobro) {
+                $sheet->setCellValue('A' . $row, $cobro['id']);
+                $sheet->setCellValue('B' . $row, $cobro['persona']);
+                $sheet->setCellValue('C' . $row, $cobro['compra']);
+                $sheet->setCellValue('D' . $row, '$' . $cobro['valor_compra']);
+                $sheet->setCellValue('E' . $row, '$' . $cobro['valor_pagado']);
+                $sheet->setCellValue('F' . $row, $cobro['fecha_registro']);
+                $sheet->setCellValue('G' . $row, $cobro['forma_pago']);
+                $sheet->setCellValue('H' . $row, $cobro['num_cheque']);
+                $sheet->setCellValue('I' . $row, $cobro['num_transferencia']);
+                $sheet->setCellValue('J' . $row, $cobro['id_banco']);
+                $sheet->setCellValue('K' . $row, $cobro['banco']);
+                // ... Agregar más columnas según tus necesidades
+    
+                $row++;
+            }
+    
+            // Guardar el archivo Excel
+            $writer = new Xlsx($spreadsheet);
+            $filename = 'export_pagos.xlsx';
+            $writer->save($filename);
+    
+            // Descargar el archivo Excel
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="' . $filename . '"');
+            header('Cache-Control: max-age=0');
+            $writer->save('php://output');
+            exit;
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
         }
-
-        // Guardar el archivo Excel
-        $writer = new Xlsx($spreadsheet);
-        $filename = 'export_pagos.xlsx';
-        $writer->save($filename);
-
-        // Descargar el archivo Excel
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="' . $filename . '"');
-        header('Cache-Control: max-age=0');
-        $writer->save('php://output');
-        exit;
     }
 }
