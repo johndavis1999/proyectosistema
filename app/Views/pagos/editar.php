@@ -6,18 +6,11 @@
                 if ($(this).val() === 'Cheque' || $(this).val() === 'Transferencia') {
                     $('#seccionBanco').show();
                     $('#seccionFechaMov').show();
-                    if($(this).val() === 'Cheque'){
-                        $('#seccionCheque').show();
-                        $('#seccionTransferencia').hide();
-                    }
-                    else if($(this).val() === 'Transferencia'){
-                        $('#seccionTransferencia').show();
-                        $('#seccionCheque').hide();
-                    }
+                    $('#seccionMovimiento').show();
                 } else {
                     $('#seccionBanco').hide();
                     $('#seccionFechaMov').hide();
-                    $('#seccionTransferencia').hide();
+                    $('#seccionMovimiento').hide();
                     $('#seccionCheque').hide();
                 }
             });
@@ -96,13 +89,9 @@
                                                 <?php endif; ?>
                                             </select>
                                         </div>
-                                        <div class="form-group" id="seccionCheque" style="display: none;">
-                                            <label for="num_cheque">Numero de Cheque:</label>
-                                            <input class="form-control" type="text" id="num_cheque" name="num_cheque" value="<?= $pago['num_cheque'] ?>" autocomplete="off">
-                                        </div>
-                                        <div class="form-group" id="seccionTransferencia" style="display: none;">
-                                            <label for="num_transferencia">Numero de Transferencia:</label>
-                                            <input class="form-control" type="text" id="num_transferencia" name="num_transferencia" value="<?= $pago['num_transferencia'] ?>" autocomplete="off">
+                                        <div class="form-group" id="seccionMovimiento" style="display: none;">
+                                            <label for="num_movimiento">Numero de Movimiento:</label>
+                                            <input class="form-control" type="text" id="num_movimiento" name="num_movimiento" value="<?= $pago['num_movimiento'] ?>" oninput="this.value = permitirNumeros(this)" autocomplete="off">
                                         </div>
                                         <div class="form-group" id="seccionFechaMov" style="display: none;">
                                             <label for="fecha_movimiento">Fecha de movimiento *</label>
@@ -145,7 +134,7 @@
                                                             <i class="fas fa-dollar-sign"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= $pago['valor_pagado'] ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required>
+                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= $pago['valor_pagado'] ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required readonly>
                                                 </div>
                                             </td>
                                         </tr>
@@ -232,6 +221,12 @@
         } else {
             input.setCustomValidity('');
         }
+    }
+
+    function permitirNumeros(input) {
+        // Eliminar todos los caracteres que no sean números
+        var numero = input.value.replace(/\D/g, "");
+        return numero;
     }
 
 </script>

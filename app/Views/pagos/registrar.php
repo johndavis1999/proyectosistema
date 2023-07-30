@@ -136,7 +136,7 @@
                                                             <i class="fas fa-dollar-sign"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= old('valor_pagado') ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required max="<?= $compras['total'] - $compras['valor_pagado'] ?>">
+                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= $valor_vencer ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required max="<?= $compras['total'] - $compras['valor_pagado'] ?>" readonly>
                                                 </div>
                                             </td>
                                         </tr>
@@ -235,6 +235,12 @@
         } else {
             input.setCustomValidity('');
         }
+    }
+
+    function permitirNumeros(input) {
+        // Eliminar todos los caracteres que no sean números
+        var numero = input.value.replace(/\D/g, "");
+        return numero;
     }
 
 </script>

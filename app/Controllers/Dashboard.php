@@ -38,16 +38,21 @@ class Dashboard extends BaseController
         $data['titulo'] = $titulo;
         
         // validacion rol permisos
+        
         $session = session();
-        if ($session->has('id_rol')) {
-            $rol_usuario = $session->get('id_rol');
-        }
+        if (!$session->has('usuario')) {
+            return redirect()->to(base_url(''));
+        }else{
+            if ($session->has('id_rol')) {
+                $rol_usuario = $session->get('id_rol');
+            }
 
-        if (in_array($rol_usuario, [1, 2, 3])) {
-            return view('dashboard/index', $data);
-        } else {
-            $data['titulo'] = 'Error 404';
-            return view('errors/html/error_404', $data);
+            if (in_array($rol_usuario, [1, 2, 3])) {
+                return view('dashboard/index', $data);
+            } else {
+                $data['titulo'] = 'Error 404';
+                return view('errors/html/error_404', $data);
+            }
         }
     }
 
