@@ -21,6 +21,17 @@
                     </a>
                 </div>
             </div>
+            
+        <?php if(session('mensaje')){?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo session('mensaje') ?>
+            </div>
+        <?php }  ?> 
+        <?php if(session('exito')){?>
+            <div class="alert alert-success" role="alert">
+                <?php echo session('exito') ?>
+            </div>
+        <?php }  ?> 
             <div class="row container-flui">
                 <div class="col-12" id="accordion">
                     <div class="card card-primary card-outline">
@@ -128,11 +139,6 @@
                     <div class="card">
                     <!-- /.card-header -->
                         <div class="card-body">
-                        <?php if(session('mensaje')){?>
-                            <div class="alert alert-danger" role="alert">
-                                <?php echo session('mensaje') ?>
-                            </div>
-                        <?php }  ?> 
                             <table id="example2" class="table table-bordered table-hover  table-sm table-responsive-sm" align-items: center>
                                 <thead>
                                     <tr>

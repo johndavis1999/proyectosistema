@@ -20,4 +20,10 @@ class Cotizaciones extends Model{
 
         return null;
     }
+    public function consultarCliente($cliente)
+    {   
+        $this->where('id_cliente', $cliente)->get();
+    }
+
+
 }

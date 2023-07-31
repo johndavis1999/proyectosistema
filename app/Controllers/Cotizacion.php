@@ -210,10 +210,11 @@ class Cotizacion extends BaseController{
             $rol_usuario = $session->get('id_rol');
         }
         if (in_array($rol_usuario, [1,2])) {
-            $cotizaciones->where('id', $id)->delete($id);
             $this->reversarStockEgreso($id);
             $this->eliminarEgresoDetalle($id);
-            return $this->response->redirect(site_url('Cotizaciones'));
+            $cotizaciones->where('id', $id)->delete($id);
+            return redirect()->to(base_url('Cotizaciones'))->with('exito', 'Cotizacion Eliminada exitosamente');
+            #return $this->response->redirect(site_url('Cotizaciones'));
         }else{
             $data['titulo'] = 'Error 404';
             return view('errors/html/error_404', $data);

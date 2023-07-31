@@ -21,6 +21,17 @@
                     </a>
                 </div>
             </div>
+            
+        <?php if(session('mensaje')){?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo session('mensaje') ?>
+            </div>
+        <?php }  ?> 
+        <?php if(session('exito')){?>
+            <div class="alert alert-success" role="alert">
+                <?php echo session('exito') ?>
+            </div>
+        <?php }  ?> 
             <div class="row container-flui">
                 <div class="col-12" id="accordion">
                     <div class="card card-primary card-outline">

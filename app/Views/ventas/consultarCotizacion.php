@@ -21,9 +21,11 @@
           <div class="col2">
             <a class="btn btn-block btn-primary" href="<?=base_url('editarCotizacion/'.$cotizacion['id']);?>"><i class="fas fa-edit"></i> Editar Documento</a>
           </div>
+          <!--
           <div class="col2 ml-3">
             <button type="button" class="btn btn-block btn-success" onclick='window.location.href="UsuariosCrear"'><i class="fas fa-plus"></i> Ver PDF Documento</button>
           </div>
+            -->
           <?php 
             if($cotizacion['total'] != $cotizacion['valor_pagado']){
         ?>
@@ -33,9 +35,10 @@
         <?php 
             }
           ?>
-          <div class="col2 ml-3">
+          <!--<div class="col2 ml-3">
             <a class="btn btn-block btn-primary" href="<?=base_url('editarCotizacion/'.$cotizacion['id']);?>"><i class="fas fa-edit"></i> Generar Factura</a>
           </div>
+        -->
         </div>
         <?php if(session('mensaje')){?>
             <div class="alert alert-danger" role="alert">

@@ -293,7 +293,9 @@ class Pago extends BaseController{
                 'doc_adjunto'=>$nuevoNombre
             ];
             $pago->insert($datos);
-            return $this->response->redirect(site_url('Pagos'));
+            $lastInsertId = $pago->insertID();
+            return redirect()->to(base_url('consultarPago/'.$lastInsertId))->with('exito', 'Pago Creado Exitosamente');
+            #return $this->response->redirect(site_url('Pagos'));
         }
 
         $datos=[
@@ -310,10 +312,11 @@ class Pago extends BaseController{
         ];
 
         $pago->insert($datos);
+        $lastInsertId = $pago->insertID();
 
         $this->sumarPago($id_compra,$valor_pagado);
 
-        return $this->response->redirect(site_url('Pagos'));
+        return redirect()->to(base_url('consultarPago/'.$lastInsertId))->with('exito', 'Pago Creado Exitosamente');
     }
 
     protected function sumarPago($id_compra,$valor_pagado){
@@ -349,7 +352,7 @@ class Pago extends BaseController{
         }
         if (in_array($rol_usuario, [1,2])) {
             $pago->where('id', $id)->delete($id);
-            return $this->response->redirect(site_url('Pagos'));
+            return redirect()->to(base_url('Pagos/'))->with('exito', 'Pago Eliminado Exitosamente');
         }else{
             $data['titulo'] = 'Error 404';
             return view('errors/html/error_404', $data);
@@ -531,7 +534,7 @@ class Pago extends BaseController{
                 'doc_adjunto'=>$nuevoNombre
             ];
             $pago->update($id,$datos);
-            return $this->response->redirect(site_url('Pagos'));
+            return redirect()->to(base_url('consultarPago/'.$id))->with('exito', 'Pago Actualizado Exitosamente');
         }
         
         // Restar el valor pagado anterior
@@ -551,7 +554,7 @@ class Pago extends BaseController{
 
         $this->sumarPago($id_compra, $valor_pagado);
 
-        return $this->response->redirect(site_url('Pagos'));
+        return redirect()->to(base_url('consultarPago/'.$id))->with('exito', 'Pago Actualizado Exitosamente');
     }
     
     public function consultar($id=null){

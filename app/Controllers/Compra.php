@@ -275,7 +275,8 @@ class Compra extends BaseController{
             $lastInsertId = $compra->insertID();
             $this->guardarDetalle($lastInsertId);
             $this->actualizarStockIngreso($lastInsertId);
-            return $this->response->redirect(site_url('Compras'));
+            return redirect()->to(base_url('consultarCompra/'.$lastInsertId))->with('exito', 'Compra Creada Exitosamente');
+            //return $this->response->redirect(site_url('Compras'));
         }
         $datos=[
             'num_fact'=>$num_fact,
@@ -295,7 +296,7 @@ class Compra extends BaseController{
         $lastInsertId = $compra->insertID();
         $this->guardarDetalle($lastInsertId);
         $this->actualizarStockIngreso($lastInsertId);
-        return $this->response->redirect(site_url('Compras'));
+        return redirect()->to(base_url('consultarCompra/'.$lastInsertId))->with('exito', 'Compra Creada Exitosamente');
         
     }
 
@@ -351,10 +352,11 @@ class Compra extends BaseController{
         if (!empty($doc_adjunto) && file_exists($doc_adjunto) && $doc_adjunto != '') {
             unlink($doc_adjunto);
         }
-        $compras->where('id', $id)->delete($id);
         $this->reversarStockIngreso($id);
         $this->eliminarIngresoDetalle($id);
-        return $this->response->redirect(site_url('Compras'));
+        $compras->where('id', $id)->delete($id);
+        return redirect()->to(base_url('Compras'))->with('exito', 'Compra Eliminada Exitosamente');
+        #return $this->response->redirect(site_url('Compras'));
     }
     
     public function eliminarIngresoDetalle($id_compra){
@@ -601,9 +603,7 @@ class Compra extends BaseController{
                     $this->actualizarStockIngreso($id);
                 }
             }
-
-
-            return redirect()->to(base_url('Compras'))->with('exito', 'Compra Actualizada exitosamente');
+            return redirect()->to(base_url('consultarCompra/'.$id))->with('exito', 'Compra Actualizada Exitosamente');
         }
 
 
@@ -672,9 +672,7 @@ class Compra extends BaseController{
                 $this->actualizarStockIngreso($id);
             }
         }
-
-
-        return redirect()->to(base_url('Compras'))->with('exito', 'Compra Actualizada Exitosamente');
+        return redirect()->to(base_url('consultarCompra/'.$id))->with('exito', 'Compra Actualizada Exitosamente');
     }
 
     public function generarExcel($num_fact, $proveedorFiltro, $fecha_inicio, $fecha_fin, $iva, $pagado, $descuento, $estado){

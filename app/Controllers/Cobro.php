@@ -388,7 +388,8 @@ class Cobro extends BaseController{
         if (in_array($rol_usuario, [1,2])) {
             $this->restarCobro($id_cotizacion, $valor_pagado);
             $cobro->where('id', $id)->delete($id);
-            return $this->response->redirect(site_url('Cobros'));
+            return redirect()->to(base_url('Cobros'))->with('exito', 'Compra Eliminada Exitosamente');
+            #return $this->response->redirect(site_url('Cobros'));
         }else{
             $data['titulo'] = 'Error 404';
             return view('errors/html/error_404', $data);
