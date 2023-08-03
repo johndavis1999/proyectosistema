@@ -1,0 +1,22 @@
+CRITICAL - 2023-08-03 02:23:07 --> Trying to access array offset on value of type null
+in APPPATH\Views\cobros\consultar.php on line 42.
+ 1 APPPATH\Views\cobros\consultar.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/consultar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(611): view('cobros/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('57')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 02:23:11 --> Trying to access array offset on value of type null
+in APPPATH\Views\cobros\consultar.php on line 42.
+ 1 APPPATH\Views\cobros\consultar.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\cobros\\consultar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('cobros/consultar', [], true)
+ 5 APPPATH\Controllers\Cobro.php(611): view('cobros/consultar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cobro->consultar('57')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cobro))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

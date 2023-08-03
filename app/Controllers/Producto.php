@@ -183,9 +183,9 @@ class Producto extends BaseController{
             return $this->response->redirect(site_url('productos'));
         }
 
-        $detallesCot = new DetalleCotizacion();
+        $detallesVenta = new DetalleCotizacion();
         //validar si hay categorias con productos relacionados
-        $detallesCot = $detalles->where('id_producto', $id)->findAll();
+        $detallesCot = $detallesVenta->where('id_producto', $id)->findAll();
         if(!empty($detallesCot)){
             $session = session();
             $session->setFlashData('mensaje','No se puede eliminar el producto ya que tiene transacciones relacionadas.');

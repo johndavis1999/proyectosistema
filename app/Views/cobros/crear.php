@@ -148,7 +148,7 @@
                                                             <i class="fas fa-dollar-sign"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?= old('valor_pagado') ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required max="<?= $cotizaciones['total'] - $cotizaciones['valor_pagado'] ?>">
+                                                    <input type="text" class="form-control align-right" id="valor_pagado" value="<?=  $cotizaciones['total'] ?>" name="valor_pagado" placeholder="Valor Total" oninput="this.value = permitirNumerosDecimales(this); validarMaximo(this)" required max="<?= $cotizaciones['total'] - $cotizaciones['valor_pagado'] ?>" readonly>
                                                 </div>
                                             </td>
                                         </tr>

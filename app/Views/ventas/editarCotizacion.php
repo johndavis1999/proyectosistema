@@ -223,9 +223,7 @@
                             <div class="table-responsive mb-5 card-body p-0">
                                 <div class="">
                                     <button class="btn btn-danger delete" id="removeRows" type="button">Eliminar</button>
-                                    <!--
-                                        <button class="btn btn-primary" id="addRows" type="button">Agregar producto</button>
-                                    -->
+                                    <button class="btn btn-primary" id="addRows" type="button">Agregar producto</button>
                                 </div>
                             </div>
 
@@ -445,7 +443,7 @@ toastr.options = {
     htmlRows += '</select>';
     htmlRows += '<input type="hidden" name="id_producto[]" id="id_producto_'+count+'" />';
     htmlRows += '</td>';
-    htmlRows += '<td><input type="text" name="stock_producto[]" id="stock_producto_'+count+'" class="form-control stock_producto" autocomplete="off" disabled></td>';  
+    //htmlRows += '<td><input type="text" name="stock_producto[]" id="stock_producto_'+count+'" class="form-control stock_producto" autocomplete="off" disabled></td>';  
     htmlRows += '<td><input type="number" name="cantidad_venta[]" id="cantidad_venta_'+count+'" class="form-control cantidad_venta" autocomplete="off" required oninput="this.value = permitirNumerosDecimales(this)" step="1" min="1"></td>';
 
     htmlRows += '<td><input type="text" name="precio_venta[]" id="precio_venta_'+count+'" class="form-control precio_venta" autocomplete="off" oninput="this.value = permitirNumerosDecimales(this)" readonly></td>'; 

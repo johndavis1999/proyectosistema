@@ -9,6 +9,8 @@ use App\Controllers\BaseController;
 use App\Models\Personas;
 use App\Models\Cargos;
 use App\Models\Users;
+use App\Models\Compras;
+use App\Models\Cotizaciones;
 
 class Persona extends BaseController{
     public function index(){
@@ -384,6 +386,32 @@ class Persona extends BaseController{
     }
     
     public function eliminar($id = null) {
+        
+
+        $compras = new Compras();
+        //validar si hay categorias con productos relacionados
+        $personaCompra = $compras->where('id_per_prov', $id)->findAll();
+        if(!empty($personaCompra)){
+            $session = session();
+            $session->setFlashData('mensaje','No se puede eliminar la persona ya que tiene transacciones relacionadas.');
+            return $this->response->redirect(site_url('personas'));
+        }
+        
+
+        $cotizaciones = new Cotizaciones();
+        $personaCot = $cotizaciones->where('id_cliente', $id)->findAll();
+        if(!empty($personaCot)){
+            $session = session();
+            $session->setFlashData('mensaje','No se puede eliminar la persona ya que tiene transacciones relacionadas.');
+            return $this->response->redirect(site_url('personas'));
+        }
+        $vendedorCot = $cotizaciones->where('id_vendedor', $id)->findAll();
+        if(!empty($vendedorCot)){
+            $session = session();
+            $session->setFlashData('mensaje','No se puede eliminar la persona ya que tiene transacciones relacionadas.');
+            return $this->response->redirect(site_url('personas'));
+        }
+
         $usuario = new Users();
         $persona_usuario = $usuario->where('id_persona', $id)->findAll();
         if(!empty($persona_usuario)){

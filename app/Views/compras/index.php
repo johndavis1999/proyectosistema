@@ -143,11 +143,6 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-            <?php if(session('mensaje')){?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo session('mensaje') ?>
-                </div>
-            <?php }  ?> 
               <table id="example2" class="table table-bordered table-hover  table-sm table-responsive-sm">
                 <thead>
                   <tr>
