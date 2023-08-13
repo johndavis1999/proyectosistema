@@ -15,8 +15,9 @@ class Cobro extends BaseController{
         $cobro = new Cobros();
 
         $cliente = new Personas();
-        $data['clientes'] = $cliente->orderBy('id','ASC')->findAll();
-
+        $data['clientes'] = $cliente->where('es_cliente', '1')
+                                    ->orderBy('id', 'ASC')
+                                    ->findAll();
         $banco = new Bancos();
         $data['bancos'] = $banco->orderBy('id','ASC')->findAll();
 
@@ -653,15 +654,15 @@ class Cobro extends BaseController{
                     $cobro->where('cobros.fecha_registro <=', $fecha_fin);
                 }
     
-            $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+            $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, cotizaciones.num_cot as cotizacion, bancos.nombre as banco')
                                     ->join('personas', 'personas.id = cobros.id_cliente', 'left')
-                                    ->join('compras', 'compras.id = cobros.id_cotizacion', 'left')
+                                    ->join('cotizaciones', 'cotizaciones.id = cobros.id_cotizacion', 'left')
                                     ->join('bancos', 'bancos.id = cobros.id_banco', 'left')
                                     ->findAll();
             } else {
-                $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, compras.num_fact as compra, bancos.nombre as banco')
+                $data['cobros'] = $cobro->select('cobros.*, personas.nombres as persona, cotizaciones.num_cot as cotizacion, bancos.nombre as banco')
                                         ->join('personas', 'personas.id = cobros.id_cliente', 'left')
-                                        ->join('compras', 'compras.id = cobros.id_cotizacion', 'left')
+                                        ->join('cotizaciones', 'cotizaciones.id = cobros.id_cotizacion', 'left')
                                         ->join('bancos', 'bancos.id = cobros.id_banco', 'left')
                                         ->findAll();
             }
@@ -684,17 +685,16 @@ class Cobro extends BaseController{
             $sheet->getColumnDimension('J')->setWidth(20);
             $sheet->getColumnDimension('K')->setWidth(15);
             // Agregar encabezados
-            $sheet->setCellValue('A1', 'Num. Pago');
+            $sheet->setCellValue('A1', 'Num. Cobro');
             $sheet->setCellValue('B1', 'Proveedor');
-            $sheet->setCellValue('C1', 'Compra');
-            $sheet->setCellValue('D1', 'Valor Compra');
+            $sheet->setCellValue('C1', 'Cotizacion');
+            $sheet->setCellValue('D1', 'Valor Cotizacion');
             $sheet->setCellValue('E1', 'Valor Pago');
             $sheet->setCellValue('F1', 'Fecha Registro');
             $sheet->setCellValue('G1', 'Forma de Pago');
-            $sheet->setCellValue('H1', 'Num. Cheque');
-            $sheet->setCellValue('I1', 'Num. Transferencia');
-            $sheet->setCellValue('J1', 'Banco');
-            $sheet->setCellValue('K1', 'Fecha Mov.');
+            $sheet->setCellValue('H1', 'Num. Mov.');
+            $sheet->setCellValue('I1', 'Banco');
+            $sheet->setCellValue('J1', 'Fecha Mov.');
             // ... Agregar más columnas según tus necesidades
     
             // Agregar datos de las personas al archivo Excel
@@ -702,15 +702,14 @@ class Cobro extends BaseController{
             foreach ($data['cobros'] as $cobro) {
                 $sheet->setCellValue('A' . $row, $cobro['id']);
                 $sheet->setCellValue('B' . $row, $cobro['persona']);
-                $sheet->setCellValue('C' . $row, $cobro['compra']);
-                $sheet->setCellValue('D' . $row, '$' . $cobro['valor_compra']);
+                $sheet->setCellValue('C' . $row, $cobro['cotizacion']);
+                $sheet->setCellValue('D' . $row, '$' . $cobro['valor_cotizacion']);
                 $sheet->setCellValue('E' . $row, '$' . $cobro['valor_pagado']);
                 $sheet->setCellValue('F' . $row, $cobro['fecha_registro']);
                 $sheet->setCellValue('G' . $row, $cobro['forma_pago']);
-                $sheet->setCellValue('H' . $row, $cobro['num_cheque']);
-                $sheet->setCellValue('I' . $row, $cobro['num_transferencia']);
-                $sheet->setCellValue('J' . $row, $cobro['id_banco']);
-                $sheet->setCellValue('K' . $row, $cobro['banco']);
+                $sheet->setCellValue('H' . $row, $cobro['valor_cotizacion']);
+                $sheet->setCellValue('I' . $row, $cobro['id_banco']);
+                $sheet->setCellValue('J' . $row, $cobro['banco']);
                 // ... Agregar más columnas según tus necesidades
     
                 $row++;

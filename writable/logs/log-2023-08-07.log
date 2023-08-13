@@ -1,0 +1,7 @@
+CRITICAL - 2023-08-07 01:30:38 --> Undefined variable $rol_usuario
+in APPPATH\Controllers\Cotizacion.php on line 39.
+ 1 APPPATH\Controllers\Cotizacion.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rol_usuario', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

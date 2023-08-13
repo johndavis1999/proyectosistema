@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Controllers\BaseController;
 use App\Models\Cotizaciones;
 use App\Models\Personas;
@@ -13,6 +15,108 @@ class Cotizacion extends BaseController{
     
     public function index(){
         $cotizacion = new Cotizaciones();
+        $titulo = "Cotizaciones";
+        $data['titulo'] = $titulo;
+        $cliente = new Personas();
+        $data['clientes'] = $cliente->where('es_cliente', '1')
+                                      ->orderBy('id', 'ASC')
+                                      ->findAll();
+        $data['vendedores'] = $cliente->where('es_empleado', '1')
+                                      ->orderBy('id', 'ASC')
+                                      ->findAll();
+
+        $num_cot = $this->request->getVar('num_cot');
+        $clienteFiltro = $this->request->getVar('clienteFiltro');
+        $vendedorFiltro = $this->request->getVar('vendedorFiltro');
+        $fecha_inicio = $this->request->getVar('fecha_inicio');
+        $fecha_fin = $this->request->getVar('fecha_fin');
+        $iva = $this->request->getVar('iva');
+        $pagado = $this->request->getVar('pagado');
+        $aprobado = $this->request->getVar('aprobado');
+        $descuento = $this->request->getVar('descuento');
+        $estado = $this->request->getVar('estado');
+
+        $data['num_cot']=$num_cot;
+        $data['clienteFiltro']=$clienteFiltro;
+        $data['vendedorFiltro']=$vendedorFiltro;
+        $data['fecha_inicio']=$fecha_inicio;
+        $data['fecha_fin']=$fecha_fin;
+        $data['iva']=$iva;
+        $data['pagado']=$pagado;
+        $data['aprobado']=$aprobado;
+        $data['descuento']=$descuento;
+        $data['estado']=$estado;
+
+        if ($num_cot != null || $clienteFiltro != null || $vendedorFiltro != null || $iva != null || $pagado != null || $descuento != null  || $estado != null || $aprobado != null || ($fecha_inicio != null && $fecha_fin != null)) {
+            $cotizacion->orderBy('id', 'ASC');
+
+            if ($num_cot != null) {
+                $cotizacion->like('num_cot', $num_cot);
+            }
+
+            if ($clienteFiltro != null) {
+                $cotizacion->like('id_cliente', $clienteFiltro);
+            }
+
+            if ($vendedorFiltro != null) {
+                $cotizacion->like('id_vendedor', $vendedorFiltro);
+            }
+
+            if ($fecha_inicio != null && $fecha_fin != null) {
+                $cotizacion->where('fecha_doc >=', $fecha_inicio);
+                $cotizacion->where('fecha_doc <=', $fecha_fin);
+            }
+
+            if ($iva != null) {
+                if($iva == '0'){
+                    $cotizacion->where('val_iva ='. 0);
+                } else{
+                    $cotizacion->where('val_iva >', 0);
+                }
+            }
+
+            if ($estado != null) {
+                $cotizacion->where('cotizaciones.estado', $estado);
+            }
+
+            if ($aprobado != null) {
+                $cotizacion->where('cotizaciones.aprobado', $aprobado);
+            }
+
+            if ($descuento != null) {
+                if ($descuento == 'Si'){
+                    $cotizacion->where('val_descuento >', 0);
+                }
+                else{
+                    $cotizacion->where('val_descuento =', 0);
+                }
+            }
+
+            if ($pagado != null) {
+                if($pagado == "Pagado"){
+                    $cotizacion->where('total = valor_pagado');
+                } else {
+                    $cotizacion->where('total != valor_pagado');
+                }
+            }
+
+            $data['cotizaciones'] = $cotizacion->select('cotizaciones.*, cli.nombres as persona, vend.nombres as vendedor')
+                                        ->join('personas as cli', 'cli.id = cotizaciones.id_cliente', 'left')
+                                        ->join('personas as vend', 'vend.id = cotizaciones.id_vendedor', 'left')
+                                        ->orderBy('cotizaciones.id', 'DESC')
+                                        ->paginate(10);
+
+            $paginador = $cotizacion->pager;
+            $data['paginador'] = $paginador;
+
+            $detalleCotizacion = new DetalleCotizacion();
+            foreach ($data['cotizaciones'] as &$cotizacion) {
+                $cantidadRegistros = $detalleCotizacion->where('id_cotizacion', $cotizacion['id'])->countAllResults();
+                $cotizacion['cantidad_registros'] = $cantidadRegistros;
+            }
+            
+            return view('ventas/cotizaciones', $data);
+        }
         //$data['categorias'] = $categoria->orderBy('id','ASC')->paginate(10);
         $data['cotizaciones'] = $cotizacion->select('cotizaciones.*, cli.nombres as persona, vend.nombres as vendedor')
                                            ->join('personas as cli', 'cli.id = cotizaciones.id_cliente', 'left')
@@ -21,11 +125,8 @@ class Cotizacion extends BaseController{
                                            ->paginate(10);
         $paginador = $cotizacion->pager;
         $data['paginador']=$paginador;
-        $titulo = "Cotizaciones";
-        $data['titulo'] = $titulo;
-        $detalleCotizacion = new DetalleCotizacion();
-        
 
+        $detalleCotizacion = new DetalleCotizacion();
         foreach ($data['cotizaciones'] as &$cotizacion) {
             $cantidadRegistros = $detalleCotizacion->where('id_cotizacion', $cotizacion['id'])->countAllResults();
             $cotizacion['cantidad_registros'] = $cantidadRegistros;
@@ -412,5 +513,152 @@ class Cotizacion extends BaseController{
         }
         return redirect()->to(base_url('consultarCotizacion/'.$id))->with('exito', 'Cotizacion Actualizada exitosamente');
         
+    }
+
+    public function generarExcel($num_cot, $clienteFiltro, $vendedorFiltro, $fecha_inicio, $fecha_fin, $iva, $pagado, $descuento, $estado, $aprobado){
+
+        //validacion rol permisos
+        $session = session();
+        if ($session->has('id_rol')) {
+            $rol_usuario = $session->get('id_rol');
+        }
+        if (in_array($rol_usuario, [1,2])) {
+            $cotizacion = new Cotizaciones();
+            // Aplica los filtros solo si se han seleccionado valores
+            if (  $num_cot != 'none' || $clienteFiltro != 'none' || $vendedorFiltro != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none' || $iva != 'none' || $pagado != 'none' || $descuento != 'none' || $estado != 'none' || $aprobado != 'none') {
+                $cotizacion->orderBy('id', 'ASC');
+    
+                if ($num_cot != 'none') {
+                    $cotizacion->where('cotizaciones.num_cot', $num_cot);
+                }
+    
+                if ($clienteFiltro != 'none') {
+                    $cotizacion->where('cotizaciones.id_cliente', $clienteFiltro);
+                }
+    
+                if ($vendedorFiltro != 'none') {
+                    $cotizacion->where('cotizaciones.id_vendedor', $vendedorFiltro);
+                }
+    
+                if ($fecha_inicio != 'none' && $fecha_fin != 'none') {
+                    $cotizacion->where('cotizaciones.fecha_doc >=', $fecha_inicio);
+                    $cotizacion->where('cotizaciones.fecha_doc <=', $fecha_fin);
+                }
+    
+                if ($iva != 'none') {
+                    if($iva == '0'){
+                        $cotizacion->where('val_iva ='. 0);
+                    } else{
+                        $cotizacion->where('val_iva >', 0);
+                    }
+                }
+    
+                if ($estado != 'none') {
+                    $cotizacion->where('cotizaciones.estado', $estado);
+                }
+    
+                if ($descuento != 'none') {
+                    if ($descuento == 'Si'){
+                        $cotizacion->where('val_descuento >', 0);
+                    }
+                    else{
+                        $cotizacion->where('val_descuento =', 0);
+                    }
+                }
+    
+                if ($aprobado != 'none') {
+                    $cotizacion->where('aprobado', $aprobado);
+                }
+    
+                if ($pagado != 'none') {
+                    if($pagado == "Pagado"){
+                        $cotizacion->where('total = valor_pagado');
+                    } else {
+                        $cotizacion->where('total != valor_pagado');
+                    }
+                }
+
+                $data['cotizaciones'] = $cotizacion->select('cotizaciones.*, cli.nombres as persona, vend.nombres as vendedor')
+                                                            ->join('personas as cli', 'cli.id = cotizaciones.id_cliente', 'left')
+                                                            ->join('personas as vend', 'vend.id = cotizaciones.id_vendedor', 'left')
+                                                            ->orderBy('cotizaciones.id', 'DESC')
+                                                            ->findAll();
+            } else {
+                
+                    $data['cotizaciones'] = $cotizacion->select('cotizaciones.*, cli.nombres as persona, vend.nombres as vendedor')
+                    ->join('personas as cli', 'cli.id = cotizaciones.id_cliente', 'left')
+                    ->join('personas as vend', 'vend.id = cotizaciones.id_vendedor', 'left')
+                    ->orderBy('cotizaciones.id', 'DESC')
+                    ->findAll();
+            }
+    
+            // Crear un nuevo objeto Spreadsheet
+            $spreadsheet = new Spreadsheet();
+    
+            // Obtener la hoja activa
+            $sheet = $spreadsheet->getActiveSheet();
+            
+            $sheet->getColumnDimension('B')->setWidth(13);
+            $sheet->getColumnDimension('C')->setWidth(20);
+            $sheet->getColumnDimension('D')->setWidth(20);
+            $sheet->getColumnDimension('E')->setWidth(11);
+            $sheet->getColumnDimension('F')->setWidth(15);
+            $sheet->getColumnDimension('G')->setWidth(14);
+            $sheet->getColumnDimension('H')->setWidth(14);
+            $sheet->getColumnDimension('I')->setWidth(14);
+            $sheet->getColumnDimension('J')->setWidth(14);
+            $sheet->getColumnDimension('K')->setWidth(12);
+    
+            // Agregar encabezados
+            $sheet->setCellValue('A1', 'ID');
+            $sheet->setCellValue('B1', 'Numero Cot.');
+            $sheet->setCellValue('C1', 'Cliente');
+            $sheet->setCellValue('D1', 'Vendedor');
+            $sheet->setCellValue('E1', 'Fecha');
+            $sheet->setCellValue('F1', 'Val. Subtotal');
+            $sheet->setCellValue('G1', 'Val. Descuento');
+            $sheet->setCellValue('H1', 'Val. Iva');
+            $sheet->setCellValue('I1', 'Val. Total');
+            $sheet->setCellValue('J1', 'Val. Pagado');
+            $sheet->setCellValue('K1', 'Estado Pago');
+            $sheet->setCellValue('L1', 'Aprobado');
+            $sheet->setCellValue('M1', 'Estado');
+            // ... Agregar más columnas según tus necesidades
+    
+            // Agregar datos de las personas al archivo Excel
+            $row = 2;
+            foreach ($data['cotizaciones'] as $cotizacion) {
+                $sheet->setCellValue('A' . $row, $cotizacion['id']);
+                $sheet->setCellValue('B' . $row, $cotizacion['num_cot']);
+                $sheet->setCellValue('C' . $row, $cotizacion['persona']);
+                $sheet->setCellValue('D' . $row, $cotizacion['vendedor']);
+                $sheet->setCellValue('E' . $row, $cotizacion['fecha_doc']);
+                $sheet->setCellValue('F' . $row, "$" . $cotizacion['subtotal_cotizacion']);
+                $sheet->setCellValue('G' . $row, "$" . $cotizacion['val_descuento']);
+                $sheet->setCellValue('H' . $row, "$" . $cotizacion['val_iva']);
+                $sheet->setCellValue('I' . $row, "$" . $cotizacion['total']);
+                $sheet->setCellValue('J' . $row, "$" . $cotizacion['valor_pagado']);
+                $sheet->setCellValue('K' . $row, $cotizacion['total'] == $cotizacion['valor_pagado'] ? 'Pagado' : 'Pendiente');
+                $sheet->setCellValue('L' . $row, $cotizacion['aprobado'] == '1' ? 'Aprobado' : 'Pendiente');                // ... Agregar más columnas según tus necesidades
+                $sheet->setCellValue('M' . $row, $cotizacion['estado'] == '1' ? 'Activo' : 'Anulado');                // ... Agregar más columnas según tus necesidades
+    
+                $row++;
+            }
+    
+            // Guardar el archivo Excel
+            $writer = new Xlsx($spreadsheet);
+            $filename = 'export_compras.xlsx';
+            $writer->save($filename);
+    
+            // Descargar el archivo Excel
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="' . $filename . '"');
+            header('Cache-Control: max-age=0');
+            $writer->save('php://output');
+            exit;
+        }else{
+            $data['titulo'] = 'Error 404';
+            return view('errors/html/error_404', $data);
+        }
     }
 }

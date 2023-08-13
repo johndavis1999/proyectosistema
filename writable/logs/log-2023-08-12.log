@@ -1,0 +1,411 @@
+CRITICAL - 2023-08-12 20:16:04 --> Undefined variable $num_fact
+in APPPATH\Views\ventas\cotizaciones.php on line 145.
+ 1 APPPATH\Views\ventas\cotizaciones.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_fact', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(40): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 20:16:36 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\cotizaciones.php on line 145.
+ 1 APPPATH\Views\ventas\cotizaciones.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(40): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:47:10 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\cotizaciones.php on line 145.
+ 1 APPPATH\Views\ventas\cotizaciones.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(64): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:47:23 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\cotizaciones.php on line 145.
+ 1 APPPATH\Views\ventas\cotizaciones.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(64): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:47:24 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\cotizaciones.php on line 145.
+ 1 APPPATH\Views\ventas\cotizaciones.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(64): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:47:25 --> Undefined variable $num_cot
+in APPPATH\Views\ventas\cotizaciones.php on line 145.
+ 1 APPPATH\Views\ventas\cotizaciones.php(145): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_cot', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 145)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(64): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:47:26 --> Undefined variable $proveedores
+in APPPATH\Views\ventas\cotizaciones.php on line 153.
+ 1 APPPATH\Views\ventas\cotizaciones.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedores', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 153)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(64): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:48:09 --> Undefined variable $proveedores
+in APPPATH\Views\ventas\cotizaciones.php on line 153.
+ 1 APPPATH\Views\ventas\cotizaciones.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedores', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 153)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(64): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:49:25 --> Undefined variable $proveedor
+in APPPATH\Controllers\Cotizacion.php on line 17.
+ 1 APPPATH\Controllers\Cotizacion.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedor', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:49:32 --> Undefined variable $proveedores
+in APPPATH\Views\ventas\cotizaciones.php on line 153.
+ 1 APPPATH\Views\ventas\cotizaciones.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedores', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 153)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(68): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:50:31 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(68): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:53:37 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:53:38 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:53:48 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:53:57 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:54:43 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:54:47 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:54:48 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:56:16 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:56:36 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:57:26 --> Undefined variable $vendedorFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 161.
+ 1 APPPATH\Views\ventas\cotizaciones.php(161): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vendedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 161)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:57:38 --> Undefined variable $clienteFiltro
+in APPPATH\Views\ventas\cotizaciones.php on line 155.
+ 1 APPPATH\Views\ventas\cotizaciones.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clienteFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 155)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 21:59:22 --> Undefined variable $aprobado
+in APPPATH\Views\ventas\cotizaciones.php on line 206.
+ 1 APPPATH\Views\ventas\cotizaciones.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aprobado', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 206)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(73): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:22:31 --> Undefined variable $num_fact
+in APPPATH\Controllers\Cotizacion.php on line 56.
+ 1 APPPATH\Controllers\Cotizacion.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_fact', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:22:52 --> Undefined variable $num_fact
+in APPPATH\Controllers\Cotizacion.php on line 46.
+ 1 APPPATH\Controllers\Cotizacion.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $num_fact', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:23:18 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cotizacion.php on line 46.
+ 1 APPPATH\Controllers\Cotizacion.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:23:29 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cotizacion.php on line 46.
+ 1 APPPATH\Controllers\Cotizacion.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:23:30 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cotizacion.php on line 46.
+ 1 APPPATH\Controllers\Cotizacion.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:23:31 --> Undefined variable $proveedorFiltro
+in APPPATH\Controllers\Cotizacion.php on line 46.
+ 1 APPPATH\Controllers\Cotizacion.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $proveedorFiltro', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:23:55 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\Cotizacion.php on line 128.
+ 1 APPPATH\Controllers\Cotizacion.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 128)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:25:11 --> foreach() argument must be of type array|object, null given
+in APPPATH\Controllers\Cotizacion.php on line 128.
+ 1 APPPATH\Controllers\Cotizacion.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 128)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:27:54 --> Undefined variable $compra
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 APPPATH\Controllers\Cotizacion.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:28:21 --> Undefined variable $compra
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 APPPATH\Controllers\Cotizacion.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:29:06 --> Undefined variable $compra
+in APPPATH\Controllers\Cotizacion.php on line 47.
+ 1 APPPATH\Controllers\Cotizacion.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:29:17 --> Undefined variable $compra
+in APPPATH\Controllers\Cotizacion.php on line 91.
+ 1 APPPATH\Controllers\Cotizacion.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-12 23:29:35 --> mysqli_sql_exception: Unknown column 'personas.nombres' in 'field list' in C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\proyectosistema\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cotizac...', 0)
+#1 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cotizac...')
+#2 C:\xampp\htdocs\proyectosistema\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cotizac...')
+#3 C:\xampp\htdocs\proyectosistema\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cotizac...', Array, false)
+#4 C:\xampp\htdocs\proyectosistema\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\proyectosistema\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\proyectosistema\app\Controllers\Cotizacion.php(95): CodeIgniter\BaseModel->paginate(10)
+#8 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+#9 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+#10 C:\xampp\htdocs\proyectosistema\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectosistema\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-08-12 23:29:35 --> Unknown column 'personas.nombres' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `cotizaciones`.*, `personas`.`nombres` as `persona`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `vend`.`id` = `cotizaciones`.`id_vendedor`
+WHERE `num_cot` LIKE \'%2%\' ESCAPE \'!\'
+ORDER BY `id` ASC, `cotizaciones`.`id` DESC
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cotizaciones`.*, `personas`.`nombres` as `persona`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `vend`.`id` = `cotizaciones`.`id_vendedor`
+WHERE `num_cot` LIKE \'%2%\' ESCAPE \'!\'
+ORDER BY `id` ASC, `cotizaciones`.`id` DESC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cotizaciones`.*, `personas`.`nombres` as `persona`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `vend`.`id` = `cotizaciones`.`id_vendedor`
+WHERE `num_cot` LIKE \'%2%\' ESCAPE \'!\'
+ORDER BY `id` ASC, `cotizaciones`.`id` DESC
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cotizaciones`.*, `personas`.`nombres` as `persona`
+FROM `cotizaciones`
+LEFT JOIN `personas` as `cli` ON `cli`.`id` = `cotizaciones`.`id_cliente`
+LEFT JOIN `personas` as `vend` ON `vend`.`id` = `cotizaciones`.`id_vendedor`
+WHERE `num_cot` LIKE :num_cot: ESCAPE \'!\'
+ORDER BY `id` ASC, `cotizaciones`.`id` DESC
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 APPPATH\Controllers\Cotizacion.php(95): CodeIgniter\BaseModel->paginate(10)
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:30:07 --> Undefined variable $compra
+in APPPATH\Controllers\Cotizacion.php on line 97.
+ 1 APPPATH\Controllers\Cotizacion.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 97)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:30:41 --> Undefined variable $compra
+in APPPATH\Controllers\Cotizacion.php on line 97.
+ 1 APPPATH\Controllers\Cotizacion.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $compra', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Controllers\\Cotizacion.php', 97)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-12 23:30:49 --> Undefined variable $titulo
+in APPPATH\Views\ventas\cotizaciones.php on line 2.
+ 1 APPPATH\Views\ventas\cotizaciones.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\proyectosistema\\app\\Views\\ventas\\cotizaciones.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('ventas/cotizaciones', [], true)
+ 5 APPPATH\Controllers\Cotizacion.php(106): view('ventas/cotizaciones', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cotizacion->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cotizacion))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

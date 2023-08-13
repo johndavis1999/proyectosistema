@@ -149,8 +149,11 @@ $routes->get('consultarCotizacion/(:num)', 'Cotizacion::consultar/$1', ['filter'
 $routes->get('editarCotizacion/(:num)', 'Cotizacion::editar/$1', ['filter' => 'verificarSesion']);
 $routes->post('actualizarCotizacion', 'Cotizacion::actualizar', ['filter' => 'verificarSesion']);
 
+$routes->get('exportarCotizacion/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?/(:segment)?', 'Cotizacion::generarExcel/$1/$2/$3/$4/$5/$6/$7/$8/$9/$10', ['filter' => 'verificarSesion']);
+
 $routes->get('crearFact', 'Facturacion::crear', ['filter' => 'verificarSesion']);
 $routes->get('  ', 'Facturacion::ver', ['filter' => 'verificarSesion']);
+
 
 #cobros
 $routes->get('Cobros', 'Cobro::index', ['filter' => 'verificarSesion']);
