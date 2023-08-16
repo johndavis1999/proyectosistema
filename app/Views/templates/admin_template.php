@@ -58,8 +58,6 @@
                <?= (session('usuario'))?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#"><i class="fas fa-key"></i>  Cambiar Contraseña</a>
-              <a class="dropdown-item" href="#"><i class="fas fa-id-card"></i> Ver VCard</a>
               <a class="dropdown-item" href="<?= base_url('salir') ?>"><i class="fas fa-sign-in-alt">  </i> Cerrar Sesión</a>
             </div>
           </li>   
