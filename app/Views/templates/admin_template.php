@@ -40,9 +40,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="<?= base_url('dashboard') ?>" class="nav-link">Inicio</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
     </ul>
 
     <!-- Right navbar links -->

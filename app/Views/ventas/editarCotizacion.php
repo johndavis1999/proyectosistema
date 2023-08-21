@@ -231,7 +231,7 @@
                                 <div class="col-8">           
                                     <div class="form-group">
                                         <label for="textAreaRemark">Descripcion</label>
-                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()"><?= $cotizacion['descripcion'] ?></textarea>
+                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarAlfanumericosEspacios(); limitarCaracteres()"><?= $cotizacion['descripcion'] ?></textarea>
                                         <p id="contadorCaracteres">Caracteres restantes: 250/250</p>
                                     </div>
                                 </div>
@@ -750,6 +750,18 @@ function formatearNumero(input) {
             return true;
         });
     });
+</script>
+<script>
+function limitarAlfanumericosEspacios() {
+    const inputElement = document.getElementById('descripcion');
+    const inputValue = inputElement.value;
+    
+    // Eliminar caracteres no alfanuméricos ni espacios utilizando una expresión regular
+    const sanitizedValue = inputValue.replace(/[^a-zA-Z0-9---+-:-_\s]/g, '');
+    
+    // Establecer el valor limpiado en el campo de texto
+    inputElement.value = sanitizedValue;
+}
 </script>
 
 <script src="<?= base_url('public/plugins/toastr/toastr.min.js') ?>"></script>
