@@ -97,11 +97,11 @@
                                         <input type="hidden" value="<?=$user['id'];?>" name="id">
                                         <div class="mb-3">
                                           <label for="password" class="form-label">Nueva contraseña</label>
-                                          <input type="password" class="form-control" id="password" name="password" placeholder="Escribir contraseña nueva">
+                                          <input type="password" class="form-control" id="password" name="password" placeholder="Escribir contraseña nueva" pattern="[A-Za-z0-9]+" minlength="8" maxlength="16" required>
                                         </div>
                                         <div class="mb-3">
                                           <label for="repassword" class="form-label">Confirmar contraseña</label>
-                                          <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Volver a escribir la nueva contraseña">
+                                          <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Volver a escribir la nueva contraseña" pattern="[A-Za-z0-9]+" minlength="8" maxlength="16" required>
                                         </div>
                                       </div>
                                       <div class="modal-footer justify-content-between">

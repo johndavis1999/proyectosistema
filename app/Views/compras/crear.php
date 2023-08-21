@@ -12,7 +12,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="<?= base_url('Compras') ?>">Compras Proveedores</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url('Compras') ?>">Compras</a></li>
               <li class="breadcrumb-item active">Registrar Compra</li>
           </ol>
         </div>
@@ -119,7 +119,7 @@
                                 <div class="col-8">           
                                     <div class="form-group">
                                         <label for="textAreaRemark">Descripcion</label>
-                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarCaracteres()"><?= old('descripcion') ?></textarea>
+                                        <textarea class="form-control" name="descripcion" id="descripcion" rows="4" placeholder="Añadir detalle adicional del documento" oninput="limitarAlfanumericosEspacios(); limitarCaracteres()"><?= old('descripcion') ?></textarea>
                                         <p id="contadorCaracteres">Caracteres restantes: 250/250</p>
                                     </div>
                                     <div class="form-group">
@@ -608,6 +608,18 @@ function formatearNumero(input) {
             return true;
         });
     });
+</script>
+<script>
+function limitarAlfanumericosEspacios() {
+    const inputElement = document.getElementById('descripcion');
+    const inputValue = inputElement.value;
+    
+    // Eliminar caracteres no alfanuméricos ni espacios utilizando una expresión regular
+    const sanitizedValue = inputValue.replace(/[^a-zA-Z0-9\s]/g, '');
+    
+    // Establecer el valor limpiado en el campo de texto
+    inputElement.value = sanitizedValue;
+}
 </script>
 
 <script src="<?= base_url('public/plugins/toastr/toastr.min.js') ?>"></script>

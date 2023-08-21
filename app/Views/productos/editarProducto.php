@@ -34,11 +34,11 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="codigo">Codigo *</label>
-                                        <input type="text" class="form-control" id="codigo" name="codigo" value="<?= $producto['codigo'] ?>" placeholder="Codigo del producto">
+                                        <input type="text" class="form-control" id="codigo" name="codigo" value="<?= $producto['codigo'] ?>" placeholder="Codigo del producto" pattern="[A-Za-z0-9]+" minlength="4" maxlength="10" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="nombre">Nombre *</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $producto['nombre'] ?>" placeholder="Nombre del producto">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $producto['nombre'] ?>" placeholder="Nombre del producto" pattern="[A-Za-z0-9 ]+" minlength="5" maxlength="30" required>
                                     </div>
                                     <div class="row">
                                         <div class="col">
@@ -51,7 +51,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="precio_compra">Precio Compra</label>
-                                                <input type="number" class="form-control align-right" id="precio_compra" name="precio_compra" value="<?= $producto['precio_compra'] ?>" placeholder="Precio Compra" pattern="^\d*\.?\d+$">
+                                                <input type="text" class="form-control align-right" id="precio_compra" name="precio_compra" value="<?= $producto['precio_compra'] ?>" placeholder="Precio Compra" pattern="^\d*\.?\d+$">
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="form-group"  style="max-width: 200px;">
                                         <label for="descuento">Porcentaje descuento</label>
-                                        <input type="text" class="form-control align-right" id="descuento" name="descuento" value="<?= $producto['descuento'] ?>" placeholder="Porcentaje descuento" pattern="^(100(\.0{1,2})?|[1-9]?\d(\.\d{1,2})?)%?$">
+                                        <input type="text" class="form-control align-right" id="descuento" name="descuento" value="<?= $producto['descuento'] ?>" placeholder="Porcentaje descuento"   pattern="[0-9]+" min="0" max="100" required>
                                     </div>
                                 </div>
                             </div>

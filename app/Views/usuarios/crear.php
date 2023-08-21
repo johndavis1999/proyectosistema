@@ -46,11 +46,11 @@
                         </div>
                         <div class="form-group">
                             <label for="usuario">Nombre de Usuario *</label>
-                            <input type="text" class="form-control" id="usuario" name="usuario" value="<?= old('usuario') ?>" placeholder="Nombre de Usuario">
+                            <input type="text" class="form-control" id="usuario" name="usuario" value="<?= old('usuario') ?>" placeholder="Nombre de Usuario" pattern="[A-Za-z0-9]+" minlength="6" maxlength="10" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Contraseña *</label>
-                            <input type="password" class="form-control" id="password" name="password" value="<?= old('password') ?>" placeholder="Contraseña">
+                            <input type="password" class="form-control" id="password" name="password" value="<?= old('password') ?>" placeholder="Contraseña" pattern="[A-Za-z0-9]+" minlength="8" maxlength="16" required>
                         </div>
                         <div class="form-group">
                             <label for="id_rol">Rol de Usuario *</label>

@@ -45,15 +45,15 @@
                         </div>
                         <div class="form-group">
                             <label for="nombres">Nombres*</label>
-                            <input type="text" value="<?= old('nombres') ?>" class="form-control" id="nombres" name="nombres" placeholder="Nombre de Persona">
+                            <input type="text" value="<?= old('nombres') ?>" class="form-control" id="nombres" name="nombres" pattern="[A-Za-z ]+" minlength="5" maxlength="30" placeholder="Nombre de Persona">
                         </div>
                         <div class="form-group">
                             <label for="correo">Correo *</label>
-                            <input type="email" class="form-control" id="correo" name="correo" value="<?= old('correo') ?>" placeholder="Correo">
+                            <input type="email" class="form-control" id="correo" name="correo" value="<?= old('correo') ?>" pattern="[A-Za-z0-9]+([._-][A-Za-z0-9]+)*@[A-Za-z0-9]+([.-][A-Za-z0-9]+)*\.[A-Za-z]{2,}"  minlength="5" maxlength="30" placeholder="Correo" required>
                         </div>
                         <div class="form-group">
                             <label for="telefono">Telefono*</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" value="<?= old('telefono') ?>" placeholder="Telefono">
+                            <input type="text" class="form-control" id="telefono" name="telefono" value="<?= old('telefono') ?>" pattern="[0-9]+" minlength="5" maxlength="10" placeholder="Telefono" required>
                         </div>
                         <div class="form-group">
                             <label>

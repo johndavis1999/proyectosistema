@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group">
                             <label for="usuario">Nombre de Usuario *</label>
-                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" value="<?= $usuario['usuario'] ?>">
+                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" value="<?= $usuario['usuario'] ?>" pattern="[A-Za-z0-9]+" minlength="5" maxlength="30" required>
                         </div>
                         <div class="form-group">
                             <label for="id_rol">Rol de Usuario *</label>

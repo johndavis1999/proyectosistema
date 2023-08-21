@@ -38,7 +38,7 @@ class User extends BaseController
     public function crear()
     {
         $persona = new Personas();
-        $data['personas'] = $persona->where('es_empleado','1')->orderBy('id', 'ASC')->findAll();
+        $data['personas'] = $persona->where('es_empleado','1')->where('estado','1')->orderBy('id', 'DESC')->findAll();
         $titulo = "Usuarios";
         $data['titulo'] = $titulo;
         
@@ -168,7 +168,7 @@ class User extends BaseController
         $rol = new Roles();
         $data['roles'] = $rol->orderBy('id','ASC')->findAll();
         $persona = new Personas();
-        $data['personas'] = $persona->orderBy('id','ASC')->findAll();
+        $data['personas'] = $persona->where('es_empleado','1')->where('estado','1')->orderBy('id', 'DESC')->findAll();
         $titulo = "Usuarios";
         $data['titulo'] = $titulo;
         

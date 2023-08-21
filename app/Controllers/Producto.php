@@ -70,6 +70,7 @@ class Producto extends BaseController{
 
             $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
                                     ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
+                                    ->orderBy('id','DESC')
                                     ->paginate(10);
 
             $paginador = $producto->pager;
@@ -81,7 +82,7 @@ class Producto extends BaseController{
 
         $data['productos'] = $producto->select('productos. *, categoria_producto.descripcion as categoria')
                                     ->join('categoria_producto', 'categoria_producto.id = productos.id_categoria', 'left')
-                                    ->orderBy('id','ASC')
+                                    ->orderBy('id','DESC')
                                     ->paginate(10);
         $paginador = $producto->pager;
         $data['paginador']=$paginador;
@@ -101,7 +102,8 @@ class Producto extends BaseController{
     
     public function crear(){
         $categoria = new Categorias();
-        $data['categorias'] = $categoria->orderBy('id','ASC')->findAll();
+        $data['categorias'] = $categoria->where('estado', 1)
+                                        ->orderBy('id','ASC')->findAll();
         $titulo = "Productos";
         $data['titulo'] = $titulo;
         

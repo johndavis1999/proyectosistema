@@ -45,15 +45,15 @@
                         </div>
                         <div class="form-group">
                             <label for="nombres">Nombres*</label>
-                            <input type="text" class="form-control" id="nombres" name="nombres" value="<?= $persona['nombres'] ?>" placeholder="Nombre de Persona">
+                            <input type="text" class="form-control" id="nombres" name="nombres" value="<?= $persona['nombres'] ?>" placeholder="Nombre de Persona"pattern="[A-Za-z ]+" minlength="5" maxlength="30" required>
                         </div>
                         <div class="form-group">
                             <label for="correo">Correo *</label>
-                            <input type="email" class="form-control" id="correo" name="correo" value="<?= $persona['correo'] ?>" placeholder="Correo">
+                            <input type="email" class="form-control" id="correo" name="correo" value="<?= $persona['correo'] ?>" placeholder="Correo" pattern="[A-Za-z0-9]+([._-][A-Za-z0-9]+)*@[A-Za-z0-9]+([.-][A-Za-z0-9]+)*\.[A-Za-z]{2,}"  minlength="5" maxlength="30" placeholder="Correo" required>
                         </div>
                         <div class="form-group">
                             <label for="telefono">Telefono*</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" value="<?= $persona['telefono'] ?>" placeholder="Telefono">
+                            <input type="text" class="form-control" id="telefono" name="telefono" value="<?= $persona['telefono'] ?>" placeholder="Telefono" pattern="[0-9]+" minlength="5" maxlength="10" placeholder="Telefono" required>
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">

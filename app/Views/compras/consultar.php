@@ -12,7 +12,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="<?= base_url('Compras') ?>">Compras Proveedores</a></li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('Compras') ?>">Compras</a></li>
                     <li class="breadcrumb-item active">Consultar Compra</li>
                 </ol>
             </div>
@@ -22,7 +22,7 @@
             <a class="btn btn-block btn-primary" href="<?=base_url('editarCompra/'.$compra['id']);?>"><i class="fas fa-edit"></i> Editar Documento</a>
           </div>
           <div class="col2 ml-3">
-            <button type="button" class="btn btn-block btn-success" onclick='window.location.href="UsuariosCrear"'><i class="fas fa-plus"></i> Ver PDF Documento</button>
+            <!--<button type="button" class="btn btn-block btn-success" onclick='window.location.href="UsuariosCrear"'><i class="fas fa-plus"></i> Ver PDF Documento</button>-->
           </div>
           <?php 
             if($compra['total'] != $compra['valor_pagado']){

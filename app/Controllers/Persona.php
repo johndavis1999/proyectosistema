@@ -326,7 +326,7 @@ class Persona extends BaseController{
         }
         $es_cliente = $es_cliente == 1 ? 1 : 0;
         $es_proveedor = $es_proveedor == 1 ? 1 : 0;   
-
+        
         if($es_empleado == 0 && $es_cliente == 0 && $es_proveedor == 0){
             $session = session();
             $session->setFlashData('mensaje','La persona debe tener al menos un rol seleccionado');
@@ -376,6 +376,7 @@ class Persona extends BaseController{
             'es_proveedor'=>$es_proveedor,
             'estado'=>$estado
         ];
+        echo $id_cargo . 'cargo';
         $persona->insert($datos);
 
         if($cotizacion=='1'){

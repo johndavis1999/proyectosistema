@@ -47,7 +47,7 @@
             <a class="btn btn-block btn-primary" href="<?=base_url('editarPago/'.$pago['id']);?>"><i class="fas fa-edit"></i> Editar Pago</a>
           </div>
           <div class="col2 ml-3">
-            <button type="button" class="btn btn-block btn-success" onclick='window.location.href="#"'><i class="fas fa-file-pdf"></i> Generar PDF</button>
+            <!--<button type="button" class="btn btn-block btn-success" onclick='window.location.href="#"'><i class="fas fa-file-pdf"></i> Generar PDF</button>-->
           </div>
         </div>
         <?php if(session('mensaje')){?>
@@ -111,7 +111,7 @@
                                         </div>
                                         <div class="form-group" id="seccionTransferencia" style="display: none;">
                                             <label for="num_transferencia">Numero de Transferencia:</label>
-                                            <input class="form-control" type="text" id="num_transferencia" name="num_transferencia" value="<?= $pago['num_transferencia'] ?>" autocomplete="off" disabled>
+                                            <input class="form-control" type="text" id="num_transferencia" name="num_transferencia" value="<?= $pago['num_movimiento'] ?>" autocomplete="off" disabled>
                                         </div>
                                         <div class="form-group" id="seccionFechaMov" style="display: none;">
                                             <label for="fecha_movimiento">Fecha de movimiento *</label>

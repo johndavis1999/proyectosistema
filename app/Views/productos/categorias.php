@@ -101,7 +101,7 @@
                                       <input type="hidden" value="<?=$categoria['id'];?>" name="id">
                                       <div class="mb-3">
                                         <label for="descripcion" class="form-label">Descripción de la categoría</label>
-                                        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?=$categoria['descripcion'];?>" placeholder="Categoria del producto">
+                                        <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?=$categoria['descripcion'];?>" placeholder="Categoria del producto" pattern="[A-Za-z ]+" minlength="8" maxlength="20">
                                       </div>
                                       <div class="form-group">
                                         <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
@@ -155,7 +155,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripción de la categoría</label>
-                        <input autofocus type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Categoria del producto">
+                        <input autofocus type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Categoria del producto" pattern="[A-Za-z ]+" minlength="8" maxlength="20">
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">

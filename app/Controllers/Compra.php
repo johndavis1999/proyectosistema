@@ -14,7 +14,10 @@ class Compra extends BaseController{
     public function index(){
         $compra = new Compras();
         $proveedor = new Personas();
-        $data['proveedores'] = $proveedor->orderBy('id','ASC')->findAll();
+        $data['proveedores'] = $proveedor->where('es_proveedor', '1')
+                                    ->where('estado', '1')
+                                    ->orderBy('id', 'DESC')
+                                    ->findAll();
         $titulo = "Compras";
         $data['titulo'] = $titulo;
 
@@ -129,11 +132,12 @@ class Compra extends BaseController{
     public function crear(){
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->where('estado', '1')
+                                    ->orderBy('id', 'DESC')
                                     ->findAll();
         $producto = new Productos();
         $data['productos'] = $producto->where('estado', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->orderBy('id', 'DESC')
                                     ->findAll();
         $titulo = "Compras";
         $data['titulo'] = $titulo;
@@ -154,11 +158,12 @@ class Compra extends BaseController{
     public function nuevo(){
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->where('estado', '1')
+                                    ->orderBy('id', 'DESC')
                                     ->findAll();
         $producto = new Productos();
         $data['productos'] = $producto->where('estado', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->orderBy('id', 'DESC')
                                     ->findAll();
 
         $titulo = "Compras";
@@ -391,11 +396,12 @@ class Compra extends BaseController{
         $data['compra'] = $compra->where('id',$id)->first();
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->where('estado', '1')
+                                    ->orderBy('id', 'ESTADO')
                                     ->findAll();
         $producto = new Productos();
         $data['productos'] = $producto->where('estado', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->orderBy('id', 'ESTADO')
                                     ->findAll();
         $titulo = "Compras";
         $data['titulo'] = $titulo;
@@ -428,11 +434,12 @@ class Compra extends BaseController{
         $data['compra'] = $compra->where('id',$id)->first();
         $persona = new Personas();
         $data['personas'] = $persona->where('es_proveedor', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->where('estado', '1')
+                                    ->orderBy('id', 'DESC')
                                     ->findAll();
         $producto = new Productos();
         $data['productos'] = $producto->where('estado', '1')
-                                    ->orderBy('id', 'ASC')
+                                    ->orderBy('id', 'DESC')
                                     ->findAll();
         $titulo = "Compras";
         $data['titulo'] = $titulo;
@@ -686,7 +693,7 @@ class Compra extends BaseController{
             $compra = new Compras();
             // Aplica los filtros solo si se han seleccionado valores
             if (  $num_fact != 'none' || $proveedorFiltro != 'none' || $fecha_inicio != 'none' || $fecha_fin != 'none' || $iva != 'none' || $pagado != 'none' || $descuento != 'none' || $estado != 'none') {
-                $compra->orderBy('id', 'ASC');
+                $compra->orderBy('id', 'DESC');
     
                 if ($num_fact != 'none') {
                     $compra->where('compras.num_fact', $num_fact);

@@ -83,12 +83,11 @@
                                         <!-- small box -->
                                         <div class="small-box bg-warning">
                                             <div class="inner">
-                                            <h3><?= $totalClientes ?></h3>
-
-                                            <p>Clientes Activos</p>
+                                                <h3><?= $totalClientes ?></h3>
+                                                <p>Clientes Activos</p>
                                             </div>
                                             <div class="icon">
-                                            <i class="ion ion-person-add"></i>
+                                                <i class="ion ion-person-add"></i>
                                             </div>
                                             <a href="personas" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
@@ -98,12 +97,11 @@
                                         <!-- small box -->
                                         <div class="small-box bg-orange">
                                             <div class="inner">
-                                            <h3><?= $totalCompras ?></h3>
-
-                                            <p>Compras realizadas</p>
+                                                <h3><?= $totalCompras ?></h3>
+                                                <p>Compras realizadas</p>
                                             </div>
                                             <div class="icon">
-                                            <i class="fas fa-cart-plus"></i>
+                                                <i class="fas fa-cart-plus"></i>
                                             </div>
                                             <a href="Compras" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
@@ -113,12 +111,11 @@
                                         <!-- small box -->
                                         <div class="small-box bg-gray">
                                             <div class="inner">
-                                            <h3>$<?= $valorEgresoCompras ?></h3>
-
-                                            <p>Egresos por compras</p>
+                                                <h3>$<?= $valorEgresoCompras ?></h3>
+                                                <p>Egresos por compras</p>
                                             </div>
                                             <div class="icon">
-                                            <i class="fas fa-money-check-alt"></i>
+                                                <i class="fas fa-money-check-alt"></i>
                                             </div>
                                             <a href="Compras" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
@@ -128,12 +125,11 @@
                                         <!-- small box -->
                                         <div class="small-box bg-olive">
                                             <div class="inner">
-                                            <h3><?= $totalProductos ?></h3>
-
-                                            <p>Productos disponibles</p>
+                                                <h3><?= $totalProductos ?></h3>
+                                                <p>Productos disponibles</p>
                                             </div>
                                             <div class="icon">
-                                            <i class="fas fa-warehouse"></i>
+                                                <i class="fas fa-warehouse"></i>
                                             </div>
                                             <a href="productos" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
@@ -143,12 +139,11 @@
                                         <!-- small box -->
                                         <div class="small-box bg-lightblue">
                                             <div class="inner">
-                                            <h3>X$</h3>
-
-                                            <p>Ganancias</p>
+                                                <h3>X$</h3>
+                                                <p>Ganancias</p>
                                             </div>
                                             <div class="icon">
-                                            <i class="fas fa-chart-line"></i>
+                                                <i class="fas fa-chart-line"></i>
                                             </div>
                                             <a href="#" class="small-box-footer">Mas información <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
@@ -160,6 +155,7 @@
                     </div>
                 </div>
             </div>
+            <!-- 
             <div class="card card-primary card-outline">
                 <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
                     <div class="card-header">
@@ -174,6 +170,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
 </section>
